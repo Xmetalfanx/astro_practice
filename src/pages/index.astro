@@ -1,18 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import "../css/styles.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+// import Layout from "../layouts/Layout.astro";
+import "../styles/styles.css";
+import Header from "../layouts/frontpage-header.astro";
+import Footer from "../layouts/global-footer.astro";
 import SiteSections from "../components/frontpage/siteSections.astro";
 import GitGroups from "../components/frontpage/gitGroups.astro";
+import GlobalHeadtag from "../layouts/global-headtag.astro";
 
-// const current_distro = {
-//   name: "linuxmint",
-//   title: "Linux Mint",
-//   base: "ubuntu",
-//   supportedVersions: "20.x, 21.x, 22.x",
-// };
+
 ---
+<GlobalHeadtag />
+
 
 <Header />
   <SiteSections />
@@ -24,6 +22,7 @@ import GitGroups from "../components/frontpage/gitGroups.astro";
 
 <style>
   a {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin: 1rem;
   }
 </style>
