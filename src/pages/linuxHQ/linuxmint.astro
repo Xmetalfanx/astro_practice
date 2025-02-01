@@ -1,0 +1,39 @@
+---
+import "../../css/styles.css";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import DistrosData from "../../components/linuxHQ/distrosData.astro";
+
+// const current_distro = {
+//   name: "linuxmint",
+//   title: "Linux Mint",
+//   home: "https://www.linuxmint.com/",
+//   base: "ubuntu",
+//   supportedVersions: "20.x, 21.x, 22.x",
+// };
+
+name: "linuxmint"
+title: "Linux Mint"
+home: "https://www.linuxmint.com/"
+base: "ubuntu"
+supportedVersions: "20.x, 21.x, 22.x"
+
+---
+
+
+<Header/>
+
+<DistrosData distroTitle="Linux Mint"
+              distroHome="https://www.linuxmint.com"
+              distroBase="Ubuntu" />
+
+<!-- <section>
+  <div>
+    Distro
+    {current_distro.title}
+    <div>{current_distro.name}</div>
+    <div>Base: {current_distro.base}</div>
+    <div>Supported Versions: {current_distro.supportedVersions}</div>
+  </div>
+</section> -->
+
