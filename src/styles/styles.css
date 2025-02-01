@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: none;
+  margin: auto;
+  padding: 1.5rem;
+  max-width: 60ch;
+}
+header, 
+footer {
+  width: 100%;
+  background-color: hsl(33, 90%, 50%);
+  color: white;
+  height: 20%;
+  margin: 1rem 0;
+}
+
+header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+footer {
+  bottom: 0;
+}
+
+section {
+  border: 1px solid red;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
