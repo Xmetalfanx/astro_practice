@@ -1,36 +1,83 @@
-body {
+:root {
+  --main-color: hsl(34 90% 44%);
+  --accent-color: hsl(150, 100%, 20%);
+
+  --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
+  roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+}
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: var(--ffamily-roboto);
 }
-main {
-  display: none;
-  margin: auto;
-  padding: 1.5rem;
-  max-width: 60ch;
+
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
 }
-header, 
+
+
+header,
 footer {
   width: 100%;
-  background-color: hsl(33, 90%, 50%);
+  background-color: var(--main-color);
   color: white;
-  height: 20%;
-  margin: 1rem 0;
+  padding: 1rem;
+
+  a {
+    color: white;
+  }
 }
 
 header {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-footer {
-  bottom: 0;
+/* main section of site */
+.main-section {
+  width: 100vw;
+  display: flex;
+  margin: 1rem auto;
+
+  /* the sidebar containing the menus */
+  aside {
+    width: 19%;
+
+    label {
+      background-color: var(--accent-color);
+      color: white;
+      display: block;
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .accordion {
+      outline: 1px solid var(--accent-color);
+      margin: 1.5rem;
+      border-radius: 10px 10px 0 0;
+  
+      .accordion-content {
+        margin: 0 1rem;
+  
+        > * {
+          display: block;
+          margin: .5rem auto;
+        }
+      }
+    }
+  }
+
+  /* where the content passed from individual pages would go */
+  .primary-content {
+    width: max-content;
+  }
 }
 
-section {
-  border: 1px solid red;
-  width: 80%;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  padding: 1rem;
-}
