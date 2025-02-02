@@ -1,0 +1,55 @@
+---
+
+import "../../styles/styles.css";
+
+const distrotitle = Astro.props.distrotitle
+const distrobase = Astro.props.distrobase
+const linkhome = Astro.props.linkhome
+const linkforum = Astro.props.linkforum
+const linkdownload = Astro.props.linkdownload
+const latestversion = Astro.props.latestversion
+
+---
+
+<div class="container">
+  <div class="distroTitle">{distrotitle}
+  </div>
+  <div>
+    <span class="infoTitle">
+      <a href="{linkhome}">{distrotitle} Homepage:</a>
+    </span>
+  </div>
+  <div>
+    <span class="infoTitle">
+      <a href="{linkdownload}">{distrotitle} Downloads</a>
+    </span>
+    <div>
+        <span class="infoTitle">
+          <a href="{linkforum}">{distrotitle} Forums</a>
+        </span>
+  <div>
+    <span class="infoTitle">Distro Base:</span>
+    {distrobase}
+  </div>
+  <div>
+    <span class="infoTitle">Latest Version: {latestversion}</span>
+  </div>
+</div>
+
+<style>
+  .container {
+    background-color: #efefef;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  .infoTitle {
+    font-weight: bold;
+  }
+  // main title
+  .distroTitle {
+    font-weight: bold;
+    font-size: 5rem;
+  }
+
+</style>

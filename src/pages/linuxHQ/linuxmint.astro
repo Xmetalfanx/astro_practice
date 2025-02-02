@@ -1,39 +1,25 @@
 ---
-import "../../css/styles.css";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import DistrosData from "../../components/linuxHQ/distrosData.astro";
 
-// const current_distro = {
-//   name: "linuxmint",
-//   title: "Linux Mint",
-//   home: "https://www.linuxmint.com/",
-//   base: "ubuntu",
-//   supportedVersions: "20.x, 21.x, 22.x",
-// };
+import LinuxDistroTemplate from "../../layouts/templates/linux-distro-template.astro"
+import DistrosData from "../../layouts/linuxHQ/distrosData.astro";
 
-name: "linuxmint"
-title: "Linux Mint"
-home: "https://www.linuxmint.com/"
-base: "ubuntu"
-supportedVersions: "20.x, 21.x, 22.x"
+const distrotitle="Test Title"
+const latestversion="22.1"
+const linkhome="https://www.linuxmint.com"
+const linkforum="https://forums.linuxmint.com/"
+const linkdownload="https://www.linuxmint.com/download.php"
+
 
 ---
 
+<LinuxDistroTemplate>
 
-<Header/>
+<DistrosData
+distrotitle={distrotitle}
+latestversion={latestversion}
+linkhome=`{linkhome}`
+linkforum={linkforum}
+linuxdownload={linkdownload}
+/>
 
-<DistrosData distroTitle="Linux Mint"
-              distroHome="https://www.linuxmint.com"
-              distroBase="Ubuntu" />
-
-<!-- <section>
-  <div>
-    Distro
-    {current_distro.title}
-    <div>{current_distro.name}</div>
-    <div>Base: {current_distro.base}</div>
-    <div>Supported Versions: {current_distro.supportedVersions}</div>
-  </div>
-</section> -->
-
+</LinuxDistroTemplate>

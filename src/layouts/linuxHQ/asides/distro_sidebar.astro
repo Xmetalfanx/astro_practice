@@ -1,0 +1,156 @@
+---
+import Link from "../../../components/global/Link.astro";
+---
+
+<div class="accordion">
+  <input type="checkbox" id="archmenu" />
+  <label for="archmenu">Arch Family</label>
+  <div class="accordion-content">
+    <Link
+      linktext="Arch Linux"
+      location=`/linuxHQ/distros/arch/archLinux.php`
+    />
+    <Link linktext="Archbang" location=`/linuxHQ/distros/arch/archBang.php` />
+    <Link
+      linktext="EndeavourOS"
+      location=`/linuxHQ/distros/arch/endeavouros.php`
+    />
+    <Link linktext="Manjaro" location=`/linuxHQ/distros/arch/manjaro.php` />
+  </div>
+</div>
+<div class="accordion">
+  <input type="checkbox" id="debianmenu" />
+  <label for="debianmenu">Debian Family</label>
+  <div class="accordion-content">
+    <Link linktext="Anti-X" location="/linuxHQ/distros/debian/antix.php" />
+    <Link
+      linktext="Bunsenlabs"
+      location="/linuxHQ/distros/debian/bunsenlabs.php"
+    />
+    <Link
+      linktext="CrunchBang++"
+      location="/linuxHQ/distros/debian/crunchbangplusplus.php"
+    />
+    <Link linktext="Debian" location="/linuxHQ/distros/debian/debian.php" />
+    <Link linktext="Deepin" location="/linuxHQ/distros/debian/deepn.php" />
+    <Link
+      linktext="Linux Mint Debian Edition"
+      location="/linuxHQ/distros/debian/lmde.php"
+    />
+    <Link
+      linktext="Makulu Linux"
+      location="/linuxHQ/distros/debian/makulu.php"
+    />
+    <Link linktext="MX Linux" location="/linuxHQ/distros/debian/mxlinux.php" />
+    <Link
+      linktext="Peppermint"
+      location="/linuxHQ/distros/debian/peppermint.php"
+    />
+    <Link
+      linktext="Sparky Linux"
+      location="/linuxHQ/distros/debian/solydxk.php"
+    />
+    <Link
+      linktext="SolydXK"
+      location="/linuxHQ/distros/debian/sparkylinux.php"
+    />
+  </div>
+</div>
+<div class="accordion">
+  <input type="checkbox" id="ubuntumenu" />
+  <label for="ubuntumenu">Ubuntu Family</label>
+  <div class="accordion-content">
+    <Link
+      linktext="Elementary OS"
+      location="/linuxHQ/distros/ubuntu/elementaryOS.php"
+    />
+    <Link
+      linktext="KDE Neon / Neon"
+      location="/linuxHQ/distros/ubuntu/neon.php"
+    />
+    <Link linktext="Kubuntu" location="/linuxHQ/distros/ubuntu/kubuntu.php" />
+    <Link
+      linktext="Linux Lite"
+      location="/linuxHQ/distros/ubuntu/linuxLite.php"
+    />
+    <Link
+      linktext="Linux Mint"
+      location="/linuxHQ/distros/ubuntu/linuxMint.php"
+    />
+    <Link linktext="LXLE" location="/linuxHQ/distros/ubuntu/LXLE.php" />
+    <Link linktext="Lubuntu" location="/linuxHQ/distros/ubuntu/lubuntu.php" />
+    <Link linktext="Ubuntu" location="/linuxHQ/distros/ubuntu/ubuntu.php" />
+    <Link
+      linktext="Ubuntu Budgie"
+      location="/linuxHQ/distros/ubuntu/ubuntuBudgie.php"
+    />
+    <Link
+      linktext="Ubuntu Cinnamon"
+      location="/linuxHQ/distros/ubuntu/ubuntuCinnamon.php"
+    />
+    <Link
+      linktext="UbuntuDDE"
+      location="/linuxHQ/distros/ubuntu/ubuntuDDE.php"
+    />
+    <Link
+      linktext="Ubuntu Mate"
+      location="/linuxHQ/distros/ubuntu/ubuntuMate.php"
+    />
+    <Link
+      linktext="Ubuntu Unity"
+      location="/linuxHQ/distros/ubuntu/ubuntuUnity.php"
+    />
+    <Link linktext="Xubuntu" location="/linuxHQ/distros/ubuntu/xubuntu.php" />
+    <Link linktext="Zorin" location="/linuxHQ/distros/ubuntu/zorin.php" />
+  </div>
+</div>
+<div class="accordion">
+  <input type="checkbox" id="rpmmenu" />
+  <label for="rpmmenu">RPM Distros</label>
+  <div class="accordion-content">
+
+    <span>Fedora based</span>
+    <Link linktext="Fedora" location="/linuxHQ/distros/rpm/fedora.php" />
+
+    <span>Open Suse Based</span>
+    <Link linktext="Gecko Linux" location="/linuxHQ/distros/rpm/gecko.php" />
+    <Link linktext="OpenSuse" location="/linuxHQ/distros/rpm/openSuse.php" />
+
+    <span>Various</span>
+
+    <Link linktext="CentOS" location="/linuxHQ/distros/rpm/centOS.php" />
+    <Link linktext="Mageia" location="/linuxHQ/distros/rpm/mageia.php" />
+    <Link linktext="OpenMandriva" location="/linuxHQ/distros/rpm/openMandriva.php" />
+    <Link linktext="PCLinuxOS" location="/linuxHQ/distros/rpm/PCLinuxOS.php" />
+    <Link linktext="ROSA" location="/linuxHQ/distros/rpm/ROSA.php" />
+  </div>
+</div>
+<div class="accordion">
+  <input type="checkbox" id="gentoomenu" />
+  <label for="gentoomenu">Gentoo Family</label>
+  <div class="accordion-content">
+    <Link linktext="Calculate Linux" location="/linuxHQ/distros/gentoo/calculate.php" />
+    <Link linktext="Gentoo" location="/linuxHQ/distros/gentoo/gentoo.php" />
+  </div>
+</div>
+<div class="accordion">
+  <input type="checkbox" id="miscdistro" />
+  <label for="miscdistro">Misc. Distros</label>
+  <div class="accordion-content">
+    <Link linktext="KaOS" location="/linuxHQ/distros/independent/kaOS.php" />
+    <Link linktext="Solus" location="/linuxHQ/distros/independent/solus.php" />
+    <Link
+      linktext="Puppy Linux"
+      location="/linuxHQ/distros/independent/puppyLinux.php"
+    />
+  </div>
+</div>
+
+<style>
+
+  input {
+    display: none;
+  }
+
+
+</style>

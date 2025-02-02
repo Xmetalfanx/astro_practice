@@ -1,0 +1,20 @@
+---
+import GlobalFooter from "../global/global-footer.astro";
+import GlobalHeadtag from "../global/global-headtag.astro";
+import DistroSidebar from "../linuxHQ/asides/distro_sidebar.astro";
+import LinuxTopMenus from "../linuxHQ/LinuxTopMenus.astro";
+---
+
+<GlobalHeadtag />
+
+<LinuxTopMenus />
+
+<div class="main-section">
+  <aside>
+    <DistroSidebar />
+  </aside>
+  <div class="primary-content">
+    <slot />
+  </div>
+</div>
+<GlobalFooter />
