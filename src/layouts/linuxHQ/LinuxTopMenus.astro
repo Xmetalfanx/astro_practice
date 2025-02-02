@@ -1,0 +1,34 @@
+---
+import Link from "../../components/global/Link.astro";
+---
+
+<header>
+  <div class="section-title">LinuxHQ</div>
+  <nav>
+    <Link linktext="Desktops" />
+    <Link linktext="Distros" />
+    <Link linktext="Theming" />
+    <Link linktext="Tips" />
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      font-size: 1.4rem;
+
+      > * {
+        margin: 0 1.4rem;
+      }
+
+      a:focus, a:hover { 
+        color: var(--accent-color);
+        outline: 1px solid var(--accent-color);
+      }
+    }
+
+  }
+</style>
