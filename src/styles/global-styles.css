@@ -61,7 +61,6 @@ header {
 
     .accordion {
       outline: 1px solid var(--accent-color);
-      margin: 1.5rem;
       border-radius: 10px 10px 0 0;
   
       .accordion-content {
@@ -72,6 +71,14 @@ header {
           margin: .5rem auto;
         }
       }
+    }
+
+    .accordion:nth-child(1) {
+      margin: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .accordion:nth-child(n +2) {
+      margin: 1.5rem;
     }
   }
 
