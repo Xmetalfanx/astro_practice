@@ -1,0 +1,62 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "makulu";
+const distro_title = "Makulu";
+
+import distro_icon from "@icons/makulu.png";
+
+const moreinfo_desktops = "Various";
+const moreinfo_featured = "yes";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros = "";
+const moreinfo_target_audience = "";
+const moreinfo_distro_type = "";
+
+const screenshot_desktop = "Plasma 5";
+const screenshot_theme = "";
+const screenshot_icon = "";
+
+import screenshot_src from "@debian_ss/makulu.png";
+import screenshot_thumbnail from "@debian_ss/thumbnails/makulu_tn.png";
+
+const version_latest = "Shift 2022";
+const versions_supported = "unknown";
+
+const link_download = "http://www.makululinux.com/wp/downloads/";
+const link_forum = "http://makululinux.discussion.community/";
+const link_homepage = "http://www.makululinux.com/";
+const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/";
+
+const youtube_review_playlist = "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ";
+const youtube_tips_playlist =
+  "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

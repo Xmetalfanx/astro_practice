@@ -1,0 +1,63 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "mageia";
+const distro_title = "Mageia";
+const family = "mandriva";
+
+import distro_icon from "@icons/mageia.png";
+
+const moreinfo_desktops =
+  "Cinnamon, GNOME, IceWM, KDE, MATE, LXDE, Openbox, Razor-qt, WMaker, Xfce";
+const moreinfo_featured = "";
+const moreinfo_releasecycle = "9 months, Support for 18 months";
+const moreinfo_similar_distros = "ROSA Fresh, Open Mandriva";
+const moreinfo_target_audience = "Any User";
+const moreinfo_distro_type = "";
+
+const screenshot_desktop = "";
+const screenshot_theme = "";
+const screenshot_icon = "";
+
+import screenshot_src from "@rpm_ss/mageia.png";
+import screenshot_thumbnail from "@rpm_ss/thumbnails/mageia_tn.png";
+
+const version_latest = "";
+const versions_supported = "";
+
+const link_download = "http://mageia.org/en/downloads/";
+const link_forum = "https://forums.mageia.org/";
+const link_homepage = "http://mageia.org";
+const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/";
+
+const youtube_review_playlist = "PLrh2y86lvcJc-GsSlO3UJqdoGq3mTMIzh";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

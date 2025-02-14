@@ -1,0 +1,61 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "peppermint";
+const distro_title = "Peppermint";
+
+import distro_icon from "@icons/peppermint.png";
+
+const moreinfo_desktops = "LXDE/XFCE";
+const moreinfo_featured = "";
+const moreinfo_releasecycle = "LXLE, Lubuntu";
+const moreinfo_target_audience = "Any User";
+const moreinfo_distro_type = "";
+const moreinfo_similar_distros = "";
+
+const screenshot_desktop = "XFCE";
+const screenshot_theme = "";
+const screenshot_icon = "";
+
+import screenshot_src from "@debian_ss/peppermint.png";
+import screenshot_thumbnail from "@debian_ss/thumbnails/peppermint_tn.png";
+
+const version_latest = "10 Debian Based, 10 Devuan Based";
+const versions_supported = "10 Debian Based, 10 Devuan Based";
+
+const link_download = "https://peppermintos.com/";
+const link_forum = "";
+const link_homepage = "http://peppermintos.com/";
+const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/";
+
+const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

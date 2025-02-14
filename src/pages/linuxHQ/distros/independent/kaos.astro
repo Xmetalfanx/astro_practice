@@ -1,0 +1,62 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "kaos";
+const distro_title = "KaOS";
+
+import distro_icon from "@icons/kaos.svg";
+
+const moreinfo_desktops = "Plasma 5";
+const moreinfo_featured = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros = "";
+const moreinfo_target_audience = "";
+const moreinfo_distro_type = "";
+
+const screenshot_desktop = "KDE / Plasma 5";
+const screenshot_icon = "";
+const screenshot_theme = "";
+
+import screenshot_src from "@independent_ss/kaos.png";
+import screenshot_thumbnail from "@independent_ss/thumbnails/kaos_tn.png";
+
+const version_latest = "";
+const versions_supported = "";
+
+const link_download = "https://kaosx.us/download";
+const link_forum = "http://forum.kaosx.us/";
+const link_homepage = "https://kaosx.us/";
+const link_mydistro_page =
+  "http://xmetal.x10.mx/linuxHQ/distros/independent/kaOS.php";
+
+const youtube_review_playlist = "";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

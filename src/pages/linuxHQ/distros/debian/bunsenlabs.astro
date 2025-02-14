@@ -1,0 +1,65 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "bunsenlabs";
+const distro_title = "Bunsenlabs";
+
+import distro_icon from "@icons/bunsenlabs.png";
+
+const moreinfo_desktops = "Openbox";
+const moreinfo_featured = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros =
+  "The Debian familys version of Archbang OR Debian with Openbox installed";
+const moreinfo_target_audience =
+  "Moderate to Advanced Users (for the most part)";
+const moreinfo_distro_type = "";
+
+const screenshot_desktop = "";
+const screenshot_theme = "";
+const screenshot_icon = "";
+
+import screenshot_src from "@debian_ss/bunsenlabs.png";
+import screenshot_thumbnail from "@debian_ss/thumbnails/bunsenlabs_tn.png";
+
+const version_latest = "Beryllium - Released December 2022";
+const versions_supported = "Beryllium";
+
+const link_download = "https://www.bunsenlabs.org/installation.html";
+const link_forum = "https://forums.bunsenlabs.org";
+const link_homepage = "https://www.bunsenlabs.org";
+const link_mydistro_page =
+  "http://xmetal.x10.mx/linuxHQ/distros/debian/bunsenlabs.php";
+
+const youtube_review_playlist = "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ";
+const youtube_tips_playlist =
+  "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

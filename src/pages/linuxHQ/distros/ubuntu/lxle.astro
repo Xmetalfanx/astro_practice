@@ -1,0 +1,64 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "lxle";
+const distro_title = "LXLE";
+
+import distro_icon from "@icons/lxle.png";
+
+const moreinfo_base = "Ubuntu Long Term Support (LTS) and non-LTS";
+const moreinfo_desktops = "LXDE";
+const moreinfo_featured = "";
+const moreinfo_distro_type = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros = "";
+("Lubuntu or any other Ubuntu moreinfo_based distro with LXDE installed");
+const moreinfo_target_audience = "Any Use";
+
+const screenshot_desktop = "";
+const screenshot_icon = "";
+const screenshot_theme = "";
+
+import screenshot_src from "@ubuntu_ss/lxle.png";
+import screenshot_thumbnail from "@ubuntu_ss/thumbnails/lxle_tn.png";
+
+const version_latest = "20.04 (moreinfo_based on Ubuntu 20.04)";
+const versions_supported = "20.04 LTS";
+
+const link_download = "http://www.lxle.net/link_download";
+const link_forum = "http://lxle.net/link_forum/";
+const link_homepage = "http://www.lxle.net";
+const link_mydistro_page =
+  "http://xmetal.x10.mx/linuxHQ/distros/ubuntu/LXLE.php";
+
+const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

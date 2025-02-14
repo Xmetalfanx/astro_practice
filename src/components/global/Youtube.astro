@@ -1,0 +1,17 @@
+---
+const youtube_review_playlist_url =
+  "https://www.youtube.com/embed/videoseries?list=";
+const yt_playlist_url = "";
+
+const yt_title = Astro.props.yt_title;
+const yt_src = Astro.props.yt_src;
+---
+
+<iframe
+  width="560"
+  height="315"
+  src=`${youtube_review_playlist_url}${yt_src}`
+  title="${yt_title}"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen></iframe>

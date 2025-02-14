@@ -1,38 +1,119 @@
 ---
+import "../../styles/global-styles.css";
 
-import "../../styles/styles.css";
+// Import the <Image /> component
+import { Image } from "astro:assets";
 
-const distrotitle = Astro.props.distrotitle
-const distrobase = Astro.props.distrobase
-const linkhome = Astro.props.linkhome
-const linkforum = Astro.props.linkforum
-const linkdownload = Astro.props.linkdownload
-const latestversion = Astro.props.latestversion
+// old ref: component from https://astro-embed.netlify.app/components/youtube/
 
+import YouTube from "@components/global/Youtube.astro";
+
+const distro_title = Astro.props.distro_title;
+const distro_base = Astro.props.distro_base;
+
+const distro_icon = Astro.props.distro_icon;
+
+const link_homepage = Astro.props.link_homepage;
+const link_forum = Astro.props.link_forum;
+const link_download = Astro.props.link_download;
+const link_mydistro_page = Astro.props.link_mydistro_page;
+
+const versions_latest = Astro.props.versions_latest;
+const versions_supported = Astro.props.versions_supported;
+
+const moreinfo_base = Astro.props.moreinfo_base;
+const moreinfo_desktops = Astro.props.moreinfo_desktops;
+const moreinfo_featured = Astro.props.moreinfo_featured;
+const moreinfo_releasecycle = Astro.props.moreinfo_releasecycle;
+const moreinfo_similar_distros = Astro.props.moreinfo_similar_distros;
+const moreinfo_target_audience = Astro.props.moreinfo_target_audience;
+
+const screenshot_desktop = Astro.props.screenshot_desktop;
+const screenshot_src = Astro.props.screenshot_src;
+const screenshot_icon = Astro.props.screenshot_icon;
+const screenshot_theme = Astro.props.screenshot_theme;
+const screenshot_thumbnail = Astro.props.screenshot_thumbnail;
+
+const youtube_review_playlist = Astro.props.youtube_review_playlist;
+const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 ---
 
 <div class="container">
-  <div class="distroTitle">{distrotitle}
+  <div class="icon-and-title-container">
+    <div class="distro-icon">
+      <Image src={distro_icon} alt="" width={48} height={48} />
+    </div>
+
+    <div class="distro-title">{distro_title}</div>
   </div>
-  <div>
-    <span class="infoTitle">
-      <a href="{linkhome}">{distrotitle} Homepage:</a>
-    </span>
-  </div>
-  <div>
-    <span class="infoTitle">
-      <a href="{linkdownload}">{distrotitle} Downloads</a>
-    </span>
+
+  <div class="basicinfo-and-screenshot-container">
     <div>
-        <span class="infoTitle">
-          <a href="{linkforum}">{distrotitle} Forums</a>
-        </span>
-  <div>
-    <span class="infoTitle">Distro Base:</span>
-    {distrobase}
+      <div>
+        <span class="infoTitle">Homepage: </span>
+        <a href="{link_homepage}">{link_homepage}</a>
+      </div>
+      <div>
+        <span class="infoTitle">Downloads:</span>
+        <a href="{link_download}">{link_download}</a>
+      </div>
+
+      <div>
+        <span class="infoTitle">Forums:</span>
+        <a href="{link_forum}">{link_forum}</a>
+      </div>
+
+      <div class="moreinfo-container">
+        <div>
+          <span class="infoTitle"> Distro Base </span>{moreinfo_base}
+        </div>
+        <div>
+          <span class="infoTitle">Featured Desktops </span>{moreinfo_desktops}
+        </div>
+        <div>
+          <span class="infoTitle">Release Cycle: </span>{moreinfo_releasecycle}
+        </div>
+
+        <div>
+          <span class="infoTitle">Latest Version: </span>{versions_latest}
+        </div>
+
+        <div>
+          <span class="infoTitle">Supported Versions: </span>{
+            versions_supported
+          }
+        </div>
+
+        <div>
+          <span class="infoTitle">Target Audience: </span>{
+            moreinfo_target_audience
+          }
+        </div>
+      </div>
+
+      <!-- <div>
+        <span class="infoTitle">My page for {distro_title} </span>
+        <a href="{link_mydistro_page}">{link_mydistro_page}</a>
+      </div> -->
+    </div>
+
+    <div class="screenshot-container">
+      <Image src={screenshot_thumbnail} alt="" width={600} />
+    </div>
   </div>
-  <div>
-    <span class="infoTitle">Latest Version: {latestversion}</span>
+
+  <div class="youtube-container">
+    <!-- YT Review Playlist -->
+    <YouTube
+      yt_src={youtube_review_playlist}
+      yt_title="Youtube Review Playlist"
+    />
+
+    <!--Youtube Tips Playlist  -->
+    <YouTube 
+      yt-src={youtube_tips_playlist} 
+      yt_title="Youtube Tips Playlist" 
+    />
   </div>
 </div>
 
@@ -42,14 +123,56 @@ const latestversion = Astro.props.latestversion
     width: 80vw;
     margin: 0 auto;
     padding: 1rem;
+    font-size: 1.1rem;
+
+    line-height: 2rem;
+
+    > div {
+      margin: 0.5rem auto;
+    }
   }
-  .infoTitle {
+  .info-title {
     font-weight: bold;
-  }
-  // main title
-  .distroTitle {
-    font-weight: bold;
-    font-size: 5rem;
   }
 
+  .basicinfo-and-screenshot-container,
+  .youtube-container {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+
+    margin-bottom: 2rem;
+  }
+
+  .screenshot-container {
+    justify-content: space-around;
+  }
+
+  .icon-and-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    > div {
+      margin: 0.5rem;
+    }
+
+    .distro-title {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .distro-icon {
+      height: 48px;
+      width: 48px;
+      float: left;
+    }
+  }
+
+  .youtube-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+
+    outline: 2px solid red;
+  }
 </style>

@@ -1,0 +1,62 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "arch";
+const distro_title = "Arch";
+const distro_icon = "arch.svg";
+
+const moreinfo_desktops =
+  "Cinnamon, Enlightenment, GNOME, KDE, LXDE, MATE, Xfce";
+const moreinfo_featured = "no";
+const moreinfo_distro_type = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros =
+  "(...sort of) Antergos, SwagArch, (..this is a stretch) Manjaro";
+const moreinfo_target_audience = "Moderate to Advanced Users";
+
+const screenshot_desktop = "";
+const screenshot_icon = "";
+const screenshot_theme = "";
+
+import screenshot_src from "@arch_ss/";
+import screenshot_thumbnail from "@arch_ss/thumbnails/";
+
+const version_latest = "2023.05.03";
+const versions_supported = "";
+
+const link_download = "http://www.archlinux.org/download/";
+const link_forum = "http://bbs.archlinux.org/";
+const link_homepage = "http://www.archlinux.org";
+const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/arch/arch.php";
+
+const youtube_review_playlist = "";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

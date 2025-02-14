@@ -1,3 +1,26 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@icons/*": ["/src/assets/graphics/linuxhq/distros/icons/*"],
+      "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
+      "@arch_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/arch/*"],
+      "@debian_ss/*": [
+        "/src/assets/graphics/linuxhq/distros/screenshots/debian/*"
+      ],
+      "@gentoo_ss/*": [
+        "/src/assets/graphics/linuxhq/distros/screenshots/gentoo/*"
+      ],
+      "@independent_ss/*": [
+        "/src/assets/graphics/linuxhq/distros/screenshots/independent/*"
+      ],
+      "@rpm_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/rpm/*"],
+      "@ubuntu_ss/*": [
+        "/src/assets/graphics/linuxhq/distros/screenshots/ubuntu/*"
+      ]
+    }
+  }
 }

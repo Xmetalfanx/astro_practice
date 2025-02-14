@@ -1,0 +1,63 @@
+---
+import DistroData from "@layouts/linuxHQ/distrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "archbang";
+const distro_title = "Archbang";
+
+const distro_icon = "archbang.png";
+
+const moreinfo_distro_base = "Arch Linux";
+const moreinfo_desktops = "Openbox";
+const moreinfo_featured = "";
+const moreinfo_distro_type = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros = "Arch";
+const moreinfo_target_audience = "Moderate to Advanced Users";
+
+const screenshot_desktop = "";
+const screenshot_icon = "";
+const screenshot_theme = "";
+
+import screenshot_src from "@arch_ss/";
+import screenshot_thumbnail from "@arch_ss/thumbnails/";
+
+const version_latest = "unknown";
+const versions_supported = "unknown";
+
+const link_download = "http://sourceforge.net/projects/archbang/files/";
+const link_forum = "";
+const link_homepage = "https://archbang.org/";
+const link_mydistro_page =
+  "http://xmetal.x10.mx/linuxHQ/distros/arch/archbang.php";
+
+const youtube_review_playlist = "PLrh2y86lvcJcds8f9K7ixM3";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    linux_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>
