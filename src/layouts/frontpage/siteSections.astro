@@ -1,20 +1,26 @@
 ---
 import Card from "../../components/default_maybe_remove/default_Card.astro";
-
 ---
 
-<Card
-href="#"
-title="LinuxHQ Section"
-body="Linux info on Desktop, Distributions, theming and more.."
-/>
+<div class="section_container">
+  <Card
+    href="#"
+    title="LinuxHQ Section"
+    body="Linux info on Desktop, Distributions, theming and more.."
+  />
 
-<Card href="#" title="TechHQ Section" body="TechHQ Section" />
+  <Card href="#" title="TechHQ Section" body="TechHQ Section" />
+</div>
 
 <style>
-li {
+  li {
     width: 80%;
     background-color: #efefef;
-    border: 1px solid black
-}
+    border: 1px solid black;
+  }
+
+  .section_container {
+    display: flex;
+    justify-content: space-evenly;
+  }
 </style>
