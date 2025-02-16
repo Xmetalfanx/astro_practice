@@ -1,0 +1,17 @@
+---
+// what do we want/
+
+// 1 the label (menu header in a sense)
+
+
+const {sectionid, sectionlabel } = Astro.props
+
+---
+
+<div class="accordion">
+    <input type="checkbox" id="{sectionid}" />
+    <label for="{sectionlabel}">{sectionlabel}</label>
+    <div class="accordion-content">
+
+    </div>
+  </div>
