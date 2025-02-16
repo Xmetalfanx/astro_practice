@@ -5,6 +5,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@css/*": ["src/styles/*"],
       "@icons/*": ["/src/assets/graphics/linuxhq/distros/icons/*"],
       "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
       "@arch_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/arch/*"],
