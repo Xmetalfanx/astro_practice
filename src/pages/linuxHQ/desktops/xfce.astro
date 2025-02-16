@@ -1,0 +1,114 @@
+---
+import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
+import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+
+const desktop_name = "xfce";
+const desktop_title = "XFCE";
+
+const link_code = "n/a";
+const link_homepage = "https://xfce.org/";
+
+const generalinfo_desktop_category = "lightweight";
+const generalinfo_desktop_toolkit = "GTK2/GTK3";
+const generalinfo_distros_that_feature =
+  "Manjaro, Xubuntu, SoyldX, Uberstudent";
+
+const install_arch = "sudo pacman -S xfce4 xfce-goodies";
+const install_fedora = "sudo dnf groupinstall xfce-desktop";
+const install_opensuse_reference = "";
+const install_opensuse_repoleap156 = "";
+const install_opensuse_tw_repo = "";
+
+const install_mint = "";
+const install_ubuntu = "sudo apt install xfce xfce-goodies";
+
+const requirements_hdd_space = "";
+const requirements_memory = "";
+const requirements_processor = "";
+
+const screenshot_distro = "Linux Lite";
+const screenshot_src = "ubuntu/linuxlite.png";
+const screenshot_thumbnail = "ubuntu/thumbnails/linuxlite_tn.png";
+
+const version_arch = "4.18.0-2";
+
+const version_debian_buster = "4.12.5-1";
+const version_debian_bullseye = "4.16.1-1";
+const version_debian_bookworm = "";
+
+const version_fedora_40 = "";
+const version_fedora_41 = "";
+
+const latest_version = "4.18";
+
+const version_opensuse_leap156 = "4.18.0";
+const version_opensuse_tumbleweed = "4.18.0";
+
+const verison_solus =
+  "N/A (yet) - Soon Solus is replacing their Mate version with an XFCE Version";
+
+const version_ubuntu_focal = "4.14.1-0.1";
+const version_ubuntu_jammy = "4.16.1-1";
+const version_ubuntu_lunar = "4.18.0-1";
+const version_linuxmint_20 = "";
+const version_linuxmint_201 = "";
+const version_linuxmint_202 = "";
+const version_linuxmint_203 = "";
+const version_linuxmint_21 = "";
+const version_linuxmint_211 = "";
+const version_linuxmint_212 = "";
+const version_linuxmint_213 = "";
+const version_linuxmint_22 = "";
+const version_linuxmint_221 = "";
+
+const version_neon = "N/A";
+
+const info_updated = "March 1, 2024";
+---
+
+<LinuxDesktopTemplate>
+  <DesktopData
+    desktop_name={desktop_name}
+    desktop_title={desktop_title}
+    generalinfo_desktop_category={generalinfo_desktop_category}
+    generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
+    link_homepage={link_homepage}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_arch={version_arch}
+    version_debian_buster={version_debian_buster}
+    version_debian_bullseye={version_debian_bullseye}
+    version_debian_bookwoom={version_debian_bookworm}
+    version_fedora_40={version_fedora_40}
+    version_fedora_41={version_fedora_41}
+    latest_version={latest_version}
+    version_leap156={version_opensuse_leap156}
+    version_tumbleweed={version_opensuse_tumbleweed}
+    version_solus={verison_solus}
+    version_ubuntu_focal={version_ubuntu_focal}
+    version_ubuntu_jammy={version_ubuntu_jammy}
+    version_ubuntu_lunar={version_ubuntu_lunar}
+    version_linuxmint_20={version_linuxmint_20}
+    version_linuxmint_201={version_linuxmint_201}
+    version_linuxmint_202={version_linuxmint_202}
+    version_linuxmint_203={version_linuxmint_203}
+    version_linuxmint_21={version_linuxmint_21}
+    version_linuxmint_211={version_linuxmint_211}
+    version_linuxmint_212={version_linuxmint_212}
+    version_linuxmint_213={version_linuxmint_213}
+    version_linuxmint_22={version_linuxmint_22}
+    version_linuxmint_221={version_linuxmint_221}
+    version_neon={version_neon}
+    info_updated={info_updated}
+  />
+</LinuxDesktopTemplate>

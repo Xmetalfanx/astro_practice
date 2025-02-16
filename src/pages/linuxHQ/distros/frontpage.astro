@@ -1,0 +1,249 @@
+---
+// import DistroData from "@layouts/linuxHQ/DistrosData.astro";
+import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+
+const distros = [
+  {
+    title: "Linux Mint",
+    homepage: "https://www.linuxmint.com",
+    forum: "https://forums.linuxmint.com/",
+    download: "https://www.linuxmint.com/download.php",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/",
+    desktops: "Mate, XFCE, Cinnamon",
+    featured: "yes",
+    releasecycle: "Follows Ubuntu Long Term Support releases",
+    similar_distros: "",
+    target_audience: "Any/New Users",
+    distro_type: "LTS - Long Term Support",
+    screenshot_src: "@ubuntu_ss/cinnamonMint.png",
+    screenshot_thumbnail: "@ubuntu_ss/thumbnails/cinnamonMint_tn.png",
+    screenshot_desktop: "Cinnamon",
+    screenshot_icon: "Mint-Y",
+    screenshot_theme: "Mint-Y",
+    version_latest: "22.1",
+    versions_supported: "20.x, 21.x, 22.x",
+    youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
+    youtube_tips_playlist: "",
+    distro_icon: "@icons/linuxmint.svg",
+  },
+  {
+    title: "Arch Linux",
+    homepage: "http://www.archlinux.org",
+    forum: "http://bbs.archlinux.org/",
+    download: "http://www.archlinux.org/download/",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/arch/arch.php",
+    desktops: "Cinnamon, Enlightenment, GNOME, KDE, LXDE, MATE, Xfce",
+    featured: "no",
+    releasecycle: "",
+    similar_distros:
+      "(...sort of) Antergos, SwagArch, (..this is a stretch) Manjaro",
+    target_audience: "Moderate to Advanced Users",
+    distro_type: "",
+    screenshot_src: "@arch_ss/arch.png",
+    screenshot_thumbnail: "@arch_ss/thumbnails/arch_tn.png",
+    screenshot_desktop: "Plasma 5",
+    screenshot_icon: "",
+    screenshot_theme: "Breeze",
+    version_latest: "2023.05.03",
+    versions_supported: "",
+    youtube_review_playlist: "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI",
+    youtube_tips_playlist: "",
+    distro_icon: "@icons/arch.svg",
+  },
+  {
+    title: "Ubuntu",
+    homepage: "http://www.ubuntu.com",
+    forum: "http://ubuntuforums.org/",
+    download: "http://www.ubuntu.com/desktop/get-ubuntu/download",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/",
+    desktops: "Gnomeshell",
+    featured: "",
+    releasecycle: "",
+    similar_distros:
+      "(many 'buntu flavors) Linux Lite, Linux Mint, Uberstudent",
+    target_audience: "Any User",
+    distro_type: "LTS and non-LTS",
+    screenshot_src: "@ubuntu_ss/ubuntu2010settings.png",
+    screenshot_thumbnail: "@ubuntu_ss/thumbnails/ubuntu2010settings_tn.png",
+    screenshot_desktop: "Gnome Shell",
+    screenshot_icon: "",
+    screenshot_theme: "",
+    version_latest: "24.04",
+    versions_supported: "20.04 LTS, 22.04 LTS, 23.04",
+    youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
+    youtube_tips_playlist: "",
+    distro_icon: "@icons/ubuntu.svg",
+  },
+  {
+    title: "Debian",
+    homepage: "http://www.debian.org/",
+    forum: "http://forums.debian.net/",
+    download: "",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/",
+    desktops: "Various",
+    featured: "",
+    releasecycle: "",
+    similar_distros: "Sparky Linux, Bunsenlabs, Linux Mint Debian Edition",
+    target_audience: "",
+    distro_type: "",
+    screenshot_src: "@debian_ss/debian.png",
+    screenshot_thumbnail: "@debian_ss/thumbnails/debian_tn.png",
+    screenshot_desktop: "",
+    screenshot_icon: "",
+    screenshot_theme: "",
+    version_latest: "12",
+    versions_supported: "12",
+    youtube_review_playlist: "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ",
+    youtube_tips_playlist: "PLrh2y86lvcJddBni43z2PSd9H0XotKdn4",
+    distro_icon: "@icons/debian.svg",
+  },
+  {
+    title: "Fedora",
+    homepage: "https://www.fedoraproject.org/",
+    forum: "http://forums.fedoraforum.org/",
+    download: "https://www.fedoraproject.org/",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/",
+    desktops: "Gnome (Default), Various official spins with other options",
+    featured: "yes",
+    releasecycle: "12 Months",
+    similar_distros: "",
+    target_audience: "Moderate to advanced users",
+    distro_type: "",
+    screenshot_src: "@rpm_ss/fedora.png",
+    screenshot_thumbnail: "@rpm_ss/thumbnails/fedora_tn.png",
+    screenshot_desktop: "Gnome",
+    screenshot_icon: "",
+    screenshot_theme: "",
+    version_latest: "38",
+    versions_supported: "37, 38",
+    youtube_review_playlist: "PLrh2y86lvcJeLcpMeVcMwbODBKBj8wqVm",
+    youtube_tips_playlist: "",
+    distro_icon: "@icons/fedora.svg",
+  },
+  {
+    title: "openSUSE",
+    homepage: "http://www.opensuse.org",
+    forum: "http://forums.opensuse.org/",
+    download: "",
+    mydistro_page: "http://xmetal.x10.mx/linuxHQ/distros/",
+    desktops: "Various",
+    featured: "",
+    releasecycle: "",
+    similar_distros: "Gecko Linux",
+    target_audience: "Any User",
+    distro_type: "",
+    screenshot_src: "@rpm_ss/opensuse.png",
+    screenshot_thumbnail: "@rpm_ss/thumbnails/opensuse_tn.png",
+    screenshot_desktop: "",
+    screenshot_icon: "",
+    screenshot_theme: "",
+    version_latest: "15.3 Leap",
+    versions_supported: "15.3 Leap, Tumbleweed",
+    youtube_review_playlist: "",
+    youtube_tips_playlist: "",
+    distro_icon: "@icons/opensuse.svg",
+  },
+];
+---
+
+<LinuxDistroTemplate>
+  <main>
+    <!-- <h1>Popular Linux Distributions</h1> -->
+    {
+      distros.map((distro) => (
+        <section>
+          <div class="distro_icon_and_title">
+            <img
+              class="distro_icon"
+              src={distro.distro_icon}
+              alt={`${distro.title} icon`}
+            />
+            <div class="distro_title">{distro.title}</div>
+          </div>
+
+          <div class="common_links">
+            <p>
+              <strong>Homepage:</strong>{" "}
+              <a href={distro.homepage}>{distro.homepage}</a>
+            </p>
+            <p>
+              <strong>Forum:</strong> <a href={distro.forum}>{distro.forum}</a>
+            </p>
+            <p>
+              <strong>Download:</strong>{" "}
+              <a href={distro.download}>{distro.download}</a>
+            </p>
+          </div>
+
+          <p>
+            <strong>Desktops:</strong> {distro.desktops}
+          </p>
+          <p>
+            <strong>Release Cycle:</strong> {distro.releasecycle}
+          </p>
+          <p>
+            <strong>Similar Distros:</strong> {distro.similar_distros}
+          </p>
+          <p>
+            <strong>Target Audience:</strong> {distro.target_audience}
+          </p>
+          <p>
+            <strong>Latest Version:</strong> {distro.version_latest}
+          </p>
+          <p>
+            <strong>Supported Versions:</strong> {distro.versions_supported}
+          </p>
+          <img
+            class="screenshot"
+            src={distro.screenshot_thumbnail}
+            alt={`${distro.title} screenshot`}
+          />
+        </section>
+      ))
+    }
+  </main>
+</LinuxDistroTemplate>
+
+<style lang="scss">
+  main {
+    display: flex;
+    gap: 4rem;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  section {
+    line-height: 2rem;
+    outline: 1px solid #ccc;
+    padding: 0.5rem;
+    min-width: 550px;
+  }
+
+  .distro_icon_and_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    .distro_title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .distro_icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 2rem;
+    }
+  }
+
+  .common_links {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+  }
+
+  .screenshot {
+    width: 100%;
+    margin: 1rem auto;
+
+  }
+</style>

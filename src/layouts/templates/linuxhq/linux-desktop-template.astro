@@ -1,0 +1,23 @@
+---
+import "@css/global-styles.css";
+
+import GlobalFooter from "@layouts/global/global-footer.astro";
+import GlobalHeadtag from "@layouts/global/global-headtag.astro";
+
+import DesktopSidebar from "@layouts/linuxHQ/asides/desktop_sidebar.astro";
+import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
+---
+
+<GlobalHeadtag />
+
+<LinuxTopMenus />
+
+<div class="main-section">
+  <aside>
+    <DesktopSidebar />
+  </aside>
+  <div class="primary-content">
+    <slot />
+  </div>
+</div>
+<GlobalFooter />

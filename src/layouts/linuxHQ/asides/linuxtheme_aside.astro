@@ -1,0 +1,38 @@
+---
+import { Fragment } from "astro";
+
+const themes = [
+  { name: "Arc Theme", link: "/linuxHQ/themes/arc" },
+  { name: "Numix Theme", link: "/linuxHQ/themes/numix" },
+  { name: "Adapta Theme", link: "/linuxHQ/themes/adapta" },
+  { name: "Materia Theme", link: "/linuxHQ/themes/materia" },
+  { name: "Papirus Theme", link: "/linuxHQ/themes/papirus" },
+];
+
+const iconThemes = [
+  { name: "Papirus Icon Theme", link: "/linuxHQ/icons/papirus" },
+  { name: "Numix Icon Theme", link: "/linuxHQ/icons/numix" },
+  { name: "Adwaita Icon Theme", link: "/linuxHQ/icons/adwaita" },
+  { name: "Breeze Icon Theme", link: "/linuxHQ/icons/breeze" },
+  { name: "Yaru Icon Theme", link: "/linuxHQ/icons/yaru" },
+];
+
+---
+
+<Fragment>
+  <aside>
+    <h2>Popular Linux Themes</h2>
+    <ul>
+      {themes.map((theme) => (
+        <li><a href={theme.link}>{theme.name}</a></li>
+      ))}
+    </ul>
+    <h2>Popular Icon Themes</h2>
+    <ul>
+      {iconThemes.map((icon) => (
+        <li><a href={icon.link}>{icon.name}</a></li>
+      ))}
+    </ul>
+  </aside>
+</Fragment>
+

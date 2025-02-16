@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@css/*": ["src/styles/*"],
+      "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@templates/*": ["src/layouts/templates/*"],
@@ -11,6 +13,7 @@
       "@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
       "@icons/*": ["/src/assets/graphics/linuxhq/distros/icons/*"],
       "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
+      "@desktops/*": ["/src/pages/linuxHQ/desktops/*"],
       "@arch_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/arch/*"],
       "@debian_ss/*": [
         "/src/assets/graphics/linuxhq/distros/screenshots/debian/*"

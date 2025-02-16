@@ -1,0 +1,119 @@
+---
+import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
+import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+
+const desktop_name = "cinnamon";
+const desktop_title = "Cinnamon";
+
+const link_code = "https://github.com/linuxmint/cinnamon-desktop";
+const link_homepage = "https://github.com/linuxmint/cinnamon-desktop";
+
+const generalinfo_desktop_category = "heavyweight";
+const generalinfo_distros_that_feature = "Linux Mint, Fedora, Arch";
+const generalinfo_desktop_toolkit = "GTK3";
+
+const install_arch =
+  "sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)";
+const install_fedora = "sudo dnf groupinstall cinnamon-desktop";
+
+const install_opensuse_reference =
+  '<a href="https://en.opensuse.org/Portal:Cinnamon"target="_blank"> Install Cinnamon on OpenSuse </a>';
+const install_opensuse_tw_repo =
+  "zypper ref && zypper in -y cinnamon cinnamon-screensaver";
+
+const install_mint = "sudo apt install mint-meta-cinnamon";
+const install_ubuntu = "cinnamon-desktop-environment";
+
+const requirements_hdd_space = "10GB (Min)";
+const requirements_memory =
+  "1GB Recommended (Xmetal's comment:I would say 2GB to 4GB for COMFORTABLE usage)";
+const requirements_processor =
+  "32bit or 64bit processor (Xmetal Comment:I'd say dual-core ... about from 2009 on should be ok for LOWEST I'd recommend";
+
+const screenshot_distro = "Linux Mint";
+const screenshot_icon = "Mint-X";
+const screenshot_src = "ubuntu/cinnamonMint.png";
+const screenshot_theme = "Mint-X";
+const screenshot_thumbnail = "ubuntu/thumbnails/cinnamonMint_tn.png";
+
+const version_arch = "6.0.4-1";
+
+const version_debian_buster = "";
+const version_debian_bullseye = "4.8.6-2";
+const version_debian_bookworm = "5.6.8-1";
+
+const version_fedora_40 = "";
+const version_fedora_41 = "";
+
+const latest_version = "6.0.4";
+
+const version_opensuse_leap156 = "4.6.7";
+const version_opensuse_tumbleweed = "6.0.0-1.2";
+
+const version_solus = "N/A";
+
+const version_ubuntu_focal = "4.4.8-4";
+const version_ubuntu_jammy = "5.2.7-4";
+const version_ubuntu_lunar = "5.6.7-1";
+
+const version_linuxmint_20 = "4.6.7";
+const version_linuxmint_201 = "4.8.6";
+const version_linuxmint_202 = "5.0.7";
+const version_linuxmint_203 = "5.0.7";
+const version_linuxmint_21 = "5.4.12";
+const version_linuxmint_211 = "5.6.8";
+const version_linuxmint_212 = "5.8.4";
+const version_linuxmint_213 = "6.0.4";
+const version_linuxmint_22 = "";
+const version_linuxmint_221 = "";
+const version_neon = "n/a";
+
+const info_updated = "March 1, 2024";
+---
+
+<LinuxDesktopTemplate>
+  <DesktopData
+    desktop_name={desktop_name}
+    desktop_title={desktop_title}
+    generalinfo_desktop_category={generalinfo_desktop_category}
+    generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
+    link_homepage={link_homepage}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_arch={version_arch}
+    version_debian_buster={version_debian_buster}
+    version_debian_bullseye={version_debian_bullseye}
+    version_debian_bookwoom={version_debian_bookworm}
+    version_fedora_40={version_fedora_40}
+    version_fedora_41={version_fedora_41}
+    latest_version={latest_version}
+    version_leap156={version_opensuse_leap156}
+    version_tumbleweed={version_opensuse_tumbleweed}
+    version_solus={version_solus}
+    version_ubuntu_focal={version_ubuntu_focal}
+    version_ubuntu_jammy={version_ubuntu_jammy}
+    version_ubuntu_lunar={version_ubuntu_lunar}
+    version_linuxmint_20={version_linuxmint_20}
+    version_linuxmint_201={version_linuxmint_201}
+    version_linuxmint_202={version_linuxmint_202}
+    version_linuxmint_203={version_linuxmint_203}
+    version_linuxmint_21={version_linuxmint_21}
+    version_linuxmint_211={version_linuxmint_211}
+    version_linuxmint_212={version_linuxmint_212}
+    version_linuxmint_213={version_linuxmint_213}
+    version_linuxmint_22={version_linuxmint_22}
+    version_linuxmint_221={version_linuxmint_221}
+    version_neon={version_neon}
+    info_updated={info_updated}
+  />
+</LinuxDesktopTemplate>

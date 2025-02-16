@@ -1,0 +1,43 @@
+---
+import GlobalFooter from "../../global/global-footer.astro";
+import GlobalHeadtag from "../../global/global-headtag.astro";
+import DistroSidebar from "../../linuxHQ/asides/distro_sidebar.astro";
+import LinuxTopMenus from "../../linuxHQ/LinuxTopMenus.astro";
+
+const icon_theme_name = "Icon Theme Name"; // Replace with actual icon theme name
+const icon_theme_title = "Icon Theme Title"; // Replace with actual icon theme title
+const icon_theme_homepage = "https://example.com"; // Replace with actual homepage link
+const icon_theme_git_repo = "https://github.com/example/repo"; // Replace with actual git repo link
+const icon_theme_install_arch = "sudo pacman -S icon-theme-package"; // Replace with actual installation command for Arch
+const icon_theme_install_fedora = "sudo dnf install icon-theme-package"; // Replace with actual installation command for Fedora
+const icon_theme_install_ubuntu = "sudo apt install icon-theme-package"; // Replace with actual installation command for Ubuntu
+const icon_theme_screenshot_src = "path/to/screenshot.png"; // Replace with actual screenshot path
+const icon_theme_screenshot_thumbnail = "path/to/thumbnail.png"; // Replace with actual thumbnail path
+
+---
+
+<GlobalHeadtag />
+
+<LinuxTopMenus />
+
+<div class="main-section">
+  <aside>
+    <DistroSidebar />
+  </aside>
+  <div class="primary-content">
+    <h1>{icon_theme_title}</h1>
+    <p>Homepage: <a href={icon_theme_homepage}>{icon_theme_homepage}</a></p>
+    <p>Git Repository: <a href={icon_theme_git_repo}>{icon_theme_git_repo}</a></p>
+    <h2>Installation Instructions</h2>
+    <ul>
+      <li>Arch: {icon_theme_install_arch}</li>
+      <li>Fedora: {icon_theme_install_fedora}</li>
+      <li>Ubuntu: {icon_theme_install_ubuntu}</li>
+    </ul>
+    <h2>Screenshots</h2>
+    <img src={icon_theme_screenshot_src} alt="{icon_theme_title} Screenshot" />
+    <img src={icon_theme_screenshot_thumbnail} alt="{icon_theme_title} Thumbnail" />
+  </div>
+</div>
+
+<GlobalFooter />

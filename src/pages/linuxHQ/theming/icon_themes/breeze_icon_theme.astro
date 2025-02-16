@@ -1,0 +1,58 @@
+---
+import IconData from "@layouts/linuxHQ/IconData.astro";
+import LinuxIconTemplate from "@layouts/templates/linuxhq/linux-icon-template.astro";
+
+const icon_name = "breeze";
+const icon_title = "Breeze Icon Theme";
+
+const link_code = "https://github.com/KDE/breeze-icons";
+const link_homepage = "https://github.com/KDE/breeze-icons";
+
+const generalinfo_icon_category = "Icon Theme";
+const generalinfo_icon_toolkit = "Qt";
+const generalinfo_distros_that_feature = "KDE Neon, Kubuntu, Arch";
+
+const install_arch = "sudo pacman -S breeze-icons";
+const install_fedora = "sudo dnf install breeze-icons";
+const install_opensuse_reference = "";
+const install_opensuse_tw_repo = "";
+const install_mint = "sudo apt install breeze-icons";
+const install_ubuntu = "sudo apt install breeze-icons";
+
+const requirements_hdd_space = "";
+const requirements_memory = "";
+const requirements_processor = "";
+
+const screenshot_distro = "KDE Neon";
+const screenshot_src = "neon/breeze-icon-theme.png";
+const screenshot_thumbnail = "neon/thumbnails/breeze-icon-theme_tn.png";
+
+const latest_version = "5.90.0";
+
+const info_updated = "March 1, 2024";
+
+---
+
+<LinuxIconTemplate>
+  <IconData
+    icon_name={icon_name}
+    icon_title={icon_title}
+    link_homepage={link_homepage}
+    generalinfo_icon_category={generalinfo_icon_category}
+    generalinfo_icon_toolkit={generalinfo_icon_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxIconTemplate>

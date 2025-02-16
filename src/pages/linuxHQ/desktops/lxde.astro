@@ -1,0 +1,109 @@
+---
+import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
+import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+
+const desktop_name = "lxde";
+const desktop_title = "LXDE";
+
+const generalinfo_desktop_category = "lightweight";
+const generalinfo_desktop_toolkit = "";
+const link_source = "n/a";
+const link_homepage = "https://lxde.org/";
+const generalinfo_distros_that_feature = "Lubuntu, LXLE";
+
+const install_arch = "sudo pacman -S lxde-common lxsession";
+const install_fedora = "";
+const install_opensuse_reference =
+  '<a href="https://en.opensuse.org/LXDE_repositories">LXDE Repos for Suse</a>';
+const install_opensuse_tw_repo = "";
+const install_ubuntu = "sudo apt install lxde";
+
+const requirements_hdd_space = "6GB Minimum";
+const requirements_memory = "1GB";
+const requirements_processor = "512Mhz or faster; 32bit or 64bit";
+
+const screenshot_distro = "LXLE";
+const screenshot_src = "ubuntu/lxle.png";
+const screenshot_thumbnail = "ubuntu/thumbnails/lxle_tn.png";
+
+const version_arch = "0.99.2-3";
+
+const version_debian_buster = "10";
+const version_debian_bullseye = "11";
+const version_debian_bookwoom = "11";
+
+const version_fedora_40 = "";
+const version_fedora_41 = "";
+
+const latest_version = "0.99.2";
+
+const version_leap156 = "Can't find info as of November 2023";
+const version_tumbleweed = "Can't find info as of November 2023";
+
+const version_solus = "N/A";
+
+const version_ubuntu_focal = "10";
+const version_ubuntu_jammy = "11";
+const version_ubuntu_lunar = "11";
+
+const version_linuxmint_20 = "N/A";
+const version_linuxmint_201 = "N/A";
+const version_linuxmint_202 = "N/A";
+const version_linuxmint_203 = "N/A";
+const version_linuxmint_21 = "N/A";
+const version_linuxmint_211 = "N/A";
+const version_linuxmint_212 = "N/A";
+const version_linuxmint_213 = "N/A";
+const version_linuxmint_22 = "N/A";
+const version_linuxmint_221 = "N/A";
+
+const version_neon = "N/A";
+const info_updated = "March 1, 2024";
+---
+
+<LinuxDesktopTemplate>
+  <DesktopData
+    desktop_name={desktop_name}
+    desktop_title={desktop_title}
+    generalinfo_desktop_category={generalinfo_desktop_category}
+    generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
+    link_homepage={link_homepage}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_arch={version_arch}
+    version_debian_buster={version_debian_buster}
+    version_debian_bullseye={version_debian_bullseye}
+    version_debian_bookwoom={version_debian_bookwoom}
+    version_fedora_40={version_fedora_40}
+    version_fedora_41={version_fedora_41}
+    latest_version={latest_version}
+    version_leap156={version_leap156}
+    version_tumbleweed={version_tumbleweed}
+    version_solus={version_solus}
+    version_ubuntu_focal={version_ubuntu_focal}
+    version_ubuntu_jammy={version_ubuntu_jammy}
+    version_ubuntu_lunar={version_ubuntu_lunar}
+    version_linuxmint_20={version_linuxmint_20}
+    version_linuxmint_201={version_linuxmint_201}
+    version_linuxmint_202={version_linuxmint_202}
+    version_linuxmint_203={version_linuxmint_203}
+    version_linuxmint_21={version_linuxmint_21}
+    version_linuxmint_211={version_linuxmint_211}
+    version_linuxmint_212={version_linuxmint_212}
+    version_linuxmint_213={version_linuxmint_213}
+    version_linuxmint_22={version_linuxmint_22}
+    version_linuxmint_221={version_linuxmint_221}
+    version_neon={version_neon}
+    info_updated={info_updated}
+  />
+</LinuxDesktopTemplate>

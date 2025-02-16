@@ -76,30 +76,86 @@
 
 <style lang="scss">
   .frontpage-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin: 2rem;
+    margin: 2rem 0;
     text-align: center;
+    color: #333;
   }
 
   .git-section {
-    margin: 1rem 0;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     .git-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
       justify-content: center;
+      padding: 1rem;
 
       .git-group {
-        width: 40%;
-        outline: 1px solid #333;
-        padding: 1rem;
-        margin: 0 auto;
-      }
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
 
-      .git-icons {
-        display: flex;
-        justify-content: space-around;
-        margin: 2rem auto;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .git-section-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #333;
+        }
+
+        .git-icons {
+          display: flex;
+          justify-content: space-around;
+          margin: 1.5rem 0;
+
+          a {
+            color: #333;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #007bff;
+            }
+
+            i {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #555;
+          }
+        }
+
+        .d-flex {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            margin-right: 1rem;
+            font-size: 0.875rem;
+            color: #777;
+          }
+        }
       }
     }
   }

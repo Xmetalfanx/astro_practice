@@ -1,23 +1,22 @@
 ---
 // import Layout from "../layouts/Layout.astro";
-import "../styles/styles.css";
-import Header from "../layouts/frontpage-header.astro";
-import Footer from "../layouts/global/global-footer.astro";
-import SiteSections from "../components/frontpage/siteSections.astro";
-import GitGroups from "../components/frontpage/gitGroups.astro";
-import GlobalHeadtag from "../layouts/global/global-headtag.astro";
+import "@css/global-styles.css";
 
+import GlobalHeadtag from "@layouts/global/global-headtag.astro";
+import Header from "@layouts/frontpage-header.astro";
+import Footer from "@layouts/global/global-footer.astro";
 
+import SiteSections from "@layouts/frontpage/siteSections.astro";
+import GitGroups from "@layouts/frontpage/gitGroups.astro";
 ---
+
 <GlobalHeadtag />
 
-
 <Header />
-  <SiteSections />
-  <GitGroups />
 
-  <a href="linuxHQ/linuxmint">Linux Mint</a>
-  <a href="linuxHQ/linuxDistros">Linux Distro</a>
+<SiteSections />
+<GitGroups />
+
 <Footer />
 
 <style>

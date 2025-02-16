@@ -1,0 +1,43 @@
+---
+import GlobalFooter from "../../global/global-footer.astro";
+import GlobalHeadtag from "../../global/global-headtag.astro";
+import DistroSidebar from "../../linuxHQ/asides/distro_sidebar.astro";
+import LinuxTopMenus from "../../linuxHQ/LinuxTopMenus.astro";
+
+const theme_name = "Theme Name"; // Replace with actual theme name
+const theme_title = "Theme Title"; // Replace with actual theme title
+const theme_homepage = "https://example.com"; // Replace with actual homepage link
+const theme_git_repo = "https://github.com/example/repo"; // Replace with actual git repo link
+const theme_install_arch = "sudo pacman -S theme-package"; // Replace with actual installation command for Arch
+const theme_install_fedora = "sudo dnf install theme-package"; // Replace with actual installation command for Fedora
+const theme_install_ubuntu = "sudo apt install theme-package"; // Replace with actual installation command for Ubuntu
+const theme_screenshot_src = "path/to/screenshot.png"; // Replace with actual screenshot path
+const theme_screenshot_thumbnail = "path/to/thumbnail.png"; // Replace with actual thumbnail path
+
+---
+
+<GlobalHeadtag />
+
+<LinuxTopMenus />
+
+<div class="main-section">
+  <aside>
+    <DistroSidebar />
+  </aside>
+  <div class="primary-content">
+    <h1>{theme_title}</h1>
+    <p>Homepage: <a href={theme_homepage}>{theme_homepage}</a></p>
+    <p>Git Repository: <a href={theme_git_repo}>{theme_git_repo}</a></p>
+    <h2>Installation Instructions</h2>
+    <ul>
+      <li>Arch: {theme_install_arch}</li>
+      <li>Fedora: {theme_install_fedora}</li>
+      <li>Ubuntu: {theme_install_ubuntu}</li>
+    </ul>
+    <h2>Screenshots</h2>
+    <img src={theme_screenshot_src} alt="{theme_title} Screenshot" />
+    <img src={theme_screenshot_thumbnail} alt="{theme_title} Thumbnail" />
+  </div>
+</div>
+
+<GlobalFooter />

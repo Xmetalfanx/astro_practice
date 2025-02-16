@@ -1,90 +1,80 @@
 :root {
   --main-color: hsl(34 90% 44%);
   --accent-color: hsl(150, 100%, 20%);
-
+  --fw-bold: bold;
   --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
-  roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol";
+    roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: var(--ffamily-roboto);
 }
 
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
 
 a {
   color: var(--accent-color);
   text-decoration: none;
 }
 
-
 header,
 footer {
   width: 100%;
   background-color: var(--main-color);
-  color: white;
+  color: #FFFFFF;
   padding: 1rem;
-
-  a {
-    color: white;
-  }
 }
-
-header {
-  font-size: 2rem;
-  font-weight: 700;
+header a,
+footer a {
+  color: white;
 }
 
 /* main section of site */
 .main-section {
   width: 100vw;
   display: flex;
-  margin: 1rem auto;
-
+  margin: 0.5rem 1rem;
   /* the sidebar containing the menus */
-  aside {
-    width: 19%;
-
-    label {
-      background-color: var(--accent-color);
-      color: white;
-      display: block;
-      padding: 1rem;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-
-    .accordion {
-      outline: 1px solid var(--accent-color);
-      border-radius: 10px 10px 0 0;
-  
-      .accordion-content {
-        margin: 0 1rem;
-  
-        > * {
-          display: block;
-          margin: .5rem auto;
-        }
-      }
-    }
-
-    .accordion:nth-child(1) {
+  /* where the content passed from individual pages would go */
+  /* .primary-content {
+      width: max-content;
+    } */
+}
+.main-section aside {
+  width: 18%;
+  margin-right: 1.25rem;
+  /* this is the full menu minus the title/label */
+  /* .accordion:nth-child(1) {
       margin: 0 1.5rem 1.5rem 1.5rem;
     }
 
-    .accordion:nth-child(n +2) {
-      margin: 1.5rem;
-    }
-  }
-
-  /* where the content passed from individual pages would go */
-  .primary-content {
-    width: max-content;
-  }
+    .accordion:nth-child(n + 2) {
+      padding: .5rem 1.5rem;
+    } */
 }
-
+.main-section aside label {
+  background-color: var(--accent-color);
+  color: white;
+  display: block;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.main-section aside .accordion {
+  outline: 1px solid var(--accent-color);
+  border-radius: 10px 10px 0 0;
+  padding: 1rem;
+}
+.main-section aside .accordion .accordion-content > * {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem 0;
+}/*# sourceMappingURL=global-styles.css.map */

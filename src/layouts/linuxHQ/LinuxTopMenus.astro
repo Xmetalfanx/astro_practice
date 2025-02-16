@@ -1,34 +1,33 @@
 ---
-import Link from "../../components/global/Link.astro";
+import Link from "@components/global/Link.astro";
 ---
 
 <header>
-  <div class="section-title">LinuxHQ</div>
+  <div class="section-title">
+    <Link linktext="LinuxHQ" location="/linuxHQ/" />
+  </div>
   <nav>
-    <Link linktext="Desktops" />
-    <Link linktext="Distros" />
-    <Link linktext="Theming" />
-    <Link linktext="Tips" />
+    <Link linktext="Desktops" location="/linuxHQ/desktops/frontpage/" />
+    <Link linktext="Distros" location="/linuxHQ/distros/frontpage/" />
+    <Link linktext="Theming" location="#" />
+    <Link linktext="Tips" location="#" />
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   header {
     display: flex;
     justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 700;
 
     nav {
+      display: flex;
+      gap: 3rem;
       font-size: 1.4rem;
-
-      > * {
-        margin: 0 1.4rem;
-      }
-
-      a:focus, a:hover { 
-        color: var(--accent-color);
-        outline: 1px solid var(--accent-color);
-      }
+      margin-right: 2rem;
     }
+
 
   }
 </style>

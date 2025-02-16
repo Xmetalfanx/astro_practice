@@ -1,0 +1,52 @@
+---
+import WindowManagerData from "@layouts/linuxHQ/WindowManagerData.astro";
+import LinuxWindowManagerTemplate from "@layouts/templates/linuxhq/linux-window-manager-template.astro";
+
+const wm_name = "i3";
+const wm_title = "i3 Window Manager";
+
+const link_code = "https://github.com/i3/i3";
+const link_homepage = "https://i3wm.org/";
+
+const generalinfo_category = "Tiling";
+const generalinfo_toolkit = "X11";
+const generalinfo_distros_that_feature = "Arch, Manjaro, Fedora, Ubuntu";
+
+const install_arch = "sudo pacman -S i3";
+const install_fedora = "sudo dnf install i3";
+const install_ubuntu = "sudo apt install i3";
+
+const requirements_hdd_space = "Minimal";
+const requirements_memory = "Minimal";
+const requirements_processor = "Minimal";
+
+const screenshot_distro = "Arch Linux";
+const screenshot_src = "arch/i3.png";
+const screenshot_thumbnail = "arch/thumbnails/i3_tn.png";
+
+const latest_version = "4.20.1";
+
+const info_updated = "March 1, 2024";
+---
+
+<LinuxWindowManagerTemplate>
+  <WindowManagerData
+    wm_name={wm_name}
+    wm_title={wm_title}
+    generalinfo_category={generalinfo_category}
+    generalinfo_toolkit={generalinfo_toolkit}
+    link_homepage={link_homepage}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxWindowManagerTemplate>

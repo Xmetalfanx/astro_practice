@@ -1,0 +1,61 @@
+---
+import DefaultCard from "@components/default_maybe_remove/default_Card.astro";
+import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.astro";
+---
+
+<LinuxBaseTemplate>
+    <div>
+        Showing Tutorials, My reviews (as well as others), and sites that have
+        helped me over the years, is TRUE goal I have with this section. The
+        Linux related ideas I came up with to add to the main site started to
+        get way out of hand to put in a "small section" so that's when I decided
+        to do the split into TechHQ (former Windows Section ... and still has
+        some cross-platform stuff) and LinuxHQ. This section has info on:
+
+        <ul>
+            <li>
+                Linux Desktop options including screenshots, system requirments,
+                and info on what version is in what Linux Distrobution
+            </li>
+            <li>
+                Linux Distrobution information including currently supported
+                release and desktop options and screenshots
+            </li>
+            <li>
+                Theming: Information on Linux Themes, Icon and Cursor packs to
+                custom the look of your Linux desktop
+            </li>
+        </ul>
+    </div>
+</LinuxBaseTemplate>
+
+<style lang="scss">
+    div {
+        padding: 20px;
+        background-color: #f9f9f9;
+        word-break: normal;
+        font-size: 1.1rem;
+        margin: 0 auto;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 2rem 1rem;
+        padding: 0;
+
+        li {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+</style>
