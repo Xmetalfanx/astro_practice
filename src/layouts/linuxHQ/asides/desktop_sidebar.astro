@@ -1,5 +1,4 @@
 ---
-import Layout from "@layouts/Layout.astro";
 
 const windowManagers = [
   { name: "i3", link: "/window-managers/i3" },
@@ -23,7 +22,7 @@ const qt = [
 ];
 ---
 
-<Layout>
+
   <input type="checkbox" id="gtk2" />
   <label for="gtk2">GTK2</label>
   <div class="accordion">
@@ -61,7 +60,6 @@ const qt = [
       {windowManagers.map((wm) => <a href={wm.link}>{wm.name}</a>)}
     </div>
   </div>
-</Layout>
 
 <style>
   input {

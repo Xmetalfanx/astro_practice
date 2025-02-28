@@ -1,12 +1,12 @@
 ---
 import IconData from "@layouts/linuxHQ/IconData.astro";
-import LinuxIconTemplate from "@layouts/templates/linuxhq/linux-icon-template.astro";
+import LinuxIconTemplate from "@templates/linuxhq/linux-theme-template.astro";
 
-const icon_name = "yaru";
-const icon_title = "Yaru Icon Theme";
+const icon_theme_name = "yaru";
+const icon_theme_title = "Yaru Icon Theme";
 
 const link_code = "https://github.com/ubuntu/yaru";
-const link_homepage = "https://github.com/ubuntu/yaru";
+const theme_homepage = "https://github.com/ubuntu/yaru";
 
 const generalinfo_icon_category = "Icon Theme";
 const generalinfo_icon_toolkit = "GTK3";
@@ -18,10 +18,6 @@ const install_opensuse_reference = "";
 const install_opensuse_tw_repo = "";
 const install_mint = "sudo apt install yaru-icon-theme";
 const install_ubuntu = "sudo apt install yaru-icon-theme";
-
-const requirements_hdd_space = "";
-const requirements_memory = "";
-const requirements_processor = "";
 
 const screenshot_distro = "Ubuntu";
 const screenshot_src = "ubuntu/yaru-icon-theme.png";
@@ -35,9 +31,9 @@ const info_updated = "March 1, 2024";
 
 <LinuxIconTemplate>
   <IconData
-    icon_name={icon_name}
-    icon_title={icon_title}
-    link_homepage={link_homepage}
+    icon_theme_name={icon_theme_name}
+    icon_theme_title={icon_theme_title}
+    theme_homepage={theme_homepage}
     generalinfo_icon_category={generalinfo_icon_category}
     generalinfo_icon_toolkit={generalinfo_icon_toolkit}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
@@ -46,9 +42,6 @@ const info_updated = "March 1, 2024";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
-    requirements_hdd_space={requirements_hdd_space}
-    requirements_memory={requirements_memory}
-    requirements_processor={requirements_processor}
     screenshot_distro={screenshot_distro}
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}

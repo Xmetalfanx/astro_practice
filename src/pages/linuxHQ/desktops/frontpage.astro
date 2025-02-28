@@ -1,5 +1,7 @@
 ---
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import { faUbuntu, faFedora, faDebian, faKubuntu, faOpensuse, faManjaro, faXubuntu, faLinux, faSolus, faArchlinux, faPopos } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const desktops = [
   {
@@ -86,6 +88,24 @@ const desktops = [
   }
 ];
 
+const distroIcons = {
+  "Ubuntu": faUbuntu,
+  "Fedora": faFedora,
+  "Debian": faDebian,
+  "Kubuntu": faKubuntu,
+  "openSUSE": faOpensuse,
+  "Manjaro": faManjaro,
+  "Xubuntu": faXubuntu,
+  "Linux Mint": faLinux,
+  "MX Linux": faLinux,
+  "Solus": faSolus,
+  "Arch Linux": faArchlinux,
+  "Pop!_OS": faPopos,
+  "Lubuntu": faLinux,
+  "SparkyLinux": faLinux,
+  "Ubuntu Budgie": faUbuntu
+};
+
 ---
 
 <LinuxDesktopTemplate>
@@ -107,7 +127,7 @@ const desktops = [
             {desktop.commonDistros.map((commonDistro) => (
               <li key={commonDistro.name}>
                 <a href={commonDistro.link} target="_blank">
-                  {commonDistro.name}
+                  <FontAwesomeIcon icon={distroIcons[commonDistro.name]} /> {commonDistro.name}
                 </a>
               </li>
             ))}

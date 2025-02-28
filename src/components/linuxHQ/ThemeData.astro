@@ -1,0 +1,99 @@
+---
+const {
+    theme_name,
+    theme_title,
+    link_homepage,
+    link_code,
+    generalinfo_theme_category,
+    generalinfo_theme_toolkit,
+    generalinfo_distros_that_feature,
+    install_arch,
+    install_fedora,
+    install_ubuntu,
+    screenshot_distro,
+    screenshot_src,
+    screenshot_thumbnail,
+    latest_version,
+    info_updated,
+} = Astro.props;
+---
+
+<div class="theme_container">
+    <div class="theme_title">{theme_title}</div>
+
+    <div class="info_and_screenshot">
+        <div class="overall_info">
+            <div class="links">
+                <p>Homepage: <a href={link_homepage}>{link_homepage}</a></p>
+                <p>Source Code: <a href={link_code}>{link_code}</a></p>
+            </div>
+
+            <div class="info">
+                <p>Category: {generalinfo_theme_category}</p>
+                <p>Toolkit: {generalinfo_theme_toolkit}</p>
+                <p>Distros that feature: {generalinfo_distros_that_feature}</p>
+                <p>Latest Version: {latest_version}</p>
+                <p>Updated: {info_updated}</p>
+            </div>
+            <div class="installation_instructions">
+                <span class="fw-bold">Installation Instructions</span>
+                <ul>
+                    <li>Arch: {install_arch}</li>
+                    <li>Fedora: {install_fedora}</li>
+                    <li>Ubuntu: {install_ubuntu}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="screenshots">
+            <img src={screenshot_src} alt="{theme_title} Screenshot" />
+            <img src={screenshot_thumbnail} alt="{theme_title} Thumbnail" />
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .theme_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme_title {
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        margin: 1rem 0;
+    }
+
+    .info_and_screenshot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .overall_info {
+        .info {
+            p {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .installation_instructions {
+        margin: 1rem 0;
+        list-style-type: none;
+        font-size: 1.1rem;
+
+        ul {
+            margin: 1rem;
+        }
+    }
+</style>

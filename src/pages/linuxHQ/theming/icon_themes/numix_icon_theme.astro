@@ -1,12 +1,12 @@
 ---
-import IconData from "@layouts/linuxHQ/IconData.astro";
-import LinuxIconTemplate from "@layouts/templates/linuxhq/linux-icon-template.astro";
+import IconData from "@components/linuxHQ/IconData.astro";
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
 
-const icon_name = "numix";
-const icon_title = "Numix Icon Theme";
+const icon_theme_name = "numix";
+const icon_theme_title = "Numix Icon Theme";
 
-const link_code = "https://github.com/numixproject/numix-icon-theme";
-const link_homepage = "https://numixproject.github.io/";
+const theme_code = "https://github.com/numixproject/numix-icon-theme";
+const theme_homepage = "https://numixproject.github.io/";
 
 const generalinfo_icon_category = "Icon Theme";
 const generalinfo_icon_toolkit = "GTK2, GTK3";
@@ -14,14 +14,7 @@ const generalinfo_distros_that_feature = "Arch, Fedora, Ubuntu";
 
 const install_arch = "sudo pacman -S numix-icon-theme";
 const install_fedora = "sudo dnf install numix-icon-theme";
-const install_opensuse_reference = "";
-const install_opensuse_tw_repo = "";
-const install_mint = "sudo apt install numix-icon-theme";
 const install_ubuntu = "sudo apt install numix-icon-theme";
-
-const requirements_hdd_space = "";
-const requirements_memory = "";
-const requirements_processor = "";
 
 const screenshot_distro = "Ubuntu";
 const screenshot_src = "ubuntu/numix-icon-theme.png";
@@ -33,26 +26,21 @@ const info_updated = "March 1, 2024";
 
 ---
 
-<LinuxIconTemplate>
+<LinuxThemeTemplate>
   <IconData
-    icon_name={icon_name}
-    icon_title={icon_title}
-    link_homepage={link_homepage}
+    icon_theme_name={icon_theme_name}
+    icon_theme_title={icon_theme_title}
+    theme_homepage={theme_homepage}
     generalinfo_icon_category={generalinfo_icon_category}
     generalinfo_icon_toolkit={generalinfo_icon_toolkit}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
     install_fedora={install_fedora}
-    install_opensuse_reference={install_opensuse_reference}
-    install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
-    requirements_hdd_space={requirements_hdd_space}
-    requirements_memory={requirements_memory}
-    requirements_processor={requirements_processor}
     screenshot_distro={screenshot_distro}
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     latest_version={latest_version}
     info_updated={info_updated}
   />
-</LinuxIconTemplate>
+</LinuxThemeTemplate>

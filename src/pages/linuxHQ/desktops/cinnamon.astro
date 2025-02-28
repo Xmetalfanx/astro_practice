@@ -1,6 +1,6 @@
 ---
 import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktop_name = "cinnamon";
 const desktop_title = "Cinnamon";
@@ -24,11 +24,9 @@ const install_opensuse_tw_repo =
 const install_mint = "sudo apt install mint-meta-cinnamon";
 const install_ubuntu = "cinnamon-desktop-environment";
 
-const requirements_hdd_space = "10GB (Min)";
-const requirements_memory =
-  "1GB Recommended (Xmetal's comment:I would say 2GB to 4GB for COMFORTABLE usage)";
-const requirements_processor =
-  "32bit or 64bit processor (Xmetal Comment:I'd say dual-core ... about from 2009 on should be ok for LOWEST I'd recommend";
+const requirements_hdd_space = "20GB (Recommended)";
+const requirements_memory = "2GB (Minimum), 4GB (Recommended)";
+const requirements_processor = "64-bit dual-core processor (Recommended)";
 
 const screenshot_distro = "Linux Mint";
 const screenshot_icon = "Mint-X";
@@ -36,39 +34,39 @@ const screenshot_src = "ubuntu/cinnamonMint.png";
 const screenshot_theme = "Mint-X";
 const screenshot_thumbnail = "ubuntu/thumbnails/cinnamonMint_tn.png";
 
-const version_arch = "6.0.4-1";
+const version_arch = "6.2.0-1";
 
-const version_debian_buster = "";
-const version_debian_bullseye = "4.8.6-2";
-const version_debian_bookworm = "5.6.8-1";
+const version_debian_buster = "4.8.6-4";
+const version_debian_bullseye = "5.2.7-6";
+const version_debian_bookworm = "5.6.8-5";
 
-const version_fedora_40 = "";
-const version_fedora_41 = "";
+const version_fedora_40 = "6.2.0-1";
+const version_fedora_41 = "6.2.0-1";
 
-const latest_version = "6.0.4";
+const latest_version = "6.2.0";
 
-const version_opensuse_leap156 = "4.6.7";
-const version_opensuse_tumbleweed = "6.0.0-1.2";
+const version_opensuse_leap156 = "5.6.8-3";
+const version_opensuse_tumbleweed = "6.2.0-1";
 
-const version_solus = "N/A";
+const version_solus = "6.2.0";
 
-const version_ubuntu_focal = "4.4.8-4";
-const version_ubuntu_jammy = "5.2.7-4";
-const version_ubuntu_lunar = "5.6.7-1";
+const version_ubuntu_focal = "5.2.7-5";
+const version_ubuntu_jammy = "5.6.8-5";
+const version_ubuntu_lunar = "6.2.0-2";
 
-const version_linuxmint_20 = "4.6.7";
-const version_linuxmint_201 = "4.8.6";
-const version_linuxmint_202 = "5.0.7";
-const version_linuxmint_203 = "5.0.7";
-const version_linuxmint_21 = "5.4.12";
-const version_linuxmint_211 = "5.6.8";
-const version_linuxmint_212 = "5.8.4";
-const version_linuxmint_213 = "6.0.4";
-const version_linuxmint_22 = "";
-const version_linuxmint_221 = "";
-const version_neon = "n/a";
+const version_linuxmint_20 = "5.2.7-4";
+const version_linuxmint_201 = "5.4.12-3";
+const version_linuxmint_202 = "5.6.8-4";
+const version_linuxmint_203 = "5.6.8-4";
+const version_linuxmint_21 = "6.2.0-1";
+const version_linuxmint_211 = "6.2.0-1";
+const version_linuxmint_212 = "6.2.0-1";
+const version_linuxmint_213 = "6.2.0-1";
+const version_linuxmint_22 = "6.2.0-1";
+const version_linuxmint_221 = "6.2.0-1";
+const version_neon = "N/A";
 
-const info_updated = "March 1, 2024";
+const info_updated = "March 1, 2025";
 ---
 
 <LinuxDesktopTemplate>

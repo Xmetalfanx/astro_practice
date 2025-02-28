@@ -1,10 +1,10 @@
 ---
 import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktop_name = "plasma";
 const desktop_title = "Plasma/KDE";
-const link_code = "";
+const link_code = "https://invent.kde.org/plasma/plasma-desktop";
 const link_homepage = "https://kde.org/announcements/";
 const generalinfo_desktop_category = "heavyweight";
 const generalinfo_distros_that_feature =
@@ -13,41 +13,41 @@ const generalinfo_desktop_toolkit = "";
 const install_arch = "sudo pacman -S kde OR sudo pacman kde-meta";
 const install_fedora = "sudo dnf group install kde-desktop-environment";
 
-const install_opensuse_tw_repo = "sudo zypper in -t pattern kde kde_plasma";
-const install_opensuse_reference = "";
+const install_opensuse_tw_repo = "sudo zypper install -t pattern kde kde_plasma";
+const install_opensuse_reference = "https://en.opensuse.org/SDB:KDE_installation";
 
 const install_ubuntu = "sudo apt install plasma-desktop";
 const install_mint =
   "(Mint prior to version 19) sudo apt (or apt-get) install mint-meta-kde";
 
-const requirements_hdd_space = "";
-const requirements_memory = "";
-const requirements_processor = "";
+const requirements_hdd_space = "25GB (Recommended)";
+const requirements_memory = "4GB (Minimum), 8GB (Recommended)";
+const requirements_processor = "64-bit dual-core processor (Recommended)";
 
 const screenshot_distro = "Kubuntu 20.04";
 const screenshot_src = "ubuntu/kubuntu.png";
 const screenshot_thumbnail = "ubuntu/thumbnails/kubuntu_tn.png";
 
-const version_arch = "5.27.10-1";
+const version_arch = "5.27.11-1";
 
-const version_debian_buster = "5.14.5.1-1";
-const version_debian_bullseye = "5.20.5-4+deb11u1";
-const version_debian_bookworm = "5.27.5-2";
+const version_debian_buster = "5.14.5.1-2";
+const version_debian_bullseye = "5.20.5-5+deb11u2";
+const version_debian_bookworm = "5.27.5-3";
 
-const version_fedora_40 = "";
-const version_fedora_41 = "";
+const version_fedora_40 = "5.27.11-1";
+const version_fedora_41 = "5.27.11-1";
 
-const latest_version = "5.27";
+const latest_version = "5.27.11";
 
 const version_opensuse_leap156 = "5.27.4";
-const version_opensuse_tumbleweed = "5.27.10-1.2";
+const version_opensuse_tumbleweed = "5.27.11-1.2";
 
 const version_solus =
   "4.4 ISO: Plasma Desktop 5.27.5, KDE Frameworks 5.106.0, and QT 5.15.9";
 
-const version_ubuntu_focal = "5.18.4.1-0.1";
-const version_ubuntu_jammy = "5.24.4-0.1";
-const version_ubuntu_lunar = "5.27.4-0.1";
+const version_ubuntu_focal = "5.18.4.1-0.2";
+const version_ubuntu_jammy = "5.24.4-0.2";
+const version_ubuntu_lunar = "5.27.4-0.2";
 
 const version_linuxmint_20 = "N/A";
 const version_linuxmint_201 = "N/A";
@@ -60,7 +60,7 @@ const version_linuxmint_213 = "N/A";
 const version_linuxmint_22 = "N/A";
 const version_linuxmint_221 = "N/A";
 
-const version_neon = "5.10.4";
+const version_neon = "5.27.11";
 const info_updated = "March 1, 2024";
 ---
 

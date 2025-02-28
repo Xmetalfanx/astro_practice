@@ -1,13 +1,8 @@
 ---
-import GlobalFooter from "@layouts/global/global-footer.astro";
-import GlobalHeadtag from "@layouts/global/global-headtag.astro";
+import LinuxBaseTemplate from "./linux-base-template.astro";
 import DistroSidebar from "@layouts/linuxHQ/asides/distro_sidebar.astro";
-import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
 ---
-
-<GlobalHeadtag />
-
-<LinuxTopMenus />
+<LinuxBaseTemplate>
 
 <div class="main-section">
   <aside>
@@ -17,4 +12,5 @@ import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
     <slot />
   </main>
 </div>
-<GlobalFooter />
+
+</LinuxBaseTemplate>

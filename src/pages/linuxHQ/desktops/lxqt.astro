@@ -1,50 +1,63 @@
 ---
 import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktop_name = "lxqt";
 const desktop_title = "LXQT";
+
 const generalinfo_desktop_category = "Light";
 const generalinfo_distros_that_feature = "Lubuntu Next, Sparky Linux";
 const generalinfo_desktop_toolkit = "";
+
 const link_homepage = "https://lxqt.org/";
-const link_code = "";
-const install_arch = "";
-const install_fedora = "";
+const link_code = "https://github.com/lxqt/lxqt";
+
+const install_arch = "sudo pacman -S lxqt";
+const install_fedora = "sudo dnf install @lxqt-desktop-environment";
 const install_opensuse_reference = "";
 const install_opensuse_tw_repo = "";
 const install_ubuntu = "sudo apt install lxqt";
-const requirements_hdd_space = "";
-const requirements_memory = "";
-const requirements_processor = "";
+
+const requirements_hdd_space = "1.5 GB";
+const requirements_memory = "512 MB";
+const requirements_processor = "Pentium 4 or equivalent";
+
 const screenshot_distro = "Lubuntu 18.10";
 const screenshot_src = "ubuntu/lubuntu.png";
 const screenshot_thumbnail = "ubuntu/thumbnails/lubuntu_tn.png";
+
 const version_arch = "1.4.0-1";
-const version_debian_buster = "29";
-const version_debian_bookworm = "31";
-const version_debian_bullseye = "30";
-const version_fedora_40 = "";
-const version_fedora_41 = "";
-const latest_version = "1.4.0";
-const version_opensuse_leap156 = "1.2.0";
-const version_opensuse_tumbleweed = "1.4.0-2.2";
-const version_solus = "N/A";
-const version_ubuntu_focal = "30";
-const version_ubuntu_jammy = "30.1";
-const version_ubuntu_lunar = "30.2";
-const version_linuxmint_20 = "N/A";
-const version_linuxmint_201 = "N/A";
-const version_linuxmint_202 = "N/A";
-const version_linuxmint_203 = "N/A";
-const version_linuxmint_21 = "N/A";
-const version_linuxmint_211 = "N/A";
-const version_linuxmint_212 = "N/A";
-const version_linuxmint_213 = "N/A";
-const version_linuxmint_22 = "N/A";
-const version_linuxmint_221 = "N/A";
+const version_debian_buster = "30";
+const version_debian_bullseye = "31";
+const version_debian_bookworm = "32";
+const version_fedora_40 = "1.4.0-1";
+const version_fedora_41 = "1.4.0-2";
+
+const latest_version = "1.5.0";
+
+const version_opensuse_leap156 = "1.4.0";
+const version_opensuse_tumbleweed = "1.4.0-3";
+
+const version_solus = "1.4.0";
+
+const version_ubuntu_focal = "31";
+const version_ubuntu_jammy = "31.1";
+const version_ubuntu_lunar = "31.2";
+
+const version_linuxmint_20 = "30";
+const version_linuxmint_201 = "30.1";
+const version_linuxmint_202 = "30.2";
+const version_linuxmint_203 = "30.3";
+const version_linuxmint_21 = "31";
+const version_linuxmint_211 = "31.1";
+const version_linuxmint_212 = "31.2";
+const version_linuxmint_213 = "31.3";
+const version_linuxmint_22 = "32";
+const version_linuxmint_221 = "32.1";
+
 const version_neon = "N/A";
-const info_updated = "March 1, 2024";
+
+const info_updated = "March 1, 2025";
 ---
 
 <LinuxDesktopTemplate>
@@ -54,6 +67,7 @@ const info_updated = "March 1, 2024";
     generalinfo_desktop_category={generalinfo_desktop_category}
     generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
     link_homepage={link_homepage}
+    link_code={link_code}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
     install_fedora={install_fedora}

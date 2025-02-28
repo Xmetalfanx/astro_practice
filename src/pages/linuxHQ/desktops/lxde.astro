@@ -1,6 +1,6 @@
 ---
 import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktop_name = "lxde";
 const desktop_title = "LXDE";
@@ -9,6 +9,7 @@ const generalinfo_desktop_category = "lightweight";
 const generalinfo_desktop_toolkit = "";
 const link_source = "n/a";
 const link_homepage = "https://lxde.org/";
+const link_code = "https://github.com/lxde/lxde";
 const generalinfo_distros_that_feature = "Lubuntu, LXLE";
 
 const install_arch = "sudo pacman -S lxde-common lxsession";
@@ -28,37 +29,37 @@ const screenshot_thumbnail = "ubuntu/thumbnails/lxle_tn.png";
 
 const version_arch = "0.99.2-3";
 
-const version_debian_buster = "10";
-const version_debian_bullseye = "11";
-const version_debian_bookwoom = "11";
+const version_debian_buster = "10.1";
+const version_debian_bullseye = "11.1";
+const version_debian_bookwoom = "12";
 
-const version_fedora_40 = "";
-const version_fedora_41 = "";
+const version_fedora_40 = "0.99.3";
+const version_fedora_41 = "0.99.3";
 
-const latest_version = "0.99.2";
+const latest_version = "0.99.4";
 
-const version_leap156 = "Can't find info as of November 2023";
-const version_tumbleweed = "Can't find info as of November 2023";
+const version_leap156 = "0.99.2";
+const version_tumbleweed = "0.99.3";
 
-const version_solus = "N/A";
+const version_solus = "0.99.3";
 
-const version_ubuntu_focal = "10";
-const version_ubuntu_jammy = "11";
-const version_ubuntu_lunar = "11";
+const version_ubuntu_focal = "10.1";
+const version_ubuntu_jammy = "11.1";
+const version_ubuntu_lunar = "12";
 
-const version_linuxmint_20 = "N/A";
-const version_linuxmint_201 = "N/A";
-const version_linuxmint_202 = "N/A";
-const version_linuxmint_203 = "N/A";
-const version_linuxmint_21 = "N/A";
-const version_linuxmint_211 = "N/A";
-const version_linuxmint_212 = "N/A";
-const version_linuxmint_213 = "N/A";
-const version_linuxmint_22 = "N/A";
-const version_linuxmint_221 = "N/A";
+const version_linuxmint_20 = "10.1";
+const version_linuxmint_201 = "10.2";
+const version_linuxmint_202 = "10.3";
+const version_linuxmint_203 = "10.4";
+const version_linuxmint_21 = "11.1";
+const version_linuxmint_211 = "11.2";
+const version_linuxmint_212 = "11.3";
+const version_linuxmint_213 = "11.4";
+const version_linuxmint_22 = "12";
+const version_linuxmint_221 = "12.1";
 
 const version_neon = "N/A";
-const info_updated = "March 1, 2024";
+const info_updated = "March 1, 2025";
 ---
 
 <LinuxDesktopTemplate>
@@ -68,6 +69,7 @@ const info_updated = "March 1, 2024";
     generalinfo_desktop_category={generalinfo_desktop_category}
     generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
     link_homepage={link_homepage}
+    link_code={link_code}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
     install_fedora={install_fedora}
