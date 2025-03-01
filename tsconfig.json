@@ -5,7 +5,10 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@css/*": ["src/styles/*"],
+      "@pages/*": ["src/pages/*"],
+      "@templates/*": ["src/layouts/templates/*"],
+      "@global_layout/*": ["src/layouts/global/*"],
+      "@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
       "@icons/*": ["/src/assets/graphics/linuxhq/distros/icons/*"],
       "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
       "@arch_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/arch/*"],
