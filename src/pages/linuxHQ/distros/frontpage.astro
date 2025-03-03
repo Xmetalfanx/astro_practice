@@ -1,6 +1,14 @@
 ---
 // import DistroData from "@layouts/linuxHQ/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+import { Image } from 'astro:assets';
+
+import linuxMintThumbnail from '@ubuntu_ss/thumbnails/mint-small.png';
+import archThumbnail from '@arch_ss/thumbnails/arch-small.png';
+import ubuntuThumbnail from '@ubuntu_ss/thumbnails/ubuntu-small.png';
+import debianThumbnail from '@debian_ss/thumbnails/debian-small.png';
+import fedoraThumbnail from '@rpm_ss/thumbnails/fedora-small.png';
+import openSuseThumbnail from '@rpm_ss/thumbnails/opensuse-small.png';
 
 const distros = [
   {
@@ -16,7 +24,7 @@ const distros = [
     target_audience: "Any/New Users",
     distro_type: "LTS - Long Term Support",
     screenshot_src: "@ubuntu_ss/cinnamonMint.png",
-    screenshot_thumbnail: "@ubuntu_ss/thumbnails/cinnamonMint_tn.png",
+    screenshot_thumbnail: linuxMintThumbnail,
     screenshot_desktop: "Cinnamon",
     screenshot_icon: "Mint-Y",
     screenshot_theme: "Mint-Y",
@@ -24,7 +32,7 @@ const distros = [
     versions_supported: "20.x, 21.x, 22.x",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "@icons/linuxmint.svg",
+    distro_icon: "@distro_icons/linuxmint.svg",
   },
   {
     title: "Arch Linux",
@@ -40,15 +48,15 @@ const distros = [
     target_audience: "Moderate to Advanced Users",
     distro_type: "",
     screenshot_src: "@arch_ss/arch.png",
-    screenshot_thumbnail: "@arch_ss/thumbnails/arch_tn.png",
+    screenshot_thumbnail: archThumbnail,
     screenshot_desktop: "Plasma 5",
     screenshot_icon: "",
     screenshot_theme: "Breeze",
     version_latest: "2023.05.03",
-    versions_supported: "",
+    versions_supported: "2023.05.03, 2023.10.01",
     youtube_review_playlist: "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI",
     youtube_tips_playlist: "",
-    distro_icon: "@icons/arch.svg",
+    distro_icon: "@distro_icons/arch.svg",
   },
   {
     title: "Ubuntu",
@@ -64,15 +72,15 @@ const distros = [
     target_audience: "Any User",
     distro_type: "LTS and non-LTS",
     screenshot_src: "@ubuntu_ss/ubuntu2010settings.png",
-    screenshot_thumbnail: "@ubuntu_ss/thumbnails/ubuntu2010settings_tn.png",
+    screenshot_thumbnail: ubuntuThumbnail,
     screenshot_desktop: "Gnome Shell",
     screenshot_icon: "",
     screenshot_theme: "",
     version_latest: "24.04",
-    versions_supported: "20.04 LTS, 22.04 LTS, 23.04",
+    versions_supported: "20.04 LTS, 22.04 LTS, 24.04",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "@icons/ubuntu.svg",
+    distro_icon: "@distro_icons/ubuntu.svg",
   },
   {
     title: "Debian",
@@ -87,15 +95,15 @@ const distros = [
     target_audience: "",
     distro_type: "",
     screenshot_src: "@debian_ss/debian.png",
-    screenshot_thumbnail: "@debian_ss/thumbnails/debian_tn.png",
+    screenshot_thumbnail: debianThumbnail,
     screenshot_desktop: "",
     screenshot_icon: "",
     screenshot_theme: "",
     version_latest: "12",
-    versions_supported: "12",
+    versions_supported: "11, 12",
     youtube_review_playlist: "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ",
     youtube_tips_playlist: "PLrh2y86lvcJddBni43z2PSd9H0XotKdn4",
-    distro_icon: "@icons/debian.svg",
+    distro_icon: "@distro_icons/debian.svg",
   },
   {
     title: "Fedora",
@@ -110,15 +118,15 @@ const distros = [
     target_audience: "Moderate to advanced users",
     distro_type: "",
     screenshot_src: "@rpm_ss/fedora.png",
-    screenshot_thumbnail: "@rpm_ss/thumbnails/fedora_tn.png",
+    screenshot_thumbnail: fedoraThumbnail,
     screenshot_desktop: "Gnome",
     screenshot_icon: "",
     screenshot_theme: "",
     version_latest: "38",
-    versions_supported: "37, 38",
+    versions_supported: "37, 38, 39",
     youtube_review_playlist: "PLrh2y86lvcJeLcpMeVcMwbODBKBj8wqVm",
     youtube_tips_playlist: "",
-    distro_icon: "@icons/fedora.svg",
+    distro_icon: "@distro_icons/fedora.svg",
   },
   {
     title: "openSUSE",
@@ -133,15 +141,15 @@ const distros = [
     target_audience: "Any User",
     distro_type: "",
     screenshot_src: "@rpm_ss/opensuse.png",
-    screenshot_thumbnail: "@rpm_ss/thumbnails/opensuse_tn.png",
+    screenshot_thumbnail: openSuseThumbnail,
     screenshot_desktop: "",
     screenshot_icon: "",
     screenshot_theme: "",
     version_latest: "15.3 Leap",
-    versions_supported: "15.3 Leap, Tumbleweed",
+    versions_supported: "15.3 Leap, 15.4 Leap, Tumbleweed",
     youtube_review_playlist: "",
     youtube_tips_playlist: "",
-    distro_icon: "@icons/opensuse.svg",
+    distro_icon: "@distro_icons/opensuse.svg",
   },
 ];
 ---
@@ -193,7 +201,7 @@ const distros = [
           <p>
             <strong>Supported Versions:</strong> {distro.versions_supported}
           </p>
-          <img
+          <Image
             class="screenshot"
             src={distro.screenshot_thumbnail}
             alt={`${distro.title} screenshot`}
@@ -244,6 +252,5 @@ const distros = [
   .screenshot {
     width: 100%;
     margin: 1rem auto;
-
   }
 </style>

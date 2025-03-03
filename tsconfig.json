@@ -11,22 +11,23 @@
       "@templates/*": ["src/layouts/templates/*"],
       "@global_layout/*": ["src/layouts/global/*"],
       "@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
-      "@icons/*": ["/src/assets/graphics/linuxhq/distros/icons/*"],
+      "@distro_icons/*": ["/src/pages/linuxHQ/graphics/distros/icons/*"],
+      "@desktop_icons/*": ["/src/pages/linuxHQ/graphics/desktops/icons/*"],
       "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
       "@desktops/*": ["/src/pages/linuxHQ/desktops/*"],
-      "@arch_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/arch/*"],
+      "@arch_ss/*": ["/src/pages/linuxHQ/graphics/distros/arch_based/*"],
       "@debian_ss/*": [
-        "/src/assets/graphics/linuxhq/distros/screenshots/debian/*"
+        "/src/pages/linuxHQ/graphics/distros/debian_based/*"
       ],
       "@gentoo_ss/*": [
-        "/src/assets/graphics/linuxhq/distros/screenshots/gentoo/*"
+        "/src/pages/linuxHQ/graphics/distros/gentoo_based/*"
       ],
       "@independent_ss/*": [
-        "/src/assets/graphics/linuxhq/distros/screenshots/independent/*"
+        "/src/pages/linuxHQ/graphics/distros/independent/*"
       ],
-      "@rpm_ss/*": ["/src/assets/graphics/linuxhq/distros/screenshots/rpm/*"],
+      "@rpm_ss/*": ["/src/pages/linuxHQ/graphics/distros/rpm_based/*"],
       "@ubuntu_ss/*": [
-        "/src/assets/graphics/linuxhq/distros/screenshots/ubuntu/*"
+        "/src/pages/linuxHQ/graphics/distros/ubuntu_based/*"
       ]
     }
   }
