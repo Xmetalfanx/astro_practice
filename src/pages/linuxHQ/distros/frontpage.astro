@@ -1,14 +1,14 @@
 ---
 // import DistroData from "@layouts/linuxHQ/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import linuxMintThumbnail from '@ubuntu_ss/thumbnails/mint-small.png';
-import archThumbnail from '@arch_ss/thumbnails/arch-small.png';
-import ubuntuThumbnail from '@ubuntu_ss/thumbnails/ubuntu-small.png';
-import debianThumbnail from '@debian_ss/thumbnails/debian-small.png';
-import fedoraThumbnail from '@rpm_ss/thumbnails/fedora-small.png';
-import openSuseThumbnail from '@rpm_ss/thumbnails/opensuse-small.png';
+import linuxMintThumbnail from "@ubuntu_ss/thumbnails/mint-small.png";
+import archThumbnail from "@arch_ss/thumbnails/arch-small.png";
+import ubuntuThumbnail from "@ubuntu_ss/thumbnails/ubuntu-small.png";
+import debianThumbnail from "@debian_ss/thumbnails/debian-small.png";
+import fedoraThumbnail from "@rpm_ss/thumbnails/fedora-small.png";
+import openSuseThumbnail from "@rpm_ss/thumbnails/opensuse-small.png";
 
 const distros = [
   {
@@ -155,8 +155,8 @@ const distros = [
 ---
 
 <LinuxDistroTemplate>
-  <main>
-    <!-- <h1>Popular Linux Distributions</h1> -->
+  <!-- <h1>Popular Linux Distributions</h1> -->
+  <div class="distro-container">
     {
       distros.map((distro) => (
         <section>
@@ -183,24 +183,26 @@ const distros = [
             </p>
           </div>
 
-          <p>
-            <strong>Desktops:</strong> {distro.desktops}
-          </p>
-          <p>
-            <strong>Release Cycle:</strong> {distro.releasecycle}
-          </p>
-          <p>
-            <strong>Similar Distros:</strong> {distro.similar_distros}
-          </p>
-          <p>
-            <strong>Target Audience:</strong> {distro.target_audience}
-          </p>
-          <p>
-            <strong>Latest Version:</strong> {distro.version_latest}
-          </p>
-          <p>
-            <strong>Supported Versions:</strong> {distro.versions_supported}
-          </p>
+          <div class="more-info">
+            <div>
+              <strong>Desktops:</strong> {distro.desktops}
+            </div>
+            <div>
+              <strong>Release Cycle:</strong> {distro.releasecycle}
+            </div>
+            <div>
+              <strong>Similar Distros:</strong> {distro.similar_distros}
+            </div>
+            <div>
+              <strong>Target Audience:</strong> {distro.target_audience}
+            </div>
+            <div>
+              <strong>Latest Version:</strong> {distro.version_latest}
+            </div>
+            <div>
+              <strong>Supported Versions:</strong> {distro.versions_supported}
+            </div>
+          </div>
           <Image
             class="screenshot"
             src={distro.screenshot_thumbnail}
@@ -209,48 +211,62 @@ const distros = [
         </section>
       ))
     }
-  </main>
+  </div>
 </LinuxDistroTemplate>
 
 <style lang="scss">
-  main {
+  @use "../../../styles/scss/colors" as *;
+  @use "../../../styles/scss/mixins" as *;
+
+  .distro-container {
     display: flex;
-    gap: 4rem;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-  }
-  section {
-    line-height: 2rem;
-    outline: 1px solid #ccc;
-    padding: 0.5rem;
-    min-width: 550px;
-  }
+    gap: 2rem;
 
-  .distro_icon_and_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
+    section {
+      @include bgcolor-level(2);
+      line-height: 2rem;
+      padding: 2rem;
+      width: 40%;
 
-    .distro_title {
-      font-size: 1.5rem;
-      font-weight: bold;
+      .distro_icon_and_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+
+        .distro_title {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .distro_icon {
+          width: 50px;
+          height: 50px;
+          margin: 0 2rem;
+        }
+      }
+
+      .common_links {
+        margin: 1rem 0;
+        line-height: 1.5rem;
+      }
+
+      .more-info {
+        @include bgcolor-level(3);
+        margin: 1rem 0;
+        max-width: 65ch;
+        line-height: 3rem;
+        outline: 1px solid $accent-color;
+        padding: .5rem 1.5rem;
+      }
+
+      .screenshot {
+        margin: 0 auto;
+        padding: 1rem;
+        width: 100%;
+      }
     }
-
-    .distro_icon {
-      width: 50px;
-      height: 50px;
-      margin: 0 2rem;
-    }
-  }
-
-  .common_links {
-    margin: 1rem 0;
-    line-height: 1.5rem;
-  }
-
-  .screenshot {
-    width: 100%;
-    margin: 1rem auto;
   }
 </style>

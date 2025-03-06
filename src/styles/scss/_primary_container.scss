@@ -1,0 +1,114 @@
+@use "colors" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+/* main section of site */
+// updated: march 17, 2025: at the time of me typing this i have not adjusted the code below
+// the main section should now be "primary-content" which includes any asides AND the <main> 
+// AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
+.primary-container {
+  
+  > *:nth-child(1) {
+    // width: 100vw;
+    display: flex;
+    // flex-flow: row wrap;
+    margin: 0.5rem 1rem;
+    font-size: var(--font-size);
+    }
+
+
+  // reason for this: the clr-level function, otherwise the user-agent-styles of the browser would be enough
+  // background-color: $light-color;
+  // @media (prefers-color-scheme: dark) {
+  //   background-color: $dark-color;
+  // }
+
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+    aside {
+      margin: 0 2rem;
+
+      label {
+        width: 85vw;
+        margin: 1.2rem auto;
+      }
+
+      .accordion {
+        display: none;
+
+        // .accordion-content {
+        //   display: none;
+        // }
+
+        .accordion-toggle {
+          display: block;
+        }
+
+        &.active .accordion-content {
+          display: flex;
+        }
+      }
+    }
+  }
+
+
+  /* the sidebar containing the menus */
+  > * > aside {
+    // width: 18%;
+    margin-right: 1.25rem;
+
+    label {
+      background-color: clr(accent-color);
+      color: clr(light-color);
+      display: block;
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    /* this is the full menu minus the title/label */
+    .accordion {
+      padding: 1rem;
+
+      @include bgcolor-level(2);
+
+
+
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 2rem;
+      outline: 1px solid var(accent-color);
+
+      .accordion-content > * {
+        display: flex;
+        flex-flow: column nowrap;
+        margin: 1rem 0;
+
+        @media (prefers-color-scheme: dark) {
+          color: $light-color
+        }
+
+      }
+
+      .accordion-toggle {
+        display: none;
+        background-color: clr(accent-color);
+        color: clr(light-color);
+        padding: 0.5rem;
+        cursor: pointer;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+      }
+    }
+
+    .accordion:nth-child(1) {
+      margin: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .accordion:nth-child(n + 2) {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+
+}

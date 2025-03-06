@@ -1,0 +1,36 @@
+@use "sass:color";
+
+
+// ref:  https://www.kevinpowell.co/article/using-my-colors/
+$main-color: hsl(34, 90%, 45%);
+$accent-color: hsl(160, 100%, 25%);
+$light-color: hsl(0, 0%, 94%);
+$dark-color: hsl(0, 0%, 15%);
+
+
+$lighten: 5%;  // Percentage works for lighten() and darken()
+$darken: -12%; // Needs to be negative when using color.adjust()
+
+$colors: (
+  main-color: (
+    base: $main-color,
+    light: color.adjust($main-color, $lightness: $lighten),
+    dark: color.adjust($main-color, $lightness: $darken),
+  ),
+  accent-color: (
+    base: $accent-color,
+    light: color.adjust($accent-color, $lightness: $lighten),
+    dark: color.adjust($accent-color, $lightness: $darken),
+  ),
+  light-color: (
+    base: $light-color,
+    light: color.adjust($light-color, $lightness: $lighten),
+    dark: color.adjust($light-color, $lightness: $darken),
+  ),
+  dark-color: (
+    base: $dark-color,
+    light: color.adjust($dark-color, $lightness: $lighten),
+    dark: color.adjust($dark-color, $lightness: $darken),
+  )
+);
+

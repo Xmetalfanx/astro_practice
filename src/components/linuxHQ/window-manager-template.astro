@@ -20,11 +20,11 @@ const wm_screenshot_thumbnail = "path/to/thumbnail.png"; // Replace with actual 
 
 <LinuxTopMenus />
 
-<div class="main-section">
+<div class="primary-container">
   <aside>
     <DistroSidebar />
   </aside>
-  <div class="primary-content">
+  <main>
     <h1>{wm_title}</h1>
     <p>Homepage: <a href={wm_homepage}>{wm_homepage}</a></p>
     <p>Git Repository: <a href={wm_git_repo}>{wm_git_repo}</a></p>
@@ -37,7 +37,7 @@ const wm_screenshot_thumbnail = "path/to/thumbnail.png"; // Replace with actual 
     <h2>Screenshots</h2>
     <img src={wm_screenshot_src} alt="{wm_title} Screenshot" />
     <img src={wm_screenshot_thumbnail} alt="{wm_title} Thumbnail" />
-  </div>
+  </main>
 </div>
 
 <GlobalFooter />

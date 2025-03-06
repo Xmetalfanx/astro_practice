@@ -1,10 +1,10 @@
 ---
-import DefaultCard from "@components/default_maybe_remove/default_Card.astro";
-import LinuxBaseTemplate from "@templates/linuxhq/linux-base-template.astro";
+import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+
 ---
 
-<LinuxBaseTemplate>
-    <div>
+<LinuxDesktopTemplate>
+    <div slot="linux-main">
         Showing Tutorials, My reviews (as well as others), and sites that have
         helped me over the years, is TRUE goal I have with this section. The
         Linux related ideas I came up with to add to the main site started to
@@ -27,15 +27,14 @@ import LinuxBaseTemplate from "@templates/linuxhq/linux-base-template.astro";
             </li>
         </ul>
     </div>
-</LinuxBaseTemplate>
+</LinuxDesktopTemplate>
 
 <style lang="scss">
     div {
         padding: 20px;
-        background-color: #f9f9f9;
         word-break: normal;
         font-size: 1.1rem;
-        margin: 0 auto;
+        margin-inline: auto;
     }
 
     ul {
@@ -45,7 +44,7 @@ import LinuxBaseTemplate from "@templates/linuxhq/linux-base-template.astro";
 
         li {
             width: 100%;
-            background-color: #ffffff;
+            // background-color: var(--light-color-500);
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 15px;

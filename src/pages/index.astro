@@ -8,12 +8,16 @@ import Footer from "@layouts/global/global-footer.astro";
 import SiteSections from "@layouts/frontpage/siteSections.astro";
 import GitGroups from "@layouts/frontpage/gitGroups.astro";
 ---
+<html lang="en">
+  <GlobalHeadtag />
 
-<GlobalHeadtag />
+  <header>Xmetalfanx's Homepage</header>
+</html>
 
-<header>Xmetalfanx's Homepage</header>
-<SiteSections />
-<GitGroups />
+<main>
+  <SiteSections />
+  <GitGroups />
+</main>
 
 <Footer />
 
@@ -21,5 +25,16 @@ import GitGroups from "@layouts/frontpage/gitGroups.astro";
   a {
     font-size: 1.5rem;
     margin: 1rem;
+  } 
+
+   header {
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: var(--ffamily-header);
+  }
+
+  main {
+    /* background-color: var(--light-color-500); */
+    margin: 2rem 0;
   }
 </style>

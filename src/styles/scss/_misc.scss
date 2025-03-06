@@ -1,0 +1,113 @@
+@use "colors" as *;
+
+:root {
+  color-scheme: dark light;
+
+  --main-color: hsl(34, 90%, 45%);
+  --accent-color: hsl(160, 100%, 25%);
+  --light-color: hsl(0, 0%, 94%);
+  --dark-color: hsl(0, 0%, 15%);
+
+
+  // create color variants based on the color scheme above
+  // @for $i from 1 through 9 {
+  //   $lightness: -20% + ($i - 1) * 5%;
+
+  //   --main-color-#{$i}00: #{generate-color-variation($main-color, $lightness)};
+  //   --accent-color-#{$i}00: #{generate-color-variation(
+  //       $accent-color,
+  //       $lightness
+  //     )};
+  //   --light-color-#{$i}00: #{generate-color-variation(
+  //       $light-color,
+  //       $lightness
+  //     )};
+  //   --dark-color-#{$i}00: #{generate-color-variation($dark-color, $lightness)};
+  // }
+
+  // --bg-level-1: 0%; // Base (no change)
+  // --bg-level-2: -10%; // Light theme darkens
+  // --bg-level-3: -20%;
+
+  --fw-bold: bold;
+  --font-size-default: 1.2rem;
+
+  // Font Families
+  --ffamily-roboto:
+    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
+  --ffamily-e-candy:
+    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
+
+  --ffamily-header: var(--ffamily-dynapuff);
+  --ffamily-nav: var(--ffamily-e-candy);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: $light-color;
+  color: $dark-color;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-color;
+    color: $light-color;
+  }
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+// .bg-level-1 {
+//   @include bg-level-1;
+// }
+
+// .bg-level-2 {
+//   @include bg-level-2;
+// }
+// .bg-level-3 {
+//   @include bg-level-3;
+// }
+
+body {
+  font-size: var(--font-size-default);
+
+  a,
+  a:link {
+    color: clr(accent-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: clr(accent-color, "dark");
+    }
+  }
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+// Screenshot
+.screenshot {
+  margin: 0 1.5rem;
+  img {
+    width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+  }
+}

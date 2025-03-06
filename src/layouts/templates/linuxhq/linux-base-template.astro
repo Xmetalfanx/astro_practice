@@ -1,9 +1,19 @@
 ---
+// this is the template the linuxhq "frontpage" should use, since no aside is needed
+
 import BaseLayout from "@layouts/BaseLayout.astro";
 import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
 ---
 
 <BaseLayout>
-    <LinuxTopMenus />
-    <slot />
+  <LinuxTopMenus slot="header" />
+  <!-- slot would contain aside and main for each sub-template -->
+  <!--idea: this is telling it to put it in slot "primary-container" 
+            of the BaseLayout.astro file, and the name="linux-container"
+            is where the individual linuxHQ templates that use this as a 
+            base, PLACE THEIR content -->
+
+  <div slot="primary-container" class="primary-container">
+    <slot name="linux-container" />
+  </div>
 </BaseLayout>

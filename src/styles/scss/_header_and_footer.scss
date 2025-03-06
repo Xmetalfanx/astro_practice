@@ -1,0 +1,82 @@
+@use "colors" as *;
+@use "functions" as *;
+
+header,
+footer {
+  width: 100%;
+  background-color: clr(main-color);
+  color: clr(light-color);
+  padding: 1rem;
+
+  a,
+  a:link {
+    color: clr(light-color);
+    
+  }
+
+  // a:hover,
+  // a:focus {
+  //   color: clr(accent-color);
+  // }
+}
+
+@media (prefers-color-scheme: dark) {
+  header,
+  footer {
+    background-color: clr(main-color, "dark");
+    color: clr(light-color, "light");
+
+    a { 
+      padding: 2px;
+
+      &:hover,
+      &:focus {
+        //color: clr(accent-color);
+        outline: 2px solid $light-color;
+        padding: 2px;
+      }
+  
+      &:visited { 
+        text-decoration: dotted;
+       }
+    }
+  }
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  flex-wrap: wrap; // Added for mobile responsiveness
+
+  .section-title {
+    font-family: var(--ffamily-header);
+    font-optical-sizing: auto;
+    font-size: 2.2rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 3rem;
+    margin-right: 2rem;
+    font-family: var(--ffamily-nav);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.6rem;
+    flex-wrap: wrap; // Added for mobile responsiveness
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      display: none;
+    }
+
+    nav {
+      flex-flow: column wrap;
+      gap: 1rem;
+      margin-inline: auto;
+    }
+  }
+}
+

@@ -15,7 +15,9 @@ const desktops = [
       { name: "Ubuntu Budgie", link: "https://ubuntubudgie.org/" },
       { name: "Arch Linux", link: "https://archlinux.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/budgie.avif"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/budgie.avif",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/budgie-small.avif",
+    screenshot_distro: "unknown"
   },
   {
     name: "Cinnamon",
@@ -27,7 +29,9 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/cinnamon.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/cinnamon.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/cinnamon-small.png",
+    screenshot_distro: "Linux Mint 22.x"
   },
   {
     name: "Cosmic",
@@ -37,7 +41,9 @@ const desktops = [
     commonDistros: [
       { name: "Pop!_OS", link: "https://pop.system76.com/" }
     ],
-    screenshot: "/assets/screenshots/cosmic.png"
+    screenshot: "/assets/screenshots/cosmic.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/cosmic-small.png",
+    screenshot_distro: ""
   },
   {
     name: "GNOME",
@@ -49,7 +55,9 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Debian", link: "https://www.debian.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/gnome.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/gnome.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/gnome-small.png",
+    screenshot_distro: "Ubuntu 24.04"
   },
   {
     name: "KDE Plasma",
@@ -61,7 +69,9 @@ const desktops = [
       { name: "openSUSE", link: "https://www.opensuse.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/plasma.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/plasma.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/plasma-small.png",
+    screenshot_distro: "Not Known - Maybe Kubuntu 24"
   },
   {
     name: "LXQt",
@@ -73,7 +83,9 @@ const desktops = [
       { name: "SparkyLinux", link: "https://sparkylinux.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/lxqt.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/lxqt.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/lxqt-small.png",
+    screenshot_distro: ""
   },
   {
     name: "MATE",
@@ -85,7 +97,9 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "Fedora", link: "https://getfedora.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/mate-1.26_fedora.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/mate.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/mate-small.png",
+    screenshot_distro: "Fedora - Mate 1.26"
   },
   {
     name: "Pantheon",
@@ -95,7 +109,9 @@ const desktops = [
     commonDistros: [
       { name: "elementary OS", link: "https://elementary.io/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/pantheon.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/pantheon.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/pantheon-small.png",
+    screenshot_distro: "ElementaryOS 6.x"
   },
   {
     name: "XFCE",
@@ -107,14 +123,16 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "MX Linux", link: "https://mxlinux.org/" }
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshot/xfce.png"
+    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/xfce.png",
+    screenshot_tn: "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/xfce-small.png",
+    screenshot_distro: "Xubuntu 24.04"
   }
 ];
 
 ---
 
 <LinuxDesktopTemplate>
-  <div class="desktop_container">
+  <div class="desktop_container" slot="linux-main">
     {
       desktops.map((desktop) => (
         <div key={desktop.name} class="desktop-card">
@@ -135,14 +153,21 @@ const desktops = [
               </li>
             ))}
           </ul>
-          <Image class="screenshot" src={desktop.screenshot} alt={`${desktop.name} screenshot`} width={800} height={450} />
+          <a href={desktop.screenshot} target="_blank">
+            <Image class="screenshot" src={desktop.screenshot_tn} alt={`${desktop.name} screenshot`} width={640} height={400} />
+          </a>
+          <div>Screenshot Distro: {desktop.screenshot_distro}</div>
+          
         </div>
       ))
     }
   </div>
 </LinuxDesktopTemplate>
 
-<style>
+<style lang="scss">
+
+@use "@css/scss/_mixins.scss" as *;
+
  .desktop_container {
     display: flex;
     flex-wrap: wrap;
@@ -151,6 +176,9 @@ const desktops = [
  }
 
  .desktop-card {
+
+    @include bgcolor-level(2);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,8 +186,7 @@ const desktops = [
     padding: 1rem;
     border-radius: 5px;
     outline: 1px solid #333;
-    max-width: 30rem;
-    width: 100%;
+    width: clamp(25rem, 30%, 100%); /* Ideal size three distros wide */
   }
 
   .icon_and_title {
@@ -197,11 +224,11 @@ const desktops = [
   }
 
   .screenshot {
-    width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 5px;
     margin-top: 1rem;
-    aspect-ratio: 16 / 9;
     height: auto;
+    width: 100%;
   }
 
   @media (max-width: 600px) {
@@ -229,4 +256,5 @@ const desktops = [
       margin-top: 0.5rem;
     }
   }
+
 </style>
