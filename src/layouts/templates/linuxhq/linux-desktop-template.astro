@@ -6,12 +6,42 @@ import DesktopSidebar from "@layouts/linuxHQ/asides/desktop_sidebar.astro";
 ---
 
 <LinuxBaseTemplate>
-
-<div class="main-section">
-  <aside>
-    <DesktopSidebar />
-  </aside>
-  <div class="primary-content">
-    <slot />
+  <div class="main-section">
+    <aside>
+      <DesktopSidebar />
+    </aside>
+    <div class="primary-content">
+      <slot />
+    </div>
   </div>
-</div>
+</LinuxBaseTemplate>
+
+<style>
+  .main-section {
+    display: flex;
+    gap: 1rem;
+  }
+
+  aside {
+    flex: 1;
+    max-width: 15rem;
+  }
+
+  .primary-content {
+    flex: 3;
+  }
+
+  @media (max-width: 600px) {
+    .main-section {
+      flex-direction: column;
+    }
+
+    aside {
+      max-width: 100%;
+    }
+
+    .primary-content {
+      width: 100%;
+    }
+  }
+</style>
