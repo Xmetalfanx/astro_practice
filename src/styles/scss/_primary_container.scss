@@ -68,15 +68,12 @@
 
     /* this is the full menu minus the title/label */
     .accordion {
-      padding: 1rem;
-
-      @include bgcolor-level(2);
-
-
-
       border-radius: 10px 10px 0 0;
       margin-bottom: 2rem;
       outline: 1px solid var(accent-color);
+      padding: 1rem;
+
+      @include bgcolor-level(2);
 
       .accordion-content > * {
         display: flex;

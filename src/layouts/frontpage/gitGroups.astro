@@ -76,6 +76,8 @@
 </div>
 
 <style lang="scss">
+  @use "@css/scss/_colors.scss" as *;
+  @use "@css/scss/_functions.scss" as *;
   @use "@css/scss/_mixins.scss" as *;
 
   .frontpage-title {
@@ -95,9 +97,9 @@
       padding: 1rem;
 
       .git-group {
+        border-radius: 8px;
         @include bgcolor-level(2);
 
-        border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
         transition:
@@ -119,8 +121,11 @@
           display: flex;
           justify-content: space-around;
           margin: 1.5rem 0;
-
+        
           a {
+            color: var(--accent-color);
+            //color: clr($accent-color, "base");
+
             transition: color 0.3s;
 
             i {
@@ -153,7 +158,6 @@
       @media (prefers-color-scheme: dark) {
           .git-group {
             box-shadow: 2px 2px 10px #FFF;
-
           }
       }
     }
