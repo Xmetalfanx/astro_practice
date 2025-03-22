@@ -2,11 +2,18 @@
 import LinuxBaseTemplate from "./linux-base-template.astro";
 import ThemingSidebar from "../../linuxHQ/asides/linuxtheme_aside.astro";
 
-const { title, keywords, description } = Astro.props;
+const { title = "" } = Astro.props;
+const appendedTitle = `Linux Distribution Section - ${title}`;
+
+const { keywords, description } = Astro.props;
 ---
 
-<LinuxBaseTemplate title={title} keywords={keywords} description={description}>
-  <div class="main-section">
+<LinuxBaseTemplate 
+  title={appendedTitle} 
+  keywords={keywords} 
+  description={description}
+>
+  <div slot="linux-container">
     <aside>
       <ThemingSidebar />
     </aside>
