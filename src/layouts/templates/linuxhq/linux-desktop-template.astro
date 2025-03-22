@@ -3,9 +3,15 @@ import "@css/global-styles.css";
 
 import LinuxBaseTemplate from "./linux-base-template.astro";
 import DesktopSidebar from "@layouts/linuxHQ/asides/desktop_sidebar.astro";
+
+const { title, keywords, description } = Astro.props;
 ---
 
-<LinuxBaseTemplate>
+<LinuxBaseTemplate
+  title={title}
+  keywords={keywords}
+  description={description}
+>
   <div slot="linux-container">
     <aside>
       <DesktopSidebar/>

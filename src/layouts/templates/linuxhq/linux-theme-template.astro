@@ -1,9 +1,11 @@
 ---
 import LinuxBaseTemplate from "./linux-base-template.astro";
 import ThemingSidebar from "../../linuxHQ/asides/linuxtheme_aside.astro";
+
+const { title, keywords, description } = Astro.props;
 ---
 
-<LinuxBaseTemplate>
+<LinuxBaseTemplate title={title} keywords={keywords} description={description}>
   <div class="main-section">
     <aside>
       <ThemingSidebar />

@@ -1,17 +1,17 @@
 ---
 import LinuxBaseTemplate from "./linux-base-template.astro";
 import DistroSidebar from "@layouts/linuxHQ/asides/distro_sidebar.astro";
+
+const { title, keywords, description } = Astro.props;
 ---
-<LinuxBaseTemplate>
 
-<div class="main-section" slot="linux-container">
-  <aside>
-    <DistroSidebar />
-  </aside>
-  <main>
-     <!--this slot is where the content of the pages, using this sub-template should go -->
-     <slot name="linux-main"/>
-  </main>
-</div>
-
+<LinuxBaseTemplate title={title} keywords={keywords} description={description}>
+  <div class="main-section" slot="linux-container">
+    <aside>
+      <DistroSidebar />
+    </aside>
+    <main>
+      <slot />
+    </main>
+  </div>
 </LinuxBaseTemplate>

@@ -3,9 +3,15 @@
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
+
+const { title, keywords, description } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={title}
+  keywords={keywords}
+  description={description}
+>
   <LinuxTopMenus slot="header" />
   <!-- slot would contain aside and main for each sub-template -->
   <!--idea: this is telling it to put it in slot "primary-container" 
