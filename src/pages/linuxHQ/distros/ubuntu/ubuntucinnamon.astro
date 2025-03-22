@@ -1,6 +1,6 @@
 ---
 import type { late } from "astro:schema";
-import DistroData from "@layouts/linuxHQ/DistrosData.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 const distro_name = "ubuntucinnamon";
 const distro_title = "Ubuntu Cinnamon";
@@ -20,7 +20,7 @@ const screenshot_icon = "";
 const screenshot_theme = "";
 
 import screenshot_src from "@ubuntu_ss/ubuntuCinnamon.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/ubuntuCinnamon_tn.png";
+import screenshot_thumbnail from "@ubuntu_ss/thumbnails/ubuntuCinnamon-small.png";
 
 const version_latest = "24.04";
 const versions_supported = "23.04";
@@ -35,7 +35,7 @@ const youtube_tips_playlist = "";
 ---
 
 <LinuxDistroTemplate>
-  <DistroData
+  <DistroData slot="linux-main"
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}

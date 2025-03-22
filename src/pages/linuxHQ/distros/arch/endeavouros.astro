@@ -1,5 +1,5 @@
 ---
-import DistroData from "@layouts/linuxHQ/DistrosData.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "endeavouros";
@@ -36,7 +36,7 @@ const youtube_tips_playlist = "";
 ---
 
 <LinuxDistroTemplate>
-  <DistroData
+  <DistroData slot="linux-main"
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}

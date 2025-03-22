@@ -1,5 +1,5 @@
 ---
-import DistroData from "@layouts/linuxHQ/DistrosData.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 const distro_name = "elementary";
 const distro_title = "ElementaryOS";
@@ -19,7 +19,7 @@ const screenshot_theme = "";
 const screenshot_icon = "";
 
 import screenshot_src from "@ubuntu_ss/elementary.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/elementary_tn.png";
+import screenshot_thumbnail from "@ubuntu_ss/thumbnails/elementary-small.png";
 
 const version_latest = "7";
 const versions_supported = "7";
@@ -34,7 +34,7 @@ const youtube_tips_playlist = "";
 ---
 
 <LinuxDistroTemplate>
-  <DistroData
+  <DistroData slot="linux-main"
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}

@@ -1,5 +1,5 @@
 ---
-import DesktopData from "@layouts/linuxHQ/DesktopData.astro";
+import DesktopData from "@layouts/linuxHQ/data/DesktopData.astro";
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktop_name = "lxde";
@@ -63,7 +63,7 @@ const info_updated = "March 1, 2025";
 ---
 
 <LinuxDesktopTemplate>
-  <DesktopData
+  <DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
