@@ -13,9 +13,18 @@ const link_homepage = "https://lxqt.org/";
 const link_code = "https://github.com/lxqt/lxqt";
 
 const install_arch = "sudo pacman -S lxqt";
+
+const install_debian_bookworm = "sudo apt install lxqt";
+const install_debian_bullseye = "sudo apt install lxqt";
+const install_debian_trixie = "sudo apt install lxqt";
+
 const install_fedora = "sudo dnf install @lxqt-desktop-environment";
+
 const install_opensuse_reference = "";
-const install_opensuse_tw_repo = "";
+const install_opensuse_tw_repo =
+  `Basic LXQT: sudo zypper in -t pattern lxqt <br /><br />
+  Complete - including more apps, LXQT: sudo zypper in -t pattern lxqt_extra`;
+
 const install_ubuntu = "sudo apt install lxqt";
 
 const requirements_hdd_space = "1.5 GB";
@@ -27,42 +36,48 @@ const screenshot_distro = "";
 import screenshot_src from "@desktop_ss/lxqt.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/lxqt-small.png";
 
-const version_arch = "1.4.0-1";
-const version_debian_buster = "30";
-const version_debian_bullseye = "31";
-const version_debian_bookworm = "32";
-const version_fedora_40 = "1.4.0-1";
-const version_fedora_41 = "1.4.0-2";
+const version_arch = "1.5.0";
 
-const latest_version = "1.5.0";
+const version_debian_bullseye = "33";
+const version_debian_bookworm = "34";
+const version_debian_trixie = "35";
 
-const version_opensuse_leap156 = "1.4.0";
-const version_opensuse_tumbleweed = "1.4.0-3";
+const version_fedora_40 = "1.5.0";
+const version_fedora_41 = "1.5.1";
+const version_fedora_42 = "1.5.1";
 
-const version_solus = "1.4.0";
+const latest_version = "1.5.1";
 
-const version_ubuntu_focal = "0.16.0-1";
-const version_ubuntu_jammy = "0.17.0-1";
-const version_ubuntu_lunar = "0.17.0-2";
+const version_opensuse_leap156 = "1.5.0";
+const version_opensuse_tumbleweed = "1.5.1";
 
-const version_linuxmint_20 = "30";
-const version_linuxmint_201 = "30.1";
-const version_linuxmint_202 = "30.2";
-const version_linuxmint_203 = "30.3";
-const version_linuxmint_21 = "31";
-const version_linuxmint_211 = "31.1";
-const version_linuxmint_212 = "31.2";
-const version_linuxmint_213 = "31.3";
-const version_linuxmint_22 = "32";
-const version_linuxmint_221 = "32.1";
+const version_solus = "1.5.1";
+
+const version_ubuntu_focal = "0.18.0-1";
+const version_ubuntu_jammy = "0.19.0-1";
+
+const version_linuxmint_20 = "33";
+const version_linuxmint_201 = "33.1";
+const version_linuxmint_202 = "33.2";
+const version_linuxmint_203 = "33.3";
+const version_linuxmint_21 = "34";
+const version_linuxmint_211 = "34.1";
+const version_linuxmint_212 = "34.2";
+const version_linuxmint_213 = "34.3";
+const version_linuxmint_22 = "35";
+const version_linuxmint_221 = "35.1";
 
 const version_neon = "N/A";
 
-const info_updated = "March 1, 2025";
+const info_updated = "April 17, 2025";
 ---
 
-<LinuxDesktopTemplate title="LXQT" keywords="LXQT, LXQT Desktop, LXQT Linux Desktop, LXQT Linux Desktop Environment, LXQT Linux Desktop Environment Information" description="LXQT is a lightweight desktop environment that is the successor to LXDE. It is designed to be fast and energy-efficient.">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate 
+  title="LXQT" 
+  keywords="LXQT, LXQT Desktop, LXQT Linux Desktop, LXQT Linux Desktop Environment, LXQT Linux Desktop Environment Information" 
+  description="LXQT is a lightweight desktop environment that is the successor to LXDE. It is designed to be fast and energy-efficient.">
+
+<DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -75,6 +90,9 @@ const info_updated = "March 1, 2025";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}
@@ -82,18 +100,18 @@ const info_updated = "March 1, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
+    version_debian_trixie={version_debian_trixie}
     version_fedora_40={version_fedora_40}
     version_fedora_41={version_fedora_41}
+    version_fedora_42={version_fedora_42}
     latest_version={latest_version}
     version_leap156={version_opensuse_leap156}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
     version_ubuntu_focal={version_ubuntu_focal}
     version_ubuntu_jammy={version_ubuntu_jammy}
-    version_ubuntu_lunar={version_ubuntu_lunar}
     version_linuxmint_20={version_linuxmint_20}
     version_linuxmint_201={version_linuxmint_201}
     version_linuxmint_202={version_linuxmint_202}

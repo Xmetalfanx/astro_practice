@@ -1,6 +1,6 @@
 ---
-import WindowManagerData from "@layouts/linuxHQ/WindowManagerData.astro";
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import WindowManagerData from "@layouts/linuxHQ/data/WindowManagerData.astro";
 
 const wm_name = "bspwm";
 const wm_title = "bspwm Window Manager";
@@ -15,22 +15,30 @@ const generalinfo_distros_that_feature = "Arch, Manjaro, Fedora, Ubuntu";
 const install_arch = "sudo pacman -S bspwm";
 const install_fedora = "sudo dnf install bspwm";
 const install_ubuntu = "sudo apt install bspwm";
+const install_debian_bullseye = "sudo apt install bspwm";
+const install_debian_bookworm = "sudo apt install bspwm";
+const install_debian_trixie = "sudo apt install bspwm";
 
 const requirements_hdd_space = "Minimal";
 const requirements_memory = "Minimal";
 const requirements_processor = "Minimal";
 
-const screenshot_distro = "Arch Linux";
-const screenshot_src = "arch/bspwm.png";
-const screenshot_thumbnail = "arch/thumbnails/bspwm_tn.png";
+const screenshot_distro = "Debian";
+
+import screenshot_src from "@desktop_ss/bspwm.png";
+import screenshot_thumbnail from "@desktop_ss/thumbnails/bspwm-small.png";
 
 const latest_version = "0.9.10";
-
 const info_updated = "March 1, 2024";
 ---
 
-<LinuxDesktopTemplate>
+<LinuxDesktopTemplate
+  title="bspwm Window Manager"
+  keywords="bspwm, window manager, tiling, x11, linux, arch, manjaro, fedora, ubuntu"
+  description="bspwm is a tiling window manager for X11 that represents windows as the leaves of a binary tree."
+>
   <WindowManagerData
+    slot="linux-main"
     wm_name={wm_name}
     wm_title={wm_title}
     generalinfo_category={generalinfo_category}
@@ -40,6 +48,9 @@ const info_updated = "March 1, 2024";
     install_arch={install_arch}
     install_fedora={install_fedora}
     install_ubuntu={install_ubuntu}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}

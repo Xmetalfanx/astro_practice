@@ -1,18 +1,45 @@
 ---
-const { theme_name, theme_title, link_homepage, generalinfo_theme_category, generalinfo_theme_toolkit, generalinfo_distros_that_feature, install_arch, install_fedora, install_ubuntu, screenshot_distro, screenshot_src, screenshot_thumbnail, latest_version, info_updated } = Astro.props;
+import "@css/global-styles.css";
+
+// Import the <Image /> component
+import { Image } from "astro:assets";
+
+const {
+  theme_name,
+  theme_title,
+  link_homepage,
+  generalinfo_theme_category,
+  generalinfo_theme_toolkit,
+  generalinfo_distros_that_feature,
+  install_arch,
+  install_fedora,
+  install_ubuntu,
+  screenshot_distro,
+  screenshot_src,
+  screenshot_thumbnail,
+  latest_version,
+  info_updated,
+} = Astro.props;
 ---
 
 <div class="theme-container">
-  <header class="theme-header">
-    <h1>{theme_title}</h1>
-    <a href={link_homepage} target="_blank" rel="noopener noreferrer">Homepage</a>
-  </header>
+  <div class="theme-header">{theme_title}</div>
+
+  <a href={link_homepage} target="_blank" rel="noopener noreferrer">
+    <p><strong>Latest Version:</strong> {latest_version}</p>
+    <p><strong>Information Updated:</strong> {info_updated}</p>
+    <div>Homepage: {link_homepage}</div>
+  </a>
+
   <section class="theme-info">
     <h2>General Information</h2>
     <ul>
       <li><strong>Category:</strong> {generalinfo_theme_category}</li>
       <li><strong>Toolkit:</strong> {generalinfo_theme_toolkit}</li>
-      <li><strong>Featured Distros:</strong> {generalinfo_distros_that_feature}</li>
+      <li>
+        <strong>Featured Distros:</strong>
+        {generalinfo_distros_that_feature}
+      </li>
     </ul>
   </section>
   <section class="theme-install">
@@ -28,46 +55,52 @@ const { theme_name, theme_title, link_homepage, generalinfo_theme_category, gene
     <h2>Screenshot</h2>
     <img src={screenshot_src} alt={`${theme_title} screenshot`} />
   </section>
-  <footer class="theme-footer">
-    <p><strong>Latest Version:</strong> {latest_version}</p>
-    <p><strong>Information Updated:</strong> {info_updated}</p>
-  </footer>
+  <div class="theme-footer"></div>
 </div>
 
-<style>
+<style lang="scss">
+  @import "src/styles/scss/mixins.scss";
   .theme-container {
+    @include bgcolor-level(2);
     font-family: Arial, sans-serif;
     padding: 20px;
-    border: 1px solid #ddd;
+    outline: 1px solid #ddd;
     border-radius: 8px;
-    /* background-color: #f9f9f9; */
-  }
-  .theme-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .theme-header h1 {
-    margin: 0;
-  }
-  .theme-info, .theme-install, .theme-requirements, .theme-screenshot {
-    margin-top: 20px;
-  }
-  .theme-info ul, .theme-install ul, .theme-requirements ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  .theme-info li, .theme-install li, .theme-requirements li {
-    margin-bottom: 10px;
-  }
-  .theme-screenshot img {
-    max-width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  .theme-footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #555;
+    margin: 2rem auto;
+
+    .theme-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .theme-info,
+    .theme-install,
+    .theme-requirements,
+    .theme-screenshot {
+      margin-top: 20px;
+
+      ul {
+        @include bgcolor-level(3);
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 8px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      img {
+        max-width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+    }
   }
 </style>

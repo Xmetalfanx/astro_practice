@@ -13,9 +13,16 @@ const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature = "Moska OS, Arch Linux";
 
 const install_arch = "sudo pacman -S moska-desktop";
+
+const install_debian_bullseye = "sudo apt install moska-desktop";
+const install_debian_bookworm = "sudo apt install moska-desktop";
+const install_debian_trixie = "sudo apt install moska-desktop";
+
 const install_fedora = "sudo dnf install moska-desktop";
+
 const install_opensuse_reference = "https://en.opensuse.org/Portal:Moska";
 const install_opensuse_tw_repo = "sudo zypper install moska-desktop";
+
 const install_ubuntu = "sudo apt install moska-desktop";
 
 const requirements_hdd_space = "2GB";
@@ -28,12 +35,14 @@ import screenshot_src from "@desktop_ss/moska.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/moska-small.png";
 
 const version_arch = "1.0.0-1";
-const version_debian_buster = "1.0.0-1";
+
 const version_debian_bullseye = "1.0.0-1";
 const version_debian_bookworm = "1.0.0-1";
+const version_debian_trixie = "1.0.0-1";
 
 const version_fedora_40 = "1.0.0-1";
 const version_fedora_41 = "1.0.0-1";
+const version_fedora_42 = "1.0.0-1";
 
 const latest_version = "1.0.0";
 
@@ -41,9 +50,9 @@ const version_opensuse_leap156 = "1.0.0-1";
 const version_opensuse_tumbleweed = "1.0.0-1";
 
 const version_solus = "1.0.0";
+
 const version_ubuntu_focal = "1.0.0-1";
 const version_ubuntu_jammy = "1.0.0-1";
-const version_ubuntu_lunar = "1.0.0-1";
 
 const version_linuxmint_20 = "1.0.0-1";
 const version_linuxmint_201 = "1.0.0-1";
@@ -60,8 +69,14 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate title="Moska" keywords="moska, moska desktop, moska os, moska linux">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate 
+  title="Moska" 
+  keywords="moska, moska desktop, moska os, moska linux"
+  description="Moska is a lightweight Linux desktop environment designed for speed and simplicity. It is based on GTK3 and is suitable for older hardware."
+>
+
+
+<DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -69,6 +84,9 @@ const info_updated = "March 1, 2025";
     link_homepage={link_homepage}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     install_fedora={install_fedora}
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
@@ -80,18 +98,18 @@ const info_updated = "March 1, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
+    version_debian_trixie={version_debian_trixie}
     version_fedora_40={version_fedora_40}
     version_fedora_41={version_fedora_41}
+    version_fedora_42={version_fedora_42}
     latest_version={latest_version}
     version_leap156={version_opensuse_leap156}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
     version_ubuntu_focal={version_ubuntu_focal}
     version_ubuntu_jammy={version_ubuntu_jammy}
-    version_ubuntu_lunar={version_ubuntu_lunar}
     version_linuxmint_20={version_linuxmint_20}
     version_linuxmint_201={version_linuxmint_201}
     version_linuxmint_202={version_linuxmint_202}

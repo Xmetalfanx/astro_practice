@@ -53,46 +53,58 @@ const icons = [
 ];
 ---
 
-<LinuxThemeTemplate>
-  <section>
-    <h1>Linux Themes</h1>
+<LinuxThemeTemplate
+  title="Linux Theming Frontpage"
+  keywords="linux, theming, themes, icons"
+  description="Explore some of the best Linux themes and icon themes available."
+>
+  <div slot="linux-main">
     <p>
-      Explore some of the best Linux themes available. Click on the theme name
-      to learn more or visit their repositories for more details.
+      Linux theming is a great way to customize your Linux desktop environment.
+      There are many themes and icon themes available for Linux that can help
+      you make your desktop look and feel the way you want. Here are some of the
+      best Linux themes and icon themes available.
     </p>
-    <ul>
-      {
-        themes.map((theme) => (
-          <li>
-            <a href={theme.link}>{theme.name}</a> -{" "}
-            <a href={theme.repo} target="_blank" rel="noopener noreferrer">
-              Repository
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+    <section>
+      <h1>Linux Themes</h1>
+      <p>
+        Explore some of the best Linux themes available. Click on the theme name
+        to learn more or visit their repositories for more details.
+      </p>
+      <ul>
+        {
+          themes.map((theme) => (
+            <li>
+              <a href={theme.link}>{theme.name}</a> -{" "}
+              <a href={theme.repo} target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
-  <section>
-    <h1>Linux Icon Themes</h1>
-    <p>
-      Explore some of the best Linux icon themes available. Click on the icon
-      theme name to learn more or visit their repositories for more details.
-    </p>
-    <ul>
-      {
-        icons.map((icon) => (
-          <li>
-            <a href={icon.link}>{icon.name}</a> -{" "}
-            <a href={icon.repo} target="_blank" rel="noopener noreferrer">
-              Repository
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+    <section>
+      <h1>Linux Icon Themes</h1>
+      <p>
+        Explore some of the best Linux icon themes available. Click on the icon
+        theme name to learn more or visit their repositories for more details.
+      </p>
+      <ul>
+        {
+          icons.map((icon) => (
+            <li>
+              <a href={icon.link}>{icon.name}</a> -{" "}
+              <a href={icon.repo} target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
 </LinuxThemeTemplate>
 <style lang="scss">
   section {
@@ -121,7 +133,6 @@ const icons = [
   }
 
   p {
-    
     margin: 1.5rem 0;
   }
 </style>

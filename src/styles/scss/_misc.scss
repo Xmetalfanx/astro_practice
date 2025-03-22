@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "functions" as *;
 
 :root {
   color-scheme: dark light;
@@ -85,12 +86,21 @@ body {
 
   a,
   a:link {
-    color: clr(accent-color);
+    color: clr(accent-color, "dark");
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: clr(accent-color, "dark");
+      color: clr(accent-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: clr(main-color, "light");
+
+      &:hover,
+      &:focus {
+        color: clr(light-color, "light");
+      }
     }
   }
 }
