@@ -10,7 +10,8 @@ const link_homepage = "https://buddiesofbudgie.org/";
 
 const generalinfo_desktop_category = "";
 const generalinfo_desktop_toolkit = "GTK3";
-const generalinfo_distros_that_feature = "Solus, Ubuntu Budgie, Fedora, Endevour";
+const generalinfo_distros_that_feature =
+  "Solus, Ubuntu Budgie, Fedora, Endevour";
 
 const install_arch = "sudo pacman -S budgie-desktop";
 const install_fedora = "sudo dnf install budgie-desktop";
@@ -61,11 +62,15 @@ const version_linuxmint_221 = "";
 const version_neon = "N/A";
 
 const info_updated = "March 1, 2024";
-
 ---
 
-<LinuxDesktopTemplate title="Budgie Desktop" keywords="budgie, desktop, linux desktop, desktop environment, budgie desktop, solus, ubuntu budgie, fedora, endeavour" description="Budgie Desktop Environment">
+<LinuxDesktopTemplate
+  title="Budgie Desktop Environment"
+  keywords="budgie, desktop, linux desktop, desktop environment, budgie desktop, solus, ubuntu budgie, fedora, endeavour"
+  description="Budgie Desktop Environment"
+>
   <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -109,4 +114,4 @@ const info_updated = "March 1, 2024";
     version_neon={version_neon}
     info_updated={info_updated}
   />
-</LinuxDistroTemplate>
+</LinuxDesktopTemplate>
