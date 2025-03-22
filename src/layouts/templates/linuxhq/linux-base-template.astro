@@ -4,11 +4,14 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
 
-const { title, keywords, description } = Astro.props;
+const { title = "" } = Astro.props;
+const appendedTitle = `LinuxHQ Section - ${title}`;
+
+const { keywords, description } = Astro.props;
 ---
 
 <BaseLayout
-  title={title}
+  title={appendedTitle}
   keywords={keywords}
   description={description}
 >
