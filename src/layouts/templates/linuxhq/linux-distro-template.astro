@@ -2,11 +2,17 @@
 import LinuxBaseTemplate from "./linux-base-template.astro";
 import DistroSidebar from "@layouts/linuxHQ/asides/distro_sidebar.astro";
 
-const { title, keywords, description } = Astro.props;
+const { title = "" } = Astro.props;
+const appendedTitle = `Linux Distribution Section - ${title}`;
+
+const { keywords, description } = Astro.props;
 ---
 
-<LinuxBaseTemplate title={title} keywords={keywords} description={description}>
-  <div class="main-section" slot="linux-container">
+<LinuxBaseTemplate 
+  title={appendedTitle}
+  keywords={keywords} 
+  description={description}>
+  <div slot="linux-container">
     <aside>
       <DistroSidebar />
     </aside>
