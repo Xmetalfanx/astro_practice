@@ -3,19 +3,21 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postcss": "postcss --verbose src/styles/global-styles.css > src/styles/final-styles.css"
+    "sass": "sass --no-source-map src/styles/index.scss src/styles/index.css",
+    "lint:styles": "stylelint 'src/**/*.scss' --fix",
+    "format:styles": "prettier --write 'src/**/*.scss'",
+    "lint:astro": "astro lint",
+    "format:astro": "astro format"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
     "astro": "^5.4.2",
     "cssnano": "^7.0.6",
-    "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.1",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.83.4",
     "stylelint": "^16.15.0",
