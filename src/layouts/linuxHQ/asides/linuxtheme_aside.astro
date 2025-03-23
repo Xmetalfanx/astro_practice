@@ -8,40 +8,67 @@ const themes = [
 ];
 
 const iconThemes = [
-  { name: "Adwaita Icon Theme", link: "/linuxHQ/theming/icon_themes/adwaita_icon_theme" },
-  { name: "Breeze Icon Theme", link: "/linuxHQ/theming/icon_themes/breeze_icon_theme" },
-  { name: "Numix Icon Theme", link: "/linuxHQ/theming/icon_themes/numix_icon_theme" },
-  { name: "Papirus Icon Theme", link: "/linuxHQ/theming/icon_themes/papirus_icon_theme" },
-  { name: "Yaru Icon Theme", link: "/linuxHQ/theming/icon_themes/yaru_icon_theme" },
+  {
+    name: "Adwaita Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/adwaita_icon_theme",
+  },
+  {
+    name: "Breeze Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/breeze_icon_theme",
+  },
+  {
+    name: "Numix Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/numix_icon_theme",
+  },
+  {
+    name: "Papirus Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/papirus_icon_theme",
+  },
+  {
+    name: "Yaru Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/yaru_icon_theme",
+  },
 ];
 ---
 
-<h2>Linux Themes</h2>
-<ul>
-  {
-    themes.map((theme) => (
-      <li>
-        <a href={theme.link}>{theme.name}</a>
-      </li>
-    ))
-  }
-</ul>
-<h2>Icon Themes</h2>
-<ul>
-  {
-    iconThemes.map((icon) => (
-      <li>
-        <a href={icon.link}>{icon.name}</a>
-      </li>
-    ))
-  }
-</ul>
+<input type="checkbox" id="themeMenu" />
+<label for="themeMenu">Linux Themes</label>
+<div class="accordion">
+  <div class="accordion-content">
+    <h2>Linux Themes</h2>
+    <ul>
+      {
+        themes.map((theme) => (
+          <li>
+            <a href={theme.link}>{theme.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
 
+<input type="checkbox" id="iconThemeMenu" />
+<label for="iconThemeMenu">Icon Themes</label>
+<div class="accordion">
+  <div class="accordion-content">
+    <h2>Icon Themes</h2>
+    <ul>
+      {
+        iconThemes.map((icon) => (
+          <li>
+            <a href={icon.link}>{icon.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
   }
 
   h2 {

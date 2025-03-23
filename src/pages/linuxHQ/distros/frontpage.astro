@@ -23,7 +23,7 @@ const distros = [
     similar_distros: "",
     target_audience: "Any/New Users",
     distro_type: "LTS - Long Term Support",
-    screenshot_src: "@ubuntu_ss/cinnamonMint.png",
+    screenshot_src: "@ubuntu_ss/mint.png",
     screenshot_thumbnail: linuxMintThumbnail,
     screenshot_desktop: "Cinnamon",
     screenshot_icon: "Mint-Y",
@@ -32,7 +32,7 @@ const distros = [
     versions_supported: "20.x, 21.x, 22.x",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "@distro_icons/linuxmint.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/linuxmint.svg",
   },
   {
     title: "Arch Linux",
@@ -56,7 +56,7 @@ const distros = [
     versions_supported: "2023.05.03, 2023.10.01",
     youtube_review_playlist: "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI",
     youtube_tips_playlist: "",
-    distro_icon: "@distro_icons/arch.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/arch.svg",
   },
   {
     title: "Ubuntu",
@@ -71,7 +71,7 @@ const distros = [
       "(many 'buntu flavors) Linux Lite, Linux Mint, Uberstudent",
     target_audience: "Any User",
     distro_type: "LTS and non-LTS",
-    screenshot_src: "@ubuntu_ss/ubuntu2010settings.png",
+    screenshot_src: "@ubuntu_ss/ubuntu.png",
     screenshot_thumbnail: ubuntuThumbnail,
     screenshot_desktop: "Gnome Shell",
     screenshot_icon: "",
@@ -80,7 +80,7 @@ const distros = [
     versions_supported: "20.04 LTS, 22.04 LTS, 24.04",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "@distro_icons/ubuntu.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/ubuntu.svg",
   },
   {
     title: "Debian",
@@ -103,7 +103,7 @@ const distros = [
     versions_supported: "11, 12",
     youtube_review_playlist: "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ",
     youtube_tips_playlist: "PLrh2y86lvcJddBni43z2PSd9H0XotKdn4",
-    distro_icon: "@distro_icons/debian.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/debian.svg",
   },
   {
     title: "Fedora",
@@ -126,7 +126,7 @@ const distros = [
     versions_supported: "37, 38, 39",
     youtube_review_playlist: "PLrh2y86lvcJeLcpMeVcMwbODBKBj8wqVm",
     youtube_tips_playlist: "",
-    distro_icon: "@distro_icons/fedora.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/fedora.svg",
   },
   {
     title: "openSUSE",
@@ -149,12 +149,16 @@ const distros = [
     versions_supported: "15.3 Leap, 15.4 Leap, Tumbleweed",
     youtube_review_playlist: "",
     youtube_tips_playlist: "",
-    distro_icon: "@distro_icons/opensuse.svg",
+    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/opensuse.svg",
   },
 ];
 ---
 
-<LinuxDistroTemplate title="Linux Distros Frontpage" keywords="linux, distros" description="Explore some of the best Linux distributions available.">
+<LinuxDistroTemplate
+  title="Linux Distros Frontpage"
+  keywords="linux, distros"
+  description="Explore some of the best Linux distributions available."
+>
   <div class="distro-container">
     {
       distros.map((distro) => (
@@ -202,11 +206,13 @@ const distros = [
               <strong>Supported Versions:</strong> {distro.versions_supported}
             </div>
           </div>
-          <Image
-            class="screenshot"
-            src={distro.screenshot_thumbnail}
-            alt={`${distro.title} screenshot`}
-          />
+          <a href={distro.screenshot_src} target="_blank">
+            <Image
+              class="screenshot"
+              src={distro.screenshot_thumbnail}
+              alt={`${distro.title} screenshot`}
+            />
+          </a>
         </section>
       ))
     }
@@ -258,10 +264,11 @@ const distros = [
         max-width: 65ch;
         line-height: 3rem;
         outline: 1px solid $accent-color;
-        padding: .5rem 1.5rem;
+        padding: 0.5rem 1.5rem;
       }
 
       .screenshot {
+        height: auto;
         margin: 0 auto;
         padding: 1rem;
         width: 100%;

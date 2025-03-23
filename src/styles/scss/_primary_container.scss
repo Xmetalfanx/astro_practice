@@ -16,13 +16,6 @@
     font-size: var(--font-size);
     }
 
-
-  // reason for this: the clr-level function, otherwise the user-agent-styles of the browser would be enough
-  // background-color: $light-color;
-  // @media (prefers-color-scheme: dark) {
-  //   background-color: $dark-color;
-  // }
-
   @media (max-width: 768px) {
     flex-flow: column wrap;
     aside {

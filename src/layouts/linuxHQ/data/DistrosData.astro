@@ -117,15 +117,17 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   </div>
 </div>
 
-<style>
+<style lang="scss">
+
+  @use "@css/scss/mixins.scss" as *;
+
   .container {
-    /* background-color: #efefef; */
-    width: 80vw;
+    @include bgcolor-level(2);
+    font-size: 1.1rem;
+    line-height: 2rem;
     margin-inline: auto;
     padding: 1rem;
-    font-size: 1.1rem;
-
-    line-height: 2rem;
+    width: 80vw;
 
     > div {
       margin: 0.5rem auto;

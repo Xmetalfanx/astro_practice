@@ -1,38 +1,41 @@
 ---
-
-// this was all created by github copilot
-// import WindowManagerData from "@layouts/linuxHQ/WindowManagerData.astro";
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import WindowManagerData from "@layouts/linuxHQ/data/WindowManagerData.astro";
 
-const wm_name = "awesome";
-const wm_title = "Awesome Window Manager";
+const wm_name = "bspwm";
+const wm_title = "bspwm Window Manager";
 
-const link_code = "https://github.com/awesomeWM/awesome";
-const link_homepage = "https://awesomewm.org/";
+const link_code = "https://github.com/baskerville/bspwm";
+const link_homepage = "https://github.com/baskerville/bspwm";
 
 const generalinfo_category = "Tiling";
 const generalinfo_toolkit = "X11";
 const generalinfo_distros_that_feature = "Arch, Manjaro, Fedora, Ubuntu";
 
-const install_arch = "sudo pacman -S awesome";
-const install_fedora = "sudo dnf install awesome";
-const install_ubuntu = "sudo apt install awesome";
+const install_arch = "sudo pacman -S bspwm";
+const install_fedora = "sudo dnf install bspwm";
+const install_ubuntu = "sudo apt install bspwm";
 
 const requirements_hdd_space = "Minimal";
 const requirements_memory = "Minimal";
 const requirements_processor = "Minimal";
 
-const screenshot_distro = "Arch Linux";
-const screenshot_src = "arch/awesome.png";
-const screenshot_thumbnail = "arch/thumbnails/awesome_tn.png";
+const screenshot_distro = "Debian";
 
-const latest_version = "4.3";
+import screenshot_src from "@desktop_ss/bspwm.png";
+import screenshot_thumbnail from "@desktop_ss/thumbnails/bspwm-small.png";
 
+const latest_version = "0.9.10";
 const info_updated = "March 1, 2024";
 ---
 
-<LinuxDesktopTemplate>
+<LinuxDesktopTemplate
+  title="bspwm Window Manager"
+  keywords="bspwm, window manager, tiling, x11, linux, arch, manjaro, fedora, ubuntu"
+  description="bspwm is a tiling window manager for X11 that represents windows as the leaves of a binary tree."
+>
   <WindowManagerData
+    slot="linux-main"
     wm_name={wm_name}
     wm_title={wm_title}
     generalinfo_category={generalinfo_category}

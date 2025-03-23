@@ -1,36 +1,41 @@
 ---
-import WindowManagerData from "@layouts/linuxHQ/WindowManagerData.astro";
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import WindowManagerData from "@layouts/linuxHQ/data/WindowManagerData.astro";
 
-const wm_name = "bspwm";
-const wm_title = "bspwm Window Manager";
+const wm_name = "awesome";
+const wm_title = "Awesome Window Manager";
 
-const link_code = "https://github.com/baskerville/bspwm";
-const link_homepage = "https://github.com/baskerville/bspwm";
+const link_code = "https://github.com/awesomeWM/awesome";
+const link_homepage = "https://awesomewm.org/";
 
 const generalinfo_category = "Tiling";
 const generalinfo_toolkit = "X11";
 const generalinfo_distros_that_feature = "Arch, Manjaro, Fedora, Ubuntu";
 
-const install_arch = "sudo pacman -S bspwm";
-const install_fedora = "sudo dnf install bspwm";
-const install_ubuntu = "sudo apt install bspwm";
+const install_arch = "sudo pacman -S awesome";
+const install_fedora = "sudo dnf install awesome";
+const install_ubuntu = "sudo apt install awesome";
 
 const requirements_hdd_space = "Minimal";
 const requirements_memory = "Minimal";
 const requirements_processor = "Minimal";
 
-const screenshot_distro = "Arch Linux";
-const screenshot_src = "arch/bspwm.png";
-const screenshot_thumbnail = "arch/thumbnails/bspwm_tn.png";
+const screenshot_distro = "";
+import screenshot_src from "@desktop_ss/awesomewm.png";
+import screenshot_thumbnail from "@desktop_ss/thumbnails/awesomewm-small.png";
 
-const latest_version = "0.9.10";
+const latest_version = "4.3";
 
 const info_updated = "March 1, 2024";
 ---
 
-<LinuxDesktopTemplate>
+<LinuxDesktopTemplate
+  title="Awesome Window Manager"
+  keywords="awesome, window manager, tiling, x11, linux, arch, manjaro, fedora, ubuntu"
+  description="Awesome is a highly configurable tiling window manager for X11, designed to be fast and extensible."
+>
   <WindowManagerData
+    slot="linux-main"
     wm_name={wm_name}
     wm_title={wm_title}
     generalinfo_category={generalinfo_category}

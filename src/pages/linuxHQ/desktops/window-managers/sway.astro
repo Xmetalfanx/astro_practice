@@ -1,6 +1,6 @@
 ---
-import WindowManagerData from "@layouts/linuxHQ/WindowManagerData.astro";
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import WindowManagerData from "@layouts/linuxHQ/data/WindowManagerData.astro";
 
 const wm_name = "sway";
 const wm_title = "Sway Window Manager";
@@ -29,8 +29,13 @@ const latest_version = "1.6.1";
 const info_updated = "March 1, 2024";
 ---
 
-<LinuxDesktopTemplate>
+<LinuxDesktopTemplate
+  title="Sway Window Manager"
+  keywords="sway, window manager, tiling, wayland, linux, arch, manjaro, fedora, ubuntu"
+  description="Sway is a tiling Wayland compositor and a drop-in replacement for the i3 window manager."
+>
   <WindowManagerData
+    slot="linux-main"
     wm_name={wm_name}
     wm_title={wm_title}
     generalinfo_category={generalinfo_category}

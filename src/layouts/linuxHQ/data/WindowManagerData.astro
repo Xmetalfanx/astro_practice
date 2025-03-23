@@ -1,0 +1,329 @@
+---
+import "@css/global-styles.css";
+
+// Import the <Image /> component
+import { Image } from "astro:assets";
+
+const wm_name = Astro.props.wm_name;
+const wm_title = Astro.props.wm_title;
+const generalinfo_wm_category = Astro.props.generalinfo_wm_category;
+const generalinfo_wm_toolkit = Astro.props.generalinfo_wm_toolkit;
+const generalinfo_distros_that_feature =
+  Astro.props.generalinfo_distros_that_feature;
+
+const link_homepage = Astro.props.link_homepage;
+// the idea is to the code ... labeled code in CASE its not on github/gitlabs
+const link_code = Astro.props.links_code;
+
+const install_arch = Astro.props.install_arch;
+const install_fedora = Astro.props.install_fedora;
+const install_opensuse_reference = Astro.props.install_opensuse_reference;
+const install_opensuse_tw_repo = Astro.props.install_opensuse_tw_repo;
+const install_ubuntu = Astro.props.install_ubuntu;
+const requirements_hdd_space = Astro.props.requirements_hdd_space;
+const requirements_memory = Astro.props.requirements_memory;
+const requirements_processor = Astro.props.requirements_processor;
+const screenshot_distro = Astro.props.screenshot_distro;
+const screenshot_src = Astro.props.screenshot_src;
+const screenshot_thumbnail = Astro.props.thumbnail;
+const version_arch = Astro.props.version_arch;
+const version_debian_buster = Astro.props.version_debian_buster;
+const version_debian_bullseye = Astro.props.version_debian_bullseye;
+const version_debian_bookwoom = Astro.props.version_debian_bookworm;
+const version_fedora_40 = Astro.props.version_fedora_40;
+const version_fedora_41 = Astro.props.version_fedora_41;
+const latest_version = Astro.props.version_latest_version;
+const version_opensuse_leap156 = Astro.props.version_leap156;
+const version_opensuse_tumbleweed = Astro.props.version_tumblewood;
+const version_solus = Astro.props.version_solus;
+const version_ubuntu_focal = Astro.props.version_ubuntu_focal;
+const version_ubuntu_jammy = Astro.props.version_ubuntu_jammy;
+const version_ubuntu_lunar = Astro.props.version_ubuntu_lunar;
+const version_linuxmint_20 = Astro.props.version_linuxmint_20;
+const version_linuxmint_201 = Astro.props.version_linuxmint_201;
+const version_linuxmint_202 = Astro.props.version_linuxmint_202;
+const version_linuxmint_203 = Astro.props.version_linuxmint_203;
+const version_linuxmint_21 = Astro.props.version_linuxmint_21;
+const version_linuxmint_211 = Astro.props.version_linuxmint_211;
+const version_linuxmint_212 = Astro.props.version_linuxmint_212;
+const version_linuxmint_213 = Astro.props.version_linuxmint_213;
+const version_linuxmint_22 = Astro.props.version_linuxmint_22;
+const version_linuxmint_221 = Astro.props.version_linuxmint_221;
+const version_neon = Astro.props.version_neon;
+const info_updated = Astro.props.info_updated;
+
+---
+
+<div class="wm_container">
+  <div class="wm_title">{wm_title}</div>
+  <div class="info_and_screenshot_container">
+    <div class="generalinfo">
+      <div>
+        <span class="fw-bold">Window Manager Homepage: </span>
+        <a href={link_homepage}>
+          {link_homepage}
+        </a>
+      </div>
+      <div>
+        <span class="fw-bold">Source Code/Issue Tracker: </span>{link_code}
+      </div>
+
+      <div>
+        <span class="fw-bold">Window Manager Category: </span>{
+          generalinfo_wm_category
+        }
+      </div>
+      <div>
+        <span class="fw-bold">Toolkit/WM Name: </span>{
+          generalinfo_wm_toolkit
+        }
+      </div>
+
+      <div>
+        Distros that Feature {wm_title}: {generalinfo_distros_that_feature}
+      </div>
+    </div>
+
+    <div class="screenshot">
+      <a href={screenshot_thumbnail} target="_blank">
+        <Image src={screenshot_src} alt="test" width={500} />
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <span class="fw-bold">Last Date Info was updated:</span>
+    {info_updated}
+  </div>
+
+  <div>
+    <span class="fw-bold">Latest Version: </span>
+    {latest_version}
+  </div>
+  <div class="versions_container">
+    <!-- Arch -->
+    <div class="sub_version_container">
+      <span class="distro-name">Arch Version:</span>
+      {version_arch}
+    </div>
+
+    <!-- Debian -->
+    <div class="sub_version_container">
+      <div>
+        <span class="distro-name">Buster Version:</span>
+        {version_debian_buster}
+      </div>
+      <div>
+        <span class="distro-name">Bullseye Version:</span>
+        {version_debian_bullseye}
+      </div>
+      <div>
+        <span class="distro-name">Bookworm Version:</span>
+        {version_debian_bookwoom}
+      </div>
+    </div>
+
+    <!-- Fedora  -->
+    <div class="sub_version_container">
+      <div>
+        <span class="distro-name">Fedora 40 Version:</span>
+        {version_fedora_40}
+      </div>
+      <div>
+        <span class="distro-name">Fedora 41 Version:</span>
+        {version_fedora_41}
+      </div>
+    </div>
+
+    <!-- OpenSUSE -->
+    <div class="sub_version_container">
+      <div>
+        <span class="distro-name">Leap 15.6 Version:</span>
+        {version_opensuse_leap156}
+      </div>
+      <div>
+        <span class="distro-name">Tumbleweed Version:</span>
+        {version_opensuse_tumbleweed}
+      </div>
+    </div>
+
+    <!-- Solus -->
+    <div class="sub_version_container">
+      <span class="distro-name">Solus Version:</span>
+      {version_solus}
+    </div>
+
+    <!-- Ubuntu based -->
+    <div>
+      <!-- Ubuntu -->
+      <div class="sub_version_container">
+        <span class="distro-name">Ubuntu Based Versions</span>
+        <div>
+          <span class="distro-name">Focal Version:</span>
+          {version_ubuntu_focal}
+        </div>
+        <div>
+          <span class="distro-name">Jammy Version:</span>
+          {version_ubuntu_jammy}
+        </div>
+        <div>
+          <span class="distro-name">Lunar Version:</span>
+          {version_ubuntu_lunar}
+        </div>
+      </div>
+
+      <!-- Linux Mint -->
+      <div class="sub_version_container">
+        <span class="distro-name">Linux Mint Versions</span>
+        <div>
+          <span class="distro-name">Linux Mint 20.0:</span>
+          {version_linuxmint_20}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 20.1:</span>
+          {version_linuxmint_201}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 20.2:</span>
+          {version_linuxmint_202}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 21.0:</span>
+          {version_linuxmint_21}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 21.1:</span>
+          {version_linuxmint_211}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 21.2:</span>
+          {version_linuxmint_212}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 21.3:</span>
+          {version_linuxmint_213}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 22.0:</span>
+          {version_linuxmint_22}
+        </div>
+        <div>
+          <span class="distro-name">Linux Mint 22.1:</span>
+          {version_linuxmint_221}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Install -->
+  <div class="install_container">
+    <h3>Installing</h3>
+    <div>
+      <span class="distro-name">Arch:</span>
+      <span class="code">{install_arch}</span>
+    </div>
+    <div>
+      <span class="distro-name">Fedora:</span>
+      <span class="code">{install_fedora}</span>
+    </div>
+    <div>
+      <span class="distro-name">OpenSUSE Tumbleweed:</span>
+      <span class="code">{install_opensuse_tw_repo}</span>
+    </div>
+    <div>
+      <span class="distro-name">Ubuntu:</span>
+      <span class="code">{install_ubuntu}</span>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "@css/scss/mixins" as *;
+
+  .wm_container {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    padding: 1.6rem;
+
+    @include bgcolor-level(2);
+
+    .wm_title {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    // Info and Screenshot Container
+    .info_and_screenshot_container {
+      display: flex;
+      justify-content: space-between;
+      line-height: 2rem;
+
+      // General Info
+      .generalinfo {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 1rem 0;
+      }
+    }
+
+    // Versions (overall) container
+    .versions_container {
+      display: flex;
+      flex-flow: row wrap;
+
+      // Sub Version Container - this is say for each distro base "section"
+      .sub_version_container {
+        width: clamp(300px, 30%, 100%);
+        margin: 2rem 0;
+        outline: 1px #333333 solid;
+        margin: 1rem;
+        padding: 1rem;
+
+        @include bgcolor-level(3);
+
+        .distro-name {
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+
+    // Install Container
+    .install_container {
+      outline: 1px #333333 solid;
+      margin: 2rem 1rem;
+      padding: 1rem;
+
+      @include bgcolor-level(3);
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+      }
+    }
+
+  }
+
+  // to make code look nice
+  .code {
+    //background-color: #000000;
+    background-color: var(--dark-color);
+    
+    color: var(--light-color);
+
+    font-family: monospace;
+    font-size: 1.2rem;
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 1rem;
+  }
+
+  // why is this outside, here ?
+  .sub_section_container {
+    outline: 1px #333333 solid;
+    margin: 2rem 1rem;
+    padding: 1rem;
+  }
+</style>
