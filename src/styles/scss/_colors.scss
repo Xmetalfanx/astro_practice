@@ -15,7 +15,7 @@ $colors: (
   main-color: (
     base: $main-color,
     light: color.adjust($main-color, $lightness: $lighten),
-    dark: color.adjust($main-color, $lightness: $darken),
+    dark: color.adjust($main-color, $lightness: $darken, $saturation: -10%),
   ),
   accent-color: (
     base: $accent-color,

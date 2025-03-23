@@ -121,7 +121,7 @@
           display: flex;
           justify-content: space-around;
           margin: 1.5rem 0;
-        
+
           a {
             //color: var(--accent-color);
             color: clr(accent-color, "dark");
@@ -156,9 +156,11 @@
       }
 
       @media (prefers-color-scheme: dark) {
-          .git-group {
-            box-shadow: 2px 2px 10px #FFF;
+        .git-group {
+          i {
+            color: clr(accent-color, light);
           }
+        }
       }
     }
   }
