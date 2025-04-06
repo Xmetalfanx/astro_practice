@@ -24,13 +24,12 @@ const moreinfo_similar_distros = Astro.props.moreinfo_similar_distros;
 const moreinfo_target_audience = Astro.props.moreinfo_target_audience;
 
 const screenshot_desktop = Astro.props.screenshot_desktop;
-const screenshot_src = typeof Astro.props.screenshot_src === 'string' 
-  ? Astro.props.screenshot_src 
-  : Astro.props.screenshot_src?.url || ''; // Fallback to extract URL if it's an object
 
 const screenshot_icon = Astro.props.screenshot_icon;
 const screenshot_theme = Astro.props.screenshot_theme;
 const screenshot_thumbnail = Astro.props.screenshot_thumbnail;
+const screenshot_src = Astro.props.screenshot_src; // Added new prop
+
 
 const youtube_review_playlist = Astro.props.youtube_review_playlist;
 const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
@@ -97,13 +96,17 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 
     <div class="screenshot-container">
       <a href={screenshot_src} target="_blank">
-        <Image src={screenshot_thumbnail} alt='{distro_title} screenshot' width={600} />
-      </a>      
-  
-    <div>
-      <div>Screenshot Desktop: {screenshot_desktop}</div>
-      <div>Screenshot Theme: {screenshot_theme}</div>
-    </div>
+        <!-- Added link to full-sized screenshot -->
+        <Image
+          src={screenshot_thumbnail}
+          alt="{distro_title} screenshot"
+          width={600}
+        />
+      </a>
+      <div>
+        <div>Screenshot Desktop: {screenshot_desktop}</div>
+        <div>Screenshot Theme: {screenshot_theme}</div>
+      </div>
     </div>
   </div>
 
@@ -115,19 +118,11 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
     />
 
     <!--Youtube Tips Playlist  -->
-    <YouTube 
-      yt-src={youtube_tips_playlist} 
-      yt_title="Youtube Tips Playlist" 
-    />
+    <YouTube yt-src={youtube_tips_playlist} yt_title="Youtube Tips Playlist" />
   </div>
 </div>
 
-<script>
-  console.log("screenshot_src:", {screenshot_src});
-</script>
-
 <style lang="scss">
-
   @use "@css/scss/mixins.scss" as *;
 
   .info-title {
