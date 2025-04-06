@@ -10,10 +10,10 @@ const generalinfo_desktop_toolkit = "";
 const link_source = "n/a";
 const link_homepage = "https://lxde.org/";
 const link_code = "https://github.com/lxde/lxde";
-const generalinfo_distros_that_feature = "Lubuntu, LXLE";
+const generalinfo_distros_that_feature = "(in maintance mode in many distros, LXQT is prefered), Lubuntu, LXLE";
 
 const install_arch = "sudo pacman -S lxde-common lxsession";
-const install_fedora = "";
+const install_fedora = "sudo dnf install @lxde-desktop";
 const install_opensuse_reference =
   '<a href="https://en.opensuse.org/LXDE_repositories">LXDE Repos for Suse</a>';
 const install_opensuse_tw_repo = "";
@@ -63,8 +63,13 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate title="LXDE" keywords="LXDE, LXDE Desktop, LXDE Linux">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate 
+  title="LXDE" 
+  keywords="LXDE, LXDE Desktop, LXDE Linux"
+  description="LXDE is a lightweight desktop environment for Linux, (LXDE is in maintance mode in many distros, LXQT is prefered)"
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
