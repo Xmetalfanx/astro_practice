@@ -18,7 +18,6 @@ requirements_processor={requirements_processor}
 screenshots_distro={screenshots_distro}
 screenshots_src={screenshots_src}
 version_arch={version_arch}
-version_debian_buster={version_debian_buster}
 version_debian_bullseye={version_debian_bullseye}
 version_debian_bookwoom={version_debian_bookwoom}
 version_fedora_38={version_fedora_38}

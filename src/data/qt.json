@@ -31,7 +31,6 @@ const generalinfo_distros_that_feature": "Kubuntu, KDE Neon, Arch, OpenSuse, Fed
 
 "version_arch": "5.27.10-1",
         
-"version_debian_buster": "5.14.5.1-1",
 "version_debian_bullseye": "5.20.5-4+deb11u1",
 "version_debian_bookworm": "5.27.5-2"
 

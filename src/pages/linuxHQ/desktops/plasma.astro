@@ -10,7 +10,12 @@ const generalinfo_desktop_category = "heavyweight";
 const generalinfo_distros_that_feature =
   "Kubuntu, KDE Neon, Arch, OpenSuse, Fedora";
 const generalinfo_desktop_toolkit = "";
+
 const install_arch = "sudo pacman -S kde OR sudo pacman kde-meta";
+
+const install_debian = "sudo apt install plasma-desktop";
+
+
 const install_fedora = "sudo dnf group install kde-desktop-environment";
 
 const install_opensuse_tw_repo = "sudo zypper install -t pattern kde kde_plasma";
@@ -31,7 +36,6 @@ import screenshot_thumbnail from "@desktop_ss/thumbnails/plasma-small.png";
 
 const version_arch = "5.27.11-1";
 
-const version_debian_buster = "5.14.5.1-2";
 const version_debian_bullseye = "5.20.5-5+deb11u2";
 const version_debian_bookworm = "5.27.5-3";
 
@@ -65,7 +69,10 @@ const version_neon = "5.27.11";
 const info_updated = "March 1, 2024";
 ---
 
-<LinuxDesktopTemplate title="Plasma/KDE" keywords="KDE, Plasma, KDE Plasma, KDE Desktop, KDE Plasma Desktop, KDE Plasma Desktop Environment, KDE">
+<LinuxDesktopTemplate 
+  title="Plasma/KDE" 
+  keywords="KDE, Plasma, KDE Plasma, KDE Desktop, KDE Plasma Desktop, KDE Plasma Desktop Environment, KDE"
+  description="KDE Plasma is a free and open-source desktop environment for Linux-based operating systems. It is known for its flexibility, customization options, and modern design. KDE Plasma provides a visually appealing and user-friendly interface, making it suitable for both casual users and advanced Linux enthusiasts.">
   <DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
@@ -78,13 +85,13 @@ const info_updated = "March 1, 2024";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
+    install_debian={install_debian}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}
     screenshot_distro={screenshot_distro}
     screenshot_src={screenshot_src}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
     version_fedora_40={version_fedora_40}

@@ -14,6 +14,9 @@ const generalinfo_distros_that_feature =
   "Solus, Ubuntu Budgie, Fedora, Endevour";
 
 const install_arch = "sudo pacman -S budgie-desktop";
+
+const install_debian = "sudo apt install budgie-desktop";
+
 const install_fedora = "sudo dnf install budgie-desktop";
 
 const install_opensuse_reference = "";
@@ -22,6 +25,7 @@ const install_opensuse_tw_repo = "";
 
 const install_mint = "N/A";
 const install_ubuntu = "sudo apt install budgie-desktop";
+
 
 const requirements_hdd_space = "";
 const requirements_memory = "";
@@ -33,7 +37,6 @@ import screenshot_src from "@desktop_ss/budgie.avif";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/budgie-small.avif";
 
 const version_arch = "10.9.1-1";
-const version_debian_buster = "10.5.2-4";
 const version_debian_bullseye = "10.5.2-4";
 const version_debian_bookworm = "10.7.1-1";
 const version_fedora_40 = "";
@@ -79,6 +82,7 @@ const info_updated = "March 1, 2024";
     link_code={link_code}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
+    install_debian_={install_debian}
     install_fedora={install_fedora}
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
@@ -90,7 +94,6 @@ const info_updated = "March 1, 2024";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
     version_fedora_40={version_fedora_40}

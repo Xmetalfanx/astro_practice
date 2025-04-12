@@ -206,7 +206,6 @@ install_ubuntu
       "versions": {
         "arch": "1.26.2-1",
         "debian": {
-          "busterVersion": "1.20.0+5",
           "bullseyeVersion": "1.24.0+4",
           "bookwormVersion": "1.26.0+1"
         },
@@ -274,7 +273,6 @@ install_ubuntu
       "versions": {
         "arch": "44.0-1",
         "debian": {
-          "busterVersion": "3.30+1",
           "bullseyeVersion": "3.38+3",
           "bookwormVersion": "43+1"
         },
@@ -343,7 +341,6 @@ install_ubuntu
       "versions": {
         "arch": "4.18.0-2",
         "debian": {
-          "busterVersion": "4.12.5-1",
           "bullseyeVersion": "4.16.1-1",
           "bookwormVersion": "4.18.0-1"
         },
@@ -412,7 +409,6 @@ install_ubuntu
       "versions": {
         "arch": "5.27.10-1",
         "debian": {
-          "busterVersion": "5.14.5.1-1",
           "bullseyeVersion": "5.20.5-4+deb11u1",
           "bookwormVersion": "5.27.5-2"
         },
@@ -477,7 +473,6 @@ install_ubuntu
       "versions": {
         "arch": "1.4.0-1",
         "debian": {
-          "busterVersion": "29",
           "bookwormVersion": "31",
           "bullseyeVersion": "30"
         },
@@ -540,7 +535,6 @@ install_ubuntu
       "versions": {
         "arch": "3.6.1-10",
         "debian": {
-          "busterVersion": "3.6.1-8",
           "bullseyeVersion": "3.6.1-9",
           "bookwormVersion": "3.6.1-10"
         },

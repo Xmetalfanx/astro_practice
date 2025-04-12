@@ -27,7 +27,6 @@ const screenshot_distro = Astro.props.screenshot_distro;
 const screenshot_src = Astro.props.screenshot_src;
 const screenshot_thumbnail = Astro.props.thumbnail;
 const version_arch = Astro.props.version_arch;
-const version_debian_buster = Astro.props.version_debian_buster;
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
 const version_fedora_40 = Astro.props.version_fedora_40;
@@ -109,10 +108,6 @@ const info_updated = Astro.props.info_updated;
 
     <!-- Debian -->
     <div class="sub_version_container">
-      <div>
-        <span class="distro-name">Buster Version:</span>
-        {version_debian_buster}
-      </div>
       <div>
         <span class="distro-name">Bullseye Version:</span>
         {version_debian_bullseye}

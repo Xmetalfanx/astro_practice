@@ -13,6 +13,9 @@ const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature = "elementary OS";
 
 const install_arch = "sudo pacman -S pantheon";
+
+const install_debian = "sudo apt install pantheon-desktop";
+
 const install_fedora = "sudo dnf install pantheon-desktop";
 
 const install_opensuse_reference = "";
@@ -31,9 +34,10 @@ import screenshot_src from "@desktop_ss/pantheon.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/pantheon-small.png";
 
 const version_arch = "6.1.0-1";
-const version_debian_buster = "5.1.0-4";
+
 const version_debian_bullseye = "5.1.0-4";
 const version_debian_bookworm = "6.0.0-1";
+
 const version_fedora_40 = "6.1.0-1";
 const version_fedora_41 = "6.1.0-1";
 
@@ -62,8 +66,11 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate title="Pantheon" keywords="pantheon, desktop, linux desktop, elementary OS desktop, pantheon desktop, pantheon linux desktop">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate title="Pantheon" 
+keywords="pantheon, desktop, linux desktop, elementary OS desktop, pantheon desktop, pantheon linux desktop"
+description="Pantheon is a desktop environment designed for elementary OS, known for its simplicity and elegance. It features a clean and modern interface, with a focus on usability and aesthetics. Pantheon includes a variety of applications and tools that are tightly integrated with the desktop environment, providing a seamless user experience. It is built on top of the GTK toolkit and is designed to be lightweight and efficient, making it suitable for both new and experienced Linux users.">
+
+<DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -75,6 +82,7 @@ const info_updated = "March 1, 2025";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
+    install_debian_bullseye={install_debian}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}
@@ -82,7 +90,6 @@ const info_updated = "March 1, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
     version_fedora_40={version_fedora_40}

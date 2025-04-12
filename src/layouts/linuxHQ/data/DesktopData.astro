@@ -16,6 +16,7 @@ const link_homepage = Astro.props.link_homepage;
 const link_code = Astro.props.links_code;
 
 const install_arch = Astro.props.install_arch;
+const install_debian = Astro.props.install_debian;
 const install_fedora = Astro.props.install_fedora;
 const install_opensuse_reference = Astro.props.install_opensuse_reference;
 const install_opensuse_tw_repo = Astro.props.install_opensuse_tw_repo;
@@ -27,7 +28,6 @@ const screenshot_distro = Astro.props.screenshot_distro;
 const screenshot_src = Astro.props.screenshot_src;
 const screenshot_thumbnail = Astro.props.thumbnail;
 const version_arch = Astro.props.version_arch;
-const version_debian_buster = Astro.props.version_debian_buster;
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
 const version_fedora_40 = Astro.props.version_fedora_40;
@@ -110,15 +110,11 @@ const info_updated = Astro.props.info_updated;
     <!-- Debian -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Buster Version:</span>
-        {version_debian_buster}
-      </div>
-      <div>
-        <span class="distro-name">Bullseye Version:</span>
+        <span class="distro-name">Debian 11 - Bullseye Version:</span>
         {version_debian_bullseye}
       </div>
       <div>
-        <span class="distro-name">Bookworm Version:</span>
+        <span class="distro-name">Debian 12 (current stable) - Bookworm Version:</span>
         {version_debian_bookwoom}
       </div>
     </div>
@@ -222,6 +218,11 @@ const info_updated = Astro.props.info_updated;
       <span class="distro-name">Arch:</span>
       <span class="code">{install_arch}</span>
     </div>
+    <div>
+      <span class="distro-name">Debian:</span>
+      <span class="code">{install_debian}</span>
+
+
     <div>
       <span class="distro-name">Fedora:</span>
       <span class="code">{install_fedora}</span>

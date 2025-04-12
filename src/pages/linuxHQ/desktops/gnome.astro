@@ -13,9 +13,14 @@ const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature = "Ubuntu, Fedora, Solus, OpenSuse";
 
 const install_arch = "";
+
+const install_debian = "sudo apt install gnome";
+
 const install_fedora = "";
+
 const install_opensuse_reference = "";
 const install_opensuse_tw_repo = "";
+
 const install_mint = "";
 const install_ubuntu = "";
 
@@ -27,9 +32,8 @@ const screenshot_distro = "Ubuntu 24.04";
 import screenshot_src from "@desktop_ss/gnome.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/gnome-small.png";
 
-
 const version_arch = "45.0-1";
-const version_debian_buster = "3.30+2";
+
 const version_debian_bullseye = "3.38+4";
 const version_debian_bookworm = "44+1";
 
@@ -60,8 +64,13 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate title="Gnome" keywords="Gnome, Gnome Desktop, Gnome Linux">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate
+  title="Gnome"
+  keywords="Gnome, Gnome Desktop, Gnome Linux"
+  description="Gnome is a free and open-source desktop environment for Linux and other Unix-like operating systems. It is known for its simplicity, elegance, and user-friendly interface."
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     link_homepage={link_homepage}
@@ -69,6 +78,7 @@ const info_updated = "March 1, 2025";
     generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
+    install_debian={install_debian}
     install_fedora={install_fedora}
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
@@ -80,7 +90,6 @@ const info_updated = "March 1, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
     version_fedora_40={version_fedora_40}

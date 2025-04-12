@@ -13,6 +13,7 @@ const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature = "Moska OS, Arch Linux";
 
 const install_arch = "sudo pacman -S moska-desktop";
+const install_debian = "sudo apt install moska-desktop";
 const install_fedora = "sudo dnf install moska-desktop";
 const install_opensuse_reference = "https://en.opensuse.org/Portal:Moska";
 const install_opensuse_tw_repo = "sudo zypper install moska-desktop";
@@ -28,7 +29,7 @@ import screenshot_src from "@desktop_ss/moska.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/moska-small.png";
 
 const version_arch = "1.0.0-1";
-const version_debian_buster = "1.0.0-1";
+
 const version_debian_bullseye = "1.0.0-1";
 const version_debian_bookworm = "1.0.0-1";
 
@@ -73,6 +74,7 @@ const info_updated = "March 1, 2025";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
+    install_debian_bullseye={install_debian}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}
@@ -80,7 +82,6 @@ const info_updated = "March 1, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_buster={version_debian_buster}
     version_debian_bullseye={version_debian_bullseye}
     version_debian_bookwoom={version_debian_bookworm}
     version_fedora_40={version_fedora_40}
