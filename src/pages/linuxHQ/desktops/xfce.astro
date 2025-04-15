@@ -23,7 +23,9 @@ const install_fedora = "sudo dnf groupinstall xfce-desktop";
 
 const install_opensuse_reference = "";
 const install_opensuse_repoleap156 = "";
-const install_opensuse_tw_repo = "";
+const install_opensuse_tw_repo = `Basic XFCE: sudo zypper in -t pattern xfce
+
+Complete XFCE: sudo zypper in -t pattern xfce xfce_basic`;
 
 const install_mint = "";
 const install_ubuntu = "sudo apt install xfce xfce-goodies";
@@ -91,7 +93,6 @@ const info_updated = "March 1, 2025";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
-    install_debian={install_debian}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}

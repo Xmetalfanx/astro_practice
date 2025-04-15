@@ -19,8 +19,10 @@ const install_debian_trixie  ="sudo apt install plasma-desktop";
 
 const install_fedora = "sudo dnf group install kde-desktop-environment";
 
-const install_opensuse_tw_repo = "sudo zypper install -t pattern kde kde_plasma";
 const install_opensuse_reference = "https://en.opensuse.org/SDB:KDE_installation";
+const install_opensuse_tw_repo = 
+  `Basic Plasma: sudo zypper in -t pattern kde kde_plasma
+   Minimal Plasma: sudo zypper in -t pattern kde_plasma`;
 
 const install_ubuntu = "sudo apt install plasma-desktop";
 const install_mint =

@@ -22,7 +22,11 @@ const install_fedora = "sudo dnf install @lxde-desktop";
 
 const install_opensuse_reference =
   '<a href="https://en.opensuse.org/LXDE_repositories">LXDE Repos for Suse</a>';
-const install_opensuse_tw_repo = "";
+const install_opensuse_tw_repo = 
+  `Basic sudo zypper in -t pattern lxde
+
+  minimal LXDE: sudo zypper in lxde-common lxde-session` ;
+
 const install_ubuntu = "sudo apt install lxde";
 
 const requirements_hdd_space = "6GB Minimum";

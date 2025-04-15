@@ -24,7 +24,9 @@ const install_fedora = "sudo dnf groupinstall mate-desktop mate-applications";
 const install_opensuse_reference =
   "https://en.opensuse.org/Portal:MATE/Install";
 const install_opensuse_tw_repo =
-  "zypper ar -r http://download.opensuse.org/repositories/X11:/MATE:/Current/openSUSE_Tumbleweed/X11:MATE:Current.repo";
+  `Basic MATE: sudo zypper in -t pattern mate
+
+  Complete MATE: sudo zypper in -t pattern mate mate_extra `;
 
 const install_mint = "sudo apt install mint-meta-mate";
 const install_ubuntu = "sudo apt install mate-desktop-environment";

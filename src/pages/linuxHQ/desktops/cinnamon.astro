@@ -24,7 +24,9 @@ const install_fedora = "sudo dnf groupinstall cinnamon-desktop";
 const install_opensuse_reference =
   '<a href="https://en.opensuse.org/Portal:Cinnamon"target="_blank"> Install Cinnamon on OpenSuse </a>';
 const install_opensuse_tw_repo =
-  "zypper ref && zypper in -y cinnamon cinnamon-screensaver";
+  `Basic Cinnamon: sudo zypper in -t pattern cinnamon
+  
+  Full Cinnamon: sudo zypper in -t pattern cinnamon cinnamon_extra`;
 
 const install_mint = "sudo apt install mint-meta-cinnamon";
 const install_ubuntu = "cinnamon-desktop-environment";
