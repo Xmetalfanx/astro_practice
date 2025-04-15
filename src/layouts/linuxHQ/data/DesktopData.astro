@@ -246,7 +246,9 @@ const info_updated = Astro.props.info_updated;
     </div>
     <div>
       <span class="distro-name">OpenSUSE Tumbleweed:</span>
-      <span class="code">{install_opensuse_tw_repo}</span>
+      <span class="code" set:html={install_opensuse_tw_repo}>
+        
+      </span>
     </div>
     <div>
       <span class="distro-name">Ubuntu:</span>
