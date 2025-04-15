@@ -14,15 +14,18 @@ const generalinfo_distros_that_feature = "Bodhi Linux, Elive";
 
 const install_arch = "sudo pacman -S enlightenment";
 
-const install_debian = "sudo apt install enlightenment";
+const install_debian_bookworm  = "sudo apt install enlightenment";
+const install_debian_bullseye  = "sudo apt install enlightenment";
+const install_debian_trixie  = "sudo apt install enlightenment";
 
 const install_fedora = "sudo dnf install enlightenment";
 
 const install_opensuse_reference = "https://en.opensuse.org/Portal:Enlightenment";
 const install_opensuse_tw_repo = "sudo zypper install enlightenment";
 
-const install_ubuntu = "sudo apt install enlightenment";
+Possible additions: sudo zypper in terminology rage`;
 
+const install_ubuntu = "sudo apt install enlightenment";
 
 const requirements_hdd_space = "2GB";
 const requirements_memory = "512MB";
@@ -79,7 +82,9 @@ const info_updated = "March 1, 2025";
     link_homepage={link_homepage}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
-    install_debian={install_debian}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     install_fedora={install_fedora}
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}

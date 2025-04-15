@@ -13,10 +13,16 @@ const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature = "Moska OS, Arch Linux";
 
 const install_arch = "sudo pacman -S moska-desktop";
-const install_debian = "sudo apt install moska-desktop";
+
+const install_debian_bullseye = "sudo apt install moska-desktop";
+const install_debian_bookworm = "sudo apt install moska-desktop";
+const install_debian_trixie = "sudo apt install moska-desktop";
+
 const install_fedora = "sudo dnf install moska-desktop";
+
 const install_opensuse_reference = "https://en.opensuse.org/Portal:Moska";
 const install_opensuse_tw_repo = "sudo zypper install moska-desktop";
+
 const install_ubuntu = "sudo apt install moska-desktop";
 
 const requirements_hdd_space = "2GB";
@@ -70,11 +76,13 @@ const info_updated = "March 1, 2025";
     link_homepage={link_homepage}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     install_fedora={install_fedora}
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
-    install_debian_bullseye={install_debian}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}

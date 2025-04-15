@@ -14,6 +14,11 @@ const generalinfo_desktop_toolkit = "GTK3";
 
 const install_arch =
   "sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)";
+
+const install_debian_bullseye = "sudo apt install cinnamon-desktop-environment";
+const install_debian_bookworm = "sudo apt install cinnamon-desktop-environment";
+const install_debian_trixie = "sudo apt install cinnamon-desktop-environment";
+
 const install_fedora = "sudo dnf groupinstall cinnamon-desktop";
 
 const install_opensuse_reference =
@@ -23,8 +28,6 @@ const install_opensuse_tw_repo =
 
 const install_mint = "sudo apt install mint-meta-cinnamon";
 const install_ubuntu = "cinnamon-desktop-environment";
-
-const install_debian = "sudo apt install cinnamon-desktop-environment";
 
 const requirements_hdd_space = "20GB (Recommended)";
 const requirements_memory = "2GB (Minimum), 4GB (Recommended)";
@@ -84,7 +87,9 @@ const info_updated = "March 1, 2025";
     install_opensuse_reference={install_opensuse_reference}
     install_opensuse_tw_repo={install_opensuse_tw_repo}
     install_ubuntu={install_ubuntu}
-    install_debian={install_debian}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
     requirements_hdd_space={requirements_hdd_space}
     requirements_memory={requirements_memory}
     requirements_processor={requirements_processor}
