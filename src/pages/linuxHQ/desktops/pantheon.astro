@@ -20,8 +20,9 @@ const install_debian_trixie  = "sudo apt install pantheon-desktop";
 
 const install_fedora = "sudo dnf install pantheon-desktop";
 
-const install_opensuse_reference = "";
-const install_opensuse_tw_repo = "";
+const install_opensuse_reference = "https://en.opensuse.org/Portal:Pantheon";
+const install_opensuse_tw_repo = "Warning - early experimental: sudo zypper ar -f obs://X11:Pantheon:Desktop/openSUSE:Factory pantheon-desktop THEN sudo zypper install patterns-pantheon-pantheon";
+
 
 const install_mint = "N/A";
 const install_ubuntu = "sudo apt install pantheon-desktop";
@@ -75,9 +76,10 @@ description="Pantheon is a desktop environment designed for elementary OS, known
 <DesktopData slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
+    link_code={link_code}
+    link_homepage={link_homepage}
     generalinfo_desktop_category={generalinfo_desktop_category}
     generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
-    link_homepage={link_homepage}
     generalinfo_distros_that_feature={generalinfo_distros_that_feature}
     install_arch={install_arch}
     install_debian_bullseye={install_debian_bullseye}
