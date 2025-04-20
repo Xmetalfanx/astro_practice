@@ -43,6 +43,7 @@ const version_arch = Astro.props.version_arch;
 
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
+const version_debian_trixie = Astro.props.version_debian_trixie;
 
 const version_fedora_40 = Astro.props.version_fedora_40;
 const version_fedora_41 = Astro.props.version_fedora_41;
@@ -52,7 +53,6 @@ const version_opensuse_tumbleweed = Astro.props.version_tumblewood;
 const version_solus = Astro.props.version_solus;
 const version_ubuntu_focal = Astro.props.version_ubuntu_focal;
 const version_ubuntu_jammy = Astro.props.version_ubuntu_jammy;
-const version_ubuntu_lunar = Astro.props.version_ubuntu_lunar;
 const version_linuxmint_20 = Astro.props.version_linuxmint_20;
 const version_linuxmint_201 = Astro.props.version_linuxmint_201;
 const version_linuxmint_202 = Astro.props.version_linuxmint_202;
@@ -126,12 +126,16 @@ const info_updated = Astro.props.info_updated;
     <!-- Debian -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Debian 11 - Bullseye Version:</span>
+        <span class="distro-name">Debian 11 - Bullseye:</span>
         {version_debian_bullseye}
       </div>
       <div>
-        <span class="distro-name">Debian 12 (current stable) - Bookworm Version:</span>
+        <span class="distro-name">Debian 12 - Bookworm:</span>
         {version_debian_bookwoom}
+      </div>
+      <div>
+        <span class="distro-name">Debian 13 - Trixie:</span>
+        {version_debian_trixie}
       </div>
     </div>
 
@@ -179,8 +183,8 @@ const info_updated = Astro.props.info_updated;
           {version_ubuntu_jammy}
         </div>
         <div>
-          <span class="distro-name">Lunar Version:</span>
-          {version_ubuntu_lunar}
+          <span class="distro-name">Version:</span>
+          {version_ubuntu}
         </div>
       </div>
 

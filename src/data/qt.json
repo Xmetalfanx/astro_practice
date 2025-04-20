@@ -47,7 +47,6 @@ const generalinfo_distros_that_feature": "Kubuntu, KDE Neon, Arch, OpenSuse, Fed
 
 "version_ubuntu_focal": "5.18.4.1-0.1",
 "version_ubuntu_jammy": "5.24.4-0.1",
-"version_ubuntu_lunar": "5.27.4-0.1",
 
 "version_linuxmint_20": "N/A",
 "version_linuxmint_201": "N/A",
