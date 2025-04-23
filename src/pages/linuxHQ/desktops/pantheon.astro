@@ -14,15 +14,15 @@ const generalinfo_distros_that_feature = "elementary OS";
 
 const install_arch = "sudo pacman -S pantheon";
 
-const install_debian_bookworm  = "sudo apt install pantheon-desktop";
-const install_debian_bullseye  = "sudo apt install pantheon-desktop";
-const install_debian_trixie  = "sudo apt install pantheon-desktop";
+const install_debian_bookworm = "sudo apt install pantheon-desktop";
+const install_debian_bullseye = "sudo apt install pantheon-desktop";
+const install_debian_trixie = "sudo apt install pantheon-desktop";
 
 const install_fedora = "sudo dnf install pantheon-desktop";
 
 const install_opensuse_reference = "https://en.opensuse.org/Portal:Pantheon";
-const install_opensuse_tw_repo = "Warning - early experimental: sudo zypper ar -f obs://X11:Pantheon:Desktop/openSUSE:Factory pantheon-desktop THEN sudo zypper install patterns-pantheon-pantheon";
-
+const install_opensuse_tw_repo =
+  "Warning - early experimental: sudo zypper ar -f obs://X11:Pantheon:Desktop/openSUSE:Factory pantheon-desktop THEN sudo zypper install patterns-pantheon-pantheon";
 
 const install_mint = "N/A";
 const install_ubuntu = "sudo apt install pantheon-desktop";
@@ -53,7 +53,6 @@ const version_opensuse_tumbleweed = "6.1.0-1";
 
 const version_solus = "6.1.0";
 
-const version_ubuntu_focal = "5.1.0-4";
 const version_ubuntu_jammy = "6.0.0-1";
 const version_ubuntu_plucky = "(Elmentary OS 8) 6.1.0-1";
 
@@ -72,11 +71,13 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate title="Pantheon" 
-keywords="pantheon, desktop, linux desktop, elementary OS desktop, pantheon desktop, pantheon linux desktop"
-description="Pantheon is a desktop environment designed for elementary OS, known for its simplicity and elegance. It features a clean and modern interface, with a focus on usability and aesthetics. Pantheon includes a variety of applications and tools that are tightly integrated with the desktop environment, providing a seamless user experience. It is built on top of the GTK toolkit and is designed to be lightweight and efficient, making it suitable for both new and experienced Linux users.">
-
-<DesktopData slot="linux-main"
+<LinuxDesktopTemplate
+  title="Pantheon"
+  keywords="pantheon, desktop, linux desktop, elementary OS desktop, pantheon desktop, pantheon linux desktop"
+  description="Pantheon is a desktop environment designed for elementary OS, known for its simplicity and elegance. It features a clean and modern interface, with a focus on usability and aesthetics. Pantheon includes a variety of applications and tools that are tightly integrated with the desktop environment, providing a seamless user experience. It is built on top of the GTK toolkit and is designed to be lightweight and efficient, making it suitable for both new and experienced Linux users."
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     link_code={link_code}
@@ -108,7 +109,6 @@ description="Pantheon is a desktop environment designed for elementary OS, known
     version_leap156={version_opensuse_leap156}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
-    version_ubuntu_focal={version_ubuntu_focal}
     version_ubuntu_jammy={version_ubuntu_jammy}
     version_ubuntu_plucky={version_ubuntu_plucky}
     version_linuxmint_20={version_linuxmint_20}

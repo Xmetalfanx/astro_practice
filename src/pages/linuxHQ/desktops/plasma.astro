@@ -13,15 +13,15 @@ const generalinfo_desktop_toolkit = "";
 
 const install_arch = "sudo pacman -S kde OR sudo pacman kde-meta";
 
-const install_debian_bookworm  = "sudo apt install plasma-desktop";
-const install_debian_bullseye  = "sudo apt install plasma-desktop";
-const install_debian_trixie  ="sudo apt install plasma-desktop";
+const install_debian_bookworm = "sudo apt install plasma-desktop";
+const install_debian_bullseye = "sudo apt install plasma-desktop";
+const install_debian_trixie = "sudo apt install plasma-desktop";
 
 const install_fedora = "sudo dnf group install kde-desktop-environment";
 
-const install_opensuse_reference = "https://en.opensuse.org/SDB:KDE_installation";
-const install_opensuse_tw_repo = 
-  `Basic Plasma: sudo zypper in -t pattern kde kde_plasma 
+const install_opensuse_reference =
+  "https://en.opensuse.org/SDB:KDE_installation";
+const install_opensuse_tw_repo = `Basic Plasma: sudo zypper in -t pattern kde kde_plasma 
   <br /><br />
    Minimal Plasma: sudo zypper in -t pattern kde_plasma`;
 
@@ -56,7 +56,6 @@ const version_opensuse_tumbleweed = "5.27.12-1.3";
 const version_solus =
   "4.5 ISO: Plasma Desktop 5.27.6, KDE Frameworks 5.107.0, and QT 5.15.10";
 
-const version_ubuntu_focal = "5.18.4";
 const version_ubuntu_jammy = "5.24.4";
 const version_ubuntu_plucky = "6.3.4";
 
@@ -75,11 +74,13 @@ const version_neon = "5.27.12";
 const info_updated = "April 17, 2025";
 ---
 
-<LinuxDesktopTemplate 
-  title="Plasma/KDE" 
+<LinuxDesktopTemplate
+  title="Plasma/KDE"
   keywords="KDE, Plasma, KDE Plasma, KDE Desktop, KDE Plasma Desktop, KDE Plasma Desktop Environment, KDE"
-  description="KDE Plasma is a free and open-source desktop environment for Linux-based operating systems. It is known for its flexibility, customization options, and modern design. KDE Plasma provides a visually appealing and user-friendly interface, making it suitable for both casual users and advanced Linux enthusiasts.">
-  <DesktopData slot="linux-main"
+  description="KDE Plasma is a free and open-source desktop environment for Linux-based operating systems. It is known for its flexibility, customization options, and modern design. KDE Plasma provides a visually appealing and user-friendly interface, making it suitable for both casual users and advanced Linux enthusiasts."
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -111,7 +112,6 @@ const info_updated = "April 17, 2025";
     version_leap156={version_opensuse_leap156}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
-    version_ubuntu_focal={version_ubuntu_focal}
     version_ubuntu_jammy={version_ubuntu_jammy}
     version_linuxmint_20={version_linuxmint_20}
     version_linuxmint_201={version_linuxmint_201}

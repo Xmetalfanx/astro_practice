@@ -85,7 +85,6 @@ install_ubuntu
         },
         "solus": "N/A",
         "ubuntu": {
-          "focal": "4.4.8-4",
           "jammy": "5.2.7-4",
           "mint": {
             "mint20": "4.6.7",
@@ -153,7 +152,6 @@ install_ubuntu
         },
         "solus": "4.4 ISO: 10.7.2",
         "ubuntu": {
-          "focal": "10.5.1-6",
           "jammy": "10.6.1-1",
           "mint": {
             "mint20": "4.6.7",
@@ -219,7 +217,6 @@ install_ubuntu
         },
         "solus": "4.4 ISO: 1.27.1",
         "ubuntu": {
-          "focal": "1.24.0-2",
           "jammy": "1.26.0-1",
           "mint": {
             "mint20": "",
@@ -285,7 +282,6 @@ install_ubuntu
         },
         "solus": "4.4 ISO: 43.5",
         "ubuntu": {
-          "focal": "3.36.1-1",
           "jammy": "42.0-1.1",
           "mint": {
             "mint20": "N/A",
@@ -352,7 +348,6 @@ install_ubuntu
         },
         "solus": "N/A (yet) - Soon Solus is replacing their Mate version with an XFCE Version",
         "ubuntu": {
-          "focal": "4.14.1-0.1",
           "jammy": "4.16.1-1",
           "mint": {
             "mint20": "",
@@ -419,7 +414,6 @@ install_ubuntu
         },
         "solus": "4.4 ISO: Plasma Desktop 5.27.5, KDE Frameworks 5.106.0, and QT 5.15.9",
         "ubuntu": {
-          "focal": "5.18.4.1-0.1",
           "jammy": "5.24.4-0.1",
           "mint": {
             "mint20": "N/A",
@@ -482,7 +476,6 @@ install_ubuntu
         },
         "solus": "N/A",
         "ubuntu": {
-          "focal": "30",
           "jammy": "30.1",
           "mint": {
             "mint20": "N/A",
@@ -543,7 +536,6 @@ install_ubuntu
         },
         "solus": "N/A",
         "ubuntu": {
-          "focal": "3.6.1-9",
           "jammy": "3.6.1-10",
           "mint": {
             "mint21": "",
