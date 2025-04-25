@@ -14,15 +14,15 @@ const generalinfo_distros_that_feature = "Bodhi Linux, Elive";
 
 const install_arch = "sudo pacman -S enlightenment";
 
-const install_debian_bookworm  = "sudo apt install enlightenment";
-const install_debian_bullseye  = "sudo apt install enlightenment";
-const install_debian_trixie  = "sudo apt install enlightenment";
+const install_debian_bookworm = "sudo apt install enlightenment";
+const install_debian_bullseye = "sudo apt install enlightenment";
+const install_debian_trixie = "sudo apt install enlightenment";
 
 const install_fedora = "sudo dnf install enlightenment";
 
-const install_opensuse_reference = "https://en.opensuse.org/Portal:Enlightenment";
-const install_opensuse_tw_repo = 
-`Basic Enlightenment: sudo zypper in enlightenment <br /><br />
+const install_opensuse_reference =
+  "https://en.opensuse.org/Portal:Enlightenment";
+const install_opensuse_tw_repo = `Basic Enlightenment: sudo zypper in enlightenment <br /><br />
 
 Possible additions: sudo zypper in terminology rage`;
 
@@ -58,10 +58,6 @@ const version_ubuntu_jammy = "0.25.3-1";
 const version_ubuntu_noble = "0.26.0-2build2";
 const version_ubuntu_plucky = "0.27.1-1";
 
-const version_linuxmint_20 = "0.24.2-1";
-const version_linuxmint_201 = "0.24.2-1";
-const version_linuxmint_202 = "0.24.2-1";
-const version_linuxmint_203 = "0.24.2-1";
 const version_linuxmint_21 = "0.25.1-1";
 const version_linuxmint_211 = "0.25.1-1";
 const version_linuxmint_212 = "0.25.1-1";
@@ -73,12 +69,13 @@ const version_neon = "N/A";
 const info_updated = "March 1, 2025";
 ---
 
-<LinuxDesktopTemplate 
-  title="Enlightenment Desktop" 
+<LinuxDesktopTemplate
+  title="Enlightenment Desktop"
   keywords="enlightenment, desktop, linux desktop, desktop environment, enlightenment desktop, bodhi linux, elive"
-  description="Enlightenment Desktop Environment">
-  
-  <DesktopData slot="linux-main"
+  description="Enlightenment Desktop Environment"
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -113,10 +110,6 @@ const info_updated = "March 1, 2025";
     version_ubuntu_jammy={version_ubuntu_jammy}
     version_ubuntu_noble={version_ubuntu_noble}
     version_ubuntu_plucky={version_ubuntu_plucky}
-    version_linuxmint_20={version_linuxmint_20}
-    version_linuxmint_201={version_linuxmint_201}
-    version_linuxmint_202={version_linuxmint_202}
-    version_linuxmint_203={version_linuxmint_203}
     version_linuxmint_21={version_linuxmint_21}
     version_linuxmint_211={version_linuxmint_211}
     version_linuxmint_212={version_linuxmint_212}
