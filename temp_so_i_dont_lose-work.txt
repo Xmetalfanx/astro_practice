@@ -24,7 +24,6 @@ latest_version={latest_version}
 version_leap156={version_leap156}
 version_tumbleweed={version_tumbleweed}
 version_solus={verson_solus}
-version_ubuntu_focal={version_ubuntu_focal}
 version_ubuntu_jammy={version_ubuntu_jammy}
 version_ubuntu_plucky={version_ubuntu_plucky}
 version_linuxmint_20={version_linuxmint_20}
