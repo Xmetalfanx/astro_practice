@@ -9,7 +9,6 @@ const windowManagers = [
 const compositor = [
   { name: "Compton", link: "/linuxHQ/desktops/compositor/compton" },
   { name: "Sway", link: "/linuxHQ/desktops/window-managers/sway" },
-
 ];
 
 const gtk2 = [{ name: "LXDE", link: "/linuxHQ/desktops/lxde" }];
@@ -21,6 +20,7 @@ const gtk3 = [
   { name: "Enlightenment", link: "/linuxHQ/desktops/enlightenment" },
   { name: "Gnome", link: "/linuxHQ/desktops/gnome" },
   { name: "Mate", link: "/linuxHQ/desktops/mate" },
+  { name: "Moksha", link: "/linuxHQ/desktops/moksha" },
   { name: "Pantheon", link: "/linuxHQ/desktops/pantheon" },
   { name: "Xfce", link: "/linuxHQ/desktops/xfce" },
 ];
@@ -70,7 +70,6 @@ const qt = [
     {compositor.map((wm) => <a href={wm.link}>{wm.name}</a>)}
   </div>
 </div>
-
 
 <style>
   input {
