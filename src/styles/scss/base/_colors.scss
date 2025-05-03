@@ -16,21 +16,29 @@ $colors: (
     base: $main-color,
     light: color.adjust($main-color, $lightness: $lighten),
     dark: color.adjust($main-color, $lightness: $darken, $saturation: -10%),
+    lighter: color.adjust($main-color, $lightness: $lighten * 2),
+    darker: color.adjust($main-color, $lightness: $darken * 2),
   ),
   accent-color: (
     base: $accent-color,
     light: color.adjust($accent-color, $lightness: $lighten),
     dark: color.adjust($accent-color, $lightness: $darken),
+    lighter: color.adjust($accent-color, $lightness: $lighten * 2),
+    darker: color.adjust($accent-color, $lightness: $darken * 2),
   ),
   light-color: (
     base: $light-color,
     light: color.adjust($light-color, $lightness: $lighten),
     dark: color.adjust($light-color, $lightness: $darken),
+    lighter: color.adjust($light-color, $lightness: $lighten * 2),
+    darker: color.adjust($light-color, $lightness: $darken * 2),
   ),
   dark-color: (
     base: $dark-color,
     light: color.adjust($dark-color, $lightness: $lighten),
     dark: color.adjust($dark-color, $lightness: $darken),
+    lighter: color.adjust($dark-color, $lightness: $lighten * 2),
+    darker: color.adjust($dark-color, $lightness: $darken * 2),
   )
 );
 

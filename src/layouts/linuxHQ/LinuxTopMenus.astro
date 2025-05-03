@@ -1,5 +1,8 @@
 ---
 import Link from "@components/global/Link.astro";
+
+import LightIcon from "../../pages/graphics/dark_mode.svg";
+import DarkIcon from "../../pages/graphics/light_mode.svg";
 ---
 
 <header>
@@ -12,8 +15,36 @@ import Link from "@components/global/Link.astro";
     <Link linktext="Theming" location="/linuxHQ/theming/frontpage/" />
     <!-- <Link linktext="Tips" location="#" /> -->
   </nav>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+    <LightIcon id="light-icon" />
+    <DarkIcon id="dark-icon" />
+  </button>
 </header>
 
+<script src="./ThemeToggleScript.js"></script>
+
 <style lang="scss">
-  /* Removed header-related CSS */
+  #theme-toggle {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: darkorange;
+      stroke: black;
+      transition: all 0.3s ease-in-out;
+
+      :last-child {
+        display: none;
+      }
+    }
+  }
+
 </style>

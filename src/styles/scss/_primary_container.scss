@@ -2,7 +2,7 @@
 
 /* main section of site */
 // updated: march 17, 2025: at the time of me typing this i have not adjusted the code below
-// the main section should now be "primary-content" which includes any asides AND the <main> 
+// the main section should now be "primary-content" which includes any asides AND the <main>
 // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
 .primary-container {
   // div that astro puts between the primary-container and the aside/main section
@@ -74,10 +74,6 @@
       .accordion {
         display: none;
 
-        // .accordion-content {
-        //   display: none;
-        // }
-
         .accordion-toggle {
           display: block;
         }
@@ -102,29 +98,14 @@
 
     .card {
       @include bgcolor-level(2);
-
-      .accordion-content > * {
-        display: flex;
-        flex-flow: column nowrap;
-        margin: 1rem 0;
-
-        @media (prefers-color-scheme: dark) {
-          color: $light-color
-        }
-
-      }
-
-      .accordion-toggle {
-        display: none;
-        background-color: clr(accent-color);
-        color: clr(light-color);
-        padding: 0.5rem;
-        cursor: pointer;
-        text-align: center;
-        border: none;
-        border-radius: 5px;
-        margin-top: 1rem;
-      }
+      margin: 1.15rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
     }
   }
+}
+
+  // .accordion:nth-child(n + 2) {
+  //   padding: 0.5rem 1.5rem;
+  // }
 }

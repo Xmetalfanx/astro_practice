@@ -1,48 +1,25 @@
 @use "sass:color";
 @use "colors" as *;
 
-// @mixin bg-level-1() {
-//   background-color: var(--light-clr-l1);
-
-//   @media (prefers-color-scheme: dark) {
-//     background-color: var(--dark-clr-l1);
-//   }
-// }
-
-// @mixin bg-level-2() {
-//   background-color: var(--light-clr-l2);
-
-//   @media (prefers-color-scheme: dark) {
-//     background-color: var(--dark-clr-l2);
-//   }
-// }
-
-// @mixin bg-level-3() {
-//   background-color: var(--light-clr-l3);
-
-//   @media (prefers-color-scheme: dark) {
-//     background-color: var(--dark-clr-l3);
-//   }
-// }
-
 @mixin bgcolor-level($level: 1) {
   $adjustment: -5%;
 
-  @media (prefers-color-scheme: light) {
-
-    @if $level == 2 {
-      background-color: color.adjust($light-color, $lightness: $adjustment);
-    } @else if $level == 3 {
-      background-color: color.adjust($light-color, $lightness: $adjustment * 1.5);
-    }
+  // Adjust the lightness based on the level
+  @if $level == 2 {
+    $adjustment: -5%;
+  } @else if $level == 3 {
+    $adjustment: $adjustment * 1.5;
   }
 
-  @media (prefers-color-scheme: dark) {
-   
-    @if $level == 2 {
-      background-color: color.adjust($dark-color, $lightness: -$adjustment);
-    } @else if $level == 3 {
-      background-color: color.adjust($dark-color, $lightness: -$adjustment * 1.5);
-    }
+
+  // Default light styles
+  html[data-theme="light"] & {
+    background-color: color.adjust($light-color, $lightness: $adjustment);
   }
+
+  // Dark theme styles using attribute selector
+  html[data-theme="dark"] & {
+    background-color: color.adjust($dark-color, $lightness: $adjustment * -1);
+  }
+
 }

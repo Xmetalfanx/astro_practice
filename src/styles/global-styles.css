@@ -1,10 +1,22 @@
 :root {
-  --main-color: hsl(34 90% 44%);
-  --accent-color: hsl(150, 100%, 20%);
+  --main-color: hsl(34, 90%, 45%);
+  --accent-color: hsl(160, 100%, 25%);
+  --light-color: hsl(0, 0%, 94%);
+  --dark-color: hsl(0, 0%, 15%);
   --fw-bold: bold;
-  --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
-    roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-default: 1.2rem;
+  --ffamily-roboto:
+    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
+  --ffamily-e-candy:
+    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
+  --ffamily-header: var(--ffamily-dynapuff);
+  --ffamily-nav: var(--ffamily-e-candy);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 *,
@@ -13,68 +25,255 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--ffamily-roboto);
+}
+
+body {
+  font-size: var(--font-size-default);
+  display: grid;
+  grid-template: 1fr auto 1fr/1fr;
+  grid-template-areas: "header" "primary-container" "footer";
+}
+body a,
+body a:link {
+  text-decoration: none;
+}
+@media (width <= 768px) {
+  body {
+    grid-template-areas: "aside" "main" "header";
+  }
 }
 
 .fw-bold {
   font-weight: var(--fw-bold);
 }
 
-a {
-  color: var(--accent-color);
-  text-decoration: none;
+.screenshot {
+  margin: 0 1.5rem;
+}
+.screenshot img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .screenshot img {
+    width: 50%;
+  }
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
 }
 
 header,
 footer {
   width: 100%;
-  background-color: var(--main-color);
-  color: #FFFFFF;
+  background-color: hsl(34, 90%, 45%);
   padding: 1rem;
 }
 header a,
-footer a {
-  color: white;
+header a:link,
+footer a,
+footer a:link {
+  color: hsl(0, 0%, 94%);
+}
+
+/* Dark mode when forced */
+[data-theme=dark] header,
+[data-theme=dark] footer {
+  background-color: #975d11;
+  color: #fcfcfc;
+}
+[data-theme=dark] header a,
+[data-theme=dark] footer a {
+  padding: 2px;
+}
+[data-theme=dark] header a:hover, [data-theme=dark] header a:focus,
+[data-theme=dark] footer a:hover,
+[data-theme=dark] footer a:focus {
+  color: #00b377;
+  outline: 2px solid hsl(0, 0%, 94%);
+}
+[data-theme=dark] header a:visited,
+[data-theme=dark] footer a:visited {
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+header .section-title {
+  font-family: var(--ffamily-header);
+  font-optical-sizing: auto;
+  font-size: 2.2rem;
+}
+header nav {
+  display: flex;
+  gap: 3rem;
+  margin-right: 2rem;
+  font-family: var(--ffamily-nav);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.6rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  header .section-title {
+    display: none;
+  }
+  header nav {
+    flex-flow: column wrap;
+    gap: 1rem;
+    margin-inline: auto;
+  }
 }
 
 /* main section of site */
-.main-section {
-  width: 100vw;
-  display: flex;
-  margin: 0.5rem 1rem;
+.primary-container > div {
+  grid-area: primary-container;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: 13% 1fr;
+  grid-template-areas: "aside main";
   /* the sidebar containing the menus */
-  /* where the content passed from individual pages would go */
-  /* .primary-content {
-      width: max-content;
-    } */
 }
-.main-section aside {
-  width: 18%;
-  margin-right: 1.25rem;
+@media (width > 768px) and (width <= 1024px) {
+  .primary-container > div {
+    grid-template-columns: 18% 1fr;
+  }
+}
+@media (width <= 768px) {
+  .primary-container > div {
+    grid-template-areas: "aside" "main";
+    grid-template-columns: unset;
+  }
+}
+.primary-container > div > aside {
+  grid-area: aside;
   /* this is the full menu minus the title/label */
-  /* .accordion:nth-child(1) {
-      margin: 0 1.5rem 1.5rem 1.5rem;
-    }
-
-    .accordion:nth-child(n + 2) {
-      padding: .5rem 1.5rem;
-    } */
 }
-.main-section aside label {
-  background-color: var(--accent-color);
-  color: white;
+.primary-container > div > aside label {
   display: block;
   padding: 1rem;
-  font-weight: 700;
+  background-color: hsl(160, 100%, 25%);
   font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 94%);
 }
-.main-section aside .accordion {
+.primary-container > div > aside .accordion {
   outline: 1px solid var(--accent-color);
-  border-radius: 10px 10px 0 0;
+  margin-bottom: 2rem;
   padding: 1rem;
+  border-radius: 10px 10px 0 0;
 }
-.main-section aside .accordion .accordion-content > * {
+html[data-theme=light] .primary-container > div > aside .accordion {
+  background-color: #e3e3e3;
+}
+html[data-theme=dark] .primary-container > div > aside .accordion {
+  background-color: #333333;
+}
+.primary-container > div > aside .accordion a {
+  color: #00422c;
+}
+.primary-container > div > aside .accordion a:focus, .primary-container > div > aside .accordion a:hover {
+  color: #975d11;
+}
+html[data-theme=dark] .primary-container > div > aside .accordion a:focus, html[data-theme=dark] .primary-container > div > aside .accordion a:hover {
+  color: #f49a25;
+}
+html[data-theme=dark] .primary-container > div > aside .accordion a {
+  color: #00b377;
+}
+.primary-container > div > main {
+  grid-area: main;
+  font-size: 1.4rem;
+  margin: 0 0.25rem;
+}
+.primary-container > *:nth-child(1) {
+  margin: 0.5rem 1rem;
+  font-size: var(--font-size);
+}
+@media (max-width: 768px) {
+  .primary-container {
+    flex-flow: column wrap;
+  }
+  .primary-container aside {
+    margin: 0 2rem;
+  }
+  .primary-container aside label {
+    width: 85vw;
+    margin: 1.2rem auto;
+  }
+  .primary-container aside .accordion {
+    display: none;
+  }
+  .primary-container aside .accordion .accordion-toggle {
+    display: block;
+  }
+  .primary-container aside .accordion.active .accordion-content {
+    display: flex;
+  }
+}
+html[data-theme=light] .primary-container .linux-main {
+  background-color: #e3e3e3;
+}
+html[data-theme=dark] .primary-container .linux-main {
+  background-color: #333333;
+}
+.primary-container .linux-main li {
+  margin: 1.15rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+html[data-theme=light] .primary-container .linux-main li {
+  background-color: #dddddd;
+}
+html[data-theme=dark] .primary-container .linux-main li {
+  background-color: #393939;
+}
+.primary-container .linux-main .card {
+  margin: 1.15rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+html[data-theme=light] .primary-container .linux-main .card {
+  background-color: #e3e3e3;
+}
+html[data-theme=dark] .primary-container .linux-main .card {
+  background-color: #333333;
+}
+
+input {
+  display: block;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  padding: 1rem;
+  position: relative;
+}
+
+.accordion .accordion-content {
   display: flex;
   flex-flow: column nowrap;
-  margin: 1rem 0;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .accordion .accordion-content {
+    height: 0;
+    overflow: hidden;
+  }
+  .accordion input:checked + label + .accordion-content {
+    height: auto;
+    transition: height 0.8s ease;
+  }
 }/*# sourceMappingURL=global-styles.css.map */

@@ -1,8 +1,7 @@
 @use "base/index" as *;
 
 :root {
-  color-scheme: dark light;
-
+  // Color scheme
   --main-color: hsl(34, 90%, 45%);
   --accent-color: hsl(160, 100%, 25%);
   --light-color: hsl(0, 0%, 94%);
@@ -64,6 +63,7 @@
 //   @include bg-level-2;
 // }
 // .bg-level-3 {
+
 //   @include bg-level-3;
 // }
 
@@ -78,22 +78,7 @@ body {
 
   a,
   a:link {
-    color: clr(accent-color, "dark");
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: clr(accent-color);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: clr(main-color, "light");
-
-      &:hover,
-      &:focus {
-        color: clr(light-color, "light");
-      }
-    }
   }
 }
 
