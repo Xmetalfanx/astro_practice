@@ -5,23 +5,70 @@
 // the main section should now be "primary-content" which includes any asides AND the <main> 
 // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
 .primary-container {
-  
+  // div that astro puts between the primary-container and the aside/main section
   > *:nth-child(1) {
-    // width: 100vw;
-    display: flex;
-    // flex-flow: row wrap;
-    margin: 0.5rem 1rem;
-    font-size: var(--font-size);
+    gap: 2rem;
+    margin: 1rem;
+
+    // grid-area: primary-container;
+    display: grid;
+    grid-template-areas: "aside main";
+    // grid-template-columns: 16% 1fr;
+    grid-template-columns: auto 1fr;
+
+    @media (width > $breakpoint-sm) and (width <= 64em) {
+      gap: 1rem;
+      // grid-template-columns: 20% 1fr;
     }
 
-  @media (max-width: 768px) {
-    flex-flow: column wrap;
+    @media (width <= $breakpoint-sm) {
+      grid-template-areas:
+        "aside"
+        "main";
+      grid-template-columns: unset;
+    }
+
+    > aside {
+      grid-area: aside;
+      margin: unset;
+      label {
+        background-color: clr(accent-color);
+        color: clr(light-color);
+        font-weight: 800;
+        display: block;
+        padding: 1rem;
+      }
+
+      .accordion {
+        @include bgcolor-level(2);
+
+        margin-bottom: 1rem;
+        outline: 1px solid var(--accent-color);
+        padding: 1.25rem;
+
+        .accordion-content {
+          display: flex;
+          flex-flow: column nowrap;
+
+          // menu items
+          a {
+            margin: 0.5rem 0;
+          }
+        }
+      }
+    }
+
+    > main {
+      grid-area: main;
+    }
+  }
+
+  @media (width <= $breakpoint-sm) {
     aside {
       margin: 0 2rem;
 
       label {
-        width: 85vw;
-        margin: 1.2rem auto;
+        text-align: center;
       }
 
       .accordion {
@@ -42,28 +89,18 @@
     }
   }
 
+  // should i put this elsewhere?
+  .linux-main {
+    @include bgcolor-level(2);
 
-  /* the sidebar containing the menus */
-  > * > aside {
-    // width: 18%;
-    margin-right: 1.25rem;
-
-    label {
-      background-color: clr(accent-color);
-      color: clr(light-color);
-      display: block;
-      padding: 1rem;
-      font-weight: 700;
-      font-size: 1.25rem;
+    li {
+      @include bgcolor-level(3);
+      margin: 1.15rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
     }
 
-    /* this is the full menu minus the title/label */
-    .accordion {
-      border-radius: 10px 10px 0 0;
-      margin-bottom: 2rem;
-      outline: 1px solid var(accent-color);
-      padding: 1rem;
-
+    .card {
       @include bgcolor-level(2);
 
       .accordion-content > * {
@@ -89,14 +126,5 @@
         margin-top: 1rem;
       }
     }
-
-    .accordion:nth-child(1) {
-      margin: 0 1.5rem 1.5rem 1.5rem;
-    }
-
-    .accordion:nth-child(n + 2) {
-      padding: 0.5rem 1.5rem;
-    }
   }
-
 }

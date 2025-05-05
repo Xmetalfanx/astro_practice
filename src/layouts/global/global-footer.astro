@@ -135,10 +135,11 @@ import "@css/global-styles.css";
     justify-content: space-between;
     padding: 1.6rem;
 
-
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-sm) {
       .site-made,
-      .copyright {display:  none;}
+      .copyright {
+        display: none;
+      }
 
       .contacts {
         margin-inline: auto;
