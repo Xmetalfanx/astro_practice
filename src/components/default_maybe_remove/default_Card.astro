@@ -46,17 +46,23 @@ import "@css/global-styles.css";
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
 
-    > a {
-      // color: var(--accent-color);
-      color: clr(accent-color, light);
+    > a,
+    a:link {
+      color: clr(accent-color);
 
       padding: 1rem 1.3rem;
       border-radius: 0.35rem;
       text-decoration: none;
       line-height: 1.4;
 
-      // is width needed?
-      // width: 100%;
+      p {
+        color: clr(dark-color);
+      }
+    }
+
+    > a:focus,
+    a:hover {
+      color: clr(main-color);
     }
   }
 
@@ -69,7 +75,6 @@ import "@css/global-styles.css";
     margin-top: 0.5rem;
     margin-bottom: 0;
   }
-
 
   // .link-card:is(:hover, :focus-within) {
   //   background-position: 0;
