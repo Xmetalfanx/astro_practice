@@ -19,7 +19,7 @@
     "astro": "^5.7.5",
     "cssnano": "^7.0.6",
     "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.83.4",
+    "sass": "^1.87.0",
     "stylelint": "^16.15.0",
     "stylelint-scss": "^6.11.1"
   }
