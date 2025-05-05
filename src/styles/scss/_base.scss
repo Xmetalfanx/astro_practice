@@ -1,5 +1,4 @@
-@use "colors" as *;
-@use "functions" as *;
+@use "base/index" as *;
 
 :root {
   color-scheme: dark light;
@@ -8,7 +7,6 @@
   --accent-color: hsl(160, 100%, 25%);
   --light-color: hsl(0, 0%, 94%);
   --dark-color: hsl(0, 0%, 15%);
-
 
   // create color variants based on the color scheme above
   // @for $i from 1 through 9 {
@@ -34,14 +32,13 @@
   --font-size-default: 1.2rem;
 
   // Font Families
-  --ffamily-roboto:
-    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
-    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
+    roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 
   --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
-  --ffamily-e-candy:
-    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
+  --ffamily-e-candy: "Emilys Candy", -apple-system, blinkmacsystemfont,
+    "Segoe UI";
 
   --ffamily-header: var(--ffamily-dynapuff);
   --ffamily-nav: var(--ffamily-e-candy);
@@ -49,15 +46,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  background-color: $light-color;
-  color: $dark-color;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: $dark-color;
-    color: $light-color;
-  }
-
 }
 
 *,
@@ -67,8 +55,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 // .bg-level-1 {
 //   @include bg-level-1;
@@ -83,6 +69,12 @@
 
 body {
   font-size: var(--font-size-default);
+  display: grid;
+
+  grid-template-areas:
+    "header"
+    "primary-container"
+    "footer";
 
   a,
   a:link {
@@ -116,7 +108,7 @@ body {
     width: 100%;
     height: auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-sm) {
       width: 50%;
     }
   }

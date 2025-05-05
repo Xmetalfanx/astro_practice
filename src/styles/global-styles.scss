@@ -1,9 +1,1 @@
-
-@forward "scss/mixins";
-@forward "scss/colors";
-@forward "scss/functions";
-
-@use "scss/misc" as *;
-@use "scss/header_and_footer" as *;
-@use "scss/primary_container" as *;
-
+@use "scss" as *;

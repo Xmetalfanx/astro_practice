@@ -30,7 +30,6 @@ const screenshot_theme = Astro.props.screenshot_theme;
 const screenshot_thumbnail = Astro.props.screenshot_thumbnail;
 const screenshot_src = Astro.props.screenshot_src; // Added new prop
 
-
 const youtube_review_playlist = Astro.props.youtube_review_playlist;
 const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 ---
@@ -123,7 +122,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 </div>
 
 <style lang="scss">
-  @use "@css/scss/mixins.scss" as *;
+  @use "@scss/base/_index.scss" as *;
 
   .info-title {
     font-weight: 700;

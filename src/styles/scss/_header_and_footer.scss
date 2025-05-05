@@ -1,10 +1,17 @@
-@use "colors" as *;
-@use "functions" as *;
+@use "base/index" as *;
+
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
 
 header,
 footer {
   width: 100%;
   background-color: clr(main-color);
+  color: clr(light-color);
   padding: 1rem;
 
   a,
@@ -12,19 +19,20 @@ footer {
     color: clr(light-color);
   }
 
-  // a:hover,
-  // a:focus {
-  //   color: clr(accent-color);
-  // }
+  a:hover,
+  a:focus {
+    color: clr(accent-color, "dark");
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode when forced */
+[data-theme="dark"] {
   header,
   footer {
     background-color: clr(main-color, "dark");
     color: clr(light-color, "light");
 
-    a { 
+    a {
       padding: 2px;
 
       &:hover,
@@ -33,13 +41,12 @@ footer {
         outline: 2px solid $light-color;
         padding: 2px;
       }
-  
-      &:visited { 
+
+      &:visited {
         text-decoration: dotted;
-       }
+      }
     }
   }
-
 }
 
 header {
@@ -65,7 +72,7 @@ header {
     flex-wrap: wrap; // Added for mobile responsiveness
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-sm) {
     .section-title {
       display: none;
     }
@@ -77,4 +84,3 @@ header {
     }
   }
 }
-
