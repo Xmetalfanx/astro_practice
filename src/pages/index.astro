@@ -11,6 +11,7 @@ import GitGroups from "@layouts/frontpage/gitGroups.astro";
 import LightIcon from "@graphics/dark_mode.svg";
 import DarkIcon from "@graphics/light_mode.svg";
 ---
+
 <html lang="en">
   <GlobalHeadtag
     title="Xmetalfanx's Main Site Frontpage"
@@ -34,13 +35,10 @@ import DarkIcon from "@graphics/light_mode.svg";
 
 <Footer />
 
-<style>
-  a {
-    font-size: 1.5rem;
-    margin: 1rem;
-  } 
+<script src="../layouts/linuxHQ/ThemeToggleScript.js"></script>
 
-   header {
+<style>
+  header {
     justify-content: center;
     font-size: 2.5rem;
     font-family: var(--ffamily-header);
@@ -53,31 +51,9 @@ import DarkIcon from "@graphics/light_mode.svg";
 
   #theme-toggle {
     position: absolute;
-    right: 1rem;
     top: 1rem;
-
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0.5rem;
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    [data-theme="dark"] & {
-
-      svg {
-        fill: var(--light-color);
-      }
-    }
-
-    svg {
-      fill: var(--accent-color);
-
-      transition: all 0.3s ease-in-out;
-    }
+    right: 1rem;
   }
+
+
 </style>
