@@ -7,12 +7,24 @@ import Footer from "@layouts/global/global-footer.astro";
 
 import SiteSections from "@layouts/frontpage/siteSections.astro";
 import GitGroups from "@layouts/frontpage/gitGroups.astro";
+
+import LightIcon from "@graphics/dark_mode.svg";
+import DarkIcon from "@graphics/light_mode.svg";
 ---
 <html lang="en">
-  <GlobalHeadtag title="Xmetalfanx's Main Site Frontpage" 
-  keywords="Linux, Ubuntu, Linux Mint, Fedora, Cinnamon, Plasma, XFCE, Distros, Desktops"/>
+  <GlobalHeadtag
+    title="Xmetalfanx's Main Site Frontpage"
+    keywords="Linux, Ubuntu, Linux Mint, Fedora, Cinnamon, Plasma, XFCE, Distros, Desktops"
+  />
 
-  <header>Xmetalfanx's Homepage</header>
+  <header>
+    Xmetalfanx's Homepage
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <LightIcon id="light-icon" />
+      <DarkIcon id="dark-icon" />
+    </button>
+  </header>
 </html>
 
 <main>
@@ -37,5 +49,35 @@ import GitGroups from "@layouts/frontpage/gitGroups.astro";
   main {
     /* background-color: var(--light-color-500); */
     margin: 2rem 0;
+  }
+
+  #theme-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [data-theme="dark"] & {
+
+      svg {
+        fill: var(--light-color);
+      }
+    }
+
+    svg {
+      fill: var(--accent-color);
+
+      transition: all 0.3s ease-in-out;
+    }
   }
 </style>
