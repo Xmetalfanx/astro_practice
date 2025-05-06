@@ -7,27 +7,8 @@
   --light-color: hsl(0, 0%, 94%);
   --dark-color: hsl(0, 0%, 15%);
 
-  // create color variants based on the color scheme above
-  // @for $i from 1 through 9 {
-  //   $lightness: -20% + ($i - 1) * 5%;
 
-  //   --main-color-#{$i}00: #{generate-color-variation($main-color, $lightness)};
-  //   --accent-color-#{$i}00: #{generate-color-variation(
-  //       $accent-color,
-  //       $lightness
-  //     )};
-  //   --light-color-#{$i}00: #{generate-color-variation(
-  //       $light-color,
-  //       $lightness
-  //     )};
-  //   --dark-color-#{$i}00: #{generate-color-variation($dark-color, $lightness)};
-  // }
-
-  // --bg-level-1: 0%; // Base (no change)
-  // --bg-level-2: -10%; // Light theme darkens
-  // --bg-level-3: -20%;
-
-  --fw-bold: bold;
+  --fw-bold: 800;
   --font-size-default: 1.2rem;
 
   // Font Families
