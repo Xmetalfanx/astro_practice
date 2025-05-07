@@ -38,10 +38,14 @@ import DarkIcon from "@graphics/light_mode.svg";
 <script src="../layouts/linuxHQ/ThemeToggleScript.js"></script>
 
 <style>
+
+  @use "@scss/base/_index.scss" as *;
+
   header {
     justify-content: center;
-    font-size: 2.5rem;
-    font-family: var(--ffamily-header);
+
+    @include header;
+    font-size: var(--h1);
   }
 
   main {
