@@ -79,9 +79,9 @@
   @use "@scss/base/_index.scss" as *;
 
   .frontpage-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 2rem 0;
+    font-size: var(--h2);
+    font-weight: var(--fw-bold);
+    margin: 1rem 0;
     text-align: center;
   }
 
@@ -95,23 +95,18 @@
       padding: 1rem;
 
       .git-group {
-        border-radius: 8px;
         @include bgcolor-level(2);
 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        line-height: 200%;
         padding: 1.5rem;
-        transition:
-          transform 0.3s,
-          box-shadow 0.3s;
 
         &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 8px var(--accent-color);
         }
 
         .git-section-title {
-          font-size: 1.25rem;
-          font-weight: 600;
+          font-weight: var(--fw-bold);
           margin-bottom: 1rem;
         }
 
@@ -133,23 +128,18 @@
         }
 
         ul {
-          list-style: none;
-          padding: 0;
+          margin-left: 2rem;
 
           li {
             margin: 0.5rem 0;
-            font-size: 1rem;
+            // font-size: 1rem;
           }
         }
 
         .d-flex {
           display: flex;
-          flex-wrap: wrap;
-
-          li {
-            margin-right: 1rem;
-            font-size: 0.875rem;
-          }
+          flex-flow: row wrap;
+          justify-content: space-around;
         }
       }
 

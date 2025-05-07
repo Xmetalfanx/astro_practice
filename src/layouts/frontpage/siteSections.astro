@@ -9,43 +9,32 @@ import Card from "@components/default_maybe_remove/default_Card.astro";
     body="Linux info on Desktop, Distributions, theming and more.."
   />
 
-  <Card href="#" title="TechHQ Section" body="TechHQ Section" />
+  <Card href="#" title="TechHQ Section" body="TechHQ Section - Coming Later" />
 </div>
 
 <style>
-.section_container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-}
+  .section_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
 
-.section_container > * {
-  flex: 1 1 calc(50% - 20px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    > ul:hover {
+      box-shadow: 0 4px 8px var(--main-color);
+      border-radius: 8px;
+    }
+  }
 
-section_container > *:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+  li {
+    width: 100%;
 
-li {
-  width: 100%;
-  
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease;
+  }
 
-li:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+
 </style>
