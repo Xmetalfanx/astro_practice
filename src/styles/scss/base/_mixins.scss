@@ -66,9 +66,15 @@
   filter: drop-shadow($xaxis $yaxis $blur $color);
 }
 
-@mixin header1 () {
-  font-family: var(--ffamily-header);
-  font-size: var(--h1);
-  font-weight: var(--fw-bold);
+@mixin header (
+  $font-family: var(--ffamily-header),
+  $font-size: var(--h1),
+  $font-weight: var(--fw-bold)
+
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  ;
 
 }
