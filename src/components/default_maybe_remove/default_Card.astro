@@ -27,11 +27,6 @@ import "@css/global-styles.css";
 
   .link-card {
     @include bgcolor-level(2);
-    // color: clr(dark-color);
-
-    // [data-theme="dark"] & {
-    //   color: clr(light-color);
-    // }
     
     display: flex;
     flex-flow: column wrap;
@@ -41,7 +36,7 @@ import "@css/global-styles.css";
     list-style: none;
     padding: 2rem;
     
-    @include border-radius-single;
+    @include border-radius;
 
     .link-card__title {
       @include header1;
