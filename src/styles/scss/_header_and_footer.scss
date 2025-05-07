@@ -1,8 +1,5 @@
 @use "base/index" as *;
 
-header {
-  grid-area: header;
-}
 footer {
   grid-area: footer;
 }
@@ -14,51 +11,46 @@ footer {
   color: clr(light-color);
   padding: 1rem;
 
-  a,
-  a:link {
-    color: clr(light-color);
-  }
-
-  a:hover,
-  a:focus {
-    color: clr(accent-color, "dark");
-  }
-}
-
-/* Dark mode when forced */
-[data-theme="dark"] {
-  header,
-  footer {
+  [data-theme="dark"] & {
     background-color: clr(main-color, "dark");
     color: clr(light-color, "light");
 
-    a {
-      padding: 2px;
+  }
 
-      &:hover,
-      &:focus {
-        //color: clr(accent-color);
-        outline: 2px solid $light-color;
-        padding: 2px;
-      }
+  a {
+    margin: 2px;
 
-      &:visited {
-        text-decoration: dotted;
-      }
+    color: clr(light-color);
+
+    // // this needed?
+    // &:link {
+    //   color: inherit;
+    // }
+
+    &:hover,
+    &:focus {
+      color: clr(accent-color);
+      //outline: 2px solid $light-color;
+    }
+
+    &:visited {
+      text-decoration: dotted;
     }
   }
 }
 
+
 header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
-  flex-wrap: wrap; // Added for mobile responsiveness
+  align-items: center;
+
+  font-weight: var(--fw-bold);
 
   .section-title {
     font-family: var(--ffamily-header);
-    font-optical-sizing: auto;
-    font-size: 2.2rem;
+    font-size: var(--h1);
   }
 
   nav {

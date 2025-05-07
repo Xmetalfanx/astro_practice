@@ -65,9 +65,22 @@
 // }
 
 body {
-  font-size: var(--font-size-default);
-  display: grid;
+ 
+  // I dont think i need this ... i dont mind keeping it 
+    // BUT the browser seems to handle the switch (WHAT I RATHER HAVE) 
+    // cutting down on un-needed CSS 
+    
+  // background-color: var(--light-color);
+  // color: var(--dark-color);
 
+  // [data-theme="dark"] & {
+  //   background-color: var(--dark-color);
+  //   color: var(--light-color);
+  // }
+
+  font-size: var(--fs-normal);
+  
+  display: grid;
   grid-template-areas:
     "header"
     "primary-container"
