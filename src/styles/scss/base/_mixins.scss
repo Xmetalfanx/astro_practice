@@ -23,3 +23,52 @@
   }
 
 }
+
+// tl: top left, tr: top right,  br: bottom right, bl: bottom left,
+@mixin border-radius($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin outline(
+  $outline-size: 1px,
+  $outline-style: solid,
+  $outline-color: var(--theme-clr-main-500)
+) {
+  outline: $outline-color;
+  outline-style: $outline-style;
+  outline-width: $outline-size;
+}
+
+@mixin border(
+  $border-size: 1px,
+  $border-style: solid,
+  $border-color: var(--theme-clr-main-500)
+) {
+  border: $border-size $border-style $border-color;
+}
+
+// because i am always forget the default values i use
+@mixin box-shadow(
+  $xaxis: 0,
+  $yaxis: 0.5rem,
+  $blur: 1rem,
+  $color: var(--theme-clr-main-500)
+) {
+  box-shadow: $xaxis $yaxis $blur $color;
+}
+
+@mixin drop-shadow(
+  $xaxis: 0,
+  $yaxis: 0.5rem,
+  $blur: 1rem,
+  $color: var(--theme-clr-dark-500)
+) {
+  filter: drop-shadow($xaxis $yaxis $blur $color);
+}
+
+@mixin header1 () {
+  font-family: var(--ffamily-header);
+  font-size: var(--h1);
+  font-weight: var(--fw-bold);
+
+}
