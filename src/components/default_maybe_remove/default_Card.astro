@@ -13,14 +13,12 @@ import "@css/global-styles.css";
 <ul>
   <li class="link-card">
     <a href={href}>
-      <h2>
+      <div class="link-card__title">
         {title}
         <span>&rarr;</span>
-      </h2>
-      <p>
-        {body}
-      </p>
+      </div>
     </a>
+    <div>{body}</div>
   </li>
 </ul>
 
@@ -29,38 +27,35 @@ import "@css/global-styles.css";
 
   .link-card {
     @include bgcolor-level(2);
+    // color: clr(dark-color);
 
-
-
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-
-    p {
-      @media (prefers-color-scheme: dark) {
-        color: $light-color;
-      }
-    }
+    // [data-theme="dark"] & {
+    //   color: clr(light-color);
+    // }
     
-    border-radius: 0.6rem;
     display: flex;
-    list-style: none;
-    padding: 0.25rem;
+    flex-flow: column wrap;
+    align-items: center;
 
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+    list-style: none;
+    padding: 2rem;
+    
+    @include border-radius-single;
+
+    .link-card__title {
+      @include header1;
+      margin: 0 0 1rem 0;
+    }
 
     > a,
     a:link {
       color: clr(accent-color);
 
-      padding: 1rem 1.3rem;
+      // padding: 1rem;
       border-radius: 0.35rem;
       text-decoration: none;
       line-height: 1.4;
-
-      p {
-        color: clr(dark-color);
-      }
     }
 
     > a:focus,
@@ -69,21 +64,4 @@ import "@css/global-styles.css";
     }
   }
 
-  h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-  }
-
-  // .link-card:is(:hover, :focus-within) {
-  //   background-position: 0;
-  //   background-image: var(--accent-gradient);
-  // }
-  // .link-card:is(:hover, :focus-within) h2 {
-  //   color: rgb(var(--accent));
-  // }
 </style>
