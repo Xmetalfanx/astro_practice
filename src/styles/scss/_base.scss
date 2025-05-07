@@ -9,7 +9,18 @@
 
 
   --fw-bold: 800;
-  --font-size-default: 1.2rem;
+
+  // 400 (like with some of Kevin Powell's vars is the "middle"/default
+  --fs-200: 1.10rem;
+  --fs-300: 1.15rem;
+  --fs-400: 1.2rem;
+  --fs-500: 1.3rem;
+  
+  --fs-default: var(--fs-400);
+
+  // header sizes (fonts)
+  --h1: 2rem;
+  --h2: 1.5rem;
 
   // Font Families
   --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
@@ -22,6 +33,11 @@
 
   --ffamily-header: var(--ffamily-dynapuff);
   --ffamily-nav: var(--ffamily-e-candy);
+
+
+  --fs-normal: 1.125rem;
+  --fs-large: 1.20rem;
+
 
   margin: 0;
   padding: 0;
