@@ -1,6 +1,7 @@
 // loads from scss/base
 @forward "base/index";
 
+@use "resets" as *;
 @use "base" as *;
 @use "header_and_footer" as *;
 @use "theme_toggle" as *;
