@@ -40,7 +40,7 @@
       }
 
       .accordion {
-        @include bgcolor-level(2);
+        @include color-level(2);
 
         margin-bottom: 1rem;
         outline: 1px solid var(--accent-color);
@@ -87,17 +87,17 @@
 
   // should i put this elsewhere?
   .linux-main {
-    @include bgcolor-level(2);
+    @include color-level(2);
 
     li {
-      @include bgcolor-level(3);
+      @include color-level(3);
       margin: 1.15rem 0;
       padding: 0.5rem;
       border-radius: 5px;
     }
 
     .card {
-      @include bgcolor-level(2);
+      @include color-level(2);
       margin: 1.15rem 0;
       padding: 0.5rem;
       border-radius: 5px;

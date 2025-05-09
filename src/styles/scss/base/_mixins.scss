@@ -1,7 +1,8 @@
 @use "sass:color";
 @use "colors" as *;
+@use "functions" as *;
 
-@mixin bgcolor-level($level: 1) {
+@mixin color-level($level: 1) {
   $adjustment: -5%;
 
   // Adjust the lightness based on the level
@@ -15,11 +16,22 @@
   // Default light styles
   html[data-theme="light"] & {
     background-color: color.adjust($light-color, $lightness: $adjustment);
+    color: clr(accent-color);
+
   }
 
   // Dark theme styles using attribute selector
   html[data-theme="dark"] & {
     background-color: color.adjust($dark-color, $lightness: $adjustment * -1);
+    
+    a {
+      color: clr(light-color);
+
+      &:hover {
+        color: clr(main-color);
+      }
+    }
+    
   }
 
 }
@@ -52,7 +64,7 @@
   $xaxis: 0,
   $yaxis: 0.5rem,
   $blur: 1rem,
-  $color: var(--theme-clr-main-500)
+  $color: var(--main-color)
 ) {
   box-shadow: $xaxis $yaxis $blur $color;
 }
