@@ -1,6 +1,5 @@
 @use "sass:color";
 
-
 // ref:  https://www.kevinpowell.co/article/using-my-colors/
 $main-color: hsl(34, 90%, 45%);
 // $accent-color: hsl(160, 100%, 25%);
@@ -8,38 +7,31 @@ $accent-color: hsl(175, 100%, 25%);
 $light-color: hsl(0, 0%, 94%);
 $dark-color: hsl(0, 0%, 15%);
 
-
 $lighten: 5%;  // Percentage works for lighten() and darken()
 $darken: -12%; // Needs to be negative when using color.adjust()
 
+
+// for color.adjust() to work, the color must be in RGB or HSL format
+// ref: https://sass-lang.com/documentation/modules/sass/color#adjust
+// ref: https://sass-lang.com/documentation/modules/sass/color#lighten
+// ref: https://sass-lang.com/documentation/modules/sass/color#darken
+// ref: https://sass-lang.com/documentation/modules/sass/color#saturate
+// leaving old mai
+
+@function generate-color-variations($base-color) {
+  @return (
+    base: $base-color,
+    light: color.adjust($base-color, $lightness: $lighten),
+    dark: color.adjust($base-color, $lightness: $darken),
+    lighter: color.adjust($base-color, $lightness: $lighten * 2),
+    darker: color.adjust($base-color, $lightness: $darken * 2),
+  );
+}
+
 $colors: (
-  main-color: (
-    base: $main-color,
-    light: color.adjust($main-color, $lightness: $lighten),
-    dark: color.adjust($main-color, $lightness: $darken, $saturation: -10%),
-    lighter: color.adjust($main-color, $lightness: $lighten * 2),
-    darker: color.adjust($main-color, $lightness: $darken * 2),
-  ),
-  accent-color: (
-    base: $accent-color,
-    light: color.adjust($accent-color, $lightness: $lighten),
-    dark: color.adjust($accent-color, $lightness: $darken),
-    lighter: color.adjust($accent-color, $lightness: $lighten * 2),
-    darker: color.adjust($accent-color, $lightness: $darken * 2),
-  ),
-  light-color: (
-    base: $light-color,
-    light: color.adjust($light-color, $lightness: $lighten),
-    dark: color.adjust($light-color, $lightness: $darken),
-    lighter: color.adjust($light-color, $lightness: $lighten * 2),
-    darker: color.adjust($light-color, $lightness: $darken * 2),
-  ),
-  dark-color: (
-    base: $dark-color,
-    light: color.adjust($dark-color, $lightness: $lighten),
-    dark: color.adjust($dark-color, $lightness: $darken),
-    lighter: color.adjust($dark-color, $lightness: $lighten * 2),
-    darker: color.adjust($dark-color, $lightness: $darken * 2),
-  )
+  main-color: generate-color-variations($main-color),
+  accent-color: generate-color-variations($accent-color),
+  light-color: generate-color-variations($light-color),
+  dark-color: generate-color-variations($dark-color),
 );
 
