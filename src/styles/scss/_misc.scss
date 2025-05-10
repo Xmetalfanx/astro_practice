@@ -1,0 +1,13 @@
+@use "base/index" as *;
+
+.desktop_container {
+
+    // note to self: the default flex direction is row
+    // not sure about this here (the jc) 
+    @include flex($jc: center);
+
+    @include box-shadow;
+    @include color-level(2);
+
+
+}
