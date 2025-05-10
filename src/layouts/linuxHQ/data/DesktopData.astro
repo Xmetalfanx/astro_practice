@@ -297,15 +297,16 @@ const info_updated = Astro.props.info_updated;
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
-        width: clamp(300px, 30%, 100%);
-        margin: 2rem 0;
-        outline: 1px #333333 solid;
+        
+        @include color-level(3);
+
+        @include box-shadow($color: var(--dark-color));
+        
+        line-height: 2rem;
         margin: 1rem;
         outline: 1px solid var(--dark-color);
         padding: 1rem;
-        line-height: 2rem;
-
-        @include bgcolor-level(3);
+        width: clamp(300px, 30%, 100%);
 
         .distro-name {
           font-weight: var(--fw-bold);
