@@ -1,3 +1,5 @@
+@use "base/index" as *;
+
 #theme-toggle {
 
     border: none;
@@ -7,9 +9,7 @@
     width: 50px;
     height: 50px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex($ai: center, $jc: center);
 
     [data-theme="dark"] & {
 

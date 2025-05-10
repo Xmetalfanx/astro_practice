@@ -28,9 +28,7 @@ import "@css/global-styles.css";
   .link-card {
     @include color-level(2);
     
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
+    @include flex($direction: column, $ai: center);
 
 
     list-style: none;

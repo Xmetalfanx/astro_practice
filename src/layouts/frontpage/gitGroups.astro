@@ -111,8 +111,8 @@
         }
 
         .git-icons {
-          display: flex;
-          justify-content: space-around;
+
+          @include flex($jc: space-around);
           margin: 1.5rem 0;
 
           a > i {
@@ -140,9 +140,7 @@
         }
 
         .d-flex {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-around;
+          @iclude flex($jc: space-around);
         }
       }
 

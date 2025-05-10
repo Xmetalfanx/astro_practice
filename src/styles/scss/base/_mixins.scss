@@ -5,7 +5,7 @@
 @mixin color-level($level: 1) {
   $adjustment: -5%;
 
-  // Adjust the lightness based on the level
+  // Adjust the lightness/"darkness", based on the level
   @if $level == 2 {
     $adjustment: -5%;
   } @else if $level == 3 {
@@ -16,19 +16,23 @@
   // Default light styles
   html[data-theme="light"] & {
     background-color: color.adjust($light-color, $lightness: $adjustment);
-    color: clr(accent-color);
-
-  }
+    
+    a {
+        color: clr(accent-color);
+      }
+    }
+    
 
   // Dark theme styles using attribute selector
   html[data-theme="dark"] & {
     background-color: color.adjust($dark-color, $lightness: $adjustment * -1);
     
     a {
-      color: clr(light-color);
+      color: clr(main-color, "light");
 
       &:hover {
-        color: clr(main-color);
+        background-color: clr(main-color);
+        color: clr(light-color);
       }
     }
     
@@ -89,4 +93,17 @@
   font-weight: $font-weight;
   ;
 
+}
+
+@mixin flex(
+  $direction: row,
+  $wrap: wrap,
+  $jc: flex-start,
+  $ai: normal
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $ai;
 }

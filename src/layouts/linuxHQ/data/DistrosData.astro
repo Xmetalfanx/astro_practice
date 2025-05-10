@@ -143,17 +143,14 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 
   .basicinfo-and-screenshot-container,
   .youtube-container {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
+    @incude flex($jc: space-between, $wrap: nowrap);
 
     margin-bottom: 2rem;
   }
 
   .screenshot-container {
-    justify-content: space-around;
-    display: flex;
-    flex-flow: column nowrap;
+
+    @include flex($direction: column, $jc: space-around, $wrap: nowrap);
 
     img {
       width: 100%;
@@ -163,9 +160,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   }
 
   .icon-and-title-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex($ai: center, $jc: flex-start);
 
     > div {
       margin: 0.5rem;
@@ -183,8 +178,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   }
 
   .youtube-container {
-    display: flex;
-    justify-content: space-evenly;
+    @include flex($jc: space-evenly);
     margin-top: 2rem;
 
     outline: 2px solid red;

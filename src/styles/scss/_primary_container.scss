@@ -47,8 +47,8 @@
         padding: 1.25rem;
 
         .accordion-content {
-          display: flex;
-          flex-flow: column nowrap;
+
+          @include flex($direction: column, $wrap: nowrap);
 
           // menu items
           a {
@@ -79,7 +79,7 @@
         }
 
         &.active .accordion-content {
-          display: flex;
+          @include flex;
         }
       }
     }

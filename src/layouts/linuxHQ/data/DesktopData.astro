@@ -262,8 +262,8 @@ const info_updated = Astro.props.info_updated;
   @use "@scss/base/mixins" as *;
 
   .desktop_container {
-    display: flex;
-    flex-flow: column wrap;
+
+    @include flex($direction: column);
     font-size: 1.2rem;
     line-height: 1.7rem;
     padding: 1.6rem;
@@ -277,22 +277,23 @@ const info_updated = Astro.props.info_updated;
 
     // Info and Screenshot Container
     .info_and_screenshot_container {
-      display: flex;
-      justify-content: space-between;
+
+      @include flex($jc: space-between);
+ 
       line-height: 2rem;
 
       // General Info
       .generalinfo {
-        display: flex;
-        flex-flow: column wrap;
         margin: 1rem 0;
+
+        @include flex($direction: column);
       }
     }
 
     // Versions (overall) container
     .versions_container {
-      display: flex;
-      flex-flow: row wrap;
+
+      @include flex;
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
@@ -300,6 +301,7 @@ const info_updated = Astro.props.info_updated;
         margin: 2rem 0;
         outline: 1px #333333 solid;
         margin: 1rem;
+        outline: 1px solid var(--dark-color);
         padding: 1rem;
         line-height: 2rem;
 

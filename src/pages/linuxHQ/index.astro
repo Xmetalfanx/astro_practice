@@ -45,8 +45,7 @@ import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-templ
   @use "@scss/base/_index.scss" as *;
 
   .linux-main {
-    display: flex;
-    flex-flow: column nowrap;
+    @include flex($direction: column, $wrap: nowrap);
 
     box-shadow: 5px 5px 3px var(--main-color);
     // font-size: 1.5rem;

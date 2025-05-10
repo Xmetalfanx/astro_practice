@@ -131,8 +131,8 @@ import "@css/global-styles.css";
 <style lang="scss">
   @use "@scss/base/index" as *;
   footer {
-    display: flex;
-    justify-content: space-between;
+
+    @include flex($jc: space-between);
     padding: 1.6rem;
 
     @media (max-width: $breakpoint-sm) {

@@ -42,9 +42,9 @@ footer {
 
 header {
   grid-area: header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+
+  @include flex($jc: space-between, $ai: center);
 
   font-weight: var(--fw-bold);
 
@@ -54,14 +54,14 @@ header {
   }
 
   nav {
-    display: flex;
+
+    @include flex();
     gap: 3rem;
     margin-right: 2rem;
     font-family: var(--ffamily-nav);
     font-weight: 700;
     font-style: normal;
     font-size: 1.6rem;
-    flex-wrap: wrap; // Added for mobile responsiveness
   }
 
   @media (max-width: $breakpoint-sm) {
