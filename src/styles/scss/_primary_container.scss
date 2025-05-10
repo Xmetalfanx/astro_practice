@@ -5,6 +5,9 @@
 // the main section should now be "primary-content" which includes any asides AND the <main>
 // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
 .primary-container {
+  // do i need this for something?
+  //color: clr(dark-color);
+
   // div that astro puts between the primary-container and the aside/main section
   > *:nth-child(1) {
     gap: 2rem;
@@ -45,6 +48,9 @@
         margin-bottom: 1rem;
         outline: 1px solid var(--accent-color);
         padding: 1.25rem;
+        
+        // reason: it looks like one pixel too wide at 100%, to my eyes 
+        width: 99%;
 
         .accordion-content {
 
@@ -53,6 +59,12 @@
           // menu items
           a {
             margin: 0.5rem 0;
+            color: clr(accent-color, "dark");
+
+
+            [data-theme="dark"] {
+              color: clr(light-color)
+            }
           }
         }
       }
