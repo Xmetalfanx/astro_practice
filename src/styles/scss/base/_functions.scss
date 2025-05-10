@@ -2,9 +2,6 @@
 @use "sass:color";
 @use "colors" as *;
 
-@function generate-color-variation($color, $lightness) {
-  @return color.scale($color, $lightness: $lightness);
-}
 
 @function clr($color-name, $variant: "base") {
   @if map.has-key($colors, $color-name) {
