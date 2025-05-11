@@ -1,64 +1,88 @@
 ---
-import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-template.astro";
+import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.astro";
 ---
 
-<LinuxDesktopTemplate
+<LinuxBaseTemplate
   title="Linux Desktops"
   keywords="Linux Desktops, Linux Desktop Environments, Linux Desktop Themes"
   description="Linux Desktops, Desktop Environments, and Themes"
 >
-  <div slot="linux-main" class="linux-main">
-    <p>This section is for Linux Desktop Environments, Distros and Themes.</p>
+  <div slot="linux-container" class="linux-main">
+    <!-- <p>This section is for Linux Desktop Environments, Distros and Themes.</p> -->
 
-    <p>
-      My Goal is to help users see the differences between the different Linux
-      Desktop Distros, and also the relationship between them and to hopefully
-      help find the combination that works for them.
-    </p>
+    <section>
+      <h1>My Goal:</h1>
 
-    <p>
-      I also want to promote open source software and Linux (as well as
-      potentially adding BSD).
-    </p>
+      <p>
+        My Goal is to help users see the differences between the different Linux
+        Desktop Distros, and also the relationship between them and to hopefully
+        help find the combination that works for them.
+      </p>
 
-    <hr />
+      <p>
+        I also want to promote open source software and Linux (as well as
+        potentially adding BSD).
+      </p>
+    </section>
 
-    <h1>What this LinuxHQ section includes</h1>
-    <ul>
-      <li>
-        Linux Desktop options including screenshots, system requirments, and
-        info on what version is in what Linux Distrobution
-      </li>
-      <li>
-        Linux Distrobution information including currently supported release and
-        desktop options and screenshots
-      </li>
-      <li>
-        Theming: Information on Linux Themes, Icon and Cursor packs to custom
-        the look of your Linux desktop
-      </li>
-    </ul>
+    <section>
+      <h1>What this LinuxHQ section includes</h1>
+      <ul>
+        <li>
+          Linux Desktop options including screenshots, system requirments, and
+          info on what version is in what Linux Distribution
+        </li>
+        <li>
+          Linux Distrobution information including currently supported release
+          and desktop options and screenshots
+        </li>
+        <li>
+          Theming: Information on Linux Themes, Icon and Cursor packs to custom
+          the look of your Linux desktop
+        </li>
+      </ul>
+    </section>
   </div>
-</LinuxDesktopTemplate>
+</LinuxBaseTemplate>
 
 <style lang="scss">
   @use "@scss/base/_index.scss" as *;
 
   .linux-main {
-    @include flex($direction: column, $wrap: nowrap);
+    @include flex($direction: column, $wrap: nowrap, $ai: center);
 
-    box-shadow: 5px 5px 3px var(--main-color);
-    outline: 1px solid var(--main-color);
     padding: 1.5rem 2rem;
 
+    @media (width <= $breakpoint-sm) { 
+      padding: unset;
+    }
+
     > * {
-      max-width: 72ch;
-      margin: 2rem 0;
+      max-width: 80%;
+      margin: 1rem 0;
+    }
+
+    section {
+      @include box-shadow(
+        $x: 5px,
+        $y: 5px,
+        $blur: 3px,
+        $color: var(--main-color)
+      );
+      @include border-radius;
+      @include outline($color: clr(main-color));
+      @include color-level(2);
+
+      padding: 1.5rem;
+
+      p {
+        margin: 1rem 0;
+      }
     }
 
     h1 {
-      font-size: 2rem;
-      margin: 1rem 0;
+      font-size: 1.5rem;
+      // margin: 1rem 0;
       font-weight: 600;
     }
 
@@ -68,15 +92,11 @@ import LinuxDesktopTemplate from "@layouts/templates/linuxhq/linux-desktop-templ
       padding: 0;
 
       li {
-        //width: 100%;
         border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 10px;
-        transition: box-shadow 0.3s ease;
+        margin-left: 2rem;
+        padding: 1rem;
 
-        &:hover {
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+        transition: box-shadow 0.3s ease;
       }
     }
   }

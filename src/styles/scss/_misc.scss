@@ -1,13 +1,32 @@
 @use "base/index" as *;
 
 .desktop_container {
+  // note to self: the default flex direction is row
+  // not sure about this here (the jc)
+  @include flex($jc: space-between);
 
-    // note to self: the default flex direction is row
-    // not sure about this here (the jc) 
-    @include flex($jc: center);
-
-    @include box-shadow;
+  .desktop-card {
     @include color-level(2);
+    @include box-shadow(
+      $x: 0,
+      $y: 0.15rem,
+      $blur: 0.60
+      rem,
+      $color: clr(light-color)
+    );
+  }
+}
 
+.mobile_menu_related {
+  display: none;
+  // what is this (below) for if display is none?
+  // writing-mode: horizontal-tb;
 
+  @media ($breakpoint-sm) {
+    @include links;
+
+    display: block;
+    margin: 1rem auto;
+    scroll-behavior: smooth;
+  }
 }

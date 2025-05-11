@@ -1,4 +1,7 @@
 ---
+import AsideLinkTarget from "@components/global/AsideLinkTarget.astro";
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
+
 const themes = [
   { name: "Adapta Theme", link: "/linuxHQ/theming/themes/adapta_theme" },
   { name: "Arc Theme", link: "/linuxHQ/theming/themes/arc_theme" },
@@ -30,12 +33,16 @@ const iconThemes = [
   },
 ];
 ---
+<!-- target for mobile link -->
+<div id="aside"></div>
+
+<!-- this is the link only on mobile to return to the top of the page -->
+<a href="#backtotop" class="backtotop">Back to Top</a>
 
 <input type="checkbox" id="themeMenu" />
 <label for="themeMenu">Linux Themes</label>
 <div class="accordion">
   <div class="accordion-content">
-    <h2>Linux Themes</h2>
     <ul>
       {
         themes.map((theme) => (
@@ -52,7 +59,6 @@ const iconThemes = [
 <label for="iconThemeMenu">Icon Themes</label>
 <div class="accordion">
   <div class="accordion-content">
-    <h2>Icon Themes</h2>
     <ul>
       {
         iconThemes.map((icon) => (

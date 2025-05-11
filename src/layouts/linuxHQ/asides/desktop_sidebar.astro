@@ -1,4 +1,6 @@
 ---
+import AsideLinkTarget from "@components/global/AsideLinkTarget.astro";
+
 const windowManagers = [
   { name: "Awesome", link: "/linuxHQ/desktops/window-managers/awesome" },
   { name: "bspwm", link: "/linuxHQ/desktops/window-managers/bspwm" },
@@ -30,6 +32,10 @@ const qt = [
   { name: "Plasma/KDE", link: "/linuxHQ/desktops/plasma" },
 ];
 ---
+
+<div>
+  <AsideLinkTarget />
+</div>
 
 <input type="checkbox" id="gtk2" />
 <label for="gtk2">GTK2</label>

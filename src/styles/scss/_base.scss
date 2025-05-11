@@ -66,21 +66,39 @@
 // }
 
 body {
- 
-    
-
 
   font-size: var(--fs-normal);
   
   display: grid;
+  grid-template: 1fr auto 1fr / 1fr;
   grid-template-areas:
     "header"
     "primary-container"
     "footer";
 
+  height: 100vh;
+
+  // default links ... things like header and footer are styled specifically, there
   a,
   a:link {
     text-decoration: none;
+  }
+
+
+  // @media ($breakpoint-sm) {
+  //   grid-template-areas:
+  //     "primary-content"
+  //     "header";
+  // }
+
+  @media ($breakpoint-sm) {
+    grid-template-areas:
+      "primary-content"
+      "header" ;
+    
+    // 1fr for primary-content, auto for the header
+    grid-template-rows: 1fr auto;
+
   }
 }
 

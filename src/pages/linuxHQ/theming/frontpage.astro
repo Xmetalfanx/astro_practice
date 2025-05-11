@@ -1,5 +1,6 @@
 ---
 import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+import LinkToTop from "@components/global/PageLinkToMenus.astro";
 
 const themes = [
   {
@@ -58,7 +59,14 @@ const icons = [
   keywords="linux, theming, themes, icons"
   description="Explore some of the best Linux themes and icon themes available."
 >
+<a href="#aside" class="linktoaside">Link to Menu</a>
+
+<!-- target for "backtotop" link  -->
+<div id="backtotop"></div>
+
   <div slot="linux-main">
+    <LinkToTop />
+
     <p>
       Linux theming is a great way to customize your Linux desktop environment.
       There are many themes and icon themes available for Linux that can help
@@ -106,6 +114,8 @@ const icons = [
     </section>
   </div>
 </LinuxThemeTemplate>
+
+
 <style lang="scss">
   section {
     padding: 20px;

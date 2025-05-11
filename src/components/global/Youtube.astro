@@ -8,10 +8,18 @@ const yt_src = Astro.props.yt_src;
 ---
 
 <iframe
-  width="560"
-  height="315"
   src=`${youtube_review_playlist_url}${yt_src}`
   title="${yt_title}"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen></iframe>
+
+
+<style>
+  iframe {
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 2rem auto;
+    width: clamp(400px, 40%, 80%);
+  }
+</style>

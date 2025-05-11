@@ -10,21 +10,31 @@ $dark-color: hsl(0, 0%, 15%);
 $lighten: 5%;  // Percentage works for lighten() and darken()
 $darken: -12%; // Needs to be negative when using color.adjust()
 
+// negative because i'd always want to DECREASE IT
+$sat: -10%;
 
 // for color.adjust() to work, the color must be in RGB or HSL format
 // ref: https://sass-lang.com/documentation/modules/sass/color#adjust
 // ref: https://sass-lang.com/documentation/modules/sass/color#lighten
 // ref: https://sass-lang.com/documentation/modules/sass/color#darken
 // ref: https://sass-lang.com/documentation/modules/sass/color#saturate
-// leaving old mai
 
 @function generate-color-variations($base-color) {
   @return (
     base: $base-color,
+    lsat: color.adjust($base-color, $saturation: $sat ),
+    xlsat: color.adjust($base-color, $saturation: $sat * 2 ),
+    
     light: color.adjust($base-color, $lightness: $lighten),
-    dark: color.adjust($base-color, $lightness: $darken),
     lighter: color.adjust($base-color, $lightness: $lighten * 2),
+    light-lsat: color.adjust($base-color, $lightness: $lighten, $saturation: $sat),
+    light-xlsat:color.adjust($base-color, $lightness: $lighten, $saturation: $sat * 2),
+    
+    dark: color.adjust($base-color, $lightness: $darken),
     darker: color.adjust($base-color, $lightness: $darken * 2),
+    dark-lsat: color.adjust($base-color, $lightness: $darken, $saturation: $sat),
+    dark-xlsat: color.adjust($base-color, $lightness: $darken, $saturation: $sat * 2),
+
   );
 }
 
