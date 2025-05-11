@@ -220,23 +220,22 @@ const distros = [
 </LinuxDistroTemplate>
 
 <style lang="scss">
-    @use "@scss/index" as *;
-
+  @use "@scss/index" as *;
 
   .distro-container {
-
-    @include flex($jc:space-evenly);
+    @include flex($jc: space-evenly);
 
     gap: 2rem;
-
+    line-height: 2.5rem;
     section {
       @include color-level(2);
-      line-height: 2rem;
+
       padding: 2rem;
       width: 40%;
 
-      .distro_icon_and_title {
+      max-width: 72ch;
 
+      .distro_icon_and_title {
         @include flex($jc: center, $ai: center);
         margin: 1rem 0;
 
@@ -252,19 +251,6 @@ const distros = [
         }
       }
 
-      .common_links {
-        margin: 1rem 0;
-        line-height: 1.5rem;
-      }
-
-      .more-info {
-        @include color-level(3);
-        margin: 1rem 0;
-        max-width: 65ch;
-        line-height: 3rem;
-        outline: 1px solid $accent-color;
-        padding: 0.5rem 1.5rem;
-      }
 
       .screenshot {
         height: auto;
