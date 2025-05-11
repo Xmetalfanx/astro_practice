@@ -7,6 +7,7 @@
       "@graphics/*": ["src/pages/graphics/*"],
       "@css/*": ["src/styles/*"],
       "@scss/*": ["src/styles/scss/*"],
+      "@scripts/*": ["src/scripts/*"],
       "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
