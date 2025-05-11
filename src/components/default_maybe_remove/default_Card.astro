@@ -37,13 +37,14 @@ import "@css/global-styles.css";
     @include border-radius;
 
     .link-card__title {
-      @include header($font-size: var(--h2));
+      @include header($font-size: var(--h2),$font-family: unset);
       margin: 0 0 1rem 0;
     }
 
     > a,
     a:link {
-      color: clr(accent-color);
+      // remove? 
+      // color: clr(accent-color);
 
       // padding: 1rem;
       border-radius: 0.35rem;
