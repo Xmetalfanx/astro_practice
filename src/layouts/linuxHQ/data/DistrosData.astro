@@ -149,8 +149,12 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   }
 
   .screenshot-container {
-
-    @include flex($direction: column, $jc: space-around, $wrap: nowrap);
+    @include flex(
+      $direction: column,
+      $jc: space-around,
+      $wrap: nowrap,
+      $ai: center
+    );
 
     img {
       width: 100%;
@@ -179,8 +183,8 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 
   .youtube-container {
     @include flex($jc: space-evenly);
-    margin-top: 2rem;
+    @include outline;
 
-    outline: 2px solid red;
+    margin-top: 3rem;
   }
 </style>
