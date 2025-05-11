@@ -10,20 +10,21 @@
 
   // div that astro puts between the primary-container and the aside/main section
   > *:nth-child(1) {
-    gap: 2rem;
+    // gap: 2rem;
     margin: 1rem;
 
-    // grid-area: primary-container;
     display: grid;
     grid-template-areas: "aside main";
-    // grid-template-columns: 16% 1fr;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 16% 1fr;
+    gap: 1rem;
 
-    @media (width > $breakpoint-sm) and (width <= 64em) {
+    // between "Desktop" and "mobile"  .. Tablet maybe?
+    @media (width > $breakpoint-sm) and (width <= $breakpoint-md) {
       gap: 1rem;
-      // grid-template-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
     }
 
+    // small breakpoint
     @media (width <= $breakpoint-sm) {
       grid-template-areas:
         "aside"
@@ -48,22 +49,25 @@
         margin-bottom: 1rem;
         outline: 1px solid var(--accent-color);
         padding: 1.25rem;
-        
-        // reason: it looks like one pixel too wide at 100%, to my eyes 
+
+        // reason: it looks like one pixel too wide at 100%, to my eyes
         width: 99%;
 
         .accordion-content {
-
           @include flex($direction: column, $wrap: nowrap);
 
           // menu items
           a {
-            margin: 0.5rem 0;
-            color: clr(accent-color, "dark");
-
+            margin-top: 0.5rem;
+            // important just as a test
 
             [data-theme="dark"] {
-              color: clr(light-color)
+              color: clr(light-color);
+            }
+
+            &:focus,
+            &:hover {
+              background-color: clr(light-color, "dark");
             }
           }
         }
