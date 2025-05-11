@@ -1,10 +1,11 @@
 ---
 import Link from "@components/global/Link.astro";
 
+
 const arch_based = [
   { name: "Arch", link: "../arch/archlinux" },
   { name: "Archbang", link: "../arch/archbang" },
-  { name: "Endevoour", link: "../arch/endeavouros" },
+  { name: "EndeavourOS", link: "../arch/endeavouros" },
   { name: "Manjaro", link: "../arch/manjaro" },
 ];
 
@@ -96,30 +97,30 @@ const other_rpm_based = [
 <div class="accordion">
   <div class="accordion-content">
     Fedora Based
-    <ul>
+
       {
         fedora_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-    </ul>
+   
 
     OpenSUSE Based
-    <ul>
+  
       {
         opensuse_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-    </ul>
+    
     Other RPM distros
-    <ul>
+   
       {
         other_rpm_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-    </ul>
+   
   </div>
 </div>
 
