@@ -84,22 +84,29 @@ import DarkIcon from "@graphics/light_mode.svg";
 
       // the overall hamburger menus and nav on smaller layouts
       #siteMenu {
-        flex-direction: column;
+
+        @include flex($direction: column, $wrap: nowrap, $jc: flex-end, $ai: flex-end);
+  
         cursor: pointer;
+        inset: 0 0 0 auto;
+
+        label {
+
+          z-index: 10;
+        }
 
         &:focus,
         &:hover {
+          // the "hamburger" menu on hover
+          background-color: clr(main-color, dark);
+          @include outline($color: white);
 
-            // the "hamburger" menu on hover
-            background-color: clr(main-color, dark);
-            @include outline($color: white);
-
-            > label {
-              span {
-                background-color: clr(dark-color, light);
-              }
+          // the "burgers" on hover
+          > label {
+            span {
+              background-color: clr(dark-color, light);
             }
-     
+          }
         }
 
         label {
@@ -107,9 +114,9 @@ import DarkIcon from "@graphics/light_mode.svg";
           span {
             display: block;
             width: 100px;
-            height: 15px;
+            height: 12px;
             background-color: clr(accent-color);
-            margin: 1rem 0;
+            margin: .75rem 0;
           }
         }
 

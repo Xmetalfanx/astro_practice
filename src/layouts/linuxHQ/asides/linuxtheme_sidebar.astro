@@ -33,41 +33,43 @@ const iconThemes = [
   },
 ];
 ---
-<!-- target for mobile link -->
-<div id="aside"></div>
+<div>
+ <AsideLinkTarget />
+</div>
 
-<!-- this is the link only on mobile to return to the top of the page -->
-<a href="#backtotop" class="backtotop">Back to Top</a>
-
-<input type="checkbox" id="themeMenu" />
-<label for="themeMenu">Linux Themes</label>
-<div class="accordion">
-  <div class="accordion-content">
-    <ul>
-      {
-        themes.map((theme) => (
-          <li>
-            <a href={theme.link}>{theme.name}</a>
-          </li>
-        ))
-      }
-    </ul>
+<div class="aside-section">
+  <input type="checkbox" id="themeMenu" />
+  <label for="themeMenu">Linux Themes</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      <ul>
+        {
+          themes.map((theme) => (
+            <li>
+              <a href={theme.link}>{theme.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </div>
 
-<input type="checkbox" id="iconThemeMenu" />
-<label for="iconThemeMenu">Icon Themes</label>
-<div class="accordion">
-  <div class="accordion-content">
-    <ul>
-      {
-        iconThemes.map((icon) => (
-          <li>
-            <a href={icon.link}>{icon.name}</a>
-          </li>
-        ))
-      }
-    </ul>
+<div class="aside-section">
+  <input type="checkbox" id="iconThemeMenu" />
+  <label for="iconThemeMenu">Icon Themes</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      <ul>
+        {
+          iconThemes.map((icon) => (
+            <li>
+              <a href={icon.link}>{icon.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </div>
 <style lang="scss">

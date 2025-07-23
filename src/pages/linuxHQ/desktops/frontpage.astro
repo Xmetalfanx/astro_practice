@@ -112,7 +112,7 @@ const desktops = [
     ],
     screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/mate.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/mate-small.png",
+      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/mate-small.png",
     screenshot_distro: "Fedora - Mate 1.26",
   },
   {
@@ -200,26 +200,26 @@ const desktops = [
 
 <style lang="scss">
   @use "@scss/base/_index.scss" as *;
-
-  // for the box-shadow on desktop-container, otherwise this doesn't get pulled in
-  // ??? eh? ... wouldn't the normal css getting pulled in ... pull this in ?
   @use "@scss/_misc.scss" as *;
 
   .desktop_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+
+    @media ($breakpoint-lg) {
+      .desktop_container {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+      }
+    }
 
     .desktop-card {
       @include flex($direction: column, $ai: center);
-      @include outline($color: clr(dark-color));
-
-      html[data-theme="dark"] & {
-        @include outline($color: clr(light-color));
-      }
-
-      align-items: center;
       padding: 1rem;
       border-radius: 5px;
-      width: 30%;
+      /* Responsive width using clamp, but grid controls columns */
+      width: 100%;
+
       .icon_and_title {
         @include flex($ai: center);
         font-size: 1.25rem;
@@ -261,19 +261,12 @@ const desktops = [
     }
   }
 
-  @media ($breakpoint-xl) and (width > $breakpoint-sm) {
-    .desktop_container .desktop-card {
-      width: 45%;
-      justify-content: space-evenly;
-    }
-  }
-
   @media ($breakpoint-sm) {
-    .desktop_container .desktop-card {
+ 
+    .desktop-card {
       margin: 0 auto;
       padding: 2rem;
-      width: 85%;
-
+      /* Remove width override, grid handles sizing */
       .icon_and_title {
         font-size: 1rem;
         margin: 1rem 0;

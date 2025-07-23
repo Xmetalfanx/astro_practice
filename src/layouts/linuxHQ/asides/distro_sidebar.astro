@@ -79,94 +79,99 @@ const other_rpm_based = [
  <AsideLinkTarget />
 </div>
 
-<input type="checkbox" id="archmenu" />
-<label for="archmenu">Arch Based </label>
-<div class="accordion">
-  <div class="accordion-content">
-    {
-      arch_based.map((distros) => (
-        <Link linktext={distros.name} location={distros.link} />
-      ))
-    }
-  </div>
-</div>
-
-<input type="checkbox" id="debianmenu" />
-<label for="debianmenu">Debian Based</label>
-<div class="accordion">
-  <div class="accordion-content">
-    {
-      debian_based.map((distros) => (
-        <Link linktext={distros.name} location={distros.link} />
-      ))
-    }
-  </div>
-</div>
-
-<input type="checkbox" id="rpmmenu" />
-<label for="rpmmenu">RPM Based</label>
-<div class="accordion">
-  <div class="accordion-content">
-    <div>Fedora Based </div>
-
+<div class="aside-section">
+  <input type="checkbox" id="archmenu" />
+  <label for="archmenu">Arch Based </label>
+  <div class="accordion">
+    <div class="accordion-content">
       {
-        fedora_based.map((distros) => (
+        arch_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-   
+    </div>
+  </div>
+</div>
 
-    <div>OpenSUSE Based </div>
-  
+<div class="aside-section">
+  <input type="checkbox" id="debianmenu" />
+  <label for="debianmenu">Debian Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
       {
-        opensuse_based.map((distros) => (
+        debian_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-    
-    <div>Other RPM distros </div>
-   
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="rpmmenu" />
+  <label for="rpmmenu">RPM Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      <div>Fedora Based </div>
+        {
+          fedora_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+      <div>OpenSUSE Based </div>
+        {
+          opensuse_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+      <div>Other RPM distros </div>
+        {
+          other_rpm_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="gentoomenu" />
+  <label for="gentoomenu">Gentoo Family</label>
+  <div class="accordion">
+    <div class="accordion-content">
       {
-        other_rpm_based.map((distros) => (
+        gentoo_based.map((distros) => (
           <Link linktext={distros.name} location={distros.link} />
         ))
       }
-   
+    </div>
   </div>
 </div>
 
-<input type="checkbox" id="gentoomenu" />
-<label for="gentoomenu">Gentoo Family</label>
-<div class="accordion">
-  <div class="accordion-content">
-    {
-      gentoo_based.map((distros) => (
-        <Link linktext={distros.name} location={distros.link} />
-      ))
-    }
+<div class="aside-section">
+  <input type="checkbox" id="miscmenu" />
+  <label for="miscmenu">Misc Distros</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        misc_distros.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
 
-<input type="checkbox" id="miscmenu" />
-<label for="miscmenu">Misc Distros</label>
-<div class="accordion">
-  <div class="accordion-content">
-    {
-      misc_distros.map((distros) => (
-        <Link linktext={distros.name} location={distros.link} />
-      ))
-    }
-  </div>
-</div>
-
-<input type="checkbox" id="ubuntumenu" />
-<label for="ubuntumenu">Ubuntu Based</label>
-<div class="accordion">
-  <div class="accordion-content">
-    {
-      ubuntu_based.map((distros) => (
-        <Link linktext={distros.name} location={distros.link} />
-      ))
-    }
+<div class="aside-section">
+  <input type="checkbox" id="ubuntumenu" />
+  <label for="ubuntumenu">Ubuntu Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        ubuntu_based.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>

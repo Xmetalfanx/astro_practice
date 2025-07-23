@@ -1,0 +1,66 @@
+---
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+
+const distro_name = "mocaccinoos";
+const distro_title = "MocaccinoOS";
+
+import distro_icon from "@distro_icons/mocaccinoOS.png";
+
+const moreinfo_desktops = "Various";
+const moreinfo_featured = "";
+const moreinfo_releasecycle = "";
+const moreinfo_similar_distros = "Gentoo, Calculate Linux";
+const moreinfo_target_audience = "Advanced Users";
+const moreinfo_distro_type = "Rolling";
+
+const screenshot_desktop = "";
+const screenshot_icon = "";
+const screenshot_theme = "";
+
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/gentoo_based/mocaccinoos.png";
+
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/gentoo_based/thumbnails/mocaccinoos-small.png";
+
+const version_latest = "MocaccinoOS v1.8";
+const versions_supported = "MocaccinoOS v1.8";
+
+const link_download = "https://github.com/mocaccinoOS/mocaccino/releases";
+const link_forum = "https://github.com/mocaccinoOS/mocaccino/discussions";
+const link_homepage = "https://www.mocaccino.org/";
+const link_mydistro_page = "";
+
+const youtube_review_playlist = "";
+const youtube_tips_playlist = "";
+---
+
+<LinuxDistroTemplate
+  title="MocaccinoOS "
+  meta_keywords="MocaccinoOS, Gentoo-based, Rolling Release, Linux distributions"
+  meta_description="Explore MocaccinoOS, a rolling-release Linux distribution based on Gentoo. Learn about its features, target audience, and more."
+>
+  <DistroData
+    distro_title={distro_title}
+    version_latest={version_latest}
+    link_homepage={link_homepage}
+    link_forum={link_forum}
+    link_download={link_download}
+    link_mydistro_page={link_mydistro_page}
+    moreinfo_desktops={moreinfo_desktops}
+    moreinfo_featured={moreinfo_featured}
+    moreinfo_releasecycle={moreinfo_releasecycle}
+    moreinfo_similar_distros={moreinfo_similar_distros}
+    moreinfo_target_audience={moreinfo_target_audience}
+    moreinfo_distro_type={moreinfo_distro_type}
+    distro_icon={distro_icon}
+    screenshot_desktop={screenshot_desktop}
+    screenshot_icon={screenshot_icon}
+    screenshot_src={screenshot_src}
+    screenshot_theme={screenshot_theme}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_latest={version_latest}
+    versions_supported={versions_supported}
+    youtube_review_playlist={youtube_review_playlist}
+    youtube_tips_playlist={youtube_tips_playlist}
+  />
+</LinuxDistroTemplate>

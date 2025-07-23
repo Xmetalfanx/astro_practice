@@ -7,12 +7,12 @@
 
   .desktop-card {
     @include color-level(2);
-    @include box-shadow(
-      $x: 0,
-      $y: 0.15rem,
-      $blur: 0.60
-      rem,
-      $color: clr(light-color)
+    @include default-ol-and-bs(
+      $bs-x: 0,
+      $bs-y: 0.15rem,
+      $bs-blur: 0.6rem,
+      // bs-color default is main-color
+      $bs-color-dark: clr(light-color)
     );
   }
 }

@@ -5,9 +5,8 @@
 // the main section should now be "primary-content" which includes any asides AND the <main>
 // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
 .primary-container {
-
   grid-area: primary-container;
- 
+
   @include links;
 
   // div that astro puts between the primary-container and the aside/main section
@@ -19,14 +18,13 @@
     gap: 2rem;
 
     // between "Desktop" and "mobile"  .. Tablet maybe?
-    @media ($breakpoint3-md) {
-      gap: 2rem;
-      grid-template-columns: 20% 1fr;
+    @media ($breakpoint-md) {
+      grid-template-columns: 25% 1fr;
     }
 
     // small breakpoint
-    @media ($breakpoint3-sm) {
-      gap: 1rem;
+    @media ($breakpoint-sm) {
+      gap: 2rem;
       grid-template-areas:
         "main"
         "aside";
@@ -40,6 +38,17 @@
       grid-area: aside;
       margin: unset;
 
+      .aside-section {
+
+        @include box-shadow(
+          $x: 0,
+          $y: 0,
+          $blur: 0.6rem,
+          $color-dark: clr(light-color),
+          
+        );
+      }
+
       input {
         display: none;
       }
@@ -49,12 +58,11 @@
         color: clr(light-color);
         font-weight: 800;
         display: block;
-        
+
         // this may not be final but leave it for now
         margin: unset;
 
         padding: 1rem;
-
 
         &:hover {
           cursor: crosshair;
@@ -62,14 +70,13 @@
       }
 
       .accordion {
+        @include border;
         @include color-level(2);
 
         margin-bottom: 1rem;
-        outline: 1px solid var(--accent-color);
+
         padding: 1.25rem;
 
-        // reason: it looks like one pixel too wide at 100%, to my eyes
-        width: 99%;
 
         .accordion-content {
           @include flex($direction: column, $wrap: nowrap);
@@ -100,54 +107,56 @@
   }
 
   // outside of nth child(1) so that it doesn't affect the aside
-  @media ($breakpoint-sm) {
-    aside {
-      margin: 0 2rem;
+  // ?? @ prior comment since the aside is in this code
+  // ?? - i think the aside IS in the nth-child(1) so this is not needed?
+  // @media ($breakpoint-sm) {
+  //   aside {
+  //     margin: 0 2rem;
 
-      input:checked + label + .accordion {
-        height: auto;
-        transition: all 450ms;
+  //     input:checked + label + .accordion {
+  //       height: auto;
+  //       transition: all 450ms;
 
-        .accordion-content {
-          place-items: center;
-          a { 
-            margin: 1.5rem 0;
-          }
-        }
-      }
+  //       .accordion-content {
+  //         place-items: center;
+  //         a {
+  //           margin: 1.5rem 0;
+  //         }
+  //       }
+  //     }
 
-      // this is the default state
-      input:not(:checked) + label + .accordion {
-        // margin: unset;
-        outline: unset;
-        padding: unset;
+  //     // this is the default state
+  //     input:not(:checked) + label + .accordion {
+  //       // margin: unset;
+  //       outline: unset;
+  //       padding: unset;
 
-        margin: 1rem 0;
-        height: 0;
-        overflow: hidden;
+  //       margin: 1rem 0;
+  //       height: 0;
+  //       overflow: hidden;
 
-        transition: all 450ms ;
-      }
+  //       transition: all 450ms ;
+  //     }
 
-      label {
-        text-align: center;
-      }
+  //     label {
+  //       text-align: center;
+  //     }
 
-      .accordion { 
-        width: unset;
-      }
-    }
+  //     .accordion {
+  //       width: unset;
+  //     }
+  //   }
 
-    .linux-main {
-      @include color-level(2);
+  //   .linux-main {
+  //     // @include color-level(2);
 
-      li,
-      .card {
-        @include color-level(3);
-        margin: 1.15rem 0;
-        padding: 0.5rem;
-        border-radius: 5px;
-      }
-    }
-  }
+  //     li,
+  //     .card {
+  //       @include color-level(3);
+  //       margin: 1.15rem 0;
+  //       padding: 0.5rem;
+  //       border-radius: 5px;
+  //     }
+  //   }
+  // }
 }

@@ -13,9 +13,7 @@
   @include flex($ai: center, $jc: center);
 
   @media ($breakpoint-sm) {
-    // position: absolute;
-    // left: 1rem;
-    // right: unset;
+    scale: 1.45;
   }
 
   // for the svg color

@@ -34,11 +34,9 @@ const screenshot_src = Astro.props.screenshot_src; // Added new prop
 const youtube_review_playlist = Astro.props.youtube_review_playlist;
 const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 ---
-<a href="#aside" class="linktoaside">Link to Menu</a>
-
-<!-- target for "backtotop" link  -->
-<div id="backtotop"></div>
-
+<div>
+ <PageLinkToMenus />
+</div>  
 <div class="container">
   <div class="icon-and-title-container">
     <div class="distro-icon">
@@ -196,7 +194,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
       margin-top: 3rem;
       width: 95%;
 
-      @media ($breakpoint3-sm) {
+      @media ($breakpoint-sm) {
         display:none;
       }
     }

@@ -104,8 +104,11 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <div class="screenshot">
-      <a href={screenshot_thumbnail} target="_blank">
-        <Image src={screenshot_src} alt="test" width={500} />
+        <a href={typeof screenshot_src === "string" ? screenshot_src : screenshot_src.src} target="_blank">
+        <Image 
+          src={screenshot_src} 
+          alt="test" 
+          width={500} />
       </a>
     </div>
   </div>
