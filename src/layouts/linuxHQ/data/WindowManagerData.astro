@@ -247,7 +247,7 @@ const info_updated = Astro.props.info_updated;
       .sub_version_container {
         width: clamp(300px, 30%, 100%);
         margin: 2rem 0;
-        outline: 1px #333333 solid;
+        @include outline($color: clr(dark-color));
         margin: 1rem;
         padding: 1rem;
 
@@ -261,7 +261,8 @@ const info_updated = Astro.props.info_updated;
 
     // Install Container
     .install_container {
-      outline: 1px #333333 solid;
+      @include outline($color: clr(dark-color));
+      
       margin: 2rem 1rem;
       padding: 1rem;
 
@@ -291,7 +292,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    outline: 1px #333333 solid;
+    @include outline($color: clr(dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

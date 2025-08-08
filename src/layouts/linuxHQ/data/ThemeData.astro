@@ -1,4 +1,5 @@
 ---
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
 import "@css/global-styles.css";
 
 // Import the <Image /> component
@@ -21,6 +22,10 @@ const {
   info_updated,
 } = Astro.props;
 ---
+
+<div>
+  <PageLinkToMenus />
+</div>
 
 <div class="theme-container">
   <div class="theme-header">{theme_title}</div>
@@ -64,7 +69,7 @@ const {
     @include color-level(2);
     font-family: Arial, sans-serif;
     padding: 20px;
-    outline: 1px solid var(--light-color);
+    @include outline($color: clr(light-color));
     border-radius: 8px;
     margin: 2rem auto;
 
@@ -98,7 +103,8 @@ const {
 
       img {
         max-width: 100%;
-        border: 1px solid #ddd;
+        // border: 1px solid #ddd;
+        @include border ($border-color: clr(light-color));
         border-radius: 8px;
       }
     }

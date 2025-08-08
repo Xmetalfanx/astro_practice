@@ -1,14 +1,30 @@
 ---
 // import DistroData from "@layouts/linuxHQ/DistrosData.astro";
+
+// Template to use
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+
+import LinkToMenus from "@components/global/PageLinkToMenus.astro";
+
+// for the images
 import { Image } from "astro:assets";
 
+// For the thumbnails
 import linuxMintThumbnail from "@ubuntu_ss/thumbnails/mint-small.png";
 import archThumbnail from "@arch_ss/thumbnails/arch-small.png";
 import ubuntuThumbnail from "@ubuntu_ss/thumbnails/ubuntu-small.png";
 import debianThumbnail from "@debian_ss/thumbnails/debian-small.png";
 import fedoraThumbnail from "@rpm_ss/thumbnails/fedora-small.png";
-import openSuseThumbnail from "@rpm_ss/thumbnails/opensuse-small.png";
+import openSUSEThumbnail from "@rpm_ss/thumbnails/opensuse-small.png";
+
+// for the screenshot sources
+import linuxMintSSSrc from "@ubuntu_ss/mint.png";
+import archSSSrc from "@arch_ss/arch.png";
+import ubuntuSSSrc from "@ubuntu_ss/ubuntu.png";
+import debianSSSrc from "@debian_ss/debian.png";
+import fedoraSSSrc from "@rpm_ss/fedora.png";
+import openSUSESSSrc from "@rpm_ss/opensuse.png";
+
 
 const distros = [
   {
@@ -23,7 +39,7 @@ const distros = [
     similar_distros: "",
     target_audience: "Any/New Users",
     distro_type: "LTS - Long Term Support",
-    screenshot_src: "@ubuntu_ss/mint.png",
+    screenshot_src: linuxMintSSSrc,
     screenshot_thumbnail: linuxMintThumbnail,
     screenshot_desktop: "Cinnamon",
     screenshot_icon: "Mint-Y",
@@ -47,7 +63,7 @@ const distros = [
       "(...sort of) Antergos, SwagArch, (..this is a stretch) Manjaro",
     target_audience: "Moderate to Advanced Users",
     distro_type: "",
-    screenshot_src: "@arch_ss/arch.png",
+    screenshot_src: archSSSrc,
     screenshot_thumbnail: archThumbnail,
     screenshot_desktop: "Plasma 5",
     screenshot_icon: "",
@@ -71,13 +87,13 @@ const distros = [
       "(many 'buntu flavors) Linux Lite, Linux Mint, Uberstudent",
     target_audience: "Any User",
     distro_type: "LTS and non-LTS",
-    screenshot_src: "@ubuntu_ss/ubuntu.png",
+    screenshot_src: ubuntuSSSrc,
     screenshot_thumbnail: ubuntuThumbnail,
     screenshot_desktop: "Gnome Shell",
     screenshot_icon: "",
     screenshot_theme: "",
-    version_latest: "24.04",
-    versions_supported: "22.04 LTS, 24.04",
+    version_latest: "25.04",
+    versions_supported: "22.04 LTS, 24.04 LTS, 25.04",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
     distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/ubuntu.svg",
@@ -94,7 +110,7 @@ const distros = [
     similar_distros: "Sparky Linux, Bunsenlabs, Linux Mint Debian Edition",
     target_audience: "",
     distro_type: "",
-    screenshot_src: "@debian_ss/debian.png",
+    screenshot_src: debianSSSrc,
     screenshot_thumbnail: debianThumbnail,
     screenshot_desktop: "",
     screenshot_icon: "",
@@ -117,13 +133,13 @@ const distros = [
     similar_distros: "",
     target_audience: "Moderate to advanced users",
     distro_type: "",
-    screenshot_src: "@rpm_ss/fedora.png",
+    screenshot_src: fedoraSSSrc,
     screenshot_thumbnail: fedoraThumbnail,
     screenshot_desktop: "Gnome",
     screenshot_icon: "",
     screenshot_theme: "",
-    version_latest: "38",
-    versions_supported: "37, 38, 39",
+    version_latest: "42",
+    versions_supported: "41, 42",
     youtube_review_playlist: "PLrh2y86lvcJeLcpMeVcMwbODBKBj8wqVm",
     youtube_tips_playlist: "",
     distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/fedora.svg",
@@ -140,13 +156,13 @@ const distros = [
     similar_distros: "Gecko Linux",
     target_audience: "Any User",
     distro_type: "",
-    screenshot_src: "@rpm_ss/opensuse.png",
-    screenshot_thumbnail: openSuseThumbnail,
+    screenshot_src: openSUSESSSrc,
+    screenshot_thumbnail: openSUSEThumbnail,
     screenshot_desktop: "",
     screenshot_icon: "",
     screenshot_theme: "",
-    version_latest: "15.3 Leap",
-    versions_supported: "15.3 Leap, 15.4 Leap, Tumbleweed",
+    version_latest: "15.6 Leap",
+    versions_supported: "15.6 Leap, Tumbleweed",
     youtube_review_playlist: "",
     youtube_tips_playlist: "",
     distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/opensuse.svg",
@@ -159,6 +175,8 @@ const distros = [
   keywords="linux, distros"
   description="Explore some of the best Linux distributions available."
 >
+  <LinkToMenus />
+
   <div class="distro-container">
     {
       distros.map((distro) => (
@@ -206,13 +224,14 @@ const distros = [
               <strong>Supported Versions:</strong> {distro.versions_supported}
             </div>
           </div>
-          <a href={distro.screenshot_src} target="_blank">
-            <Image
-              class="screenshot"
-              src={distro.screenshot_thumbnail}
-              alt={`${distro.title} screenshot`}
-            />
-          </a>
+          <div class="screenshot">
+            <a href={distro.screenshot_src.src} target="_blank">
+              <Image
+                src={distro.screenshot_thumbnail}
+                alt={`${distro.title} screenshot`}
+              />
+            </a>
+          </div>
         </section>
       ))
     }
@@ -230,10 +249,25 @@ const distros = [
     section {
       @include color-level(2);
 
+      @include outline;
+
       padding: 2rem;
       width: 40%;
 
       max-width: 72ch;
+
+      // Section breakpoint
+      @media ($breakpoint-md) {
+        width: 90%;
+      }
+
+      @media ($breakpoint-sm) {
+        flex-direction: column;
+
+        section {
+          width: unset;
+        }
+      }
 
       .distro_icon_and_title {
         @include flex($jc: center, $ai: center);
@@ -245,18 +279,26 @@ const distros = [
         }
 
         .distro_icon {
-          width: 50px;
-          height: 50px;
+          width: 80px;
+          height: 80px;
           margin: 0 1rem;
         }
       }
 
-
       .screenshot {
+        // not sure i need height now
         height: auto;
         margin: 0 auto;
         padding: 1rem;
         width: 100%;
+      }
+    }
+
+    @media ($breakpoint-sm) {
+      flex-direction: column;
+
+      section {
+        width: unset;
       }
     }
   }

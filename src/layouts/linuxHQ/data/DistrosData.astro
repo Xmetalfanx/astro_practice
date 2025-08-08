@@ -2,6 +2,7 @@
 import "@css/global-styles.css";
 import { Image } from "astro:assets";
 import YouTube from "@components/global/Youtube.astro";
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
 
 const distro_title = Astro.props.distro_title;
 const distro_base = Astro.props.distro_base;
@@ -33,7 +34,9 @@ const screenshot_src = Astro.props.screenshot_src; // Added new prop
 const youtube_review_playlist = Astro.props.youtube_review_playlist;
 const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 ---
-
+<div>
+ <PageLinkToMenus />
+</div>  
 <div class="container">
   <div class="icon-and-title-container">
     <div class="distro-icon">
@@ -99,7 +102,6 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
         <Image
           src={screenshot_thumbnail}
           alt="{distro_title} screenshot"
-          width={600}
         />
       </a>
       <div>
@@ -130,61 +132,71 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   }
   .container {
     @include color-level(2);
+    @include outline($color: clr(accent-color));
+
+
     font-size: 1.1rem;
     line-height: 2rem;
     margin-inline: auto;
     padding: 1rem;
-    width: 80vw;
 
     > div {
       margin: 0.5rem auto;
     }
-  }
 
-  .basicinfo-and-screenshot-container,
-  .youtube-container {
-    @incude flex($jc: space-between, $wrap: nowrap);
+    .basicinfo-and-screenshot-container,
+    .youtube-container {
+      @incude flex($jc: space-between, $wrap: nowrap);
 
-    margin-bottom: 2rem;
-  }
-
-  .screenshot-container {
-    @include flex(
-      $direction: column,
-      $jc: space-around,
-      $wrap: nowrap,
-      $ai: center
-    );
-
-    img {
-      width: 100%;
-      height: auto;
-      margin: 2rem 0;
-    }
-  }
-
-  .icon-and-title-container {
-    @include flex($ai: center, $jc: flex-start);
-
-    > div {
-      margin: 0.5rem;
+      margin-bottom: 2rem;
     }
 
-    .distro-title {
-      font-weight: bold;
-      font-size: 2rem;
-    }
-    .distro-icon {
-      height: 48px;
-      width: 48px;
-      float: left;
-    }
-  }
+    .screenshot-container {
+      @include flex(
+        $direction: column,
+        $jc: space-around,
+        $wrap: nowrap,
+        $ai: center
+      );
 
-  .youtube-container {
-    @include flex($jc: space-evenly);
-    @include outline;
+      img {
+        height: auto;
+        margin: 2rem 0;
+        width: clamp(300px, 40vw, 80vw);
+        
+      }
+    }
 
-    margin-top: 3rem;
+    .icon-and-title-container {
+      @include flex($ai: center, $jc: flex-start);
+
+      > div {
+        margin: 0.5rem;
+      }
+
+      .distro-title {
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      .distro-icon {
+        height: 48px;
+        width: 48px;
+        float: left;
+      }
+    }
+
+    .youtube-container {
+      @include flex($jc: space-between);
+      @include outline;
+      // padding: 2rem 1rem;
+      padding: 1rem;
+
+      margin-top: 3rem;
+      width: 95%;
+
+      @media ($breakpoint-sm) {
+        display:none;
+      }
+    }
   }
 </style>

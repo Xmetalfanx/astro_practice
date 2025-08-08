@@ -5,69 +5,94 @@
 // the main section should now be "primary-content" which includes any asides AND the <main>
 // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
 .primary-container {
-  // do i need this for something?
-  //color: clr(dark-color);
+  grid-area: primary-container;
+
+  @include links;
 
   // div that astro puts between the primary-container and the aside/main section
   > *:nth-child(1) {
-    // gap: 2rem;
-    margin: 1rem;
-
+    margin: 2rem;
     display: grid;
     grid-template-areas: "aside main";
     grid-template-columns: 16% 1fr;
-    gap: 1rem;
+    gap: 2rem;
 
     // between "Desktop" and "mobile"  .. Tablet maybe?
-    @media (width > $breakpoint-sm) and (width <= $breakpoint-md) {
-      gap: 1rem;
-      grid-template-columns: 20% 1fr;
+    @media ($breakpoint-md) {
+      grid-template-columns: 25% 1fr;
     }
 
     // small breakpoint
-    @media (width <= $breakpoint-sm) {
+    @media ($breakpoint-sm) {
+      gap: 2rem;
       grid-template-areas:
-        "aside"
-        "main";
+        "main"
+        "aside";
       grid-template-columns: unset;
+
+      // idea for the header now at the bottom so the content is not covered
+      margin-bottom: $mobile-header-height;
     }
 
     > aside {
       grid-area: aside;
       margin: unset;
+
+      .aside-section {
+
+        @include box-shadow(
+          $x: 0,
+          $y: 0,
+          $blur: 0.6rem,
+          $color-dark: clr(light-color),
+          
+        );
+      }
+
+      input {
+        display: none;
+      }
+
       label {
         background-color: clr(accent-color);
         color: clr(light-color);
         font-weight: 800;
         display: block;
+
+        // this may not be final but leave it for now
+        margin: unset;
+
         padding: 1rem;
+
+        &:hover {
+          cursor: crosshair;
+        }
       }
 
       .accordion {
+        @include border;
         @include color-level(2);
 
         margin-bottom: 1rem;
-        outline: 1px solid var(--accent-color);
+
         padding: 1.25rem;
 
-        // reason: it looks like one pixel too wide at 100%, to my eyes
-        width: 99%;
 
         .accordion-content {
           @include flex($direction: column, $wrap: nowrap);
 
-          // menu items
+          // needed since the mixin doesn't do margins (mixin called elsewhere)
           a {
             margin-top: 0.5rem;
-            // important just as a test
-
-            [data-theme="dark"] {
-              color: clr(light-color);
-            }
 
             &:focus,
             &:hover {
               background-color: clr(light-color, "dark");
+
+              html[data-theme="dark"] & {
+                background-color: unset;
+                color: clr(light-color);
+              }
             }
           }
         }
@@ -76,47 +101,62 @@
 
     > main {
       grid-area: main;
+
+      @include links;
     }
   }
 
-  @media (width <= $breakpoint-sm) {
-    aside {
-      margin: 0 2rem;
+  // outside of nth child(1) so that it doesn't affect the aside
+  // ?? @ prior comment since the aside is in this code
+  // ?? - i think the aside IS in the nth-child(1) so this is not needed?
+  // @media ($breakpoint-sm) {
+  //   aside {
+  //     margin: 0 2rem;
 
-      label {
-        text-align: center;
-      }
+  //     input:checked + label + .accordion {
+  //       height: auto;
+  //       transition: all 450ms;
 
-      .accordion {
-        display: none;
+  //       .accordion-content {
+  //         place-items: center;
+  //         a {
+  //           margin: 1.5rem 0;
+  //         }
+  //       }
+  //     }
 
-        .accordion-toggle {
-          display: block;
-        }
+  //     // this is the default state
+  //     input:not(:checked) + label + .accordion {
+  //       // margin: unset;
+  //       outline: unset;
+  //       padding: unset;
 
-        &.active .accordion-content {
-          @include flex;
-        }
-      }
-    }
-  }
+  //       margin: 1rem 0;
+  //       height: 0;
+  //       overflow: hidden;
 
-  // should i put this elsewhere?
-  .linux-main {
-    @include color-level(2);
+  //       transition: all 450ms ;
+  //     }
 
-    li {
-      @include color-level(3);
-      margin: 1.15rem 0;
-      padding: 0.5rem;
-      border-radius: 5px;
-    }
+  //     label {
+  //       text-align: center;
+  //     }
 
-    .card {
-      @include color-level(2);
-      margin: 1.15rem 0;
-      padding: 0.5rem;
-      border-radius: 5px;
-    }
-  }
+  //     .accordion {
+  //       width: unset;
+  //     }
+  //   }
+
+  //   .linux-main {
+  //     // @include color-level(2);
+
+  //     li,
+  //     .card {
+  //       @include color-level(3);
+  //       margin: 1.15rem 0;
+  //       padding: 0.5rem;
+  //       border-radius: 5px;
+  //     }
+  //   }
+  // }
 }

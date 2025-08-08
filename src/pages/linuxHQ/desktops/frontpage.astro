@@ -1,5 +1,7 @@
 ---
 import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import LinkToMenu from "@components/global/PageLinkToMenus.astro";
+
 import { Image } from "astro:assets";
 
 const desktopicon_path = "/src/pages/linuxHQ/graphics/desktops/icons";
@@ -110,7 +112,7 @@ const desktops = [
     ],
     screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/mate.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/mate-small.png",
+      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/mate-small.png",
     screenshot_distro: "Fedora - Mate 1.26",
   },
   {
@@ -149,129 +151,140 @@ const desktops = [
   keywords="linux, desktop, environments, distros"
   description="A collection of popular Linux desktop environments."
 >
-  <div class="desktop_container" slot="linux-main">
-    {
-      desktops.map((desktop) => (
-        <div key={desktop.name} class="desktop-card">
-          <div class="icon_and_title">
-            <img class="icon" src={desktop.icon} alt={`${desktop.name} icon`} />
-            <div class="title">{desktop.name}</div>
-          </div>
+  <div slot="linux-main">
+    <LinkToMenu />
 
-          <p>{desktop.description}</p>
-          <a class="homepage" href={desktop.homepage} target="_blank">
-            Homepage
-          </a>
-          <h3>Common Distros:</h3>
-          <ul>
-            {desktop.commonDistros.map((distro) => (
-              <li key={distro.name}>
-                <a href={distro.link} target="_blank">
-                  {distro.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a href={desktop.screenshot} target="_blank">
-            <Image
-              class="screenshot"
-              src={desktop.screenshot_tn}
-              alt={`${desktop.name} screenshot`}
-              width={640}
-              height={400}
-            />
-          </a>
-          <div>Screenshot Distro: {desktop.screenshot_distro}</div>
-        </div>
-      ))
-    }
+    <div class="desktop_container">
+      {
+        desktops.map((desktop) => (
+          <div key={desktop.name} class="desktop-card">
+            <div class="icon_and_title">
+              <img
+                class="icon"
+                src={desktop.icon}
+                alt={`${desktop.name} icon`}
+              />
+              <div class="title">{desktop.name}</div>
+            </div>
+
+            <p>{desktop.description}</p>
+            <a class="homepage" href={desktop.homepage} target="_blank">
+              Homepage
+            </a>
+            <h3>Common Distros:</h3>
+            <ul>
+              {desktop.commonDistros.map((distro) => (
+                <li key={distro.name}>
+                  <a href={distro.link} target="_blank">
+                    {distro.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a href={desktop.screenshot} target="_blank">
+              <Image
+                class="screenshot"
+                src={desktop.screenshot_tn}
+                alt={`${desktop.name} screenshot`}
+                width={640}
+                height={400}
+              />
+            </a>
+            <div>Screenshot Distro: {desktop.screenshot_distro}</div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </LinuxDesktopTemplate>
 
 <style lang="scss">
-  @use "@scss/base/_mixins.scss" as *;
+  @use "@scss/base/_index.scss" as *;
+  @use "@scss/_misc.scss" as *;
 
   .desktop_container {
-    gap: 1rem;
-  }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 
-  .desktop-card {
-    @include color-level(2);
-
-    @include flex($direction: column, $ai: center);
-
-    align-items: center;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    outline: 1px solid var(--dark-color);
-    width: clamp(25rem, 30%, 100%); /* Ideal size three distros wide */
-  }
-
-  .icon_and_title {
-
-    @include flex($ai: center);
-    font-size: 1.25rem;
-    margin: 2rem 0;
-
-    .icon {
-      width: 50px;
-      height: 50px;
-      margin-right: 1rem;
-    }
-    .title {
-      font-weight: bold;
-    }
-  }
-
-  ul {
-
-    @include flex($jc: center);
-    list-style-type: none;
-    padding: 0;
-    margin: 1rem 0;
-
-    li {
-      margin: 0.5rem;
-    }
-  }
-
-  .homepage {
-    margin: 1rem 0;
-    font-weight: bold;
-  }
-
-  .screenshot {
-    aspect-ratio: 16 / 9;
-    border-radius: 5px;
-    margin-top: 1rem;
-    height: auto;
-    width: 90%;
-  }
-
-  @media (max-width: 600px) {
-    .desktop-card {
-      margin: 0.5rem;
-      padding: 0.5rem;
-    }
-
-    .icon_and_title {
-      font-size: 1rem;
-      margin: 1rem 0;
-
-      .icon {
-        width: 40px;
-        height: 40px;
-        margin-right: 0.5rem;
+    @media ($breakpoint-lg) {
+      .desktop_container {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
       }
     }
 
-    .homepage {
-      font-size: 0.9rem;
-    }
+    .desktop-card {
+      @include flex($direction: column, $ai: center);
+      padding: 1rem;
+      border-radius: 5px;
+      /* Responsive width using clamp, but grid controls columns */
+      width: 100%;
 
-    .screenshot {
-      margin-top: 0.5rem;
+      .icon_and_title {
+        @include flex($ai: center);
+        font-size: 1.25rem;
+        margin: 2rem 0;
+
+        .icon {
+          width: 50px;
+          height: 50px;
+          margin-right: 1rem;
+        }
+        .title {
+          font-weight: bold;
+        }
+      }
+
+      .homepage {
+        margin: 1rem 0;
+        font-weight: bold;
+      }
+
+      ul {
+        @include flex($jc: center);
+        list-style-type: none;
+        padding: 0;
+        margin: 1rem 0;
+
+        li {
+          margin: 0.5rem;
+        }
+      }
+
+      .screenshot {
+        aspect-ratio: 16 / 9;
+        border-radius: 5px;
+        margin-top: 1rem;
+        height: auto;
+        width: 90%;
+      }
+    }
+  }
+
+  @media ($breakpoint-sm) {
+ 
+    .desktop-card {
+      margin: 0 auto;
+      padding: 2rem;
+      /* Remove width override, grid handles sizing */
+      .icon_and_title {
+        font-size: 1rem;
+        margin: 1rem 0;
+
+        .icon {
+          width: 40px;
+          height: 40px;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .homepage {
+        font-size: 0.9rem;
+      }
+
+      .screenshot {
+        margin-top: 0.5rem;
+      }
     }
   }
 </style>

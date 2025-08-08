@@ -27,35 +27,28 @@ import "@css/global-styles.css";
 
   .link-card {
     @include color-level(2);
-    
     @include flex($direction: column, $ai: center);
-
+    @include border-radius;
+    @include links;
 
     list-style: none;
     padding: 2rem;
-    
-    @include border-radius;
+
+    > *:nth-child(2) {
+      margin-top: 1rem;
+    }
 
     .link-card__title {
-      @include header($font-size: var(--h2),$font-family: unset);
-      margin: 0 0 1rem 0;
+      @include header($font-size: var(--h2), $font-family: unset);
     }
 
     > a,
     a:link {
-      // remove? 
-      // color: clr(accent-color);
 
       // padding: 1rem;
       border-radius: 0.35rem;
       text-decoration: none;
       line-height: 1.4;
     }
-
-    > a:focus,
-    a:hover {
-      color: clr(main-color);
-    }
   }
-
 </style>

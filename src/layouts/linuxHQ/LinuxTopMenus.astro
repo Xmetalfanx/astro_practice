@@ -1,20 +1,34 @@
 ---
 import Link from "@components/global/Link.astro";
 
-import LightIcon from "../../pages/graphics/dark_mode.svg";
-import DarkIcon from "../../pages/graphics/light_mode.svg";
+import LightIcon from "@graphics/dark_mode.svg";
+import DarkIcon from "@graphics/light_mode.svg";
 ---
 
 <header>
   <div class="section-title">
     <Link linktext="LinuxHQ" location="/linuxHQ/" />
   </div>
-  <nav>
-    <Link linktext="Desktops" location="/linuxHQ/desktops/frontpage/" />
-    <Link linktext="Distros" location="/linuxHQ/distros/frontpage/" />
-    <Link linktext="Theming" location="/linuxHQ/theming/frontpage/" />
-    <!-- <Link linktext="Tips" location="#" /> -->
-  </nav>
+
+  <div id="siteMenu">
+    <!-- the hamburger menu, the spans being the "burgers" -->
+    <input type="checkbox" id="hamburgerMenu" />
+    <label for="hamburgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="overlay">
+      <nav>
+        <Link linktext="Desktops" location="/linuxHQ/desktops/frontpage/" />
+        <Link linktext="Distros" location="/linuxHQ/distros/frontpage/" />
+        <Link linktext="Theming" location="/linuxHQ/theming/frontpage/" />
+      </nav>
+    </div>
+  </div>
+
+  <!-- button to toggle the theme -->
   <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
     <LightIcon id="light-icon" />
     <DarkIcon id="dark-icon" />
@@ -24,8 +38,125 @@ import DarkIcon from "../../pages/graphics/light_mode.svg";
 <script src="./ThemeToggleScript.js"></script>
 
 <style lang="scss">
-  #theme-toggle {
-    position: relative;
+  @use "@scss/_index.scss" as *;
 
+  header {
+    .section-title {
+      font-family: var(--ffamily-header);
+      font-size: var(--h1);
+    }
+
+    // the hamburger menu that contains the nav that actually contains the items
+    #siteMenu {
+      // idea: hide checkbox on desktop
+      input {
+        display: none;
+      }
+
+      // the actual menu items... on normal layouts
+      nav {
+        @include flex;
+
+        gap: 3rem;
+        margin-right: 2rem;
+        font-family: var(--ffamily-nav);
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.6rem;
+      }
+    }
+
+    // header on smaller than the sm breakpoint, below
+    @media ($breakpoint-sm) {
+      flex-direction: row-reverse;
+
+      // idea: attach header to bottom (fixed vs absolute?)
+      position: fixed;
+      inset: auto 0 0 0;
+
+      // for now ... this may not be the "right value" in the end
+      height: $mobile-header-height;
+
+      // hides the section-title, on small layouts
+      .section-title {
+        display: none;
+      }
+
+      // the overall hamburger menus and nav on smaller layouts
+      #siteMenu {
+
+        @include flex($direction: column, $wrap: nowrap, $jc: flex-end, $ai: flex-end);
+  
+        cursor: pointer;
+        inset: 0 0 0 auto;
+
+        label {
+
+          z-index: 10;
+        }
+
+        &:focus,
+        &:hover {
+          // the "hamburger" menu on hover
+          background-color: clr(main-color, dark);
+          @include outline($color: white);
+
+          // the "burgers" on hover
+          > label {
+            span {
+              background-color: clr(dark-color, light);
+            }
+          }
+        }
+
+        label {
+          // the actual "burgers"
+          span {
+            display: block;
+            width: 100px;
+            height: 12px;
+            background-color: clr(accent-color);
+            margin: .75rem 0;
+          }
+        }
+
+        // "default" postion for nav on small layouts
+        .overlay > nav {
+          display: none;
+        }
+
+        // the menu when the hamburger menu is clicked
+        input:checked ~ .overlay > nav {
+          background-color: clr(main-color);
+
+          margin: unset;
+          place-content: center;
+          position: fixed;
+          text-align: center;
+
+          @include flex($direction: column, $wrap: nowrap, $jc: center);
+
+          inset: 25% 10% 25% 10%;
+          z-index: 100;
+
+          transition: all 750ms ease allow-discrete;
+
+          // for "style" ?
+          @include border-radius;
+          @include outline($width: 3px, $color: white);
+
+          // why does 8rem here look like 1 or 2 rem?.. 1 or 2 rem was my goal
+          padding: 8rem 0;
+        }
+
+        // the blur overlay on checked
+        input:checked ~ .overlay {
+          inset: 0 0 $mobile-header-height 0;
+          position: fixed;
+          z-index: 50;
+          backdrop-filter: blur(2px);
+        }
+      }
+    }
   }
 </style>

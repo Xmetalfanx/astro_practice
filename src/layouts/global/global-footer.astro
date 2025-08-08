@@ -131,25 +131,15 @@ import "@css/global-styles.css";
 <style lang="scss">
   @use "@scss/base/index" as *;
   footer {
+    grid-area: footer;
 
     @include flex($jc: space-between);
     padding: 1.6rem;
 
-    @media (max-width: $breakpoint-sm) {
-      .site-made,
-      .copyright {
-        display: none;
-      }
-
-      .contacts {
-        margin-inline: auto;
-      }
+    @media ($breakpoint-sm) {
+      display: none;
     }
 
-    .site-made,
-    .contact {
-      width: 40vw;
-    }
     i {
       scale: 2;
       margin: 0 1.5rem;

@@ -1,6 +1,8 @@
 ---
 import "@css/global-styles.css";
 
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
+
 // Import the <Image /> component
 import { Image } from "astro:assets";
 
@@ -18,7 +20,7 @@ const link_code = Astro.props.links_code;
 const install_arch = Astro.props.install_arch;
 
 const install_debian_bullseye = Astro.props.install_debian_bullseye;
-const install_debian_bookworm =  Astro.props.install_debian_bookworm;
+const install_debian_bookworm = Astro.props.install_debian_bookworm;
 const install_debian_trixie = Astro.props.install_debian_trixie;
 
 const install_fedora = Astro.props.install_fedora;
@@ -28,16 +30,13 @@ const install_opensuse_tw_repo = Astro.props.install_opensuse_tw_repo;
 
 const install_ubuntu = Astro.props.install_ubuntu;
 
-
 const requirements_hdd_space = Astro.props.requirements_hdd_space;
 const requirements_memory = Astro.props.requirements_memory;
 const requirements_processor = Astro.props.requirements_processor;
 
-
 const screenshot_distro = Astro.props.screenshot_distro;
 const screenshot_src = Astro.props.screenshot_src;
 const screenshot_thumbnail = Astro.props.thumbnail;
-
 
 const version_arch = Astro.props.version_arch;
 
@@ -68,8 +67,11 @@ const version_linuxmint_22 = Astro.props.version_linuxmint_22;
 const version_linuxmint_221 = Astro.props.version_linuxmint_221;
 const version_neon = Astro.props.version_neon;
 const info_updated = Astro.props.info_updated;
-
 ---
+
+<div>
+  <PageLinkToMenus />
+</div>
 
 <div class="desktop_container">
   <div class="desktop_title">{desktop_title}</div>
@@ -102,8 +104,11 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <div class="screenshot">
-      <a href={screenshot_thumbnail} target="_blank">
-        <Image src={screenshot_src} alt="test" width={500} />
+        <a href={typeof screenshot_src === "string" ? screenshot_src : screenshot_src.src} target="_blank">
+        <Image 
+          src={screenshot_src} 
+          alt="test" 
+          width={500} />
       </a>
     </div>
   </div>
@@ -155,8 +160,7 @@ const info_updated = Astro.props.info_updated;
       <div>
         <span class="distro-name">Fedora 42 Version:</span>
         {version_fedora_42}
-      </div>  
-
+      </div>
     </div>
 
     <!-- OpenSUSE -->
@@ -178,54 +182,55 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <!-- Ubuntu based -->
-    <div>
-      <!-- Ubuntu -->
-      <div class="sub_version_container">
-        <span class="distro-name">Ubuntu Based Versions</span>
-        <div>
-          <span class="distro-name">Jammy (22.04) Version:</span>
-          {version_ubuntu_jammy}
-        </div>
-        <div>
-          <span class="distro-name">Noble (24.04) Version:</span>
-          {version_ubuntu_noble}
-        </div>
-        <div>
-          <span class="distro-name">Pluxy (25.04) Version:</span>
-          {version_ubuntu_plucky}
-        </div>
+    <!-- <div id="ubuntu_based"> -->
+
+    <!-- Ubuntu -->
+    <div class="sub_version_container">
+      <span class="distro-name">Ubuntu Based Versions</span>
+      <div>
+        <span class="distro-name">Jammy (22.04) Version:</span>
+        {version_ubuntu_jammy}
       </div>
-
-      <!-- Linux Mint -->
-      <div class="sub_version_container">
-        <span class="distro-name">Linux Mint Versions</span>
-
-        <div>
-          <span class="distro-name">Linux Mint 21.0:</span>
-          {version_linuxmint_21}
-        </div>
-        <div>
-          <span class="distro-name">Linux Mint 21.1:</span>
-          {version_linuxmint_211}
-        </div>
-        <div>
-          <span class="distro-name">Linux Mint 21.2:</span>
-          {version_linuxmint_212}
-        </div>
-        <div>
-          <span class="distro-name">Linux Mint 21.3:</span>
-          {version_linuxmint_213}
-        </div>
-        <div>
-          <span class="distro-name">Linux Mint 22.0:</span>
-          {version_linuxmint_22}
-        </div>
-        <div>
-          <span class="distro-name">Linux Mint 22.1:</span>
-          {version_linuxmint_221}
-        </div>
+      <div>
+        <span class="distro-name">Noble (24.04) Version:</span>
+        {version_ubuntu_noble}
+      </div>
+      <div>
+        <span class="distro-name">Pluxy (25.04) Version:</span>
+        {version_ubuntu_plucky}
       </div>
     </div>
+
+    <!-- Linux Mint -->
+    <div class="sub_version_container">
+      <span class="distro-name">Linux Mint Versions</span>
+
+      <div>
+        <span class="distro-name">Linux Mint 21.0:</span>
+        {version_linuxmint_21}
+      </div>
+      <div>
+        <span class="distro-name">Linux Mint 21.1:</span>
+        {version_linuxmint_211}
+      </div>
+      <div>
+        <span class="distro-name">Linux Mint 21.2:</span>
+        {version_linuxmint_212}
+      </div>
+      <div>
+        <span class="distro-name">Linux Mint 21.3:</span>
+        {version_linuxmint_213}
+      </div>
+      <div>
+        <span class="distro-name">Linux Mint 22.0:</span>
+        {version_linuxmint_22}
+      </div>
+      <div>
+        <span class="distro-name">Linux Mint 22.1:</span>
+        {version_linuxmint_221}
+      </div>
+    </div>
+    <!-- </div> -->
   </div>
 
   <!-- Install container-->
@@ -240,16 +245,14 @@ const info_updated = Astro.props.info_updated;
       <span class="code">Debian 11 - Bullseye: {install_debian_bullseye}</span>
       <span class="code">Debian 12 - Bookworm: {install_debian_bookworm} </span>
       <span class="code">Debian 13 - Trixie: {install_debian_trixie} </span>
-</span>
+    </div>
     <div>
       <span class="distro-name">Fedora:</span>
       <span class="code">{install_fedora}</span>
     </div>
     <div>
       <span class="distro-name">OpenSUSE Tumbleweed:</span>
-      <span class="code" set:html={install_opensuse_tw_repo}>
-        
-      </span>
+      <span class="code" set:html={install_opensuse_tw_repo} />
     </div>
     <div>
       <span class="distro-name">Ubuntu:</span>
@@ -259,16 +262,21 @@ const info_updated = Astro.props.info_updated;
 </div>
 
 <style lang="scss">
-  @use "@scss/base/mixins" as *;
+  @use "@scss/base/index" as *;
 
   .desktop_container {
+    @include outline;
+    @include color-level(2);
 
-    @include flex($direction: column);
+    // not sure this is "too much"
+    // @include box-shadow($blur: 0.75rem);
+
+    // since flex should be set globally for this
+    flex-direction: column;
+
     font-size: 1.2rem;
     line-height: 1.7rem;
     padding: 1.6rem;
-
-    @include color-level(2);
 
     .desktop_title {
       font-size: 2rem;
@@ -277,9 +285,8 @@ const info_updated = Astro.props.info_updated;
 
     // Info and Screenshot Container
     .info_and_screenshot_container {
-
       @include flex($jc: space-between);
- 
+
       line-height: 2rem;
 
       // General Info
@@ -292,21 +299,23 @@ const info_updated = Astro.props.info_updated;
 
     // Versions (overall) container
     .versions_container {
-
-      @include flex;
+      @include flex($jc: center);
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
-        
         @include color-level(3);
 
         @include box-shadow($color: var(--dark-color));
-        
+
         line-height: 2rem;
         margin: 1rem;
-        outline: 1px solid var(--dark-color);
+        @include outline;
         padding: 1rem;
-        width: clamp(300px, 30%, 100%);
+        width: clamp(300px, 25%, 100%);
+
+        // @media (width <= $breakpoint-md) {
+        //   width: max(300px, 100%);
+        // }
 
         .distro-name {
           font-weight: var(--fw-bold);
@@ -316,7 +325,7 @@ const info_updated = Astro.props.info_updated;
 
     // Install Container
     .install_container {
-      outline: 1px #333333 solid;
+      //  @include box-shadow;
       margin: 2rem 1rem;
       padding: 1rem;
 
@@ -327,14 +336,13 @@ const info_updated = Astro.props.info_updated;
         margin: 2rem 0;
       }
     }
-
   }
 
   // to make code look nice
   .code {
     //background-color: #000000;
     background-color: var(--dark-color);
-    
+
     color: var(--light-color);
 
     font-family: monospace;
@@ -347,7 +355,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    outline: 1px #333333 solid;
+    @include outline($color: clr(dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

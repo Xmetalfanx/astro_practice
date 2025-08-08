@@ -1,37 +1,28 @@
 @use "base/index" as *;
 
-footer {
-  grid-area: footer;
-}
 
 header,
 footer {
-  width: 100%;
-  background-color: clr(main-color);
-  color: clr(light-color);
   padding: 1rem;
 
+  // needed? ... these colors dont effect links...but can i use a mixing of some kind here?
+  background-color: clr(main-color);
+  color: clr(light-color);
+  
   [data-theme="dark"] & {
-    background-color: clr(main-color, "dark");
-    color: clr(light-color, "light");
-
+    background-color: clr(main-color, "xlsat");
+    // color: clr(light-color, "light");
   }
+
+  @include links(
+    $light-link: clr(light-color),
+    $dark-link: clr(light-color),
+    $light-link-hf: clr(accent-color),
+    $dark-link-hf: clr(accent-color, "lsat")
+  );
 
   a {
     margin: 2px;
-
-    color: clr(light-color);
-
-    // // this needed?
-    // &:link {
-    //   color: inherit;
-    // }
-
-    &:hover,
-    &:focus {
-      color: clr(accent-color);
-      //outline: 2px solid $light-color;
-    }
 
     &:visited {
       text-decoration: dotted;
@@ -39,40 +30,20 @@ footer {
   }
 }
 
-
 header {
   grid-area: header;
-
 
   @include flex($jc: space-between, $ai: center);
 
   font-weight: var(--fw-bold);
 
-  .section-title {
-    font-family: var(--ffamily-header);
-    font-size: var(--h1);
-  }
+  // commented out due to this being in an .Astro file 
+  // @media (max-width: $breakpoint-sm) {
 
-  nav {
-
-    @include flex();
-    gap: 3rem;
-    margin-right: 2rem;
-    font-family: var(--ffamily-nav);
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.6rem;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    .section-title {
-      display: none;
-    }
-
-    nav {
-      flex-flow: column wrap;
-      gap: 1rem;
-      margin-inline: auto;
-    }
-  }
+  //   nav {
+  //     flex-flow: column wrap;
+  //     gap: 1rem;
+  //     margin-inline: auto;
+  //   }
+  // }
 }
