@@ -30,11 +30,13 @@ const {
 <div class="theme-container">
   <div class="theme-header">{theme_title}</div>
 
-  <a href={link_homepage} target="_blank" rel="noopener noreferrer">
-    <p><strong>Latest Version:</strong> {latest_version}</p>
-    <p><strong>Information Updated:</strong> {info_updated}</p>
-    <div>Homepage: {link_homepage}</div>
-  </a>
+  <p><strong>Latest Version:</strong> {latest_version}</p>
+  <p><strong>Information Updated:</strong> {info_updated}</p>
+  <div>
+    <a href={link_homepage} target="_blank" rel="noopener noreferrer">
+      Homepage: {link_homepage}
+    </a>
+  </div>
 
   <section class="theme-info">
     <h2>General Information</h2>
@@ -58,7 +60,11 @@ const {
 
   <section class="theme-screenshot">
     <h2>Screenshot</h2>
-    <img src={screenshot_src} alt={`${theme_title} screenshot`} loading="lazy" />
+    <img
+      src={screenshot_src}
+      alt={`${theme_title} screenshot`}
+      loading="lazy"
+    />
   </section>
   <div class="theme-footer"></div>
 </div>
@@ -74,7 +80,6 @@ const {
     margin: 2rem auto;
 
     .theme-header {
-
       @include flex($ai: center, $jc: space-between);
 
       margin: 0;
@@ -89,7 +94,6 @@ const {
       margin-top: 20px;
 
       ul {
-        
         list-style-type: none;
         padding: 0;
 
@@ -105,7 +109,7 @@ const {
       img {
         max-width: 100%;
         // border: 1px solid #ddd;
-        @include border ($border-color: clr(light-color));
+        @include border($border-color: clr(light-color));
         border-radius: 8px;
       }
     }

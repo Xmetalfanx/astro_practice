@@ -28,11 +28,13 @@ const {
 <div class="icon-container">
   <div class="icon-header">{icon_title}</div>
 
-  <a href={link_homepage} target="_blank" rel="noopener noreferrer">
-    <p><strong>Latest Version:</strong> {latest_version}</p>
-    <p><strong>Information Updated:</strong> {info_updated}</p>
-    <div>Homepage: {link_homepage}</div>
-  </a>
+  <p><strong>Latest Version:</strong> {latest_version}</p>
+  <p><strong>Information Updated:</strong> {info_updated}</p>
+  <div>
+    <a href={link_homepage} target="_blank" rel="noopener noreferrer">
+      Homepage: {link_homepage}
+    </a>
+  </div>
 
   <section class="icon-info">
     <h2>General Information</h2>
@@ -99,7 +101,7 @@ const {
 
       img {
         max-width: 100%;
-        @include border ($border-color: clr(light-color));
+        @include border($border-color: clr(light-color));
         border-radius: 8px;
       }
     }
