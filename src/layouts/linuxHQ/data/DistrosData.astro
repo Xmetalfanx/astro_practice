@@ -34,9 +34,10 @@ const screenshot_src = Astro.props.screenshot_src; // Added new prop
 const youtube_review_playlist = Astro.props.youtube_review_playlist;
 const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
 ---
+
 <div>
- <PageLinkToMenus />
-</div>  
+  <PageLinkToMenus />
+</div>
 <div class="container">
   <div class="icon-and-title-container">
     <div class="distro-icon">
@@ -99,10 +100,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
     <div class="screenshot-container">
       <a href={screenshot_src} target="_blank">
         <!-- Added link to full-sized screenshot -->
-        <Image
-          src={screenshot_thumbnail}
-          alt="{distro_title} screenshot"
-        />
+        <Image src={screenshot_thumbnail} alt="{distro_title} screenshot" />
       </a>
       <div>
         <div>Screenshot Desktop: {screenshot_desktop}</div>
@@ -132,8 +130,13 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
   }
   .container {
     @include color-level(2);
-    @include outline($color: clr(accent-color));
-
+    // @include outline($color: clr(accent-color));
+    @include box-shadow(
+      $x: 2px,
+      $y: 2px,
+      $blur: 8px,
+      $color: clr(shadow-color)
+    );
 
     font-size: 1.1rem;
     line-height: 2rem;
@@ -163,7 +166,6 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
         height: auto;
         margin: 2rem 0;
         width: clamp(300px, 40vw, 80vw);
-        
       }
     }
 
@@ -195,7 +197,7 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
       width: 95%;
 
       @media ($breakpoint-sm) {
-        display:none;
+        display: none;
       }
     }
   }

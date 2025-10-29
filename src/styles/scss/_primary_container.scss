@@ -43,7 +43,7 @@
         @include box-shadow(
           $x: 0,
           $y: 0,
-          $blur: 0.6rem,
+          $blur: 0.4rem,
           $color-dark: clr(light-color),
           
         );
@@ -70,7 +70,7 @@
       }
 
       .accordion {
-        @include border;
+        // @include border;
         @include color-level(2);
 
         margin-bottom: 1rem;
