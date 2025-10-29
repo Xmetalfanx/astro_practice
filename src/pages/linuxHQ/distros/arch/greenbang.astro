@@ -2,10 +2,10 @@
 import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
-const distro_name = "archbang";
-const distro_title = "Archbang";
+const distro_name = "greenbang";
+const distro_title = "GreenBANG";
 
-import distro_icon from "@distro_icons/antiX.png";
+import distro_icon from "@distro_icons/greenbang.png";
 
 const moreinfo_distro_base = "Arch Linux";
 const moreinfo_desktops = "Openbox";
@@ -20,26 +20,29 @@ const screenshot_icon = "";
 const screenshot_theme = "";
 
 // import screenshot_src from "/src/pages/linuxHQ/graphics/distros/arch_based/archbang.png";
-const screenshot_src = "/src/pages/linuxHQ/graphics/distros/arch_based/archbang.png";
-import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/arch_based/thumbnails/archbang-small.png";
 
-const version_latest = "2023.10";
+//TODO: update greenbang screenshot
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/arch_based/greenbang.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/arch_based/thumbnails/greenbang-small.png";
+
+const version_latest = "2025.10";
 const versions_supported = "unknown";
 
+// The sourceforge link still lists it as Archbang, just like the Homepage URL 
 const link_download = "http://sourceforge.net/projects/archbang/files/";
 const link_forum = "";
 const link_homepage = "https://archbang.org/";
 const link_mydistro_page =
-  "http://xmetal.x10.mx/linuxHQ/distros/arch/archbang.php";
+  "http://xmetal.x10.mx/linuxHQ/distros/arch/greenbang.php";
 
 const youtube_review_playlist = "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI";
 const youtube_tips_playlist = "";
 ---
 
 <LinuxDistroTemplate
-  title="Archbang "
-  meta_keywords="Archbang, Arch-based, Linux, Openbox, Linux distributions"
-  meta_description="Learn about Archbang, an Arch-based Linux distribution featuring the Openbox desktop environment. Discover its features, target audience, and more."
+  title="GreenBANG "
+  meta_keywords="GreenBANG, Arch-based, Linux, Openbox, Linux distributions"
+  meta_description="Learn about GreenBANG, an Arch-based Linux distribution featuring the Openbox desktop environment. Discover its features, target audience, and more."
 >
   <DistroData
     distro_title={distro_title}
