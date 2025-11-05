@@ -13,13 +13,13 @@ document.documentElement.style.colorScheme = currentTheme;
 
 // Add a function to update the preferred-color-scheme meta tag
 function updatePreferredColorScheme(theme) {
-  let metaTag = document.querySelector('meta[name="color-scheme"]');
-  if (!metaTag) {
-    metaTag = document.createElement("meta");
-    metaTag.name = "color-scheme";
-    document.head.appendChild(metaTag);
-  }
-  metaTag.content = theme;
+	let metaTag = document.querySelector('meta[name="color-scheme"]');
+	if (!metaTag) {
+		metaTag = document.createElement("meta");
+		metaTag.name = "color-scheme";
+		document.head.appendChild(metaTag);
+	}
+	metaTag.content = theme;
 }
 
 // Update the meta tag on initial load
@@ -27,47 +27,44 @@ updatePreferredColorScheme(currentTheme);
 
 // Update the visibility of the icons based on the current theme
 if (currentTheme === "dark") {
-  lightIcon.style.display = "none"; // Hide the light icon
-  darkIcon.style.display = "block"; // Show the dark icon
+	lightIcon.style.display = "none"; // Hide the light icon
+	darkIcon.style.display = "block"; // Show the dark icon
 } else {
-  lightIcon.style.display = "block"; // Show the light icon
-  darkIcon.style.display = "none"; // Hide the dark icon
+	lightIcon.style.display = "block"; // Show the light icon
+	darkIcon.style.display = "none"; // Hide the dark icon
 }
 
 // Add a click event listener to the theme toggle button
 themeToggle.addEventListener("click", () => {
-  // Determine the new theme based on the current theme
-  const newTheme =
-    document.documentElement.getAttribute("data-theme") === "light"
-      ? "dark"
-      : "light";
+	// Determine the new theme based on the current theme
+	const newTheme =
+		document.documentElement.getAttribute("data-theme") === "light"
+			? "dark"
+			: "light";
 
-  // Update the theme on the document's root element
-  document.documentElement.setAttribute("data-theme", newTheme);
+	// Update the theme on the document's root element
+	document.documentElement.setAttribute("data-theme", newTheme);
 
-  // Update the color-scheme property to match the new theme
-  document.documentElement.style.colorScheme = newTheme;
+	// Update the color-scheme property to match the new theme
+	document.documentElement.style.colorScheme = newTheme;
 
-  // Save the new theme to localStorage
-  localStorage.setItem("theme", newTheme);
+	// Save the new theme to localStorage
+	localStorage.setItem("theme", newTheme);
 
-  // Update the preferred-color-scheme meta tag
-  updatePreferredColorScheme(newTheme);
+	// Update the preferred-color-scheme meta tag
+	updatePreferredColorScheme(newTheme);
 
-  // Update the visibility of the icons based on the new theme
-  if (newTheme === "dark") {
-    lightIcon.style.display = "none"; // Hide the light icon
-    darkIcon.style.display = "block"; // Show the dark icon
-  } else {
-    lightIcon.style.display = "block"; // Show the light icon
-    darkIcon.style.display = "none"; // Hide the dark icon
-  }
+	// Update the visibility of the icons based on the new theme
+	if (newTheme === "dark") {
+		lightIcon.style.display = "none"; // Hide the light icon
+		darkIcon.style.display = "block"; // Show the dark icon
+	} else {
+		lightIcon.style.display = "block"; // Show the light icon
+		darkIcon.style.display = "none"; // Hide the dark icon
+	}
 });
 
-
-
-
-// Try 2 below 
+// Try 2 below
 
 // const themeToggle = document.querySelector(".theme-toggle");
 // const root = document.documentElement;

@@ -1,17 +1,16 @@
 ---
 import "@css/global-styles.css";
 
-import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
-
 // Import the <Image /> component
 import { Image } from "astro:assets";
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
 
 const desktop_name = Astro.props.desktop_name;
 const desktop_title = Astro.props.desktop_title;
 const generalinfo_desktop_category = Astro.props.generalinfo_desktop_category;
 const generalinfo_desktop_toolkit = Astro.props.generalinfo_desktop_toolkit;
 const generalinfo_distros_that_feature =
-  Astro.props.generalinfo_distros_that_feature;
+	Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs

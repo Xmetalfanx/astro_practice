@@ -1,33 +1,33 @@
 {
-  // "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@graphics/*": ["src/pages/graphics/*"],
-      "@css/*": ["src/styles/*"],
-      "@scss/*": ["src/styles/scss/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@data/*": ["src/data/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@templates/*": ["src/layouts/templates/*"],
-      "@global_layout/*": ["src/layouts/global/*"],
-      "@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
-      "@distro_icons/*": ["/src/pages/linuxHQ/graphics/distros/icons/*"],
-      "@distro_ss/*": ["/src/pages/linuxHQ/graphics/distros/screenshots/*"],
-      "@desktops/*": ["/src/pages/linuxHQ/desktops/*"],
-      "@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
-      "@desktop_icons/*": ["/src/pages/linuxHQ/graphics/desktops/icons/*"],
-      "@desktop_ss/*": ["/src/pages/linuxHQ/graphics/desktops/screenshots/*"],
-      "@arch_ss/*": ["/src/pages/linuxHQ/graphics/distros/arch_based/*"],
-      "@debian_ss/*": ["/src/pages/linuxHQ/graphics/distros/debian_based/*"],
-      "@gentoo_ss/*": ["/src/pages/linuxHQ/graphics/distros/gentoo_based/*"],
-      "@independent_ss/*": [
-        "/src/pages/linuxHQ/graphics/distros/independent/*"
-      ],
-      "@rpm_ss/*": ["/src/pages/linuxHQ/graphics/distros/rpm_based/*"],
-      "@ubuntu_ss/*": ["/src/pages/linuxHQ/graphics/distros/ubuntu_based/*"]
-    }
-  }
+	// "extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@graphics/*": ["src/pages/graphics/*"],
+			"@css/*": ["src/styles/*"],
+			"@scss/*": ["src/styles/scss/*"],
+			"@scripts/*": ["src/scripts/*"],
+			"@data/*": ["src/data/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@pages/*": ["src/pages/*"],
+			"@templates/*": ["src/layouts/templates/*"],
+			"@global_layout/*": ["src/layouts/global/*"],
+			"@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
+			"@distro_icons/*": ["/src/pages/linuxHQ/graphics/distros/icons/*"],
+			"@distro_ss/*": ["/src/pages/linuxHQ/graphics/distros/screenshots/*"],
+			"@desktops/*": ["/src/pages/linuxHQ/desktops/*"],
+			"@screenshots/*": ["/src/assets/graphics/linuxhq/distros/screenshots/*"],
+			"@desktop_icons/*": ["/src/pages/linuxHQ/graphics/desktops/icons/*"],
+			"@desktop_ss/*": ["/src/pages/linuxHQ/graphics/desktops/screenshots/*"],
+			"@arch_ss/*": ["/src/pages/linuxHQ/graphics/distros/arch_based/*"],
+			"@debian_ss/*": ["/src/pages/linuxHQ/graphics/distros/debian_based/*"],
+			"@gentoo_ss/*": ["/src/pages/linuxHQ/graphics/distros/gentoo_based/*"],
+			"@independent_ss/*": [
+				"/src/pages/linuxHQ/graphics/distros/independent/*"
+			],
+			"@rpm_ss/*": ["/src/pages/linuxHQ/graphics/distros/rpm_based/*"],
+			"@ubuntu_ss/*": ["/src/pages/linuxHQ/graphics/distros/ubuntu_based/*"]
+		}
+	}
 }
