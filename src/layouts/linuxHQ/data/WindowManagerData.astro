@@ -29,7 +29,6 @@ const screenshot_thumbnail = Astro.props.thumbnail;
 const version_arch = Astro.props.version_arch;
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
-const version_fedora_40 = Astro.props.version_fedora_40;
 const version_fedora_41 = Astro.props.version_fedora_41;
 const latest_version = Astro.props.version_latest_version;
 const version_opensuse_leap156 = Astro.props.version_leap156;
@@ -113,10 +112,6 @@ const info_updated = Astro.props.info_updated;
 
     <!-- Fedora  -->
     <div class="sub_version_container">
-      <div>
-        <span class="distro-name">Fedora 40 Version:</span>
-        {version_fedora_40}
-      </div>
       <div>
         <span class="distro-name">Fedora 41 Version:</span>
         {version_fedora_41}
@@ -214,7 +209,6 @@ const info_updated = Astro.props.info_updated;
   @use "@scss/base/mixins" as *;
 
   .wm_container {
-
     @include flex($direction: column);
     font-size: 1.2rem;
     line-height: 1.7rem;
@@ -262,7 +256,7 @@ const info_updated = Astro.props.info_updated;
     // Install Container
     .install_container {
       @include outline($color: clr(dark-color));
-      
+
       margin: 2rem 1rem;
       padding: 1rem;
 
