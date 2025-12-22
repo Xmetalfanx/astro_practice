@@ -11,7 +11,7 @@ const link_homepage = "https://mate-desktop.org/";
 const generalinfo_desktop_category = "middle-weight";
 const generalinfo_desktop_toolkit = "GTK3";
 const generalinfo_distros_that_feature =
-	"Ubuntu Mate, Linux Mint Mate, Fedora, Arch/Antergos";
+  "Ubuntu Mate, Linux Mint Mate, Fedora, Arch/Antergos";
 
 const install_arch = "sudo pacman -S mate mate-extra";
 
@@ -22,7 +22,7 @@ const install_debian_trixie = "sudo apt install mate-desktop-environment";
 const install_fedora = "sudo dnf groupinstall mate-desktop mate-applications";
 
 const install_opensuse_reference =
-	"https://en.opensuse.org/Portal:MATE/Install";
+  "https://en.opensuse.org/Portal:MATE/Install";
 const install_opensuse_tw_repo = `Basic MATE: sudo zypper in -t pattern mate <br /><br />
 
   Complete MATE: sudo zypper in -t pattern mate mate_extra `;
@@ -70,11 +70,13 @@ const version_neon = "N/A";
 const info_updated = "April 17, 2025";
 ---
 
-<LinuxDesktopTemplate 
-  title="Mate Desktop" 
-  keywords="mate, mate desktop, mate linux desktop, mate linux distro, mate linux distribution, mate desktop environment, mate desktop environment linux, mate desktop environment distro, mate desktop environment distribution, mate desktop environment linux distro, mate desktop environment linux distribution" 
-  description="Mate is a middle-weight desktop environment that is a fork of GNOME 2. It is a great choice for users who prefer a traditional desktop layout.">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate
+  title="Mate Desktop"
+  keywords="mate, mate desktop, mate linux desktop, mate linux distro, mate linux distribution, mate desktop environment, mate desktop environment linux, mate desktop environment distro, mate desktop environment distribution, mate desktop environment linux distro, mate desktop environment linux distribution"
+  description="Mate is a middle-weight desktop environment that is a fork of GNOME 2. It is a great choice for users who prefer a traditional desktop layout."
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}

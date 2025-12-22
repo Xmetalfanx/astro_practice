@@ -10,7 +10,7 @@ const desktop_title = Astro.props.desktop_title;
 const generalinfo_desktop_category = Astro.props.generalinfo_desktop_category;
 const generalinfo_desktop_toolkit = Astro.props.generalinfo_desktop_toolkit;
 const generalinfo_distros_that_feature =
-	Astro.props.generalinfo_distros_that_feature;
+  Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs
@@ -102,11 +102,13 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <div class="screenshot">
-        <a href={typeof screenshot_src === "string" ? screenshot_src : screenshot_src.src} target="_blank">
-        <Image 
-          src={screenshot_src} 
-          alt="test" 
-          width={500} />
+      <a
+        href={typeof screenshot_src === "string"
+          ? screenshot_src
+          : screenshot_src.src}
+        target="_blank"
+      >
+        <Image src={screenshot_src} alt="test" width={500} />
       </a>
     </div>
   </div>

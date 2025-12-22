@@ -13,7 +13,7 @@ const generalinfo_distros_that_feature = "Linux Mint, Fedora, Arch";
 const generalinfo_desktop_toolkit = "GTK3";
 
 const install_arch =
-	"sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)";
+  "sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)";
 
 const install_debian_bullseye = "sudo apt install cinnamon-desktop-environment";
 const install_debian_bookworm = "sudo apt install cinnamon-desktop-environment";
@@ -22,9 +22,9 @@ const install_debian_trixie = "sudo apt install cinnamon-desktop-environment";
 const install_fedora = "sudo dnf groupinstall cinnamon-desktop";
 
 const install_opensuse_reference =
-	'<a href="https://en.opensuse.org/Portal:Cinnamon"target="_blank"> Install Cinnamon on OpenSuse </a>';
+  '<a href="https://en.opensuse.org/Portal:Cinnamon"target="_blank"> Install Cinnamon on OpenSuse </a>';
 const install_opensuse_tw_repo = `Basic Cinnamon: sudo zypper in -t pattern cinnamon <br /><br />
-  
+
   Full Cinnamon: sudo zypper in -t pattern cinnamon cinnamon_extra`;
 
 const install_mint = "sudo apt install mint-meta-cinnamon";
@@ -72,11 +72,13 @@ const version_neon = "N/A";
 const info_updated = "April 17, 2025";
 ---
 
-<LinuxDesktopTemplate 
-  title="Cinnamon Desktop" 
-  keywords="cinnamon, desktop, linux desktop, desktop environment, cinnamon desktop, linux mint, fedora, arch" 
-  description="Cinnamon Desktop Environment">
-  <DesktopData slot="linux-main"
+<LinuxDesktopTemplate
+  title="Cinnamon Desktop"
+  keywords="cinnamon, desktop, linux desktop, desktop environment, cinnamon desktop, linux mint, fedora, arch"
+  description="Cinnamon Desktop Environment"
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
