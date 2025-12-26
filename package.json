@@ -22,7 +22,7 @@
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.97.0",
-    "stylelint": "^16.25.0",
+    "stylelint": "^16.26.1",
     "stylelint-scss": "^6.13.0"
   },
   "dependencies": {
