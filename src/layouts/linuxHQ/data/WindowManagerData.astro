@@ -9,7 +9,7 @@ const wm_title = Astro.props.wm_title;
 const generalinfo_wm_category = Astro.props.generalinfo_wm_category;
 const generalinfo_wm_toolkit = Astro.props.generalinfo_wm_toolkit;
 const generalinfo_distros_that_feature =
-	Astro.props.generalinfo_distros_that_feature;
+  Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs
@@ -29,8 +29,7 @@ const screenshot_thumbnail = Astro.props.thumbnail;
 const version_arch = Astro.props.version_arch;
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
-const version_fedora_40 = Astro.props.version_fedora_40;
-const version_fedora_41 = Astro.props.version_fedora_41;
+const version_fedora_43 = Astro.props.version_fedora_43;
 const latest_version = Astro.props.version_latest_version;
 const version_opensuse_leap156 = Astro.props.version_leap156;
 const version_opensuse_tumbleweed = Astro.props.version_tumblewood;
@@ -114,12 +113,8 @@ const info_updated = Astro.props.info_updated;
     <!-- Fedora  -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Fedora 40 Version:</span>
-        {version_fedora_40}
-      </div>
-      <div>
-        <span class="distro-name">Fedora 41 Version:</span>
-        {version_fedora_41}
+        <span class="distro-name">Fedora 43 Version:</span>
+        {version_fedora_43}
       </div>
     </div>
 
@@ -214,7 +209,6 @@ const info_updated = Astro.props.info_updated;
   @use "@scss/base/mixins" as *;
 
   .wm_container {
-
     @include flex($direction: column);
     font-size: 1.2rem;
     line-height: 1.7rem;
@@ -262,7 +256,7 @@ const info_updated = Astro.props.info_updated;
     // Install Container
     .install_container {
       @include outline($color: clr(dark-color));
-      
+
       margin: 2rem 1rem;
       padding: 1rem;
 

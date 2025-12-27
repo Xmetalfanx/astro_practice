@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "sass": "sass --no-source-map src/styles/index.scss src/styles/index.css",
+    "sass": "sass --no-source-map src/styles/global-styles.scss src/styles/global-styles.css",
     "lint:styles": "stylelint 'src/**/*.scss' --fix",
     "format:styles": "prettier --write 'src/**/*.scss'",
     "bcheck": "biome check --write",
@@ -22,7 +22,7 @@
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.97.0",
-    "stylelint": "^16.25.0",
+    "stylelint": "^16.26.1",
     "stylelint-scss": "^6.13.0"
   },
   "dependencies": {

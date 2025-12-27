@@ -10,7 +10,7 @@ const desktop_title = Astro.props.desktop_title;
 const generalinfo_desktop_category = Astro.props.generalinfo_desktop_category;
 const generalinfo_desktop_toolkit = Astro.props.generalinfo_desktop_toolkit;
 const generalinfo_distros_that_feature =
-	Astro.props.generalinfo_distros_that_feature;
+  Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs
@@ -43,8 +43,7 @@ const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
 const version_debian_trixie = Astro.props.version_debian_trixie;
 
-const version_fedora_40 = Astro.props.version_fedora_40;
-const version_fedora_41 = Astro.props.version_fedora_41;
+const version_fedora_43 = Astro.props.version_fedora_43;
 const version_fedora_42 = Astro.props.version_fedora_42;
 
 const latest_version = Astro.props.version_latest_version;
@@ -103,11 +102,13 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <div class="screenshot">
-        <a href={typeof screenshot_src === "string" ? screenshot_src : screenshot_src.src} target="_blank">
-        <Image 
-          src={screenshot_src} 
-          alt="test" 
-          width={500} />
+      <a
+        href={typeof screenshot_src === "string"
+          ? screenshot_src
+          : screenshot_src.src}
+        target="_blank"
+      >
+        <Image src={screenshot_src} alt="test" width={500} />
       </a>
     </div>
   </div>
@@ -149,12 +150,8 @@ const info_updated = Astro.props.info_updated;
     <!-- Fedora  -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Fedora 40 Version:</span>
-        {version_fedora_40}
-      </div>
-      <div>
-        <span class="distro-name">Fedora 41 Version:</span>
-        {version_fedora_41}
+        <span class="distro-name">Fedora 43 Version:</span>
+        {version_fedora_43}
       </div>
       <div>
         <span class="distro-name">Fedora 42 Version:</span>
