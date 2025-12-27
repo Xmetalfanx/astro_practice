@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "sass": "sass --no-source-map src/styles/index.scss src/styles/index.css",
+    "sass": "sass --no-source-map src/styles/global-styles.scss src/styles/global-styles.css",
     "lint:styles": "stylelint 'src/**/*.scss' --fix",
     "format:styles": "prettier --write 'src/**/*.scss'",
     "bcheck": "biome check --write",
