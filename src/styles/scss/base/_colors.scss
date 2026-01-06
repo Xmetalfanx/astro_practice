@@ -1,12 +1,19 @@
 // Color scheme - Tropical 1
-$main-color: hsl(29, 100%, 43%);
+// $main-color: hsl(29, 100%, 43%);
 //$accent-color2: hsl(160, 100%, 25%);
-$accent-color: hsl(174, 100%, 19%);
+//$accent-color: hsl(174, 100%, 19%);
 
 // Christmas Theme
 // $main-color: hsl(120, 100%, 20%);
 // $accent-color: hsl(2, 94%, 31%);
 
+// winter 
+$main-color: hsl(206, 80%, 60%);
+$accent-color: hsl(240, 98%, 41%);
+// $accent-color: hsl(26, 70%, 60%);
+$light-color: hsl(45, 0%, 97%);
 
-$light-color: hsl(45, 29%, 97%);
+
+// consider keeping these no matter the theme change above
+//$light-color: hsl(45, 29%, 97%);
 $dark-color: hsl(0, 0%, 20%);
