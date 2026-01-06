@@ -1,77 +1,74 @@
 ---
-import Link from "@components/global/Link.astro";
 import AsideLinkTarget from "@components/global/AsideLinkTarget.astro";
+import Link from "@components/global/Link.astro";
 
 const arch_based = [
-  { name: "Arch", link: "../arch/archlinux" },
-  { name: "GreenBANG", link: "../arch/greenbang" },
-  { name: "EndeavourOS", link: "../arch/endeavouros" },
-  { name: "Manjaro", link: "../arch/manjaro" },
+	{ name: "Arch", link: "../arch/archlinux" },
+	{ name: "GreenBANG", link: "../arch/greenbang" },
+	{ name: "EndeavourOS", link: "../arch/endeavouros" },
+	{ name: "Manjaro", link: "../arch/manjaro" },
 ];
 
 const debian_based = [
-  { name: "Anti-X", link: "../debian/antix" },
-  { name: "Bunsenlabs", link: "../debian/bunsenlabs" },
-  { name: "CrunchBang++", link: "../debian/cbplusplus" },
-  { name: "Debian", link: "../debian/debian" },
-  { name: "Deepin", link: "../debian/deepin" },
-  { name: "Linux Mint Debian Edition", link: "../debian/lmde" },
-  { name: "Makulu Linux", link: "../debian/makulu" },
-  { name: "MX Linux", link: "../debian/mxlinux" },
-  { name: "Peppermint", link: "../debian/peppermint" },
-  { name: "Sparky Linux", link: "../debian/sparkylinux" },
-  { name: "SolydXK", link: "../debian/solydxk" },
+	{ name: "Anti-X", link: "../debian/antix" },
+	{ name: "Bunsenlabs", link: "../debian/bunsenlabs" },
+	{ name: "CrunchBang++", link: "../debian/cbplusplus" },
+	{ name: "Debian", link: "../debian/debian" },
+	{ name: "Deepin", link: "../debian/deepin" },
+	{ name: "Linux Mint Debian Edition", link: "../debian/lmde" },
+	{ name: "Makulu Linux", link: "../debian/makulu" },
+	{ name: "MX Linux", link: "../debian/mxlinux" },
+	{ name: "Peppermint", link: "../debian/peppermint" },
+	{ name: "Sparky Linux", link: "../debian/sparkylinux" },
+	{ name: "SolydXK", link: "../debian/solydxk" },
 ];
 
 const ubuntu_based = [
-  { name: "Elementary OS", link: "../ubuntu/elementary" },
-  { name: "KDE Neon / Neon", link: "../ubuntu/neon" },
-  { name: "Kubuntu", link: "../ubuntu/kubuntu" },
-  { name: "Linux Lite", link: "../ubuntu/linuxlite" },
-  { name: "Linux Mint", link: "../ubuntu/linuxmint" },
-  { name: "Lubuntu", link: "../ubuntu/lubuntu" },
-  { name: "Ubuntu", link: "../ubuntu/ubuntu" },
-  { name: "Ubuntu Budgie", link: "../ubuntu/ubuntubudgie" },
-  { name: "Ubuntu Cinnamon", link: "../ubuntu/ubuntucinnamon" },
-  { name: "UbuntuDDE", link: "../ubuntu/ubuntuDDE" },
-  { name: "Ubuntu Mate", link: "../ubuntu/ubuntumate" },
-  { name: "Ubuntu Unity", link: "../ubuntu/ubuntuunity" },
-  { name: "Xubuntu", link: "../ubuntu/xubuntu" },
-  { name: "Zorin", link: "../ubuntu/zorin" },
+	{ name: "Elementary OS", link: "../ubuntu/elementary" },
+	{ name: "KDE Neon / Neon", link: "../ubuntu/neon" },
+	{ name: "Kubuntu", link: "../ubuntu/kubuntu" },
+	{ name: "Linux Lite", link: "../ubuntu/linuxlite" },
+	{ name: "Linux Mint", link: "../ubuntu/linuxmint" },
+	{ name: "Lubuntu", link: "../ubuntu/lubuntu" },
+	{ name: "Ubuntu", link: "../ubuntu/ubuntu" },
+	{ name: "Ubuntu Budgie", link: "../ubuntu/ubuntubudgie" },
+	{ name: "Ubuntu Cinnamon", link: "../ubuntu/ubuntucinnamon" },
+	{ name: "UbuntuDDE", link: "../ubuntu/ubuntuDDE" },
+	{ name: "Ubuntu Mate", link: "../ubuntu/ubuntumate" },
+	{ name: "Ubuntu Unity", link: "../ubuntu/ubuntuunity" },
+	{ name: "Xubuntu", link: "../ubuntu/xubuntu" },
+	{ name: "Zorin", link: "../ubuntu/zorin" },
 ];
 
 const gentoo_based = [
-  { name: "Calculate Linux", link: "../gentoo/calculate" },
-  { name: "Gentoo", link: "../gentoo/gentoo" },
-  { name: "MocaccinoOS", link: "../gentoo/mocaccinoos" },
+	{ name: "Calculate Linux", link: "../gentoo/calculate" },
+	{ name: "Gentoo", link: "../gentoo/gentoo" },
+	{ name: "MocaccinoOS", link: "../gentoo/mocaccinoos" },
 ];
 
 const misc_distros = [
-  { name: "KaOS", link: "../independent/kaos" },
-  { name: "Puppy Linux", link: "../independent/puppylinux" },
-  { name: "Solus", link: "../independent/solus" },
+	{ name: "KaOS", link: "../independent/kaos" },
+	{ name: "Puppy Linux", link: "../independent/puppylinux" },
+	{ name: "Solus", link: "../independent/solus" },
 ];
 
-// with Gecko Linux 
+// with Gecko Linux
 // const opensuse_based = [
 //   { name: "Gecko Linux", link: "../rpm/geckolinux" },
 //   { name: "OpenSuse", link: "../rpm/opensuse" },
 // ];
 
-// without Gecko 
-const opensuse_based = [
-  { name: "OpenSuse", link: "../rpm/opensuse" },
-];
-
+// without Gecko
+const opensuse_based = [{ name: "OpenSuse", link: "../rpm/opensuse" }];
 
 const fedora_based = [{ name: "Fedora", link: "../rpm/fedora" }];
 
 const other_rpm_based = [
-  { name: "CentOS", link: "../rpm/centos" },
-  { name: "Mageia", link: "../rpm/mageia" },
-  { name: "OpenMandriva", link: "../rpm/openmandriva" },
-  { name: "PCLinuxOS", link: "../rpm/pclinuxos" },
-  { name: "ROSA", link: "../rpm/rosa" },
+	{ name: "CentOS", link: "../rpm/centos" },
+	{ name: "Mageia", link: "../rpm/mageia" },
+	{ name: "OpenMandriva", link: "../rpm/openmandriva" },
+	{ name: "PCLinuxOS", link: "../rpm/pclinuxos" },
+	{ name: "ROSA", link: "../rpm/rosa" },
 ];
 ---
 

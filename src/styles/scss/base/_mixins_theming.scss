@@ -1,0 +1,51 @@
+@use "sass:color";
+@use "colors" as *;
+
+// to create the colors
+@mixin color-variants(
+  $name,
+  $theme,
+  $lum_level2: 5,
+  $lum_level3: 10,
+  $saturation_less1: 5,
+  $saturation_less2: 10
+) {
+  @if $theme == light {
+    --#{$name}-l2: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
+    --#{$name}-l3: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+  } @else if $theme == dark {
+    --#{$name}-l2: hsl(
+      from var(--#{$name})
+        h
+        calc(s - #{$saturation_less1})
+        calc(l + #{$lum_level2})
+    );
+    --#{$name}-l3: hsl(
+      from var(--#{$name})
+        h
+        calc(s - #{$saturation_less2})
+        calc(l + #{$lum_level3})
+    );
+  }
+}
+
+// property is like background-color, color, border-color, etc or what element to color
+// name is the base name of the color variable like main-color, accent-color, etc
+// level is the level of the color variant, default is 1 (and wouldn't be called if 1)
+@mixin theme-color($level: 1, $property: background-color) {
+  html[data-theme="light"] & {
+    @if $level == 1 {
+      #{$property}: var(--light-color);
+    } @else {
+      #{$property}: var(--light-color-l#{$level});
+    }
+  }
+
+  html[data-theme="dark"] & {
+    @if $level == 1 {
+      #{$property}: var(--dark-color);
+    } @else {
+      #{$property}: var(--dark-color-l#{$level});
+    }
+  }
+}

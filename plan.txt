@@ -1,0 +1,6 @@
+I think my plan for astro_practice and homepage is this 
+
+- do most of the edits and whatnot on astro_practice
+- at certain points (? if i have this right) run "npm build dev"
+- move those to "homepage" (what is on the web)
+-- THIS WILL not load "Homepage" up with branches and different git commit histories

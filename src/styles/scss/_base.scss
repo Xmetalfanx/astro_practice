@@ -1,21 +1,19 @@
 @use "base/index" as *;
 
 :root {
-  // Color scheme
-  --main-color: hsl(34, 90%, 45%);
-  --accent-color: hsl(160, 100%, 25%);
-  --light-color: hsl(0, 0%, 94%);
-  --dark-color: hsl(0, 0%, 15%);
-
+  --main-color: #{$main-color};
+  --accent-color: #{$accent-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
 
   --fw-bold: 800;
 
   // 400 (like with some of Kevin Powell's vars is the "middle"/default
-  --fs-200: 1.10rem;
+  --fs-200: 1.1rem;
   --fs-300: 1.15rem;
   --fs-400: 1.2rem;
   --fs-500: 1.3rem;
-  
+
   --fs-default: var(--fs-400);
 
   // header sizes (fonts)
@@ -23,26 +21,39 @@
   --h2: 1.5rem;
 
   // Font Families
-  --ffamily-roboto: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI",
-    roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  --ffamily-roboto:
+    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
   --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
-  --ffamily-e-candy: "Emilys Candy", -apple-system, blinkmacsystemfont,
-    "Segoe UI";
+  --ffamily-e-candy:
+    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
 
   --ffamily-header: var(--ffamily-dynapuff);
   --ffamily-nav: var(--ffamily-e-candy);
 
-
   --fs-normal: 1.125rem;
-  --fs-large: 1.20rem;
+  --fs-large: 1.2rem;
   --fs-larger: 1.4rem;
-
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root[data-theme="light"] {
+  @include color-variants(main-color, light);
+  @include color-variants(accent-color, light);
+  @include color-variants(light-color, light);
+  @include color-variants(dark-color, light);
+}
+
+:root[data-theme="dark"] {
+  @include color-variants(main-color, dark);
+  @include color-variants(accent-color, dark);
+  @include color-variants(light-color, dark);
+  @include color-variants(dark-color, dark);
 }
 
 *,
@@ -53,27 +64,29 @@
   box-sizing: border-box;
 }
 
-// .bg-level-1 {
-//   @include bg-level-1;
-// }
+html {
+  color-scheme: light dark;
+}
 
-// .bg-level-2 {
-//   @include bg-level-2;
-// }
-// .bg-level-3 {
-
-//   @include bg-level-3;
-// }
 
 body {
+  html[data-theme="light"] & {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+  }
+
+  html[data-theme="dark"] & {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+  }
 
   font-size: var(--fs-normal);
-  
+
   display: grid;
   grid-template: 1fr auto 1fr / 1fr;
   grid-template-areas:
     "header"
-    "primary-container" 
+    "primary-container"
     "footer";
 
   height: 100vh;
@@ -84,7 +97,6 @@ body {
     text-decoration: none;
   }
 
-
   @media ($breakpoint-sm) {
     grid-template-areas:
       "primary-container"
@@ -92,8 +104,6 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
   }
-
-
 }
 
 .fw-bold {

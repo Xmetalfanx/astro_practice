@@ -1,6 +1,7 @@
 ---
 import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
 import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+
 const distro_name = "elementary";
 const distro_title = "ElementaryOS";
 
@@ -18,8 +19,10 @@ const screenshot_desktop = "";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/elementary.png";
-import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/elementary-small.png";
+const screenshot_src =
+  "/src/assets/linuxHQ/graphics/distros/ubuntu_based/elementary.png";
+
+import screenshot_thumbnail from "/src/assets/linuxHQ/graphics/distros/ubuntu_based/thumbnails/elementary-small.png";
 
 const version_latest = "7";
 const versions_supported = "7";
@@ -33,9 +36,11 @@ const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate title="ELementaryOS"
+<LinuxDistroTemplate
+  title="ELementaryOS"
   meta_keywords="ElementaryOS, Linux, Pantheon, Ubuntu-based, Linux distributions"
-  meta_description="Explore ElementaryOS, an Ubuntu-based Linux distribution featuring the Pantheon desktop environment. Learn about its features, target audience, and more.">
+  meta_description="Explore ElementaryOS, an Ubuntu-based Linux distribution featuring the Pantheon desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}

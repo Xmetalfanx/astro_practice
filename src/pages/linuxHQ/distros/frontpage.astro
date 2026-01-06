@@ -1,30 +1,25 @@
 ---
 // import DistroData from "@layouts/linuxHQ/DistrosData.astro";
 
-// Template to use
-import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
-
-import LinkToMenus from "@components/global/PageLinkToMenus.astro";
-
 // for the images
 import { Image } from "astro:assets";
-
-// For the thumbnails
-import linuxMintThumbnail from "@ubuntu_ss/thumbnails/mint-small.png";
-import archThumbnail from "@arch_ss/thumbnails/arch-small.png";
-import ubuntuThumbnail from "@ubuntu_ss/thumbnails/ubuntu-small.png";
-import debianThumbnail from "@debian_ss/thumbnails/debian-small.png";
-import fedoraThumbnail from "@rpm_ss/thumbnails/fedora-small.png";
-import openSUSEThumbnail from "@rpm_ss/thumbnails/opensuse-small.png";
-
-// for the screenshot sources
-import linuxMintSSSrc from "@ubuntu_ss/mint.png";
 import archSSSrc from "@arch_ss/arch.png";
-import ubuntuSSSrc from "@ubuntu_ss/ubuntu.png";
+import archThumbnail from "@arch_ss/thumbnails/arch-small.png";
+import LinkToMenus from "@components/global/PageLinkToMenus.astro";
 import debianSSSrc from "@debian_ss/debian.png";
+import debianThumbnail from "@debian_ss/thumbnails/debian-small.png";
 import fedoraSSSrc from "@rpm_ss/fedora.png";
 import openSUSESSSrc from "@rpm_ss/opensuse.png";
-
+import fedoraThumbnail from "@rpm_ss/thumbnails/fedora-small.png";
+import openSUSEThumbnail from "@rpm_ss/thumbnails/opensuse-small.png";
+// Template to use
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+// for the screenshot sources
+import linuxMintSSSrc from "@ubuntu_ss/mint.png";
+// For the thumbnails
+import linuxMintThumbnail from "@ubuntu_ss/thumbnails/mint-small.png";
+import ubuntuThumbnail from "@ubuntu_ss/thumbnails/ubuntu-small.png";
+import ubuntuSSSrc from "@ubuntu_ss/ubuntu.png";
 
 const distros = [
   {
@@ -48,7 +43,7 @@ const distros = [
     versions_supported: "20.x, 21.x, 22.x",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/linuxmint.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/linuxmint.svg",
   },
   {
     title: "Arch Linux",
@@ -72,7 +67,7 @@ const distros = [
     versions_supported: "2023.05.03, 2023.10.01",
     youtube_review_playlist: "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI",
     youtube_tips_playlist: "",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/arch.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/arch.svg",
   },
   {
     title: "Ubuntu",
@@ -96,7 +91,7 @@ const distros = [
     versions_supported: "22.04 LTS, 24.04 LTS, 25.04",
     youtube_review_playlist: "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck",
     youtube_tips_playlist: "",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/ubuntu.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/ubuntu.svg",
   },
   {
     title: "Debian",
@@ -119,7 +114,7 @@ const distros = [
     versions_supported: "11, 12",
     youtube_review_playlist: "PLrh2y86lvcJeeTlI3BEHVMxYbKYy74ABJ",
     youtube_tips_playlist: "PLrh2y86lvcJddBni43z2PSd9H0XotKdn4",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/debian.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/debian.svg",
   },
   {
     title: "Fedora",
@@ -142,7 +137,7 @@ const distros = [
     versions_supported: "41, 42",
     youtube_review_playlist: "PLrh2y86lvcJeLcpMeVcMwbODBKBj8wqVm",
     youtube_tips_playlist: "",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/fedora.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/fedora.svg",
   },
   {
     title: "openSUSE",
@@ -165,7 +160,7 @@ const distros = [
     versions_supported: "15.6 Leap, Tumbleweed",
     youtube_review_playlist: "",
     youtube_tips_playlist: "",
-    distro_icon: "/src/pages/linuxHQ/graphics/distros/icons/opensuse.svg",
+    distro_icon: "/src/assets/linuxHQ/graphics/distros/icons/opensuse.svg",
   },
 ];
 ---
@@ -247,8 +242,8 @@ const distros = [
     gap: 2rem;
     line-height: 2.5rem;
     section {
-      @include color-level(2);
 
+      @include theme-color(2);
       @include outline;
 
       padding: 2rem;

@@ -1,47 +1,19 @@
-@use "sass:color";
+// Color scheme - Tropical 1
+// $main-color: hsl(29, 100%, 43%);
+//$accent-color2: hsl(160, 100%, 25%);
+//$accent-color: hsl(174, 100%, 19%);
 
-// ref:  https://www.kevinpowell.co/article/using-my-colors/
-$main-color: hsl(34, 90%, 45%);
-// $accent-color: hsl(160, 100%, 25%);
-$accent-color: hsl(175, 95%, 19%);
-$light-color: hsl(0, 0%, 94%);
-$dark-color: hsl(0, 0%, 15%);
+// Christmas Theme
+// $main-color: hsl(120, 100%, 20%);
+// $accent-color: hsl(2, 94%, 31%);
 
-$lighten: 5%;  // Percentage works for lighten() and darken()
-$darken: -12%; // Needs to be negative when using color.adjust()
+// winter 
+$main-color: hsl(206, 80%, 60%);
+$accent-color: hsl(240, 98%, 41%);
+// $accent-color: hsl(26, 70%, 60%);
+$light-color: hsl(45, 0%, 97%);
 
-// negative because i'd always want to DECREASE IT
-$sat: -10%;
 
-// for color.adjust() to work, the color must be in RGB or HSL format
-// ref: https://sass-lang.com/documentation/modules/sass/color#adjust
-// ref: https://sass-lang.com/documentation/modules/sass/color#lighten
-// ref: https://sass-lang.com/documentation/modules/sass/color#darken
-// ref: https://sass-lang.com/documentation/modules/sass/color#saturate
-
-@function generate-color-variations($base-color) {
-  @return (
-    base: $base-color,
-    lsat: color.adjust($base-color, $saturation: $sat ),
-    xlsat: color.adjust($base-color, $saturation: $sat * 2 ),
-    
-    light: color.adjust($base-color, $lightness: $lighten),
-    lighter: color.adjust($base-color, $lightness: $lighten * 2),
-    light-lsat: color.adjust($base-color, $lightness: $lighten, $saturation: $sat),
-    light-xlsat:color.adjust($base-color, $lightness: $lighten, $saturation: $sat * 2),
-    
-    dark: color.adjust($base-color, $lightness: $darken),
-    darker: color.adjust($base-color, $lightness: $darken * 2),
-    dark-lsat: color.adjust($base-color, $lightness: $darken, $saturation: $sat),
-    dark-xlsat: color.adjust($base-color, $lightness: $darken, $saturation: $sat * 2),
-
-  );
-}
-
-$colors: (
-  main-color: generate-color-variations($main-color),
-  accent-color: generate-color-variations($accent-color),
-  light-color: generate-color-variations($light-color),
-  dark-color: generate-color-variations($dark-color),
-);
-
+// consider keeping these no matter the theme change above
+//$light-color: hsl(45, 29%, 97%);
+$dark-color: hsl(0, 0%, 20%);

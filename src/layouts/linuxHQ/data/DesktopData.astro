@@ -1,10 +1,9 @@
 ---
 import "@css/global-styles.css";
 
-import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
-
 // Import the <Image /> component
 import { Image } from "astro:assets";
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
 
 const desktop_name = Astro.props.desktop_name;
 const desktop_title = Astro.props.desktop_title;
@@ -44,8 +43,7 @@ const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
 const version_debian_trixie = Astro.props.version_debian_trixie;
 
-const version_fedora_40 = Astro.props.version_fedora_40;
-const version_fedora_41 = Astro.props.version_fedora_41;
+const version_fedora_43 = Astro.props.version_fedora_43;
 const version_fedora_42 = Astro.props.version_fedora_42;
 
 const latest_version = Astro.props.version_latest_version;
@@ -104,11 +102,13 @@ const info_updated = Astro.props.info_updated;
     </div>
 
     <div class="screenshot">
-        <a href={typeof screenshot_src === "string" ? screenshot_src : screenshot_src.src} target="_blank">
-        <Image 
-          src={screenshot_src} 
-          alt="test" 
-          width={500} />
+      <a
+        href={typeof screenshot_src === "string"
+          ? screenshot_src
+          : screenshot_src.src}
+        target="_blank"
+      >
+        <Image src={screenshot_src} alt="test" width={500} />
       </a>
     </div>
   </div>
@@ -150,12 +150,8 @@ const info_updated = Astro.props.info_updated;
     <!-- Fedora  -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Fedora 40 Version:</span>
-        {version_fedora_40}
-      </div>
-      <div>
-        <span class="distro-name">Fedora 41 Version:</span>
-        {version_fedora_41}
+        <span class="distro-name">Fedora 43 Version:</span>
+        {version_fedora_43}
       </div>
       <div>
         <span class="distro-name">Fedora 42 Version:</span>
@@ -266,7 +262,6 @@ const info_updated = Astro.props.info_updated;
 
   .desktop_container {
     @include outline;
-    @include color-level(2);
 
     // not sure this is "too much"
     // @include box-shadow($blur: 0.75rem);
@@ -303,7 +298,7 @@ const info_updated = Astro.props.info_updated;
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
-        @include color-level(3);
+        @include theme-color(3);
 
         @include box-shadow($color: var(--dark-color));
 
@@ -329,7 +324,7 @@ const info_updated = Astro.props.info_updated;
       margin: 2rem 1rem;
       padding: 1rem;
 
-      @include color-level(3);
+      @include theme-color(3);
 
       h3 {
         font-size: 1.5rem;
@@ -355,7 +350,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    @include outline($color: clr(dark-color));
+    @include outline($color: var(--dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

@@ -1,15 +1,14 @@
 ---
-import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
-import LinkToMenu from "@components/global/PageLinkToMenus.astro";
-
 import { Image } from "astro:assets";
+import LinkToMenu from "@components/global/PageLinkToMenus.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
-const desktopicon_path = "/src/pages/linuxHQ/graphics/desktops/icons";
+const desktopicon_path = "/src/assets/linuxHQ/graphics/desktops/icons";
 
 const desktops = [
   {
     name: "Budgie",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/budgie.svg",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/budgie.svg",
     description:
       "Budgie is a desktop environment that focuses on simplicity and elegance. It is developed by the Solus project.",
     homepage: "https://getsol.us/home/",
@@ -18,9 +17,9 @@ const desktops = [
       { name: "Ubuntu Budgie", link: "https://ubuntubudgie.org/" },
       { name: "Arch Linux", link: "https://archlinux.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/budgie.avif",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/budgie.avif",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/budgie-small.avif",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/budgie-small.avif",
     screenshot_distro: "unknown",
   },
   {
@@ -34,9 +33,10 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/cinnamon.png",
+    screenshot:
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/cinnamon.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/cinnamon-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/cinnamon-small.png",
     screenshot_distro: "Linux Mint 22.x",
   },
   {
@@ -48,12 +48,12 @@ const desktops = [
     commonDistros: [{ name: "Pop!_OS", link: "https://pop.system76.com/" }],
     screenshot: "/assets/screenshots/cosmic.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/cosmic-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/cosmic-small.png",
     screenshot_distro: "",
   },
   {
     name: "GNOME",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/gnome.svg",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/gnome.svg",
     description:
       "GNOME is a desktop environment composed of free and open-source software that runs on Linux and most BSD derivatives.",
     homepage: "https://www.gnome.org/",
@@ -62,14 +62,14 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Debian", link: "https://www.debian.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/gnome.png",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/gnome.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/gnome-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/gnome-small.png",
     screenshot_distro: "Ubuntu 24.04",
   },
   {
     name: "KDE Plasma",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/plasma.svg",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/plasma.svg",
     description:
       "KDE Plasma is a modern desktop environment designed to be powerful, flexible, and customizable.",
     homepage: "https://kde.org/plasma-desktop",
@@ -78,14 +78,14 @@ const desktops = [
       { name: "openSUSE", link: "https://www.opensuse.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/plasma.png",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/plasma.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/plasma-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/plasma-small.png",
     screenshot_distro: "Not Known - Maybe Kubuntu 24",
   },
   {
     name: "LXQt",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/lxqt.png",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/lxqt.png",
     description:
       "LXQt is a lightweight, modular, fast, and user-friendly desktop environment.",
     homepage: "https://lxqt-project.org/",
@@ -94,14 +94,14 @@ const desktops = [
       { name: "SparkyLinux", link: "https://sparkylinux.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/lxqt.png",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/lxqt.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/lxqt-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/lxqt-small.png",
     screenshot_distro: "",
   },
   {
     name: "MATE",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/mate.png",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/mate.png",
     description:
       "MATE is a desktop environment that continues the legacy of GNOME 2, providing a traditional desktop experience.",
     homepage: "https://mate-desktop.org/",
@@ -110,26 +110,27 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "Fedora", link: "https://getfedora.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/mate.png",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/mate.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/mate-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/mate-small.png",
     screenshot_distro: "Fedora - Mate 1.26",
   },
   {
     name: "Pantheon",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/pantheon.svg",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/pantheon.svg",
     description:
       "Pantheon is the desktop environment of elementary OS, known for its simplicity, elegance, and user-friendly design.",
     homepage: "https://elementary.io/",
     commonDistros: [{ name: "elementary OS", link: "https://elementary.io/" }],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/pantheon.png",
+    screenshot:
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/pantheon.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/pantheon-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/pantheon-small.png",
     screenshot_distro: "ElementaryOS 6.x",
   },
   {
     name: "XFCE",
-    icon: "/src/pages/linuxHQ/graphics/desktops/icons/xfce.svg",
+    icon: "/src/assets/linuxHQ/graphics/desktops/icons/xfce.svg",
     description:
       "XFCE is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources.",
     homepage: "https://xfce.org/",
@@ -138,9 +139,9 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "MX Linux", link: "https://mxlinux.org/" },
     ],
-    screenshot: "/src/pages/linuxHQ/graphics/desktops/screenshots/xfce.png",
+    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/xfce.png",
     screenshot_tn:
-      "/src/pages/linuxHQ/graphics/desktops/screenshots/thumbnails/xfce-small.png",
+      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/xfce-small.png",
     screenshot_distro: "Xubuntu 24.04",
   },
 ];
@@ -262,7 +263,6 @@ const desktops = [
   }
 
   @media ($breakpoint-sm) {
- 
     .desktop-card {
       margin: 0 auto;
       padding: 2rem;

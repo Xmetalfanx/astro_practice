@@ -29,8 +29,7 @@ const screenshot_thumbnail = Astro.props.thumbnail;
 const version_arch = Astro.props.version_arch;
 const version_debian_bullseye = Astro.props.version_debian_bullseye;
 const version_debian_bookwoom = Astro.props.version_debian_bookworm;
-const version_fedora_40 = Astro.props.version_fedora_40;
-const version_fedora_41 = Astro.props.version_fedora_41;
+const version_fedora_43 = Astro.props.version_fedora_43;
 const latest_version = Astro.props.version_latest_version;
 const version_opensuse_leap156 = Astro.props.version_leap156;
 const version_opensuse_tumbleweed = Astro.props.version_tumblewood;
@@ -114,12 +113,8 @@ const info_updated = Astro.props.info_updated;
     <!-- Fedora  -->
     <div class="sub_version_container">
       <div>
-        <span class="distro-name">Fedora 40 Version:</span>
-        {version_fedora_40}
-      </div>
-      <div>
-        <span class="distro-name">Fedora 41 Version:</span>
-        {version_fedora_41}
+        <span class="distro-name">Fedora 43 Version:</span>
+        {version_fedora_43}
       </div>
     </div>
 
@@ -214,13 +209,10 @@ const info_updated = Astro.props.info_updated;
   @use "@scss/base/mixins" as *;
 
   .wm_container {
-
     @include flex($direction: column);
     font-size: 1.2rem;
     line-height: 1.7rem;
     padding: 1.6rem;
-
-    @include color-level(2);
 
     .wm_title {
       font-size: 2rem;
@@ -247,11 +239,11 @@ const info_updated = Astro.props.info_updated;
       .sub_version_container {
         width: clamp(300px, 30%, 100%);
         margin: 2rem 0;
-        @include outline($color: clr(dark-color));
+        @include outline($color: var(--dark-color));
         margin: 1rem;
         padding: 1rem;
 
-        @include color-level(3);
+        @include theme-color(3);
 
         .distro-name {
           font-weight: var(--fw-bold);
@@ -261,12 +253,12 @@ const info_updated = Astro.props.info_updated;
 
     // Install Container
     .install_container {
-      @include outline($color: clr(dark-color));
-      
+      @include outline($color: var(--dark-color));
+
       margin: 2rem 1rem;
       padding: 1rem;
 
-      @include color-level(3);
+      @include theme-color(3);
 
       h3 {
         font-size: 1.5rem;
@@ -292,7 +284,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    @include outline($color: clr(dark-color));
+    @include outline($color: var(--dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

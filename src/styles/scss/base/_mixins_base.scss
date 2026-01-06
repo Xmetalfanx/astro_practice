@@ -1,0 +1,170 @@
+// This file is related to the mixins that are more "base content" related
+
+// tl: top left, tr: top right,  br: bottom right, bl: bottom left,
+@mixin border-radius($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin outline(
+  $width: 1px,
+  $style: solid,
+  $color: var(--main-color),
+  $color-dark: var(--light-color)
+) {
+  html[data-theme="light"] & {
+    outline: $width $style $color;
+  }
+  html[data-theme="dark"] & {
+    outline: $width $style $color-dark;
+  }
+}
+
+@mixin border(
+  $border-size: 1px,
+  $border-style: solid,
+
+  $border-color: var(--main-color),
+  $border-color-dark: var(--light-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+  }
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+  }
+}
+
+// because i am always forget the default values i use
+// x or y is x axis or y axis
+@mixin box-shadow(
+  $x: 0,
+  $y: 0.5rem,
+  $blur: 1rem,
+  $color: var(--main-color),
+  $color-dark: var(--light-color)
+) {
+  html[data-theme="light"] & {
+    box-shadow: $x $y $blur $color;
+  }
+
+  html[data-theme="dark"] & {
+    box-shadow: $x $y $blur $color-dark;
+  }
+}
+
+@mixin drop-shadow(
+  $xaxis: 0,
+  $yaxis: 0.5rem,
+  $blur: 1rem,
+  $color: var(--dark-color)
+) {
+  filter: drop-shadow($xaxis $yaxis $blur $color);
+}
+
+@mixin flex($direction: row, $wrap: wrap, $jc: flex-start, $ai: normal) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// just an idea for a default mixin for a box shadow AND outline, to combine the two
+@mixin default-ol-and-bs(
+  $ol-color: var(--main-color),
+  $ol-color-dark: var(--light-color),
+  $ol-size: 1px,
+  $ol-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: var(--main-color),
+  $bs-color-dark: var(--accent-color)
+) {
+  html[data-theme="light"] & {
+    outline: $ol-color $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    outline: $ol-color-dark $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}
+
+@mixin default-border-and-bs(
+  $border-color: var(--main-color),
+  $border-color-dark: var(--light-color),
+  $border-size: 1px,
+  $border-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: var(--main-color),
+  $bs-color-dark: var(--accent-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}
+
+@mixin header(
+  $font-family: var(--ffamily-header),
+  $font-size: var(--h1),
+  $font-weight: var(--fw-bold)
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+// for links
+// "intial values" are for a, a:link
+@mixin links(
+  // the link (unhovered) color
+  $light-link: var(--accent-color),
+  $light-link-bg: inherit,
+  $light-link-hf: var(--main-color),
+  $light-link-hf-bg: inherit,
+  $light-link-visited: var(--accent-color),
+  $dark-link: var(--light-color-l2),
+  $dark-link-bg: inherit,
+  $dark-link-hf: var(--main-color-l2),
+  $dark-link-hf-bg: inherit,
+  $dark-link-visited: var(--main-color)
+) {
+  html[data-theme="light"] & {
+    a,
+    a:link {
+      background-color: $light-link-bg;
+      color: $light-link;
+
+      &:focus,
+      &:hover {
+        background-color: $light-link-hf-bg;
+        color: $light-link-hf;
+        @include outline;
+      }
+    }
+  }
+
+  html[data-theme="dark"] & {
+    a,
+    a:link {
+      background-color: $dark-link-bg;
+      color: $dark-link;
+
+      &:focus,
+      &:hover {
+        background-color: $dark-link-hf-bg;
+        color: $dark-link-hf;
+      }
+    }
+  }
+}

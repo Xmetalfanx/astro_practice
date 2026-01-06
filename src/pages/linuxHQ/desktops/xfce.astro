@@ -23,7 +23,7 @@ const install_fedora = "sudo dnf groupinstall xfce-desktop";
 
 const install_opensuse_reference = "";
 const install_opensuse_repoleap156 = "";
-const install_opensuse_tw_repo = `Basic XFCE: sudo zypper in -t pattern xfce 
+const install_opensuse_tw_repo = `Basic XFCE: sudo zypper in -t pattern xfce
   <br /><br />
   Complete XFCE: sudo zypper in -t pattern xfce xfce_basic`;
 
@@ -36,40 +36,42 @@ const requirements_processor = "";
 
 const screenshot_distro = "Xubuntu";
 
-import screenshot_src from "@desktop_ss/xfce.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/xfce-small.png";
+import screenshot_src from "@desktop_ss/xfce.png";
 
-const version_arch = "4.20.0";
+const version_arch = "4.20.0-2";
 
-const version_debian_bullseye = "4.18.1-3";
-const version_debian_bookworm = "4.20.0-1";
-const version_debian_trixie = "4.20.0-1";
+const version_debian_trixie = "4.20.1";
+const version_debian_forky = "4.20.1";
+const version_debian_sid = "4.20.1";
 
+const version_fedora_42 = "4.20.0-2.fc42";
+const version_fedora_43 = "4.20.0-3.fc43";
 
-const version_fedora_41 = "4.18.6-2";
-const version_fedora_42 = "4.20.0-3";
+const latest_version = "";
 
-const latest_version = "4.20.0";
+const version_opensuse_leap156 = "4.18.0-bp156.2.6";
+const version_opensuse_leap160 = "4.20.0-bp160.1.3";
+const version_opensuse_tumbleweed = "4.20.0-1.3";
 
-const version_opensuse_leap156 = "4.20.0-1";
-const version_opensuse_tumbleweed = "4.20.0-2";
+const version_solus = "";
 
-const version_solus = "4.18.1";
-
+// Ubuntu versions
 const version_ubuntu_jammy = "4.16";
 const version_ubuntu_noble = "4.18";
 const version_ubuntu_plucky = "4.20";
+const version_ubuntu_questing = "4.20.1";
 
-const version_linuxmint_21 = "4.18.1-3";
-const version_linuxmint_211 = "4.18.1-3";
-const version_linuxmint_212 = "4.18.1-3";
-const version_linuxmint_213 = "4.18.1-3";
-const version_linuxmint_22 = "4.20.0-1";
-const version_linuxmint_221 = "4.20.0-2";
+const version_linuxmint_21 = "";
+const version_linuxmint_211 = "";
+const version_linuxmint_212 = "";
+const version_linuxmint_213 = "";
+const version_linuxmint_22 = "";
+const version_linuxmint_221 = "";
 
 const version_neon = "N/A";
 
-const info_updated = "April 17, 2025";
+const info_updated = "December 23, 2025";
 ---
 
 <LinuxDesktopTemplate
@@ -100,20 +102,19 @@ const info_updated = "April 17, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_bullseye={version_debian_bullseye}
-    version_debian_bookwoom={version_debian_bookworm}
     version_debian_trixie={version_debian_trixie}
-    version_fedora_40={version_fedora_40}
-    version_fedora_41={version_fedora_41}
+    version_debian_forky={version_debian_forky}
+    version_debian_sid={version_debian_sid}
+    version_fedora_43={version_fedora_43}
     version_fedora_42={version_fedora_42}
     latest_version={latest_version}
     version_leap156={version_opensuse_leap156}
+    version_leap160={version_opensuse_leap160}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
     version_ubuntu_jammy={version_ubuntu_jammy}
     version_ubuntu_noble={version_ubuntu_noble}
     version_ubuntu_plucky={version_ubuntu_plucky}
-    
     version_linuxmint_21={version_linuxmint_21}
     version_linuxmint_211={version_linuxmint_211}
     version_linuxmint_212={version_linuxmint_212}

@@ -21,8 +21,7 @@ const install_debian_trixie = "sudo apt install lxqt";
 const install_fedora = "sudo dnf install @lxqt-desktop-environment";
 
 const install_opensuse_reference = "";
-const install_opensuse_tw_repo =
-  `Basic LXQT: sudo zypper in -t pattern lxqt <br /><br />
+const install_opensuse_tw_repo = `Basic LXQT: sudo zypper in -t pattern lxqt <br /><br />
   Complete - including more apps, LXQT: sudo zypper in -t pattern lxqt_extra`;
 
 const install_ubuntu = "sudo apt install lxqt";
@@ -36,45 +35,48 @@ const screenshot_distro = "";
 import screenshot_src from "@desktop_ss/lxqt.png";
 import screenshot_thumbnail from "@desktop_ss/thumbnails/lxqt-small.png";
 
-const version_arch = "1.5.0";
+const version_arch = "2.3.0-1";
 
-const version_debian_bullseye = "33";
-const version_debian_bookworm = "34";
-const version_debian_trixie = "35";
+const version_debian_trixie = "33.2";
+const version_debian_forky = "33.2";
+const version_debian_sid = "33.2";
 
-const version_fedora_40 = "1.5.0";
-const version_fedora_41 = "1.5.1";
-const version_fedora_42 = "1.5.1";
+const version_fedora_42 = "2.1.0-3.fc42";
+const version_fedora_43 = "2.3.0-1.fc43";
 
-const latest_version = "1.5.1";
+const latest_version = "";
 
-const version_opensuse_leap156 = "1.5.0";
-const version_opensuse_tumbleweed = "1.5.1";
+const version_opensuse_leap156 = "1.4.0-bp156.1.2";
+const version_opensuse_leap160 = "2.2.0-bp160.1.2";
+const version_opensuse_tumbleweed = "2.3.0-1.1";
 
 const version_solus = "1.5.1";
 
-const version_ubuntu_jammy = "(Meta-package) 30ubuntu1";
-const version_ubuntu_noble = "(Meta-package) 30ubuntu3";
-const version_ubuntu_plucky = "(Meta-package) 32ubuntu1";
+// Ubuntu versions
+const version_ubuntu_jammy = "(Meta Package) 30.1";
+const version_ubuntu_noble = "(Meta Package) 30.3";
+const version_ubuntu_plucky = "(Meta Package) 32.1";
+const version_ubuntu_questing = "(Meta Package) 32.1";
 
-const version_linuxmint_21 = "34";
-const version_linuxmint_211 = "34.1";
-const version_linuxmint_212 = "34.2";
-const version_linuxmint_213 = "34.3";
-const version_linuxmint_22 = "35";
-const version_linuxmint_221 = "35.1";
+const version_linuxmint_21 = "";
+const version_linuxmint_211 = "";
+const version_linuxmint_212 = "";
+const version_linuxmint_213 = "";
+const version_linuxmint_22 = "";
+const version_linuxmint_221 = "";
 
 const version_neon = "N/A";
 
-const info_updated = "April 17, 2025";
+const info_updated = "December 23, 2025";
 ---
 
-<LinuxDesktopTemplate 
-  title="LXQT" 
-  keywords="LXQT, LXQT Desktop, LXQT Linux Desktop, LXQT Linux Desktop Environment, LXQT Linux Desktop Environment Information" 
-  description="LXQT is a lightweight desktop environment that is the successor to LXDE. It is designed to be fast and energy-efficient.">
-
-<DesktopData slot="linux-main"
+<LinuxDesktopTemplate
+  title="LXQT"
+  keywords="LXQT, LXQT Desktop, LXQT Linux Desktop, LXQT Linux Desktop Environment, LXQT Linux Desktop Environment Information"
+  description="LXQT is a lightweight desktop environment that is the successor to LXDE. It is designed to be fast and energy-efficient."
+>
+  <DesktopData
+    slot="linux-main"
     desktop_name={desktop_name}
     desktop_title={desktop_title}
     generalinfo_desktop_category={generalinfo_desktop_category}
@@ -97,20 +99,19 @@ const info_updated = "April 17, 2025";
     screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_arch={version_arch}
-    version_debian_bullseye={version_debian_bullseye}
-    version_debian_bookwoom={version_debian_bookworm}
     version_debian_trixie={version_debian_trixie}
-    version_fedora_40={version_fedora_40}
-    version_fedora_41={version_fedora_41}
+    version_debian_forky={version_debian_forky}
+    version_debian_sid={version_debian_sid}
+    version_fedora_43={version_fedora_43}
     version_fedora_42={version_fedora_42}
     latest_version={latest_version}
     version_leap156={version_opensuse_leap156}
+    version_leap160={version_opensuse_leap160}
     version_tumbleweed={version_opensuse_tumbleweed}
     version_solus={version_solus}
     version_ubuntu_jammy={version_ubuntu_jammy}
     version_ubuntu_noble={version_ubuntu_noble}
     version_ubuntu_plucky={version_ubuntu_plucky}
-    
     version_linuxmint_21={version_linuxmint_21}
     version_linuxmint_211={version_linuxmint_211}
     version_linuxmint_212={version_linuxmint_212}

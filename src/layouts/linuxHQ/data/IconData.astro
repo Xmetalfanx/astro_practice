@@ -4,20 +4,20 @@ import "@css/global-styles.css";
 import { Image } from "astro:assets";
 
 const {
-  icon_name,
-  icon_title,
-  link_homepage,
-  generalinfo_icon_category,
-  generalinfo_icon_toolkit,
-  generalinfo_distros_that_feature,
-  install_arch,
-  install_fedora,
-  install_ubuntu,
-  screenshot_distro,
-  screenshot_src,
-  screenshot_thumbnail,
-  latest_version,
-  info_updated,
+	icon_name,
+	icon_title,
+	link_homepage,
+	generalinfo_icon_category,
+	generalinfo_icon_toolkit,
+	generalinfo_distros_that_feature,
+	install_arch,
+	install_fedora,
+	install_ubuntu,
+	screenshot_distro,
+	screenshot_src,
+	screenshot_thumbnail,
+	latest_version,
+	info_updated,
 } = Astro.props;
 ---
 
@@ -66,10 +66,9 @@ const {
 <style lang="scss">
   @use "src/styles/scss/base/_index" as *;
   .icon-container {
-    @include color-level(2);
     font-family: Arial, sans-serif;
     padding: 20px;
-    @include outline($color: clr(light-color));
+    @include outline($color: var(--light-color));
     border-radius: 8px;
     margin: 2rem auto;
 
@@ -91,7 +90,7 @@ const {
         padding: 0;
 
         li {
-          @include color-level(3);
+          @include theme-color(3);
           padding: 1rem;
           margin: 2rem 0;
           border-radius: 8px;
@@ -101,7 +100,7 @@ const {
 
       img {
         max-width: 100%;
-        @include border($border-color: clr(light-color));
+        @include border($border-color: var(--light-color));
         border-radius: 8px;
       }
     }

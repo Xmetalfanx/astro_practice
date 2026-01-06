@@ -1,0 +1,67 @@
+// tl: top left, tr: top right,  br: bottom right, bl: bottom left,
+@mixin border-radius($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin outline(
+  $width: 1px,
+  $style: solid,
+  $color: clr(main-color),
+  $color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    outline: $width $style $color;
+  }
+  html[data-theme="dark"] & {
+    outline: $width $style $color-dark;
+  }
+}
+
+@mixin border(
+  $border-size: 1px,
+  $border-style: solid,
+  $border-color: clr(main-color),
+  $border-color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+  }
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+  }
+}
+
+// because i am always forget the default values i use
+// x or y is x axis or y axis
+@mixin box-shadow(
+  $x: 0,
+  $y: 0.5rem,
+  $blur: 1rem,
+  $color: clr(main-color),
+  $color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    box-shadow: $x $y $blur $color;
+  }
+
+  html[data-theme="dark"] & {
+    box-shadow: $x $y $blur $color-dark;
+  }
+}
+
+@mixin drop-shadow(
+  $xaxis: 0,
+  $yaxis: 0.5rem,
+  $blur: 1rem,
+  $color: var(--theme-clr-dark-500)
+) {
+  filter: drop-shadow($xaxis $yaxis $blur $color);
+}
+
+@mixin flex($direction: row, $wrap: wrap, $jc: flex-start, $ai: normal) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}

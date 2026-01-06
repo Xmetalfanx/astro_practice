@@ -1,8 +1,8 @@
 ---
 export interface Props {
-  title: string;
-  body: string;
-  href: string;
+	title: string;
+	body: string;
+	href: string;
 }
 
 const { href, title, body } = Astro.props;
@@ -26,7 +26,18 @@ import "@css/global-styles.css";
   @use "@scss/base/_index.scss" as *;
 
   .link-card {
-    @include color-level(2);
+    
+    html[data-theme=light] & {
+      background-color: var(--light-color-l2);
+    }
+    
+    
+    html[data-theme=dark] & {
+    background-color: var(--dark-color-l2);  
+    }
+
+
+
     @include flex($direction: column, $ai: center);
     @include border-radius;
     @include links;
