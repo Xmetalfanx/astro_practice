@@ -8,6 +8,8 @@
   width: 50px;
   height: 50px;
 
+  background-color: var(--light-color);
+
   // remember this is for the items IN the button, 
   // not #theme-toggle in the footer itself
   @include flex($ai: center, $jc: center);
@@ -24,8 +26,8 @@
 
     [data-theme="dark"] & {
 
-      // why is !important needed? ...
-      fill: clr(light-color) !important;
+      //?? why is !important needed? ...
+      //fill: var(--light-color) !important;
     }
   }
 }

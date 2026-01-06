@@ -3,22 +3,25 @@
 
 header,
 footer {
-  padding: 1rem;
 
-  // needed? ... these colors dont effect links...but can i use a mixing of some kind here?
-  background-color: clr(main-color);
-  color: clr(light-color);
-  
-  [data-theme="dark"] & {
-    background-color: clr(main-color, "xlsat");
-    // color: clr(light-color, "light");
+  html[data-theme="light"] & {
+    background-color: var(--main-color);    
   }
 
+  html[data-theme="dark"] & {
+    background-color: var(--main-color-l2);
+  }
+  
+  color: var(--light-color);
+
+  padding: 1rem;
+
+
   @include links(
-    $light-link: clr(light-color),
-    $dark-link: clr(light-color),
-    $light-link-hf: clr(accent-color),
-    $dark-link-hf: clr(accent-color, "lsat")
+    $light-link: var(--light-color),
+    $dark-link: var(--light-color),
+    $light-link-hf: var(--accent-color),
+    $dark-link-hf: var(--accent-color)
   );
 
   a {

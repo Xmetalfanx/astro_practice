@@ -129,13 +129,13 @@ const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
     font-size: 1.2rem;
   }
   .container {
-    @include color-level(2);
-    // @include outline($color: clr(accent-color));
+    // @include outline($color: var(--accent-color));
     @include box-shadow(
       $x: 2px,
       $y: 2px,
       $blur: 8px,
-      $color: clr(shadow-color)
+      // where ... ? 
+      $color: var(--shadow-color)
     );
 
     font-size: 1.1rem;

@@ -63,15 +63,15 @@ import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.as
     }
 
     section {
+      @include theme-color(2);
       @include border-radius;
-      @include color-level(2);
 
       // use outline and box-shadow combo mixin
       @include default-ol-and-bs( 
-        $ol-color: clr(accent-color),
-        $ol-color-dark: clr(light-color),
-        $bs-color: clr(accent-color),
-        $bs-color-dark: clr(light-color),
+        $ol-color: var(--accent-color),
+        $ol-color-dark: var(--light-color),
+        $bs-color: var(--accent-color),
+        $bs-color-dark: var(--light-color),
         $bs-x: 5px,
         $bs-y: 5px,
         $bs-blur: 3px

@@ -262,7 +262,6 @@ const info_updated = Astro.props.info_updated;
 
   .desktop_container {
     @include outline;
-    @include color-level(2);
 
     // not sure this is "too much"
     // @include box-shadow($blur: 0.75rem);
@@ -299,7 +298,7 @@ const info_updated = Astro.props.info_updated;
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
-        @include color-level(3);
+        @include theme-color(3);
 
         @include box-shadow($color: var(--dark-color));
 
@@ -325,7 +324,7 @@ const info_updated = Astro.props.info_updated;
       margin: 2rem 1rem;
       padding: 1rem;
 
-      @include color-level(3);
+      @include theme-color(3);
 
       h3 {
         font-size: 1.5rem;
@@ -351,7 +350,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    @include outline($color: clr(dark-color));
+    @include outline($color: var(--dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

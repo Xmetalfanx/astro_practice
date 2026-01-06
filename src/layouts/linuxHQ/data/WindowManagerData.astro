@@ -214,8 +214,6 @@ const info_updated = Astro.props.info_updated;
     line-height: 1.7rem;
     padding: 1.6rem;
 
-    @include color-level(2);
-
     .wm_title {
       font-size: 2rem;
       font-weight: 800;
@@ -241,11 +239,11 @@ const info_updated = Astro.props.info_updated;
       .sub_version_container {
         width: clamp(300px, 30%, 100%);
         margin: 2rem 0;
-        @include outline($color: clr(dark-color));
+        @include outline($color: var(--dark-color));
         margin: 1rem;
         padding: 1rem;
 
-        @include color-level(3);
+        @include theme-color(3);
 
         .distro-name {
           font-weight: var(--fw-bold);
@@ -255,12 +253,12 @@ const info_updated = Astro.props.info_updated;
 
     // Install Container
     .install_container {
-      @include outline($color: clr(dark-color));
+      @include outline($color: var(--dark-color));
 
       margin: 2rem 1rem;
       padding: 1rem;
 
-      @include color-level(3);
+      @include theme-color(3);
 
       h3 {
         font-size: 1.5rem;
@@ -286,7 +284,7 @@ const info_updated = Astro.props.info_updated;
 
   // why is this outside, here ?
   .sub_section_container {
-    @include outline($color: clr(dark-color));
+    @include outline($color: var(--dark-color));
     margin: 2rem 1rem;
     padding: 1rem;
   }

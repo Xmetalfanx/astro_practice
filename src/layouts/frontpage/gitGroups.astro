@@ -95,7 +95,8 @@
       padding: 1rem;
 
       .git-group {
-        @include color-level(2);
+
+        @include theme-color(2);
 
         border-radius: 8px;
         line-height: 200%;
@@ -116,7 +117,7 @@
           margin: 1.5rem 0;
 
           a > i {
-            color: clr(accent-color);
+            color: var(--accent-color);
               
             &:focus, 
             &:hover {
@@ -145,13 +146,15 @@
       }
 
       // todo: change to data-theme="dark"
-      @media (prefers-color-scheme: dark) {
+      html[data-theme="dark"] & {
         .git-group {
+
           i {
-            color: clr(accent-color, light);
+            @include theme-color(accent-color, 2);
           }
         }
       }
+      
     }
   }
 </style>

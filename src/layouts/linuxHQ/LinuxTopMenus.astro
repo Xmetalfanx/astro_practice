@@ -98,13 +98,13 @@ import DarkIcon from "@graphics/light_mode.svg";
         &:focus,
         &:hover {
           // the "hamburger" menu on hover
-          background-color: clr(main-color, dark);
+          background-color: var(--main-color-dark);
           @include outline($color: white);
 
           // the "burgers" on hover
           > label {
             span {
-              background-color: clr(dark-color, light);
+              background-color: var(--dark-color);
             }
           }
         }
@@ -115,7 +115,7 @@ import DarkIcon from "@graphics/light_mode.svg";
             display: block;
             width: 100px;
             height: 12px;
-            background-color: clr(accent-color);
+            background-color: var(--accent-color);
             margin: .75rem 0;
           }
         }
@@ -127,7 +127,7 @@ import DarkIcon from "@graphics/light_mode.svg";
 
         // the menu when the hamburger menu is clicked
         input:checked ~ .overlay > nav {
-          background-color: clr(main-color);
+          background-color: var(--main-color);
 
           margin: unset;
           place-content: center;
