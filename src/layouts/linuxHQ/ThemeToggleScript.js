@@ -7,7 +7,7 @@ const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 // Use saved theme OR OS preference
 let theme = localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
 
-// applyTheme(theme);
+applyTheme(theme);
 
 themeToggle.addEventListener("click", () => {
   theme = theme === "light" ? "dark" : "light";
@@ -17,7 +17,6 @@ themeToggle.addEventListener("click", () => {
 
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  // document.documentElement.style.colorScheme = theme;
 
   lightIcon.style.display = theme === "dark" ? "none" : "block";
   darkIcon.style.display = theme === "dark" ? "block" : "none";
