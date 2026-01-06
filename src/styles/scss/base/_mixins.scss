@@ -1,0 +1,194 @@
+@use "sass:color";
+@use "colors" as *;
+@use "functions" as *;
+
+// tl: top left, tr: top right,  br: bottom right, bl: bottom left,
+@mixin border-radius($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin outline(
+  $width: 1px,
+  $style: solid,
+  $color: clr(main-color),
+  $color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    outline: $width $style $color;
+  }
+  html[data-theme="dark"] & {
+    outline: $width $style $color-dark;
+  }
+}
+
+@mixin border(
+  $border-size: 1px,
+  $border-style: solid,
+  $border-color: clr(main-color),
+  $border-color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+  }
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+  }
+}
+
+// because i am always forget the default values i use
+// x or y is x axis or y axis
+@mixin box-shadow(
+  $x: 0,
+  $y: 0.5rem,
+  $blur: 1rem,
+  $color: clr(main-color),
+  $color-dark: clr(light-color)
+) {
+  html[data-theme="light"] & {
+    box-shadow: $x $y $blur $color;
+  }
+
+  html[data-theme="dark"] & {
+    box-shadow: $x $y $blur $color-dark;
+  }
+}
+
+@mixin drop-shadow(
+  $xaxis: 0,
+  $yaxis: 0.5rem,
+  $blur: 1rem,
+  $color: var(--theme-clr-dark-500)
+) {
+  filter: drop-shadow($xaxis $yaxis $blur $color);
+}
+
+@mixin header(
+  $font-family: var(--ffamily-header),
+  $font-size: var(--h1),
+  $font-weight: var(--fw-bold)
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin flex($direction: row, $wrap: wrap, $jc: flex-start, $ai: normal) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// for links
+// "intial values" are for a, a:link
+@mixin links(
+  // the link (unhovered) color
+  $light-link: clr(accent-color),
+  $light-link-bg: inherit,
+  $light-link-hf: clr(main-color),
+  $light-link-hf-bg: inherit,
+  $light-link-visited: clr(accent-color),
+  $dark-link: clr(main-color, "lighter"),
+  $dark-link-bg: inherit,
+  $dark-link-hf: clr(accent-color, "lighter"),
+  $dark-link-hf-bg: inherit,
+  $dark-link-visited: clr(main-color, "dark")
+) {
+  html[data-theme="light"] & {
+    a,
+    a:link {
+      background-color: $light-link-bg;
+      color: $light-link;
+
+      &:focus,
+      &:hover {
+        background-color: $light-link-hf-bg;
+        color: $light-link-hf;
+        @include outline;
+      }
+    }
+  }
+
+  html[data-theme="dark"] & {
+    a,
+    a:link {
+      background-color: $dark-link-bg;
+      color: $dark-link;
+
+      &:focus,
+      &:hover {
+        background-color: $dark-link-hf-bg;
+        color: $dark-link-hf;
+      }
+    }
+  }
+}
+
+// This only change the background color
+@mixin color-level($level: 1) {
+  $adjustment: 5%; // Use positive percentage for adjustment
+
+  // Adjust the lightness/"darkness", based on the level
+  @if $level == 2 {
+    // For level 2, keep the adjustment at 5%
+    $adjustment: 5%;
+  } @else if $level == 3 {
+    // For level 3, apply a larger adjustment
+    $adjustment: 10%;
+  }
+
+  // Default light styles
+  html[data-theme="light"] & {
+    background-color: color.adjust($light-color, $lightness: -$adjustment);
+  }
+
+  // Dark theme styles using attribute selector
+  html[data-theme="dark"] & {
+    background-color: color.adjust($dark-color, $lightness: $adjustment);
+  }
+}
+
+// just an idea for a default mixin for a box shadow AND outline, to combine the two
+@mixin default-ol-and-bs(
+  $ol-color: clr(main-color),
+  $ol-color-dark: clr(light-color),
+  $ol-size: 1px,
+  $ol-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: clr(main-color),
+  $bs-color-dark: clr(accent-color)
+) {
+  html[data-theme="light"] & {
+    outline: $ol-color $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    outline: $ol-color-dark $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}
+@mixin default-border-and-bs(
+  $border-color: clr(main-color),
+  $border-color-dark: clr(light-color),
+  $border-size: 1px,
+  $border-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: clr(main-color),
+  $bs-color-dark: clr(accent-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}

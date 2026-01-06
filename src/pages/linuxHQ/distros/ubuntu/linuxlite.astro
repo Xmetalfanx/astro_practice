@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "linuxlite";
 const distro_title = "Linux Lite";
 
-import distro_icon from "@icons/lite.png";
+import distro_icon from "@distro_icons/lite.png";
 
 const moreinfo_base = "Ubuntu Long Term Support (LTS)";
 const moreinfo_desktops = "XFCE";
@@ -19,14 +19,14 @@ const screenshot_desktop = "XFCE";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@ubuntu_ss/linuxlite.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/linuxlite_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/linuxlite.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/linuxlite-small.png";
 
-const version_latest = "6.4";
-const versions_supported = "6.x";
+const version_latest = "7.4";
+const versions_supported = "";
 
 const link_download = "http://sourceforge.net/projects/linuxlite/files";
-const link_forum = "https=//www.linuxliteos.com/link_forums/";
+const link_forum = "https://www.linuxliteos.com/link_forums/";
 const link_homepage = "http://www.linuxliteos.com";
 const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/";
 
@@ -34,13 +34,17 @@ const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Linux Lite "
+  meta_keywords="Linux Lite, Linux, XFCE, Ubuntu-based, Lightweight Linux distributions"
+  meta_description="Explore Linux Lite, a lightweight Ubuntu-based Linux distribution featuring the XFCE desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

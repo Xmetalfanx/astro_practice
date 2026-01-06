@@ -1,0 +1,51 @@
+export const desktops = [
+  {
+    name: "XFCE",
+    icon: "/path/to/xfce/icon.png",
+    description: "A lightweight desktop environment for UNIX-like operating systems.",
+    homepage: "https://xfce.org/",
+    commonDistros: ["Manjaro", "Xubuntu", "SoyldX", "Uberstudent"],
+    screenshot: "/path/to/xfce/screenshot.png",
+  },
+  {
+    name: "Plasma/KDE",
+    icon: "/path/to/plasma/icon.png",
+    description: "A powerful, multi-functional desktop environment.",
+    homepage: "https://kde.org/announcements/",
+    commonDistros: ["Kubuntu", "KDE Neon", "Arch", "OpenSuse", "Fedora"],
+    screenshot: "/path/to/plasma/screenshot.png",
+  },
+  {
+    name: "LXQT",
+    icon: "/path/to/lxqt/icon.png",
+    description: "A lightweight, modular, and fast desktop environment.",
+    homepage: "https://lxqt.org/",
+    commonDistros: ["Lubuntu Next", "Sparky Linux"],
+    screenshot: "/path/to/lxqt/screenshot.png",
+  },
+  {
+    name: "Gnome",
+    icon: "/path/to/gnome/icon.png",
+    description: "A modern desktop environment for UNIX-like operating systems.",
+    homepage: "https://www.gnome.org/",
+    commonDistros: ["Ubuntu", "Fedora", "Solus", "OpenSuse"],
+    screenshot: "/path/to/gnome/screenshot.png",
+  },
+  {
+    name: "Cinnamon",
+    icon: "/path/to/cinnamon/icon.png",
+    description: "A Linux desktop environment that provides advanced innovative features and a traditional user experience.",
+    homepage: "https://github.com/linuxmint/cinnamon-desktop",
+    commonDistros: ["Linux Mint", "Fedora", "Arch"],
+    screenshot: "/path/to/cinnamon/screenshot.png",
+  },
+  {
+    name: "Budgie",
+    icon: "/path/to/budgie/icon.png",
+    description: "A desktop environment that focuses on simplicity and elegance.",
+    homepage: "https://buddiesofbudgie.org/",
+    commonDistros: ["Solus", "Ubuntu Budgie", "Fedora", "Endevour"],
+    screenshot: "/path/to/budgie/screenshot.png",
+  },
+  // Add more desktops as needed
+];

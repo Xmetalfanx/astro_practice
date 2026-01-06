@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "kaos";
 const distro_title = "KaOS";
 
-import distro_icon from "@icons/kaos.svg";
+import distro_icon from "@distro_icons/kaos.svg";
 
 const moreinfo_desktops = "Plasma 5";
 const moreinfo_featured = "";
@@ -18,10 +18,10 @@ const screenshot_desktop = "KDE / Plasma 5";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@independent_ss/kaos.png";
-import screenshot_thumbnail from "@independent_ss/thumbnails/kaos_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/independent//kaos.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/independent//thumbnails/kaos-small.png";
 
-const version_latest = "";
+const version_latest = "2025.05 (May 2025)";
 const versions_supported = "";
 
 const link_download = "https://kaosx.us/download";
@@ -34,13 +34,17 @@ const youtube_review_playlist = "";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="KaOS "
+  meta_keywords="KaOS, Linux, Plasma 5, Independent, Linux distributions"
+  meta_description="Explore KaOS, an independent Linux distribution featuring the Plasma 5 desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}
@@ -51,8 +55,8 @@ const youtube_tips_playlist = "";
     distro_icon={distro_icon}
     screenshot_desktop={screenshot_desktop}
     screenshot_icon={screenshot_icon}
-    screenshot_src={screenshot_src}
     screenshot_theme={screenshot_theme}
+    screenshot_src={screenshot_src}
     screenshot_thumbnail={screenshot_thumbnail}
     version_latest={version_latest}
     versions_supported={versions_supported}

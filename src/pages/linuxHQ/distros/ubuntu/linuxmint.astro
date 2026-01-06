@@ -1,7 +1,7 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
-import distro_icon from "@icons/linuxmint.svg";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
+import distro_icon from "@distro_icons/linuxmint.svg";
 
 const distro_title = "Linux Mint";
 
@@ -17,27 +17,31 @@ const moreinfo_similar_distros = "";
 const moreinfo_target_audience = "Any/New Users";
 const moreinfo_distro_type = "LTS - Long Term Support";
 
-import screenshot_src from "@ubuntu_ss/cinnamonMint.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/cinnamonMint_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/mint.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/mint-small.png";
 
 const screenshot_desktop = "Cinnamon";
 const screenshot_icon = "Mint-Y";
 const screenshot_theme = "Mint-Y";
 
 const version_latest = "22.1";
-const versions_supported = "20.x, 21.x, 22.x";
+const versions_supported = "21.x, 22.x";
 
 const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Linux Mint "
+  meta_keywords="Linux Mint, Linux, Cinnamon Desktop, Ubuntu-based, Linux distributions"
+  meta_description="Explore Linux Mint, an Ubuntu-based Linux distribution featuring Cinnamon, Mate, and XFCE desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

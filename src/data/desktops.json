@@ -1,0 +1,550 @@
+// idea: 
+
+desktop_name
+desktop_title
+
+generalinfo_category
+generalinfo_toolkit
+generalinfo_
+generalinfo_
+generalinfo_
+
+requirements_processor
+requirements_hdd_space
+requirements_recommended
+
+
+install_arch
+install_debian
+install_fedora
+install_opensuse
+install_solus
+install_ubuntu
+///////////////////////////////////////////////////////////
+
+
+
+{
+ 
+
+
+
+
+
+  "gtk3": [
+    {
+      "desktop_name": "cinnamon",
+      "desktop_title": "Cinnamon",
+      "generalInfo": {
+        "desktopCategory": "heavyweight",
+        "desktopGithubURL": "https://github.com/linuxmint/cinnamon-desktop",
+        "desktopHomepage": "https://github.com/linuxmint/cinnamon-desktop",
+        "distrosFeature": "Linux Mint, Fedora, Arch"
+      },
+      "install": {
+        "arch": "sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)",
+        "fedora": "sudo dnf groupinstall cinnamon-desktop",
+        "opensuse": {
+          "opensuseInstall": "(See instructions for each branch, below)",
+          "reference": "<a href=\"https://en.opensuse.org/Portal:Cinnamon\"target=\"_blank\"> Install Cinnamon on OpenSuse </a>",
+          "repoleap154": "N/A",
+          "twRepo": "zypper ref && zypper in -y cinnamon cinnamon-screensaver"
+        },
+        "ubuntu": {
+          "mintInstall": "sudo apt install mint-meta-cinnamon",
+          "ubuntuInstall": "cinnamon-desktop-environment"
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "10GB (Min)",
+        "reqMemory": "1GB Recommended (Xmetal's comment:I would say 2GB to 4GB for COMFORTABLE usage)",
+        "reqProcessor": "32bit or 64bit processor (Xmetal Comment:I'd say dual-core ... about from 2009 on should be ok for LOWEST I'd recommend"
+      },
+      "screenshots": {
+        "distro": "Linux Mint",
+        "icon": "Mint-X",
+        "src": "ubuntu/cinnamonMint.png",
+        "theme": "Mint-X",
+        "thumbnail": "ubuntu/thumbnails/cinnamonMint_tn.png"
+      },
+      "versions": {
+        "arch": "6.0.4-1",
+        "debian": {
+          "bullseye": "4.8.6-2",
+          "bookworm": "5.6.8-1"
+        },
+        "fedora": {
+          "f38": "6.0.4-1",
+          "f39": "6.0.4-1"
+        },
+        "latestVersion": "6.0.4",
+        "opensuse": {
+          "leap155": "4.6.7",
+          "leap156": "4.6.7",
+          "tumbleweed": "6.0.0-1.2"
+        },
+        "solus": "N/A",
+        "ubuntu": {
+          "jammy": "5.2.7-4",
+          "mint": {
+            "mint20": "4.6.7",
+            "mint201": "4.8.6",
+            "mint202": "5.0.7",
+            "mint203": "5.0.7",
+            "mint21": "5.4.12",
+            "mint211": "5.6.8",
+            "mint212": "5.8.4",
+            "mint213": "6.0.4"
+          },
+          "neonversion": "n/a"
+        },
+        "updated": "March 1, 2024"
+      }
+    },
+    {
+      "desktop_name": "budgie",
+      "desktop_title": "Budgie",
+      "generalInfo": {
+        "desktopCategory": "",
+        "desktopGithubURL": "https://github.com/BuddiesOfBudgie",
+        "desktopHomepage": "https://buddiesofbudgie.org/",
+        "distrosFeature": "Solus, Ubuntu Budgie, Fedora, Endevour"
+      },
+      "install": {
+        "arch": "sudo pacman -S budgie-desktop",
+        "fedora": "sudo dnf install budgie-desktop",
+        "opensuse": {
+          "opensuseInstall": "",
+          "reference": "",
+          "repoleap154": "",
+          "twRepo": ""
+        },
+        "ubuntu": {
+          "mintInstall": "N/A",
+          "ubuntuInstall": "sudo apt install budgie-desktop"
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Solus",
+        "src": "solus/solusbudgie.png",
+        "thumbnail": "solus/thumbnails/solusbudgie_tn.png"
+      },
+      "versions": {
+        "arch": "10.9.1-1",
+        "debian": {
+          "bullseye": "10.5.2-4",
+          "bookworm": "10.7.1-1"
+        },
+        "fedora": {
+          "f38": "10.8.2-1",
+          "f39": "10.9.1-2"
+        },
+        "latestVersion": "10.9.1",
+        "opensuse": {
+          "leap155": "10.6+4",
+          "leap156": "10.6+4",
+          "tumbleweed": "10.9+2-2.1"
+        },
+        "solus": "4.4 ISO: 10.7.2",
+        "ubuntu": {
+          "jammy": "10.6.1-1",
+          "mint": {
+            "mint20": "4.6.7",
+            "mint201": "4.8.6",
+            "mint202": "5.0.7",
+            "mint203": "5.2.7",
+            "mint21": "5.4.12",
+            "mint211": "5.6.8",
+            "mint212": "5.8.4",
+            "mint213": "6.0.4"
+          },
+          "neonversion": "N/A"
+        },
+        "updated": "March 1, 2024"
+      }
+    },
+    {
+      "desktop_name": "mate",
+      "desktop_title": "Mate",
+      "generalInfo": {
+        "desktopCategory": "lightweight",
+        "desktopGithubURL": "https://github.com/mate-desktop",
+        "desktopHomepage": "https://mate-desktop.org/",
+        "distrosFeature": "Ubuntu Mate, Linux Mint Mate, Fedora, Arch/Antergos"
+      },
+      "install": {
+        "arch": "sudo pacman -S mate mate-extra",
+        "fedora": "sudo dnf groupinstall mate-desktop mate-applications",
+        "opensuse": {
+          "reference": "https://en.opensuse.org/Portal:MATE/Install",
+          "twrepo": "zypper ar -r http://download.opensuse.org/repositories/X11:/MATE:/Current/openSUSE_Tumbleweed/X11:MATE:Current.repo"
+        },
+        "ubuntu": {
+          "mintinstall": "sudo apt install mint-meta-mate",
+          "ubuntuInstall": "sudo apt install mate-desktop-environment"
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Ubuntu Mate",
+        "src": "ubuntu/umate1.png",
+        "thumbnail": "ubuntu/thumbnails/umate1_tn.png"
+      },
+      "versions": {
+        "arch": "1.26.2-1",
+        "debian": {
+          "bullseyeVersion": "1.24.0+4",
+          "bookwormVersion": "1.26.0+1"
+        },
+        "fedora": {
+          "f38": "1.26.2-1",
+          "f39": "1.26.2-1"
+        },
+        "latestVersion": "1.26.x",
+        "opensuse": {
+          "leap155": "1.26.0",
+          "leap156": "1.26.0",
+          "tumbleweed": "1.26.2-1"
+        },
+        "solus": "4.4 ISO: 1.27.1",
+        "ubuntu": {
+          "jammy": "1.26.0-1",
+          "mint": {
+            "mint20": "",
+            "mint201": "",
+            "mint202": "",
+            "mint203": "",
+            "mint21": "",
+            "mint211": "",
+            "mint212": "",
+            "mint213": ""
+          },
+          "neonversion": "N/A"
+        },
+        "updated": "March 1, 2024"
+      }
+    },
+    {
+      "desktop_name": "gnome",
+      "desktop_title": "Gnome Shell",
+      "generalInfo": {
+        "desktopCategory": "heavyweight",
+        "desktopGithubURL": "",
+        "desktopHomepage": "https://www.gnome.org/",
+        "distrosFeature": "Ubuntu, Fedora, Solus, OpenSuse"
+      },
+      "install": {
+        "arch": "",
+        "fedora": "",
+        "opensuse": {
+          "reference": "",
+          "twrepo": ""
+        },
+        "ubuntu": {
+          "mintinstall": "",
+          "ubuntuInstall": ""
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Ubuntu 20.10 (settings)",
+        "src": "ubuntu/ubuntu2010settings.png",
+        "thumbnail": "ubuntu/thumbnails/ubuntu2010settings_tn.png"
+      },
+      "versions": {
+        "arch": "44.0-1",
+        "debian": {
+          "bullseyeVersion": "3.38+3",
+          "bookwormVersion": "43+1"
+        },
+        "fedora": {
+          "f38": "44.9-1",
+          "f39": "45.4-1"
+        },
+        "latestVersion": "45",
+        "opensuse": {
+          "leap155": "41.9",
+          "leap156": "41.9",
+          "tumbleweed": "45.3-3.1"
+        },
+        "solus": "4.4 ISO: 43.5",
+        "ubuntu": {
+          "jammy": "42.0-1.1",
+          "mint": {
+            "mint20": "N/A",
+            "mint201": "N/A",
+            "mint202": "N/A",
+            "mint203": "N/A",
+            "mint21": "N/A",
+            "mint211": "N/A",
+            "mint212": "N/A",
+            "mint213": "N/A"
+          },
+          "neonversion": "N/A"
+        },
+        "updated": "March 1, 2024"
+      }
+    },
+    {
+      "desktop_name": "xfce",
+      "desktop_title": "XFCE",
+      "generalInfo": {
+        "desktopCategory": "lightweight",
+        "desktopGithubURL": "n/a",
+        "desktopHomepage": "https://xfce.org/",
+        "distrosFeature": "mintHP . 'Manjaro XFCE, Manjaro by MM, Xubuntu, SoyldX, Uberstudent"
+      },
+      "install": {
+        "arch": "sudo pacman -S xfce4 xfce-goodies",
+        "fedora": "sudo dnf groupinstall xfce-desktop",
+        "opensuse": {
+          "reference": "",
+          "repoleap154": "",
+          "twRepo": ""
+        },
+        "ubuntu": {
+          "mintInstall": "",
+          "ubuntuInstall": "sudo apt install xfce xfce-goodies"
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Linux Lite",
+        "src": "ubuntu/linuxlite.png",
+        "thumbnail": "ubuntu/thumbnails/linuxlite_tn.png"
+      },
+      "versions": {
+        "arch": "4.18.0-2",
+        "debian": {
+          "bullseyeVersion": "4.16.1-1",
+          "bookwormVersion": "4.18.0-1"
+        },
+        "fedora": {
+          "f38": "4.18.0-2",
+          "f39": "4.18.0-3"
+        },
+        "latestVersion": "4.18",
+        "opensuse": {
+          "leap155": "4.18.0",
+          "leap156": "4.18.0",
+          "tumbleweed": "4.18.0"
+        },
+        "solus": "N/A (yet) - Soon Solus is replacing their Mate version with an XFCE Version",
+        "ubuntu": {
+          "jammy": "4.16.1-1",
+          "mint": {
+            "mint20": "",
+            "mint201": "",
+            "mint202": "",
+            "mint203": "",
+            "mint21": "",
+            "mint211": "",
+            "mint212": "",
+            "mint213": ""
+          },
+          "neonversion": "N/A"
+        },
+        "updated": "March 1, 2024"
+      }
+    }
+  ],
+  "qt": [
+    {
+      "desktop_name": "plasma5",
+      "desktop_title": "Plasma 5",
+      "generalInfo": {
+        "desktopCategory": "heavyweight",
+        "desktopGithubURL": "",
+        "desktopHomepage": "https://kde.org/announcements/",
+        "distrosFeature": "Kubuntu, KDE Neon, Arch, OpenSuse, Fedora"
+      },
+      "install": {
+        "arch": "sudo pacman -S kde OR sudo pacman kde-meta",
+        "fedora": "sudo dnf group install kde-desktop-environment",
+        "opensuse": {
+          "install": "sudo zypper in -t pattern kde kde_plasma"
+        },
+        "ubuntu": {
+          "install": "sudo apt install plasma-desktop",
+          "mintinstall": "(Mint prior to version 19) sudo apt (or apt-get) install mint-meta-kde"
+        }
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Kubuntu 20.04",
+        "src": "ubuntu/kubuntu.png",
+        "thumbnail": "ubuntu/thumbnails/kubuntu_tn.png"
+      },
+      "versions": {
+        "arch": "5.27.10-1",
+        "debian": {
+          "bullseyeVersion": "5.20.5-4+deb11u1",
+          "bookwormVersion": "5.27.5-2"
+        },
+        "fedora": {
+          "f38": "5.27.10-1",
+          "f39": "5.27.10-1"
+        },
+        "latestVersion": "5.27",
+        "opensuse": {
+          "leap155": "5.27.4",
+          "leap156": "5.27.4",
+          "tumbleweed": "5.27.10-1.2"
+        },
+        "solus": "4.4 ISO: Plasma Desktop 5.27.5, KDE Frameworks 5.106.0, and QT 5.15.9",
+        "ubuntu": {
+          "jammy": "5.24.4-0.1",
+          "mint": {
+            "mint20": "N/A",
+            "mint201": "N/A",
+            "mint202": "N/A",
+            "mint203": "N/A",
+            "mint21": "N/A",
+            "mint211": "N/A",
+            "mint212": "N/A",
+            "mint213": "N/A"
+          },
+          "neonversion": "5.10.4"
+        },
+        "updated": "March 1, 2024"
+      }
+    },
+    {
+      "desktop_name": "lxqt",
+      "desktop_title": "LXQT",
+      "generalInfo": {
+        "desktopCategory": "Light",
+        "desktopHomepage": "https://lxqt.org/",
+        "distrosFeature": "Lubuntu Next, Sparky Linux"
+      },
+      "install": {
+        "arch": "",
+        "fedora": "",
+        "opensuse": {
+          "reference": "",
+          "repoTW": "",
+          "repoleap154": ""
+        },
+        "ubuntu": "sudo apt install lxqt"
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Lubuntu 18.10",
+        "src": "ubuntu/lubuntu.png",
+        "thumbnail": "ubuntu/thumbnails/lubuntu_tn.png"
+      },
+      "versions": {
+        "arch": "1.4.0-1",
+        "debian": {
+          "bookwormVersion": "31",
+          "bullseyeVersion": "30"
+        },
+        "fedora": {
+          "f38": "1.2.0-2",
+          "f39": "1.3.0-1"
+        },
+        "latestVersion": "1.4.0",
+        "opensuse": {
+          "leap155": "1.2.0",
+          "leap156": "1.2.0",
+          "tumbleweed": "1.4.0-2.2"
+        },
+        "solus": "N/A",
+        "ubuntu": {
+          "jammy": "30.1",
+          "mint": {
+            "mint20": "N/A",
+            "mint201": "N/A",
+            "mint202": "N/A",
+            "mint203": "N/A",
+            "mint21": "N/A",
+            "mint211": "N/A",
+            "mint212": "N/A",
+            "mint213": "N/A"
+          }
+        },
+        "updated": "March 1, 2024"
+      }
+    }
+  ],
+  "wm": [
+    {
+      "desktop_name": "openbox",
+      "desktop_title": "Openbox",
+      "generalInfo": {
+        "desktopCategory": "Light",
+        "desktopHomepage": "",
+        "distrosFeature": "Crunchbang++, Bunsenlabs, Arch"
+      },
+      "install": {
+        "arch": "sudo pacman -S openbox",
+        "fedora": "",
+        "mintinstall": "",
+        "opensuse": "",
+        "ubuntu": "sudo apt install openbox"
+      },
+      "requirements": {
+        "reqHDDSpace": "",
+        "reqMemory": "",
+        "reqProcessor": ""
+      },
+      "screenshots": {
+        "distro": "Bunsenlabs",
+        "src": "debian/bunsenlabs.png",
+        "thumbnail": "debian/thumbnails/bunsenlabs_tn.png"
+      },
+      "versions": {
+        "arch": "3.6.1-10",
+        "debian": {
+          "bullseyeVersion": "3.6.1-9",
+          "bookwormVersion": "3.6.1-10"
+        },
+        "fedora": {
+          "f38": "3.6.1.22",
+          "f39": "3.6.1.24"
+        },
+        "latestVersion": "3.6.x",
+        "opensuse": {
+          "leap155": "3.6.1",
+          "leap156": "3.6.1",
+          "tumbleweed": "3.6.1"
+        },
+        "solus": "N/A",
+        "ubuntu": {
+          "jammy": "3.6.1-10",
+          "mint": {
+            "mint21": "",
+            "mint20": ""
+          },
+          "neonversion": "N/A"
+        },
+        "updated": "March 1, 2024"
+      }
+    }
+  ]
+}

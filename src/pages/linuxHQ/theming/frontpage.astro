@@ -1,0 +1,148 @@
+---
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+import LinkToTop from "@components/global/PageLinkToMenus.astro";
+
+const themes = [
+  {
+    name: "Numix",
+    link: "/linuxHQ/theming/themes/numix_theme",
+    repo: "https://github.com/numixproject/numix-gtk-theme",
+  },
+  {
+    name: "Materia",
+    link: "/linuxHQ/theming/themes/materia_theme",
+    repo: "https://github.com/nana-4/materia-theme",
+  },
+  {
+    name: "Arc",
+    link: "/linuxHQ/theming/themes/arc_theme",
+    repo: "https://github.com/jnsh/arc-theme",
+  },
+  {
+    name: "Adapta",
+    link: "/linuxHQ/theming/themes/adapta_theme",
+    repo: "https://github.com/adapta-project/adapta-gtk-theme",
+  },
+];
+
+const icons = [
+  {
+    name: "Papirus Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/papirus_icon_theme",
+    repo: "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme",
+  },
+  {
+    name: "Numix Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/numix_icon_theme",
+    repo: "https://github.com/numixproject/numix-icon-theme",
+  },
+  {
+    name: "Adwaita Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/adwaita_icon_theme",
+    repo: "https://gitlab.gnome.org/GNOME/adwaita-icon-theme",
+  },
+  {
+    name: "Breeze Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/breeze_icon_theme",
+    repo: "https://github.com/KDE/breeze-icons",
+  },
+  {
+    name: "Yaru Icon Theme",
+    link: "/linuxHQ/theming/icon_themes/yaru_icon_theme",
+    repo: "https://github.com/ubuntu/yaru",
+  },
+];
+---
+
+<LinuxThemeTemplate
+  title="Linux Theming Frontpage"
+  keywords="linux, theming, themes, icons"
+  description="Explore some of the best Linux themes and icon themes available."
+>
+<a href="#aside" class="linktoaside">Link to Menu</a>
+
+<!-- target for "backtotop" link  -->
+<div id="backtotop"></div>
+
+  <div slot="linux-main">
+    <LinkToTop />
+
+    <p>
+      Linux theming is a great way to customize your Linux desktop environment.
+      There are many themes and icon themes available for Linux that can help
+      you make your desktop look and feel the way you want. Here are some of the
+      best Linux themes and icon themes available.
+    </p>
+    <section>
+      <h1>Linux Themes</h1>
+      <p>
+        Explore some of the best Linux themes available. Click on the theme name
+        to learn more or visit their repositories for more details.
+      </p>
+      <ul>
+        {
+          themes.map((theme) => (
+            <li>
+              <a href={theme.link}>{theme.name}</a> -{" "}
+              <a href={theme.repo} target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h1>Linux Icon Themes</h1>
+      <p>
+        Explore some of the best Linux icon themes available. Click on the icon
+        theme name to learn more or visit their repositories for more details.
+      </p>
+      <ul>
+        {
+          icons.map((icon) => (
+            <li>
+              <a href={icon.link}>{icon.name}</a> -{" "}
+              <a href={icon.repo} target="_blank" rel="noopener noreferrer">
+                Repository
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</LinuxThemeTemplate>
+
+
+<style lang="scss">
+  section {
+    padding: 20px;
+    // background-color: #f9f9f9;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 1.5rem 0;
+  }
+</style>

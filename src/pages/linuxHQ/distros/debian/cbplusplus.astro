@@ -1,14 +1,14 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "cbplusplus";
 const distro_title = "Crunchbang++";
 
-import distro_icon from "@icons/crunchbang.png";
+import distro_icon from "@distro_icons/crunchbang.png";
 
 const moreinfo_desktops = "Openbox";
-const moreinfo_featured = "";
+const moreinfo_featured = "no";
 const moreinfo_releasecycle = "";
 const moreinfo_similar_distros = "Debian with Openbox";
 const moreinfo_target_audience = "";
@@ -18,11 +18,11 @@ const screenshot_desktop = "";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/cbpp.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/cbpp_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/cbpp.jpg";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/cbpp-small.jpg";
 
-const version_latest = "11.1";
-const versions_supported = "11.x";
+const version_latest = "12.1 (based on Debian 12.x) - Released Feb. 2024";
+const versions_supported = "12.1";
 
 const link_download = "https://crunchbangplusplus.org/download/";
 const link_forum = "https://www.reddit.com/r/crunchbangplusplus/";
@@ -34,13 +34,17 @@ const youtube_tips_playlist =
   "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Crunchbang++ "
+  meta_keywords="Crunchbang++, Debian-based, Openbox, Lightweight, Linux distributions"
+  meta_description="Explore Crunchbang++, a Debian-based Linux distribution featuring the Openbox window manager. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

@@ -1,0 +1,51 @@
+---
+import ThemeData from "@layouts/linuxHQ//data/ThemeData.astro";
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+
+const theme_name = "materia";
+const theme_title = "Materia Theme";
+
+const link_code = "https://github.com/nana-4/materia-theme";
+const link_homepage = "https://github.com/nana-4/materia-theme";
+
+const generalinfo_theme_category = "GTK Theme";
+const generalinfo_theme_toolkit = "GTK2, GTK3";
+const generalinfo_distros_that_feature = "Arch, Fedora, Ubuntu";
+
+const install_arch = "sudo pacman -S materia-gtk-theme";
+const install_fedora = "sudo dnf install materia-gtk-theme";
+const install_opensuse_reference = "";
+const install_opensuse_tw_repo = "";
+const install_mint = "sudo apt install materia-gtk-theme";
+const install_ubuntu = "sudo apt install materia-gtk-theme";
+
+const screenshot_distro = "Arch";
+const screenshot_src = "arch/materia-theme.png";
+const screenshot_thumbnail = "arch/thumbnails/materia-theme_tn.png";
+
+const latest_version = "20220405";
+
+const info_updated = "March 1, 2024";
+
+---
+
+<LinuxThemeTemplate>
+  <ThemeData
+    theme_name={theme_name}
+    theme_title={theme_title}
+    link_homepage={link_homepage}
+    generalinfo_theme_category={generalinfo_theme_category}
+    generalinfo_theme_toolkit={generalinfo_theme_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxThemeTemplate>

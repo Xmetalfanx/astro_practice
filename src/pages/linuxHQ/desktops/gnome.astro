@@ -1,0 +1,124 @@
+---
+import DesktopData from "@layouts/linuxHQ/data/DesktopData.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+
+const desktop_name = "gnome";
+const desktop_title = "Gnome Shell";
+
+const link_code = "https://gitlab.gnome.org/GNOME/gnome-desktop";
+const link_homepage = "https://www.gnome.org/";
+
+const generalinfo_desktop_category = "heavyweight";
+const generalinfo_desktop_toolkit = "GTK3";
+const generalinfo_distros_that_feature = "Ubuntu, Fedora, Solus, OpenSuse";
+
+const install_arch = "sudo pacman -S gnome gnome-extra";
+
+const install_debian_bullseye = "sudo apt install gnome";
+const install_debian_bookworm = "sudo apt install gnome";
+const install_debian_trixie = "sudo apt install gnome";
+
+const install_fedora = "sudo dnf groupinstall 'GNOME Desktop Environment'";
+
+const install_opensuse_reference = "";
+const install_opensuse_tw_repo = 
+  `Basic/Typical Gnome: sudo zypper in -t pattern gnome gnome_basic
+  <br /><br />
+  Minimal GNOME: sudo zypper in -t pattern gnome_basic`;
+
+const install_mint = "N/A";
+const install_ubuntu = "sudo apt install gnome";
+
+const requirements_hdd_space = "";
+const requirements_memory = "";
+const requirements_processor = "";
+
+const screenshot_distro = "Ubuntu 24.04";
+import screenshot_src from "@desktop_ss/gnome.png";
+import screenshot_thumbnail from "@desktop_ss/thumbnails/gnome-small.png";
+
+const version_arch = "44.1-1";
+
+const version_debian_bullseye = "44+2";
+const version_debian_bookworm = "46+1";
+const version_debian_trixie = "46.0-1";
+
+const version_fedora_41 = "44.1-2";
+const version_fedora_42 = "44.1-3";
+
+const latest_version = "44.1";
+
+const version_opensuse_leap156 = "45.0";
+const version_opensuse_tumbleweed = "46.0-2.1";
+
+const version_solus = "4.5 ISO: 46.0";
+
+const version_ubuntu_jammy = "42+3";
+const version_ubuntu_noble = "44+1";
+const version_ubuntu_plucky = "47+6";
+
+
+const version_linuxmint_21 = "N/A";
+const version_linuxmint_211 = "N/A";
+const version_linuxmint_212 = "N/A";
+const version_linuxmint_213 = "N/A";
+const version_linuxmint_22 = "46.0";
+const version_linuxmint_221 = "46.1";
+
+const version_neon = "N/A";
+
+const info_updated = "April 17, 2025";
+---
+
+<LinuxDesktopTemplate
+  title="Gnome"
+  keywords="Gnome, Gnome Desktop, Gnome Linux"
+  description="Gnome is a free and open-source desktop environment for Linux and other Unix-like operating systems. It is known for its simplicity, elegance, and user-friendly interface."
+>
+  <DesktopData
+    slot="linux-main"
+    desktop_name={desktop_name}
+    desktop_title={desktop_title}
+    link_homepage={link_homepage}
+    generalinfo_desktop_category={generalinfo_desktop_category}
+    generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_arch={version_arch}
+    version_debian_bullseye={version_debian_bullseye}
+    version_debian_bookwoom={version_debian_bookworm}
+    version_debian_trixie={version_debian_trixie}
+    version_fedora_40={version_fedora_40}
+    version_fedora_41={version_fedora_41}
+    version_fedora_42={version_fedora_42}
+    latest_version={latest_version}
+    version_leap156={version_opensuse_leap156}
+    version_tumbleweed={version_opensuse_tumbleweed}
+    version_solus={version_solus}
+    version_ubuntu_jammy={version_ubuntu_jammy}
+    version_ubuntu_noble={version_ubuntu_noble}
+    version_ubuntu_plucky={version_ubuntu_plucky}
+    
+    version_linuxmint_21={version_linuxmint_21}
+    version_linuxmint_211={version_linuxmint_211}
+    version_linuxmint_212={version_linuxmint_212}
+    version_linuxmint_213={version_linuxmint_213}
+    version_linuxmint_22={version_linuxmint_22}
+    version_linuxmint_221={version_linuxmint_221}
+    version_neon={version_neon}
+    info_updated={info_updated}
+  />
+</LinuxDesktopTemplate>

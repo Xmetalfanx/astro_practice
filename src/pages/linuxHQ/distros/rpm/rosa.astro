@@ -1,13 +1,13 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "rosa";
 const distro_title = "ROSA Fresh";
 
-import distro_icon from "@icons/rosa.png";
+import distro_icon from "@distro_icons/rosa.png";
 
-const moreinfo_desktops = "KDE";
+const moreinfo_desktops = "Plasma (5?), Gnome, LXQT, XFCE";
 const moreinfo_featured = "";
 const moreinfo_releasecycle = "";
 const moreinfo_similar_distros = "Mageia";
@@ -18,10 +18,10 @@ const screenshot_desktop = "";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@rpm_ss/rosa.png";
-import screenshot_thumbnail from "@rpm_ss/thumbnails/rosa_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/rpm_based/rosa.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/rpm_based/thumbnails/rosa-small.png";
 
-const version_latest = "";
+const version_latest = "12.4 - Released December 2023";
 const versions_supported = "";
 
 const link_download = "http://wiki.rosalab.ru/en/index.php/ROSA_Release";
@@ -33,13 +33,17 @@ const youtube_review_playlist = "PLrh2y86lvcJc-GsSlO3UJqdoGq3mTMIzh";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="ROSA Fresh "
+  meta_keywords="ROSA Fresh, Linux, KDE, RPM-based, Linux distributions"
+  meta_description="Explore ROSA Fresh, an RPM-based Linux distribution featuring the KDE desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

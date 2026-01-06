@@ -1,0 +1,49 @@
+@use "base/index" as *;
+
+
+header,
+footer {
+  padding: 1rem;
+
+  // needed? ... these colors dont effect links...but can i use a mixing of some kind here?
+  background-color: clr(main-color);
+  color: clr(light-color);
+  
+  [data-theme="dark"] & {
+    background-color: clr(main-color, "xlsat");
+    // color: clr(light-color, "light");
+  }
+
+  @include links(
+    $light-link: clr(light-color),
+    $dark-link: clr(light-color),
+    $light-link-hf: clr(accent-color),
+    $dark-link-hf: clr(accent-color, "lsat")
+  );
+
+  a {
+    margin: 2px;
+
+    &:visited {
+      text-decoration: dotted;
+    }
+  }
+}
+
+header {
+  grid-area: header;
+
+  @include flex($jc: space-between, $ai: center);
+
+  font-weight: var(--fw-bold);
+
+  // commented out due to this being in an .Astro file 
+  // @media (max-width: $breakpoint-sm) {
+
+  //   nav {
+  //     flex-flow: column wrap;
+  //     gap: 1rem;
+  //     margin-inline: auto;
+  //   }
+  // }
+}

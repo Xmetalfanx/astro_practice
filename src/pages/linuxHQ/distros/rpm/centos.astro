@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "centOS";
 const distro_title = "Cent OS";
 
-import distro_icon from "@icons/centos.png";
+import distro_icon from "@distro_icons/centos.png";
 
 const moreinfo_desktops = "Various";
 const moreinfo_featured = "";
@@ -18,8 +18,8 @@ const screenshot_desktop = "";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@rpm_ss/centos.png";
-import screenshot_thumbnail from "@rpm_ss/thumbnails/centos_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/rpm_based/centos.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/rpm_based/thumbnails/centos-small.png";
 
 const version_latest = "";
 const versions_supported = "";
@@ -31,15 +31,24 @@ const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/";
 
 const youtube_review_playlist = "PLrh2y86lvcJc-GsSlO3UJqdoGq3mTMIzh";
 const youtube_tips_playlist = "";
+
+// SEO metadata
+const title = "CentOS ";
+const meta_keywords = "CentOS, Linux, Enterprise, RPM-based, Linux distributions";
+const meta_description = "Explore CentOS, a Linux distribution designed for enterprise and advanced users. Learn about its features, target audience, and more.";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="CentOS "
+  meta_keywords="CentOS, Linux, Enterprise, RPM-based, Linux distributions"
+  meta_description="Explore CentOS, a Linux distribution designed for enterprise and advanced users. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

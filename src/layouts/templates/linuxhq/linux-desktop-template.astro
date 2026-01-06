@@ -1,0 +1,28 @@
+---
+import "@css/global-styles.css";
+
+import LinuxBaseTemplate from "./linux-base-template.astro";
+import DesktopSidebar from "@layouts/linuxHQ/asides/desktop_sidebar.astro";
+
+const { title = "" } = Astro.props;
+const appendedTitle = `Linux Desktop/Window Manager Section - ${title}`;
+
+const { keywords, description } = Astro.props;
+---
+
+<LinuxBaseTemplate
+  title={appendedTitle}
+  keywords={keywords}
+  description={description}>
+
+  <div slot="linux-container">
+    <aside>
+      <DesktopSidebar/>
+    </aside>
+    <main>
+      <!--this slot is where the content of the pages, using this sub-template should go -->
+      <slot name="linux-main"/>
+    </main>
+  </div>
+</LinuxBaseTemplate>
+

@@ -1,24 +1,38 @@
 ---
-
+const { title, keywords, description } = Astro.props;
 ---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <base href="http://xmetal.x10.mx/" > -->
+<html lang="en">
+  <title>{title}</title>
+  <meta name="keywords" content={keywords} />
+  <meta name="description" content={description} />
 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Various Javascript-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/cjs/popper.min.js" integrity="sha512-m4yAwVbwlVl0M8YA4PJz5sY4oDQHq3PhXUY3DmkFgNL/FzdNjFDtR0S27nce8ij9uPb0zWMGxxaBVQViKuvqJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Various Meta Tags-->
+  <meta name="robots" content="index,follow,noodp" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- <script src="/scripts/topnav.js" ></script> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+    rel="stylesheet"
+  />
 
-<!-- Various Meta Tags-->
-<meta name="robots" content="index,follow,noodp">
-<meta name="googlebot" content="index,follow">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/index.php" rel="index">
-<link href="/index.php" rel="home">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap"
+    rel="stylesheet"
+  />
+</html>

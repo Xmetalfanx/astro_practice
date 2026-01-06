@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "peppermint";
 const distro_title = "Peppermint";
 
-import distro_icon from "@icons/peppermint.png";
+import distro_icon from "@distro_icons/peppermint.png";
 
 const moreinfo_desktops = "LXDE/XFCE";
 const moreinfo_featured = "";
@@ -18,8 +18,8 @@ const screenshot_desktop = "XFCE";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/peppermint.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/peppermint_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/peppermint.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/peppermint-small.png";
 
 const version_latest = "10 Debian Based, 10 Devuan Based";
 const versions_supported = "10 Debian Based, 10 Devuan Based";
@@ -33,13 +33,17 @@ const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Peppermint "
+  meta_keywords="Peppermint, Debian-based, Lightweight, Linux distributions"
+  meta_description="Explore Peppermint, a lightweight Debian-based Linux distribution featuring LXDE and XFCE desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

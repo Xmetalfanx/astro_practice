@@ -1,20 +1,23 @@
 ---
-import GlobalFooter from "../../global/global-footer.astro";
-import GlobalHeadtag from "../../global/global-headtag.astro";
-import DistroSidebar from "../../linuxHQ/asides/distro_sidebar.astro";
-import LinuxTopMenus from "../../linuxHQ/LinuxTopMenus.astro";
+import LinuxBaseTemplate from "./linux-base-template.astro";
+import DistroSidebar from "@layouts/linuxHQ/asides/distro_sidebar.astro";
+
+const { title = "" } = Astro.props;
+const appendedTitle = `Linux Distribution Section - ${title}`;
+
+const { keywords, description } = Astro.props;
 ---
 
-<GlobalHeadtag />
-
-<LinuxTopMenus />
-
-<div class="main-section">
-  <aside>
-    <DistroSidebar />
-  </aside>
-  <div class="primary-content">
-    <slot />
+<LinuxBaseTemplate 
+  title={appendedTitle}
+  keywords={keywords} 
+  description={description}>
+  <div slot="linux-container">
+    <aside>
+      <DistroSidebar />
+    </aside>
+    <main>
+      <slot />
+    </main>
   </div>
-</div>
-<GlobalFooter />
+</LinuxBaseTemplate>

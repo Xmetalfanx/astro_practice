@@ -1,10 +1,10 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 const distro_name = "manjaro";
 const distro_title = "Manjaro";
 
-import distro_icon from "@icons/manjaro.svg";
+import distro_icon from "@distro_icons/manjaro.svg";
 
 const moreinfo_desktops =
   "Cinnamon, Enlightenment, GNOME, KDE, LXDE, MATE, Xfce";
@@ -18,11 +18,12 @@ const screenshot_desktop = "KDE/Plasma 5";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@arch_ss/manjaro.png";
-import screenshot_thumbnail from "@arch_ss/thumbnails/manjaro_tn.png";
+// import screenshot_src from "/src/pages/linuxHQ/graphics/distros/arch_based/manjaro.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/arch_based/manjaro.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/arch_based/thumbnails/manjaro-small.png";
 
-const version_latest = "22.1.0";
-const versions_supported = "";
+const version_latest = "25.0.4 - Released April 2025";
+const versions_supported = "25.0.4";
 
 const link_download = "http://manjaro.org/get-manjaro/";
 const link_forum = "http://forum.manjaro.org/";
@@ -34,13 +35,17 @@ const youtube_review_playlist = "PLrh2y86lvcJcds8f9K7ixM3-A687PqjgI";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Manjaro"
+  meta_keywords="Manjaro, Arch-based, Linux, KDE, XFCE, Linux distributions"
+  meta_description="Explore Manjaro, an Arch-based Linux distribution featuring various desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "antix";
 const distro_title = "Anti-X";
 
-import distro_icon from "@icons/antiX.png";
+import distro_icon from "@distro_icons/antiX.png";
 
 const moreinfo_desktops = "";
 const moreinfo_featured = "";
@@ -18,10 +18,10 @@ const screenshot_desktop = "";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/antix.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/antix_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/antix.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/antix-small.png";
 
-const version_latest = "22";
+const version_latest = "23";
 const versions_supported = "22";
 
 const link_download = "https://antixlinux.com/download/";
@@ -34,13 +34,17 @@ const youtube_tips_playlist =
   "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="AntiX "
+  meta_keywords="AntiX, Debian-based, Lightweight, Linux distributions"
+  meta_description="Explore AntiX, a lightweight Debian-based Linux distribution. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

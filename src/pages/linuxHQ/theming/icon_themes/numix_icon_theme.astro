@@ -1,0 +1,46 @@
+---
+import IconData from "@layouts/linuxHQ/data/IconData.astro";
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+
+const icon_theme_name = "numix";
+const icon_theme_title = "Numix Icon Theme";
+
+const theme_code = "https://github.com/numixproject/numix-icon-theme";
+const theme_homepage = "https://numixproject.github.io/";
+
+const generalinfo_icon_category = "Icon Theme";
+const generalinfo_icon_toolkit = "GTK2, GTK3";
+const generalinfo_distros_that_feature = "Arch, Fedora, Ubuntu";
+
+const install_arch = "sudo pacman -S numix-icon-theme";
+const install_fedora = "sudo dnf install numix-icon-theme";
+const install_ubuntu = "sudo apt install numix-icon-theme";
+
+const screenshot_distro = "Ubuntu";
+const screenshot_src = "ubuntu/numix-icon-theme.png";
+const screenshot_thumbnail = "ubuntu/thumbnails/numix-icon-theme_tn.png";
+
+const latest_version = "2.6.7";
+
+const info_updated = "March 1, 2024";
+
+---
+
+<LinuxThemeTemplate>
+  <IconData slot="linux-main"
+    icon_theme_name={icon_theme_name}
+    icon_theme_title={icon_theme_title}
+    theme_homepage={theme_homepage}
+    generalinfo_icon_category={generalinfo_icon_category}
+    generalinfo_icon_toolkit={generalinfo_icon_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_ubuntu={install_ubuntu}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxThemeTemplate>

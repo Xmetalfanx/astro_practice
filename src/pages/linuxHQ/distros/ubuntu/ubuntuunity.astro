@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "ubuntuunuity";
 const distro_title = "Ubuntu Unity";
 
-import distro_icon from "@icons/ubuntuunity.png";
+import distro_icon from "@distro_icons/ubuntuunity.png";
 
 const moreinfo_base = "Ubuntu Long Term Support (LTS) and non-LTS";
 const moreinfo_desktops = "Unity";
@@ -19,28 +19,32 @@ const screenshot_desktop = "Unity";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@ubuntu_ss/ubuntuunity.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/ubuntuunity_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/ubuntuunity.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/ubuntuunity-small.png";
 
-const version_latest = "23.04";
-const versions_supported = "22.04 LTS 23.04";
+const version_latest = "25.04";
+const versions_supported = "22.04 LTS, 24.04 LTS, 25.04";
 
-const link_download = "https=//ubuntuunity.org/link_download/";
-const link_forum = "https=//ubuntuunity.org/link_download/";
-const link_homepage = "https=//ubuntuunity.org/";
+const link_download = "https://ubuntuunity.org/link_download/";
+const link_forum = "https://ubuntuunity.org/link_download/";
+const link_homepage = "https://ubuntuunity.org/";
 const link_mydistro_page = "http://xmetal.x10.mx/linuxHQ/distros/ubuntu/";
 
 const youtube_review_playlist = "";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Ubuntu Unity "
+  meta_keywords="Ubuntu Unity, Linux, Unity Desktop, Ubuntu-based, Linux distributions"
+  meta_description="Explore Ubuntu Unity, an Ubuntu-based Linux distribution featuring the Unity desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

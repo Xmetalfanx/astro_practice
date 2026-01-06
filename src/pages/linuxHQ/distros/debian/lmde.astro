@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "lmde";
 const distro_title = "Linux Mint Debian Edition";
 
-import distro_icon from "@icons/mint.png";
+import distro_icon from "@distro_icons/linuxmint.svg";
 
 const moreinfo_desktops = "Mate, Cinnamon";
 const moreinfo_featured = "";
@@ -19,10 +19,10 @@ const screenshot_desktop = "";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/lmde.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/lmde_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/lmde.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/lmde-small.png";
 
-const version_latest = "5";
+const version_latest = "6";
 const versions_supported = "5";
 
 const link_download = "http://www.linuxmint.com/download_lmde.php";
@@ -36,13 +36,17 @@ const youtube_tips_playlist =
   "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Linux Mint Debian Edition "
+  meta_keywords="LMDE, Linux Mint Debian Edition, Debian-based, Linux distributions"
+  meta_description="Explore Linux Mint Debian Edition (LMDE), a Debian-based Linux distribution featuring Cinnamon and Mate desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

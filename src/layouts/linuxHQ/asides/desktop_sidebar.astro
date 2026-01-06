@@ -1,0 +1,94 @@
+---
+import AsideLinkTarget from "@components/global/AsideLinkTarget.astro";
+
+const windowManagers = [
+  { name: "Awesome", link: "/linuxHQ/desktops/window-managers/awesome" },
+  { name: "bspwm", link: "/linuxHQ/desktops/window-managers/bspwm" },
+  { name: "i3", link: "/linuxHQ/desktops/window-managers/i3" },
+  { name: "Openbox", link: "/linuxHQ/desktops/window-managers/openbox" },
+];
+
+const compositor = [
+  { name: "Compton", link: "/linuxHQ/desktops/compositor/compton" },
+  { name: "Sway", link: "/linuxHQ/desktops/window-managers/sway" },
+];
+
+const gtk2 = [{ name: "LXDE", link: "/linuxHQ/desktops/lxde" }];
+
+const gtk3 = [
+  { name: "Budgie", link: "/linuxHQ/desktops/budgie" },
+  { name: "Cinnamon", link: "/linuxHQ/desktops/cinnamon" },
+  { name: "Deepin", link: "/linuxHQ/desktops/deepin" },
+  { name: "Enlightenment", link: "/linuxHQ/desktops/enlightenment" },
+  { name: "Gnome", link: "/linuxHQ/desktops/gnome" },
+  { name: "Mate", link: "/linuxHQ/desktops/mate" },
+  { name: "Moksha", link: "/linuxHQ/desktops/moksha" },
+  { name: "Pantheon", link: "/linuxHQ/desktops/pantheon" },
+  { name: "Xfce", link: "/linuxHQ/desktops/xfce" },
+];
+
+const qt = [
+  { name: "LXQT", link: "/linuxHQ/desktops/lxqt" },
+  { name: "Plasma/KDE", link: "/linuxHQ/desktops/plasma" },
+];
+---
+
+<div>
+  <AsideLinkTarget />
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="gtk2" />
+  <label for="gtk2">GTK2</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {gtk2.map((wm) => <a href={wm.link}>{wm.name}</a>)}
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="gtk3" />
+  <label for="gtk3">GTK3</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {gtk3.map((wm) => <a href={wm.link}>{wm.name}</a>)}
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="qt" />
+  <label for="qt">QT</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {qt.map((wm) => <a href={wm.link}>{wm.name}</a>)}
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="windowmanagers" />
+  <label for="windowmanagers">Window Manager</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {windowManagers.map((wm) => <a href={wm.link}>{wm.name}</a>)}
+    </div>
+  </div>
+</div>
+
+<div class="aside-section">
+  <input type="checkbox" id="compositors" />
+  <label for="compositors">Compositors</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {compositor.map((wm) => <a href={wm.link}>{wm.name}</a>)}
+    </div>
+  </div>
+</div>
+
+<style>
+  input {
+    display: none;
+  }
+</style>

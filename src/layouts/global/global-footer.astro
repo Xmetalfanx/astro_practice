@@ -1,5 +1,5 @@
 ---
-
+import "@css/global-styles.css";
 ---
 
 <footer>
@@ -128,26 +128,26 @@
   </div>
 </footer>
 
-<style>
+<style lang="scss">
+  @use "@scss/base/index" as *;
   footer {
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
+    grid-area: footer;
+
+    @include flex($jc: space-between);
     padding: 1.6rem;
-    margin-top: 1rem;
+
+    @media ($breakpoint-sm) {
+      display: none;
+    }
+
+    i {
+      scale: 2;
+      margin: 0 1.5rem;
+    }
   }
 
+  // make this global?
   .hiddenAccessLinkText {
     display: none;
-  }
-
-  .site-made, .contact {
-    width: 40vw;
-  }
-
-  i {
-    width: 32px;
-    height: 32px;
-    font-size: 1.25rem;
   }
 </style>

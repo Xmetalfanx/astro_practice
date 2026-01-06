@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "pclinuxos";
 const distro_title = "PCLinuxOS";
 
-import distro_icon from "@icons/pclinuxos.png";
+import distro_icon from "@distro_icons/pclinuxos.png";
 
 const moreinfo_desktops = "Plasma 5";
 const moreinfo_distro_family = "mandriva";
@@ -19,10 +19,10 @@ const screenshot_desktop = "Plasma 5";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@rpm_ss/pclinuxos.png";
-import screenshot_thumbnail from "@rpm_ss/thumbnails/pclinuxos_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/rpm_based/pclinuxos.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/rpm_based/thumbnails/pclinuxos-small.png";
 
-const version_latest = "";
+const version_latest = "2024.10 (October 2024)";
 const versions_supported = "";
 
 const link_download = "http://pclinuxos.com/?page_id=10";
@@ -40,7 +40,7 @@ const youtube_tips_playlist = "";
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

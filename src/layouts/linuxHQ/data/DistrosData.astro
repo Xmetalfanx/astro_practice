@@ -1,0 +1,202 @@
+---
+import "@css/global-styles.css";
+import { Image } from "astro:assets";
+import YouTube from "@components/global/Youtube.astro";
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
+
+const distro_title = Astro.props.distro_title;
+const distro_base = Astro.props.distro_base;
+
+const distro_icon = Astro.props.distro_icon;
+
+const link_homepage = Astro.props.link_homepage;
+const link_forum = Astro.props.link_forum;
+const link_download = Astro.props.link_download;
+const link_mydistro_page = Astro.props.link_mydistro_page;
+
+const versions_latest = Astro.props.versions_latest;
+const versions_supported = Astro.props.versions_supported;
+
+const moreinfo_base = Astro.props.moreinfo_base;
+const moreinfo_desktops = Astro.props.moreinfo_desktops;
+const moreinfo_featured = Astro.props.moreinfo_featured;
+const moreinfo_releasecycle = Astro.props.moreinfo_releasecycle;
+const moreinfo_similar_distros = Astro.props.moreinfo_similar_distros;
+const moreinfo_target_audience = Astro.props.moreinfo_target_audience;
+
+const screenshot_desktop = Astro.props.screenshot_desktop;
+
+const screenshot_icon = Astro.props.screenshot_icon;
+const screenshot_theme = Astro.props.screenshot_theme;
+const screenshot_thumbnail = Astro.props.screenshot_thumbnail;
+const screenshot_src = Astro.props.screenshot_src; // Added new prop
+
+const youtube_review_playlist = Astro.props.youtube_review_playlist;
+const youtube_tips_playlist = Astro.props.youtube_tips_playlist;
+---
+<div>
+ <PageLinkToMenus />
+</div>  
+<div class="container">
+  <div class="icon-and-title-container">
+    <div class="distro-icon">
+      <Image src={distro_icon} alt="" width={48} height={48} />
+    </div>
+
+    <div class="distro-title">{distro_title}</div>
+  </div>
+
+  <div class="basicinfo-and-screenshot-container">
+    <div>
+      <div>
+        <span class="info-title">Homepage: </span>
+        <a href={link_homepage} target="_blank">{link_homepage}</a>
+      </div>
+      <div>
+        <span class="info-title">Downloads:</span>
+        <a href={link_download} target="_blank">{link_download}</a>
+      </div>
+
+      <div>
+        <span class="info-title">Forums:</span>
+        <a href={link_forum} target="_blank">{link_forum}</a>
+      </div>
+
+      <div class="moreinfo-container">
+        <div>
+          <span class="info-title"> Distro Base </span>{moreinfo_base}
+        </div>
+        <div>
+          <span class="info-title">Featured Desktops </span>{moreinfo_desktops}
+        </div>
+        <div>
+          <span class="info-title">Release Cycle: </span>{moreinfo_releasecycle}
+        </div>
+
+        <div>
+          <span class="info-title">Latest Version: </span>{versions_latest}
+        </div>
+
+        <div>
+          <span class="info-title">Supported Versions: </span>{
+            versions_supported
+          }
+        </div>
+
+        <div>
+          <span class="info-title">Target Audience: </span>{
+            moreinfo_target_audience
+          }
+        </div>
+      </div>
+
+      <!-- <div>
+        <span class="info-title">My page for {distro_title} </span>
+        <a href="{link_mydistro_page}">{link_mydistro_page}</a>
+      </div> -->
+    </div>
+
+    <div class="screenshot-container">
+      <a href={screenshot_src} target="_blank">
+        <!-- Added link to full-sized screenshot -->
+        <Image
+          src={screenshot_thumbnail}
+          alt="{distro_title} screenshot"
+        />
+      </a>
+      <div>
+        <div>Screenshot Desktop: {screenshot_desktop}</div>
+        <div>Screenshot Theme: {screenshot_theme}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="youtube-container">
+    <!-- YT Review Playlist -->
+    <YouTube
+      yt_src={youtube_review_playlist}
+      yt_title="Youtube Review Playlist"
+    />
+
+    <!--Youtube Tips Playlist  -->
+    <YouTube yt-src={youtube_tips_playlist} yt_title="Youtube Tips Playlist" />
+  </div>
+</div>
+
+<style lang="scss">
+  @use "@scss/base/_index.scss" as *;
+
+  .info-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .container {
+    @include color-level(2);
+    @include outline($color: clr(accent-color));
+
+
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin-inline: auto;
+    padding: 1rem;
+
+    > div {
+      margin: 0.5rem auto;
+    }
+
+    .basicinfo-and-screenshot-container,
+    .youtube-container {
+      @incude flex($jc: space-between, $wrap: nowrap);
+
+      margin-bottom: 2rem;
+    }
+
+    .screenshot-container {
+      @include flex(
+        $direction: column,
+        $jc: space-around,
+        $wrap: nowrap,
+        $ai: center
+      );
+
+      img {
+        height: auto;
+        margin: 2rem 0;
+        width: clamp(300px, 40vw, 80vw);
+        
+      }
+    }
+
+    .icon-and-title-container {
+      @include flex($ai: center, $jc: flex-start);
+
+      > div {
+        margin: 0.5rem;
+      }
+
+      .distro-title {
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      .distro-icon {
+        height: 48px;
+        width: 48px;
+        float: left;
+      }
+    }
+
+    .youtube-container {
+      @include flex($jc: space-between);
+      @include outline;
+      // padding: 2rem 1rem;
+      padding: 1rem;
+
+      margin-top: 3rem;
+      width: 95%;
+
+      @media ($breakpoint-sm) {
+        display:none;
+      }
+    }
+  }
+</style>

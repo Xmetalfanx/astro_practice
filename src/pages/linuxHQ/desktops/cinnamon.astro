@@ -1,0 +1,126 @@
+---
+import DesktopData from "@layouts/linuxHQ/data/DesktopData.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+
+const desktop_name = "cinnamon";
+const desktop_title = "Cinnamon";
+
+const link_code = "https://github.com/linuxmint/cinnamon-desktop";
+const link_homepage = "https://github.com/linuxmint/cinnamon-desktop";
+
+const generalinfo_desktop_category = "heavyweight";
+const generalinfo_distros_that_feature = "Linux Mint, Fedora, Arch";
+const generalinfo_desktop_toolkit = "GTK3";
+
+const install_arch =
+  "sudo pacman -S cinnamon (maybe cinnamon-desktop too... not sure if these two packages conflict with one another)";
+
+const install_debian_bullseye = "sudo apt install cinnamon-desktop-environment";
+const install_debian_bookworm = "sudo apt install cinnamon-desktop-environment";
+const install_debian_trixie = "sudo apt install cinnamon-desktop-environment";
+
+const install_fedora = "sudo dnf groupinstall cinnamon-desktop";
+
+const install_opensuse_reference =
+  '<a href="https://en.opensuse.org/Portal:Cinnamon"target="_blank"> Install Cinnamon on OpenSuse </a>';
+const install_opensuse_tw_repo =
+  `Basic Cinnamon: sudo zypper in -t pattern cinnamon <br /><br />
+  
+  Full Cinnamon: sudo zypper in -t pattern cinnamon cinnamon_extra`;
+
+const install_mint = "sudo apt install mint-meta-cinnamon";
+const install_ubuntu = "cinnamon-desktop-environment";
+
+const requirements_hdd_space = "20GB (Recommended)";
+const requirements_memory = "2GB (Minimum), 4GB (Recommended)";
+const requirements_processor = "64-bit dual-core processor (Recommended)";
+
+const screenshot_distro = "Linux Mint";
+const screenshot_icon = "Mint-X";
+const screenshot_theme = "Mint-X";
+
+import screenshot_src from "@desktop_ss/cinnamon.png";
+import screenshot_thumbnail from "@desktop_ss/thumbnails/cinnamon-small.png";
+
+const version_arch = "6.4.1-1";
+
+const version_debian_bullseye = "4.8.6";
+const version_debian_bookworm = "5.6.0";
+const version_debian_trixie = "6.4.0";
+
+const version_fedora_40 = "6.2.9-1.fc40";
+const version_fedora_41 = "6.4.8-1.fc41";
+const version_fedora_42 = "6.4.8-2.fc42";
+
+const latest_version = "6.3.0";
+
+const version_opensuse_leap156 = "5.7.0-1";
+const version_opensuse_tumbleweed = "6.3.0-1";
+
+const version_solus = "6.3.0";
+
+const version_ubuntu_jammy = "5.2.2";
+const version_ubuntu_noble = "5.8.0";
+const version_ubuntu_plucky = "6.4.0";
+
+const version_linuxmint_21 = "6.2.0-1";
+const version_linuxmint_211 = "6.2.0-1";
+const version_linuxmint_212 = "6.2.0-1";
+const version_linuxmint_213 = "6.2.0-1";
+const version_linuxmint_22 = "6.2.0-1";
+const version_linuxmint_221 = "6.2.0-1";
+const version_neon = "N/A";
+
+const info_updated = "April 17, 2025";
+---
+
+<LinuxDesktopTemplate 
+  title="Cinnamon Desktop" 
+  keywords="cinnamon, desktop, linux desktop, desktop environment, cinnamon desktop, linux mint, fedora, arch" 
+  description="Cinnamon Desktop Environment">
+  <DesktopData slot="linux-main"
+    desktop_name={desktop_name}
+    desktop_title={desktop_title}
+    generalinfo_desktop_category={generalinfo_desktop_category}
+    generalinfo_desktop_toolkit={generalinfo_desktop_toolkit}
+    link_homepage={link_homepage}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_opensuse_reference={install_opensuse_reference}
+    install_opensuse_tw_repo={install_opensuse_tw_repo}
+    install_ubuntu={install_ubuntu}
+    install_debian_bullseye={install_debian_bullseye}
+    install_debian_bookworm={install_debian_bookworm}
+    install_debian_trixie={install_debian_trixie}
+    requirements_hdd_space={requirements_hdd_space}
+    requirements_memory={requirements_memory}
+    requirements_processor={requirements_processor}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    version_arch={version_arch}
+    version_debian_bullseye={version_debian_bullseye}
+    version_debian_bookwoom={version_debian_bookworm}
+    version_debian_trixie={version_debian_trixie}
+    version_fedora_40={version_fedora_40}
+    version_fedora_41={version_fedora_41}
+    version_fedora_42={version_fedora_42}
+    latest_version={latest_version}
+    version_leap156={version_opensuse_leap156}
+    version_tumbleweed={version_opensuse_tumbleweed}
+    version_solus={version_solus}
+    version_ubuntu_jammy={version_ubuntu_jammy}
+    version_ubuntu_noble={version_ubuntu_noble}
+    version_ubuntu_plucky={version_ubuntu_plucky}
+    
+    version_linuxmint_21={version_linuxmint_21}
+    version_linuxmint_211={version_linuxmint_211}
+    version_linuxmint_212={version_linuxmint_212}
+    version_linuxmint_213={version_linuxmint_213}
+    version_linuxmint_22={version_linuxmint_22}
+    version_linuxmint_221={version_linuxmint_221}
+    version_neon={version_neon}
+    info_updated={info_updated}
+  />
+</LinuxDesktopTemplate>

@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "solyd";
 const distro_title = "SoyldXK";
 
-import distro_icon from "@icons/solydxk.png";
+import distro_icon from "@distro_icons/solydxk.png";
 
 const moreinfo_desktops = "KDE aka Plama 5 / XFCE";
 const moreinfo_featured = "";
@@ -19,11 +19,11 @@ const screenshot_desktop = "XFCE";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/solydxk.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/solydxk_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/solydxk.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/solydxk-small.png";
 
-const version_latest = "unknown";
-const versions_supported = "unknown";
+const version_latest = "12 - Released Dec 2023";
+const versions_supported = "12";
 
 const link_download = "http://downloads.solydxk.com/";
 const link_forum = "https://forums.solydxk.com/";
@@ -36,13 +36,17 @@ const youtube_tips_playlist =
   "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="SolydXK "
+  meta_keywords="SolydXK, Debian-based, XFCE, KDE, Linux distributions"
+  meta_description="Explore SolydXK, a Debian-based Linux distribution featuring XFCE and KDE desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

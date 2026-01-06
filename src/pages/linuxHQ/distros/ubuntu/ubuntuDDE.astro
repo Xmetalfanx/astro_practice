@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "ubuntudde";
 const distro_title = "Ubuntu DDE";
 
-import distro_icon from "@icons/ubuntudde.png";
+import distro_icon from "@distro_icons/ubuntudde.png";
 
 const moreinfo_base = "Ubuntu Long Term Support (LTS) and non-LTS";
 const moreinfo_desktops = "DDE";
@@ -19,15 +19,15 @@ const screenshot_desktop = "Deepin screenshot_desktop Envirnoment";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@ubuntu_ss/ubuntudde1.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/ubuntudde1_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/ubuntudde1.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/ubuntudde1-small.png";
 
-const version_latest = "23.04";
-const versions_supported = "20.04 LTS 22.04 LTS 23.04";
+const version_latest = "22.04 LTS";
+const versions_supported = "22.04 LTS";
 
-const link_download = "https=//ubuntudde.com/link_download/";
-const link_forum = "https=//discourse.ubuntudde.com/";
-const link_homepage = "https=//ubuntudde.com/";
+const link_download = "https://ubuntudde.com/link_download/";
+const link_forum = "https://discourse.ubuntudde.com/";
+const link_homepage = "https://ubuntudde.com/";
 const link_mydistro_page =
   "http://xmetal.x10.mx/linuxHQ/distros/ubuntu/ubuntudde.php";
 
@@ -35,13 +35,17 @@ const youtube_review_playlist = "";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Ubuntu DDE "
+  meta_keywords="Ubuntu DDE, Linux, Deepin Desktop, Ubuntu-based, Linux distributions"
+  meta_description="Explore Ubuntu DDE, an Ubuntu-based Linux distribution featuring the Deepin Desktop Environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

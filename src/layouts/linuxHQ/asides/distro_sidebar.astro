@@ -1,101 +1,177 @@
 ---
-import Link from "../../../components/global/Link.astro";
+import Link from "@components/global/Link.astro";
+import AsideLinkTarget from "@components/global/AsideLinkTarget.astro";
+
+const arch_based = [
+  { name: "Arch", link: "../arch/archlinux" },
+  { name: "GreenBANG", link: "../arch/greenbang" },
+  { name: "EndeavourOS", link: "../arch/endeavouros" },
+  { name: "Manjaro", link: "../arch/manjaro" },
+];
+
+const debian_based = [
+  { name: "Anti-X", link: "../debian/antix" },
+  { name: "Bunsenlabs", link: "../debian/bunsenlabs" },
+  { name: "CrunchBang++", link: "../debian/cbplusplus" },
+  { name: "Debian", link: "../debian/debian" },
+  { name: "Deepin", link: "../debian/deepin" },
+  { name: "Linux Mint Debian Edition", link: "../debian/lmde" },
+  { name: "Makulu Linux", link: "../debian/makulu" },
+  { name: "MX Linux", link: "../debian/mxlinux" },
+  { name: "Peppermint", link: "../debian/peppermint" },
+  { name: "Sparky Linux", link: "../debian/sparkylinux" },
+  { name: "SolydXK", link: "../debian/solydxk" },
+];
+
+const ubuntu_based = [
+  { name: "Elementary OS", link: "../ubuntu/elementary" },
+  { name: "KDE Neon / Neon", link: "../ubuntu/neon" },
+  { name: "Kubuntu", link: "../ubuntu/kubuntu" },
+  { name: "Linux Lite", link: "../ubuntu/linuxlite" },
+  { name: "Linux Mint", link: "../ubuntu/linuxmint" },
+  { name: "Lubuntu", link: "../ubuntu/lubuntu" },
+  { name: "Ubuntu", link: "../ubuntu/ubuntu" },
+  { name: "Ubuntu Budgie", link: "../ubuntu/ubuntubudgie" },
+  { name: "Ubuntu Cinnamon", link: "../ubuntu/ubuntucinnamon" },
+  { name: "UbuntuDDE", link: "../ubuntu/ubuntuDDE" },
+  { name: "Ubuntu Mate", link: "../ubuntu/ubuntumate" },
+  { name: "Ubuntu Unity", link: "../ubuntu/ubuntuunity" },
+  { name: "Xubuntu", link: "../ubuntu/xubuntu" },
+  { name: "Zorin", link: "../ubuntu/zorin" },
+];
+
+const gentoo_based = [
+  { name: "Calculate Linux", link: "../gentoo/calculate" },
+  { name: "Gentoo", link: "../gentoo/gentoo" },
+  { name: "MocaccinoOS", link: "../gentoo/mocaccinoos" },
+];
+
+const misc_distros = [
+  { name: "KaOS", link: "../independent/kaos" },
+  { name: "Puppy Linux", link: "../independent/puppylinux" },
+  { name: "Solus", link: "../independent/solus" },
+];
+
+// with Gecko Linux 
+// const opensuse_based = [
+//   { name: "Gecko Linux", link: "../rpm/geckolinux" },
+//   { name: "OpenSuse", link: "../rpm/opensuse" },
+// ];
+
+// without Gecko 
+const opensuse_based = [
+  { name: "OpenSuse", link: "../rpm/opensuse" },
+];
+
+
+const fedora_based = [{ name: "Fedora", link: "../rpm/fedora" }];
+
+const other_rpm_based = [
+  { name: "CentOS", link: "../rpm/centos" },
+  { name: "Mageia", link: "../rpm/mageia" },
+  { name: "OpenMandriva", link: "../rpm/openmandriva" },
+  { name: "PCLinuxOS", link: "../rpm/pclinuxos" },
+  { name: "ROSA", link: "../rpm/rosa" },
+];
 ---
 
-<div class="accordion">
+<div>
+ <AsideLinkTarget />
+</div>
+
+<div class="aside-section">
   <input type="checkbox" id="archmenu" />
-  <label for="archmenu">Arch Family</label>
-  <div class="accordion-content">
-    <Link linktext="Arch Linux" location="../arch/archlinux" />
-    <Link linktext="Archbang" location="../arch/archbang" />
-    <Link linktext="EndeavourOS" location="../arch/endeavouros" />
-    <Link linktext="Manjaro" location="../arch/manjaro" />
+  <label for="archmenu">Arch Based </label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        arch_based.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
 
-<div class="accordion">
+<div class="aside-section">
   <input type="checkbox" id="debianmenu" />
-  <label for="debianmenu">Debian Family</label>
-  <div class="accordion-content">
-    <Link linktext="Anti-X" location="../debian/antix" />
-    <Link linktext="Bunsenlabs" location="../debian/bunsenlabs" />
-    <Link linktext="CrunchBang++" location="../debian/cbplusplus" />
-    <Link linktext="Debian" location="../debian/debian" />
-    <Link linktext="Deepin" location="../debian/deepin" />
-    <Link linktext="Linux Mint Debian Edition" location="../debian/lmde" />
-    <Link linktext="Makulu Linux" location="../debian/makulu" />
-    <Link linktext="MX Linux" location="../debian/mxlinux" />
-    <Link linktext="Peppermint" location="../debian/peppermint" />
-    <Link linktext="Sparky Linux" location="../debian/solydxk" />
-    <Link linktext="SolydXK" location="../debian/sparkylinux" />
+  <label for="debianmenu">Debian Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        debian_based.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
 
-<div class="accordion">
+<div class="aside-section">
   <input type="checkbox" id="rpmmenu" />
-  <label for="rpmmenu">RPM Distros</label>
-  <div class="accordion-content">
-    <span>Fedora based</span>
-    <Link linktext="Fedora" location="../rpm/fedora" />
-
-    <span>Open Suse Based</span>
-    <Link linktext="Gecko Linux" location="../rpm/geckolinux" />
-    <Link linktext="OpenSuse" location="../rpm/opensuse" />
-
-    <span>Various</span>
-
-    <Link linktext="CentOS" location="../rpm/centos" />
-    <Link linktext="Mageia" location="mageia" />
-    <Link linktext="OpenMandriva" location="../rpm/openmandriva" />
-    <Link linktext="PCLinuxOS" location="../rpm/pclinuxos" />
-    <Link linktext="ROSA" location="../rpm/rosa" />
+  <label for="rpmmenu">RPM Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      <div>Fedora Based </div>
+        {
+          fedora_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+      <div>OpenSUSE Based </div>
+        {
+          opensuse_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+      <div>Other RPM distros </div>
+        {
+          other_rpm_based.map((distros) => (
+            <Link linktext={distros.name} location={distros.link} />
+          ))
+        }
+    </div>
   </div>
 </div>
 
-<div class="accordion">
+<div class="aside-section">
   <input type="checkbox" id="gentoomenu" />
   <label for="gentoomenu">Gentoo Family</label>
-  <div class="accordion-content">
-    <Link linktext="Calculate Linux" location="../gentoo/calculate" />
-    <Link linktext="Gentoo" location="../gentoo/gentoo" />
-    <Link linktext="MocaccinoOS" location="../gentoo/mocaccinoos" />
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        gentoo_based.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
 
-<div class="accordion">
-  <input type="checkbox" id="miscdistro" />
-  <label for="miscdistro">Misc. Distros</label>
-  <div class="accordion-content">
-    <Link linktext="KaOS" location="../independent/kaos" />
-    <Link linktext="Solus" location="../independent/solus" />
-    <Link linktext="Puppy Linux" location="../independent/puppylinux" />
+<div class="aside-section">
+  <input type="checkbox" id="miscmenu" />
+  <label for="miscmenu">Misc Distros</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        misc_distros.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
 
-<div class="accordion">
+<div class="aside-section">
   <input type="checkbox" id="ubuntumenu" />
-  <label for="ubuntumenu">Ubuntu Family</label>
-  <div class="accordion-content">
-    <Link linktext="Elementary OS" location="../ubuntu/elementary" />
-    <Link linktext="KDE Neon / Neon" location="../ubuntu/neon" />
-    <Link linktext="Kubuntu" location="../ubuntu/kubuntu" />
-    <Link linktext="Linux Lite" location="../ubuntu/linuxlite" />
-    <Link linktext="Linux Mint" location="../ubuntu/linuxmint" />
-    <Link linktext="LXLE" location="../ubuntu/lxle" />
-    <Link linktext="Lubuntu" location="../ubuntu/lubuntu" />
-    <Link linktext="Ubuntu" location="../ubuntu/ubuntu" />
-    <Link linktext="Ubuntu Budgie" location="../ubuntu/ubuntubudgie" />
-    <Link linktext="Ubuntu Cinnamon" location="../ubuntu/ubuntucinnamon" />
-    <Link linktext="UbuntuDDE" location="../ubuntu/ubuntuDDE" />
-    <Link linktext="Ubuntu Mate" location="../ubuntu/ubuntumate" />
-    <Link linktext="Ubuntu Unity" location="../ubuntu/ubuntuunity" />
-    <Link linktext="Xubuntu" location="../ubuntu/xubuntu" />
-    <Link linktext="Zorin" location="../ubuntu/zorin" />
+  <label for="ubuntumenu">Ubuntu Based</label>
+  <div class="accordion">
+    <div class="accordion-content">
+      {
+        ubuntu_based.map((distros) => (
+          <Link linktext={distros.name} location={distros.link} />
+        ))
+      }
+    </div>
   </div>
 </div>
-
-<style>
-  input {
-    display: none;
-  }
-</style>

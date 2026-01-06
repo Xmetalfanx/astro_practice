@@ -8,7 +8,8 @@
     <div class="git-group">
       <div class="git-section-title">Linux Setup</div>
       <div class="git-icons">
-        <a href="https://github.com/Xmetalfanx/linuxSetup"
+        <a
+          href="https://github.com/Xmetalfanx/linuxSetup"
           target="_blank"
           rel="noopener"
           aria-label="Link to Xmetal's Github page for LinuxSetup scripts"
@@ -75,31 +76,81 @@
 </div>
 
 <style lang="scss">
+  @use "@scss/base/_index.scss" as *;
+
   .frontpage-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 2rem;
+    font-size: var(--h2);
+    font-weight: var(--fw-bold);
+    margin: 1rem 0;
     text-align: center;
   }
 
   .git-section {
-    margin: 1rem 0;
-
+    padding: 1rem;
     .git-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
       justify-content: center;
+      padding: 1rem;
 
       .git-group {
-        width: 40%;
-        outline: 1px solid #333;
-        padding: 1rem;
-        margin: 0 auto;
+        @include color-level(2);
+
+        border-radius: 8px;
+        line-height: 200%;
+        padding: 1.5rem;
+
+        &:hover {
+          box-shadow: 0 8px 8px var(--accent-color);
+        }
+
+        .git-section-title {
+          margin-bottom: 1rem;
+          @include header($font-size: var(--fs-500));
+        }
+
+        .git-icons {
+
+          @include flex($jc: space-around);
+          margin: 1.5rem 0;
+
+          a > i {
+            color: clr(accent-color);
+              
+            &:focus, 
+            &:hover {
+              color: var(--main-color);
+              transition: color 0.3s;
+            }
+
+            i {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        ul {
+          margin-left: 2rem;
+
+          li {
+            margin: 0.5rem 0;
+            // font-size: 1rem;
+          }
+        }
+
+        .d-flex {
+          @iclude flex($jc: space-around);
+        }
       }
 
-      .git-icons {
-        display: flex;
-        justify-content: space-around;
-        margin: 2rem auto;
+      // todo: change to data-theme="dark"
+      @media (prefers-color-scheme: dark) {
+        .git-group {
+          i {
+            color: clr(accent-color, light);
+          }
+        }
       }
     }
   }

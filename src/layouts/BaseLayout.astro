@@ -1,0 +1,20 @@
+---
+// this is the base layout for the LinuxHQ AND/OR the TechHQ side 
+import GlobalHeadtag from "@global_layout/global-headtag.astro";
+import GlobalFooter from "@global_layout/global-footer.astro";
+
+
+const { title = "" } = Astro.props;
+const appendedTitle = `Xmetalfanx's Homepage - ${title}`;
+const { keywords, description } = Astro.props;
+---
+
+<!-- This should be for either LinuxHQ or TechHQ pages. -->
+<!-- This would ONLY get called from the templates  -->
+
+<GlobalHeadtag title={appendedTitle} keywords={keywords} description={description} />
+<slot name="header" />
+
+<slot name="primary-container" />
+
+<GlobalFooter />

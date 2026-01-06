@@ -1,28 +1,61 @@
 ---
 // import Layout from "../layouts/Layout.astro";
-import "../styles/styles.css";
-import Header from "../layouts/frontpage-header.astro";
-import Footer from "../layouts/global/global-footer.astro";
-import SiteSections from "../components/frontpage/siteSections.astro";
-import GitGroups from "../components/frontpage/gitGroups.astro";
-import GlobalHeadtag from "../layouts/global/global-headtag.astro";
+import "@css/global-styles.css";
 
+import GlobalHeadtag from "@layouts/global/global-headtag.astro";
+import Footer from "@layouts/global/global-footer.astro";
 
+import SiteSections from "@layouts/frontpage/siteSections.astro";
+import GitGroups from "@layouts/frontpage/gitGroups.astro";
+
+import LightIcon from "@graphics/dark_mode.svg";
+import DarkIcon from "@graphics/light_mode.svg";
 ---
-<GlobalHeadtag />
 
+<html lang="en">
+  <GlobalHeadtag
+    title="Xmetalfanx's Main Site Frontpage"
+    keywords="Linux, Ubuntu, Linux Mint, Fedora, Cinnamon, Plasma, XFCE, Distros, Desktops"
+  />
 
-<Header />
+  <header>
+    Xmetalfanx's Homepage
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <LightIcon id="light-icon" />
+      <DarkIcon id="dark-icon" />
+    </button>
+  </header>
+</html>
+
+<main>
   <SiteSections />
   <GitGroups />
+</main>
 
-  <a href="linuxHQ/linuxmint">Linux Mint</a>
-  <a href="linuxHQ/linuxDistros">Linux Distro</a>
 <Footer />
 
+<script src="../layouts/linuxHQ/ThemeToggleScript.js"></script>
+
 <style>
-  a {
-    font-size: 1.5rem;
-    margin: 1rem;
+
+  @use "@scss/base/_index.scss" as *;
+
+  header {
+    justify-content: center;
+
+    @include header;
+    font-size: var(--h1);
+
+    button {
+      position: absolute;
+      right: 1rem;
+    }
   }
+
+  /* main is the group in the middle that contains the links to the site sections AND the git section */
+  main {
+    margin: 2rem 0;
+  }
+
 </style>

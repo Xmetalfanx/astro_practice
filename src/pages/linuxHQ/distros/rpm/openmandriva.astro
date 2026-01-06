@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "openmandriva";
 const distro_title = "Open Mandriva";
 
-import distro_icon from "@icons/openmandriva.png";
+import distro_icon from "@distro_icons/openmandriva.png";
 
 const moreinfo_desktops = "KDE";
 const moreinfo_featured = "";
@@ -18,11 +18,11 @@ const screenshot_desktop = "";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@rpm_ss/openmandriva.png";
-import screenshot_thumbnail from "@rpm_ss/thumbnails/openmandriva_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/rpm_based/openmandriva.jpg";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/rpm_based/thumbnails/openmandriva-small.jpg";
 
-const version_latest = "";
-const versions_supported = "";
+const version_latest = "Rock -Vanadium - Released April 20, 2025; Rome - Rolling Release version";
+const versions_supported = "Rock, Rome";
 
 const link_download = "http://openmandriva.org/en/download_lx";
 const link_forum = "http://forums.openmandriva.org/";
@@ -33,13 +33,17 @@ const youtube_review_playlist = "PLrh2y86lvcJc-GsSlO3UJqdoGq3mTMIzh";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="OpenMandriva "
+  meta_keywords="OpenMandriva, Linux, KDE, RPM-based, Linux distributions"
+  meta_description="Explore OpenMandriva, an RPM-based Linux distribution featuring the KDE desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

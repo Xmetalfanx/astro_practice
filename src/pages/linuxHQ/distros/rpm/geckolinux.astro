@@ -1,12 +1,12 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "gecko";
 const distro_title = "Gecko Linux";
 const family = "rpm";
 
-import distro_icon from "@icons/gecko.png";
+import distro_icon from "@distro_icons/gecko.png";
 
 const distro_base = "openSUSE";
 const moreinfo_desktops = "Cinnamon, Mate, XFCE, Budgie, Mate, .. and more";
@@ -20,10 +20,10 @@ const screenshot_desktop = "Cinnamon";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@rpm_ss/gecko.png";
-import screenshot_thumbnail from "@rpm_ss/thumbnails/gecko_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/rpm_based/gecko.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/rpm_based/thumbnails/gecko-small.png";
 
-const version_latest = "";
+const version_latest = "Rolling (VERY old ISO), Leap versions are out of date, based on 15.4";
 const versions_supported = "";
 
 const link_download = "http://geckolinux.github.io/#download";
@@ -36,13 +36,17 @@ const youtube_review_playlist =
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Gecko Linux "
+  meta_keywords="Gecko Linux, Linux, RPM-based, OpenSUSE-based, Linux distributions"
+  meta_description="Explore Gecko Linux, an OpenSUSE-based Linux distribution offering various desktop environments. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

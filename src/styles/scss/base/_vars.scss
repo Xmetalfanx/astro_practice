@@ -1,0 +1,13 @@
+// widths 
+// the target and BELOW 
+$breakpoint-xs: "width <= 36em";    // 576px
+$breakpoint-sm: "width <= 48em";    // about 768px
+$breakpoint-md: "width <= 64em";    // about 1024px
+$breakpoint-lg: "width <= 75em";    // about 1200px
+$breakpoint-xl: "width <= 90em";    // about 1440px
+
+
+// have to rethink this .. 1.2x REM maybe around my "default" font size
+$h3: 1.25rem;
+
+$mobile-header-height: 10rem;

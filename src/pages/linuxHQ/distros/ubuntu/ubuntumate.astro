@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "ubuntumate";
 const distro_title = "Ubuntu Mate";
 
-import distro_icon from "@icons/ubuntuMate.svg";
+import distro_icon from "@distro_icons/ubuntuMate.svg";
 
 const moreinfo_base = "Ubuntu Long Term Support (LTS) and non-LTS";
 const moreinfo_desktops = "Mate";
@@ -19,14 +19,14 @@ const screenshot_desktop = "Mate";
 const screenshot_icon = "";
 const screenshot_theme = "";
 
-import screenshot_src from "@ubuntu_ss/umate1.png";
-import screenshot_thumbnail from "@ubuntu_ss/thumbnails/umate1_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/ubuntu_based/umate1.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/ubuntu_based/thumbnails/umate1-small.png";
 
-const version_latest = "24.04";
-const versions_supported = "20.04 LTS 22.04 LTS 23.04";
+const version_latest = "24.04 LTS, 25.04";
+const versions_supported = "22.04 LTS, 24.04 LTS, 25.04";
 
-const link_download = "https=//ubuntu-mate.org/link_download/";
-const link_forum = "https=//ubuntu-mate.community/";
+const link_download = "https://ubuntu-mate.org/link_download/";
+const link_forum = "https://ubuntu-mate.community/";
 const link_homepage = "http://ubuntu-mate.org";
 const link_mydistro_page = "";
 
@@ -34,13 +34,17 @@ const youtube_review_playlist = "PLrh2y86lvcJfmyxuXW01A-ujfqrJzL8Ck";
 const youtube_tips_playlist = "";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Ubuntu Mate "
+  meta_keywords="Ubuntu Mate, Linux, Mate Desktop, Ubuntu-based, Linux distributions"
+  meta_description="Explore Ubuntu Mate, an Ubuntu-based Linux distribution featuring the Mate desktop environment. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

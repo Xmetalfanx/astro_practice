@@ -1,0 +1,46 @@
+---
+import IconData from "@layouts/linuxHQ/data/IconData.astro";
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+
+const icon_theme_name = "breeze";
+const icon_theme_title = "Breeze Icon Theme";
+
+const theme_code = "https://github.com/KDE/breeze-icons";
+const theme_homepage = "https://github.com/KDE/breeze-icons";
+
+const generalinfo_icon_category = "Icon Theme";
+const generalinfo_icon_toolkit = "Qt";
+const generalinfo_distros_that_feature = "KDE Neon, Kubuntu, Arch";
+
+const install_arch = "sudo pacman -S breeze-icons";
+const install_fedora = "sudo dnf install breeze-icons";
+const install_ubuntu = "sudo apt install breeze-icons";
+
+const screenshot_distro = "KDE Neon";
+const screenshot_src = "neon/breeze-icon-theme.png";
+const screenshot_thumbnail = "neon/thumbnails/breeze-icon-theme_tn.png";
+
+const latest_version = "5.90.0";
+
+const info_updated = "March 1, 2024";
+
+---
+
+<LinuxThemeTemplate>
+  <IconData slot="linux-main"
+    icon_theme_name={icon_theme_name}
+    icon_theme_title={icon_theme_title}
+    theme_homepage={theme_homepage}
+    generalinfo_icon_category={generalinfo_icon_category}
+    generalinfo_icon_toolkit={generalinfo_icon_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_ubuntu={install_ubuntu}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxThemeTemplate>

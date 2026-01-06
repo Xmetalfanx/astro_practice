@@ -1,11 +1,11 @@
 ---
-import DistroData from "@layouts/linuxHQ/distrosData.astro";
-import LinuxDistroTemplate from "@layouts/templates/linuxhq/linux-distro-template.astro";
+import DistroData from "@layouts/linuxHQ/data/DistrosData.astro";
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distro_name = "debian";
 const distro_title = "Debian";
 
-import distro_icon from "@icons/debian.svg";
+import distro_icon from "@distro_icons/debian.svg";
 
 const moreinfo_desktops = "Various";
 const moreinfo_featured = "";
@@ -15,17 +15,17 @@ const moreinfo_similar_distros =
 const moreinfo_target_audience = "";
 const moreinfo_distro_type = "";
 
-const screenshot_desktop = "";
+const screenshot_desktop = "Gnome";
 const screenshot_theme = "";
 const screenshot_icon = "";
 
-import screenshot_src from "@debian_ss/debian.png";
-import screenshot_thumbnail from "@debian_ss/thumbnails/debian_tn.png";
+const screenshot_src = "/src/pages/linuxHQ/graphics/distros/debian_based/debian.png";
+import screenshot_thumbnail from "/src/pages/linuxHQ/graphics/distros/debian_based/thumbnails/debian-small.png";
 
-const version_latest = "12";
+const version_latest = "12.1";
 const versions_supported = "12";
 
-const link_download = "";
+const link_download = "https://www.debian.org/distrib/";
 const link_forum = "http://forums.debian.net/";
 const link_homepage = "http://www.debian.org/";
 const link_mydistro_page =
@@ -36,13 +36,17 @@ const youtube_tips_playlist =
   "https://www.youtube.com/playlist?list=PLrh2y86lvcJddBni43z2PSd9H0XotKdn4";
 ---
 
-<LinuxDistroTemplate>
+<LinuxDistroTemplate
+  title="Debian "
+  meta_keywords="Debian, Linux, Stable, Linux distributions"
+  meta_description="Explore Debian, a stable and versatile Linux distribution. Learn about its features, target audience, and more."
+>
   <DistroData
     distro_title={distro_title}
     version_latest={version_latest}
     link_homepage={link_homepage}
     link_forum={link_forum}
-    linux_download={link_download}
+    link_download={link_download}
     link_mydistro_page={link_mydistro_page}
     moreinfo_desktops={moreinfo_desktops}
     moreinfo_featured={moreinfo_featured}

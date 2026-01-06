@@ -1,0 +1,116 @@
+---
+import PageLinkToMenus from "@components/global/PageLinkToMenus.astro";
+import "@css/global-styles.css";
+
+// Import the <Image /> component
+import { Image } from "astro:assets";
+
+const {
+  theme_name,
+  theme_title,
+  link_homepage,
+  generalinfo_theme_category,
+  generalinfo_theme_toolkit,
+  generalinfo_distros_that_feature,
+  install_arch,
+  install_fedora,
+  install_ubuntu,
+  screenshot_distro,
+  screenshot_src,
+  screenshot_thumbnail,
+  latest_version,
+  info_updated,
+} = Astro.props;
+---
+
+<div>
+  <PageLinkToMenus />
+</div>
+
+<div class="theme-container">
+  <div class="theme-header">{theme_title}</div>
+
+  <p><strong>Latest Version:</strong> {latest_version}</p>
+  <p><strong>Information Updated:</strong> {info_updated}</p>
+  <div>
+    <a href={link_homepage} target="_blank" rel="noopener noreferrer">
+      Homepage: {link_homepage}
+    </a>
+  </div>
+
+  <section class="theme-info">
+    <h2>General Information</h2>
+    <ul>
+      <li><strong>Category:</strong> {generalinfo_theme_category}</li>
+      <li><strong>Toolkit:</strong> {generalinfo_theme_toolkit}</li>
+      <li>
+        <strong>Featured Distros:</strong>
+        {generalinfo_distros_that_feature}
+      </li>
+    </ul>
+  </section>
+  <section class="theme-install">
+    <h2>Installation</h2>
+    <ul>
+      <li><strong>Arch:</strong> <code>{install_arch}</code></li>
+      <li><strong>Fedora:</strong> <code>{install_fedora}</code></li>
+      <li><strong>Ubuntu:</strong> <code>{install_ubuntu}</code></li>
+    </ul>
+  </section>
+
+  <section class="theme-screenshot">
+    <h2>Screenshot</h2>
+    <img
+      src={screenshot_src}
+      alt={`${theme_title} screenshot`}
+      loading="lazy"
+    />
+  </section>
+  <div class="theme-footer"></div>
+</div>
+
+<style lang="scss">
+  @use "src/styles/scss/base/_index" as *;
+  .theme-container {
+    @include color-level(2);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    @include outline($color: clr(light-color));
+    border-radius: 8px;
+
+    .theme-header {
+      @include flex($ai: center, $jc: space-between);
+
+      margin: 0;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .theme-info,
+    .theme-install,
+    .theme-requirements,
+    .theme-screenshot {
+      margin-top: 20px;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          @include color-level(3);
+          padding: 1rem;
+          margin: 2rem 0;
+          border-radius: 8px;
+          box-shadow: 0 0 5px var(--dark-color);
+        }
+      }
+
+      img {
+        max-width: 100%;
+        // border: 1px solid #ddd;
+        @include border($border-color: clr(light-color));
+        border-radius: 8px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "sass:color";
+@use "colors" as *;
+
+
+@function clr($color-name, $variant: "base") {
+  @if map.has-key($colors, $color-name) {
+    $color-map: map.get($colors, $color-name);
+
+    @if map.has-key($color-map, $variant) {
+      @return map.get($color-map, $variant);
+    } @else {
+      @warn "Variant `#{$variant}` not found for `#{$color-name}`.";
+      @return null;
+    }
+  } @else {
+    @warn "Color `#{$color-name}` not found.";
+    @return null;
+  }
+}

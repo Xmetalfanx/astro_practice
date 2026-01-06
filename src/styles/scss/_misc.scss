@@ -1,0 +1,32 @@
+@use "base/index" as *;
+
+.desktop_container {
+  // note to self: the default flex direction is row
+  // not sure about this here (the jc)
+  @include flex($jc: space-between);
+
+  .desktop-card {
+    @include color-level(2);
+    @include default-ol-and-bs(
+      $bs-x: 0,
+      $bs-y: 0.15rem,
+      $bs-blur: 0.6rem,
+      // bs-color default is main-color
+      $bs-color-dark: clr(light-color)
+    );
+  }
+}
+
+.mobile_menu_related {
+  display: none;
+  // what is this (below) for if display is none?
+  // writing-mode: horizontal-tb;
+
+  @media ($breakpoint-sm) {
+    @include links;
+
+    display: block;
+    margin: 1rem auto;
+    scroll-behavior: smooth;
+  }
+}

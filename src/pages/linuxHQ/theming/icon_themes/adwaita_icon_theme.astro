@@ -1,0 +1,46 @@
+---
+import IconData from "@layouts/linuxHQ/data/IconData.astro";
+import LinuxThemeTemplate from "@templates/linuxhq/linux-theme-template.astro";
+
+const icon_theme_name = "adwaita";
+const icon_theme_title = "Adwaita Icon Theme";
+
+const theme_code = "https://gitlab.gnome.org/GNOME/adwaita-icon-theme";
+const theme_homepage = "https://gitlab.gnome.org/GNOME/adwaita-icon-theme";
+
+const generalinfo_icon_category = "Icon Theme";
+const generalinfo_icon_toolkit = "GTK2, GTK3";
+const generalinfo_distros_that_feature = "Fedora, Ubuntu, Arch";
+
+const install_arch = "sudo pacman -S adwaita-icon-theme";
+const install_fedora = "sudo dnf install adwaita-icon-theme";
+const install_ubuntu = "sudo apt install adwaita-icon-theme";
+
+const screenshot_distro = "Fedora";
+const screenshot_src = "fedora/adwaita-icon-theme.png";
+const screenshot_thumbnail = "fedora/thumbnails/adwaita-icon-theme_tn.png";
+
+const latest_version = "3.38.0";
+
+const info_updated = "March 1, 2024";
+
+---
+
+<LinuxThemeTemplate>
+  <IconData slot="linux-main"
+    icon_theme_name={icon_theme_name}
+    icon_theme_title={icon_theme_title}
+    theme_homepage={theme_homepage}
+    generalinfo_icon_category={generalinfo_icon_category}
+    generalinfo_icon_toolkit={generalinfo_icon_toolkit}
+    generalinfo_distros_that_feature={generalinfo_distros_that_feature}
+    install_arch={install_arch}
+    install_fedora={install_fedora}
+    install_ubuntu={install_ubuntu}
+    screenshot_distro={screenshot_distro}
+    screenshot_src={screenshot_src}
+    screenshot_thumbnail={screenshot_thumbnail}
+    latest_version={latest_version}
+    info_updated={info_updated}
+  />
+</LinuxThemeTemplate>
