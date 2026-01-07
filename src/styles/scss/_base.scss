@@ -22,6 +22,10 @@
 
   --fs-default: var(--fs-400);
 
+  --fs-normal: 1.125rem;
+  --fs-large: 1.2rem;
+  --fs-larger: 1.4rem;
+
   // header sizes (fonts)
   --h1: 2rem;
   --h2: 1.5rem;
@@ -38,10 +42,6 @@
 
   --ffamily-header: var(--ffamily-dynapuff);
   --ffamily-nav: var(--ffamily-e-candy);
-
-  --fs-normal: 1.125rem;
-  --fs-large: 1.2rem;
-  --fs-larger: 1.4rem;
 
   margin: 0;
   padding: 0;
