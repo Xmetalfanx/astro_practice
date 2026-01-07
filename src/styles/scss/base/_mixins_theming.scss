@@ -1,8 +1,40 @@
 @use "sass:color";
 @use "colors" as *;
 
+// consider: name change to "color-levels"
+// color-variants could be for creating variants (that say color-levels could use)
+// idea variants like the ones below (lightening and darkening)
+// variants with some for of opacity
 // to create the colors
+
+// just an idea for now .. not sure about the syntax FTR
+// L level note
+// l - $lum_level darkens; l + lum_level lightens
 @mixin color-variants(
+  $name,
+  $lum_level2: 5,
+  $lum_level3: 10,
+  $saturation_less1: 5,
+  $saturation_less2: 10,
+  $opacity_80: 80,
+  $opacity_70: 70
+) {
+  --#{$name}-light: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
+  --#{$name}-lighter: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+
+  --#{$name}-dark: hsl(
+    from var(--#{$name}) h calc(s - #{$saturation_less1})
+      calc(l + #{$lum_level2})
+  );
+  --#{$name}-darker: hsl(
+    from var(--#{$name}) h calc(s - #{$saturation_less2})
+      calc(l + #{$lum_level3})
+  );
+
+  --#{$name}-o90: hsl(from var(--#{$name}) h s l / .90);
+  --#{$name}-o80: hsl(from var(--#{$name}) h s l / .80);
+  --#{$name}-o70: hsl(from var(--#{$name}) h s l / .70);
+}
 
 // color-levels are for the levels so i can say background-color: var(--main-color-l2)
 @mixin color-levels(

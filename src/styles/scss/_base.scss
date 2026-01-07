@@ -6,6 +6,12 @@
   --light-color: #{$light-color};
   --dark-color: #{$dark-color};
 
+
+  @include color-variants(main-color);
+  @include color-variants(accent-color);
+  @include color-variants(light-color);
+  @include color-variants(dark-color);
+
   --fw-bold: 800;
 
   // 400 (like with some of Kevin Powell's vars is the "middle"/default
