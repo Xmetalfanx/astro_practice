@@ -43,17 +43,17 @@
 }
 
 :root[data-theme="light"] {
-  @include color-variants(main-color, light);
-  @include color-variants(accent-color, light);
-  @include color-variants(light-color, light);
-  @include color-variants(dark-color, light);
+  @include color-levels(main-color, light);
+  @include color-levels(accent-color, light);
+  @include color-levels(light-color, light);
+  @include color-levels(dark-color, light);
 }
 
 :root[data-theme="dark"] {
-  @include color-variants(main-color, dark);
-  @include color-variants(accent-color, dark);
-  @include color-variants(light-color, dark);
-  @include color-variants(dark-color, dark);
+  @include color-levels(main-color, dark);
+  @include color-levels(accent-color, dark);
+  @include color-levels(light-color, dark);
+  @include color-levels(dark-color, dark);
 }
 
 *,

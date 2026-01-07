@@ -3,6 +3,9 @@
 
 // to create the colors
 @mixin color-variants(
+
+// color-levels are for the levels so i can say background-color: var(--main-color-l2)
+@mixin color-levels(
   $name,
   $theme,
   $lum_level2: 5,
