@@ -5,7 +5,7 @@
 <div class="git-section">
   <div class="frontpage-title">My Git Projects</div>
   <div class="git-container">
-    <div class="git-group">
+    <div class="git-card">
       <div class="git-section-title">Linux Setup</div>
       <div class="git-icons">
         <a
@@ -44,7 +44,7 @@
         <li>Ubuntu</li>
       </ul>
     </div>
-    <div class="git-group">
+    <div class="git-card">
       <div class="git-section-title">Linux Theming</div>
       <div class="git-icons">
         <a
@@ -87,6 +87,8 @@
 
   .git-section {
     padding: 1rem;
+    
+    // The overall "git container" class covering both cards
     .git-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -94,7 +96,10 @@
       justify-content: center;
       padding: 1rem;
 
-      .git-group {
+
+      .git-card {
+
+        @include outline;
 
         @include theme-color(2);
 
@@ -102,9 +107,9 @@
         line-height: 200%;
         padding: 1.5rem;
 
-        &:hover {
-          box-shadow: 0 8px 8px var(--accent-color);
-        }
+        // &:hover {
+        //   box-shadow: 0 8px 8px var(--accent-color);
+        // }
 
         .git-section-title {
           margin-bottom: 1rem;
