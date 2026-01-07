@@ -168,3 +168,15 @@
     }
   }
 }
+
+@mixin ai_ac_ji_jc(
+  $align-items: normal,
+  $align-content: normal,
+  $justify-items: legacy,
+  $justify-content: normal
+) {
+  align-items: $align-items;
+  align-content: $align-content;
+  justify-items: $justify-items;
+  justify-content: $justify-content;
+}
