@@ -8,8 +8,6 @@
 // to create the colors
 
 // just an idea for now .. not sure about the syntax FTR
-// L level note
-// l - $lum_level darkens; l + lum_level lightens
 @mixin color-variants(
   $name,
   $lum_level2: 5,
@@ -19,14 +17,14 @@
   $opacity_80: 80,
   $opacity_70: 70
 ) {
-  --#{$name}-light: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
-  --#{$name}-lighter: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+  --#{$name}-dark: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
+  --#{$name}-darker: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
 
-  --#{$name}-dark: hsl(
+  --#{$name}-light: hsl(
     from var(--#{$name}) h calc(s - #{$saturation_less1})
       calc(l + #{$lum_level2})
   );
-  --#{$name}-darker: hsl(
+  --#{$name}-lighter: hsl(
     from var(--#{$name}) h calc(s - #{$saturation_less2})
       calc(l + #{$lum_level3})
   );
@@ -40,27 +38,13 @@
 @mixin color-levels(
   $name,
   $theme,
-  $lum_level2: 5,
-  $lum_level3: 10,
-  $saturation_less1: 5,
-  $saturation_less2: 10
 ) {
   @if $theme == light {
-    --#{$name}-l2: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
-    --#{$name}-l3: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+    --#{$name}-l2: var(--#{$name}-dark);
+    --#{$name}-l3: var(--#{$name}-darker);
   } @else if $theme == dark {
-    --#{$name}-l2: hsl(
-      from var(--#{$name})
-        h
-        calc(s - #{$saturation_less1})
-        calc(l + #{$lum_level2})
-    );
-    --#{$name}-l3: hsl(
-      from var(--#{$name})
-        h
-        calc(s - #{$saturation_less2})
-        calc(l + #{$lum_level3})
-    );
+    --#{$name}-l2: var(--#{$name}-light);
+    --#{$name}-l3: var(--#{$name}-lighter);
   }
 }
 
