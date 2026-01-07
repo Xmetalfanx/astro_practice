@@ -27,16 +27,9 @@ import "@css/global-styles.css";
 
   .link-card {
     
-    html[data-theme=light] & {
-      background-color: var(--light-color-l2);
-    }
-    
-    
-    html[data-theme=dark] & {
-    background-color: var(--dark-color-l2);  
-    }
+    @include outline;
 
-
+    @include theme-color(2);
 
     @include flex($direction: column, $ai: center);
     @include border-radius;
