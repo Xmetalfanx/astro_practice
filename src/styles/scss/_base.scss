@@ -1,6 +1,7 @@
 @use "base/index" as *;
 
 :root {
+  // setup css var colors based on the sass color vars, of the same names
   --main-color: #{$main-color};
   --accent-color: #{$accent-color};
   --light-color: #{$light-color};
@@ -47,6 +48,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 
 :root[data-theme="light"] {
   @include color-levels(main-color, light);
