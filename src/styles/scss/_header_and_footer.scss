@@ -4,13 +4,7 @@
 header,
 footer {
 
-  html[data-theme="light"] & {
-    background-color: var(--main-color);    
-  }
-
-  html[data-theme="dark"] & {
-    background-color: var(--main-color-dark);
-  }
+  @include theme-color-element(main-color, main-color-soft, background-color);
   
   color: var(--light-color);
 

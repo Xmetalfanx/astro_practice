@@ -1,6 +1,6 @@
 // Color scheme - Tropical 1
-$main-color: hsl(29, 100%, 46%);
-$accent-color: hsl(174, 100%, 19%);
+$main-color: oklch(66% 50% 51);
+$accent-color: oklch(45% 80% 182.8);
 //$accent-color2: hsl(160, 100%, 25%);
 
 
@@ -15,5 +15,5 @@ $accent-color: hsl(174, 100%, 19%);
 // $light-color: hsl(45, 0%, 97%);
 
 // consider keeping these no matter the theme change above
-$light-color: hsl(45, 29%, 97%);
-$dark-color: hsl(0, 0%, 20%);
+$light-color: oklch(98% 0 78);
+$dark-color: oklch(32% 0 271);
