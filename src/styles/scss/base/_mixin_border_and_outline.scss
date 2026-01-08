@@ -1,0 +1,48 @@
+
+// just an idea for a default mixin for a box shadow AND outline, to combine the two
+
+// default outline and box-shadow
+@mixin default-ol-and-bs(
+  $ol-color: var(--main-color),
+  $ol-color-dark: var(--light-color),
+  $ol-size: 1px,
+  $ol-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: var(--main-color),
+  $bs-color-dark: var(--accent-color)
+) {
+  html[data-theme="light"] & {
+    outline: $ol-color $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    outline: $ol-color-dark $ol-size $ol-style;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}
+
+// default border and box-shadow 
+@mixin default-border-and-bs(
+  $border-color: var(--main-color),
+  $border-color-dark: var(--light-color),
+  $border-size: 1px,
+  $border-style: solid,
+  $bs-x: 5px,
+  $bs-y: 5px,
+  $bs-blur: 3px,
+  $bs-color: var(--main-color),
+  $bs-color-dark: var(--accent-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color;
+  }
+
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+    box-shadow: $bs-x $bs-y $bs-blur $bs-color-dark;
+  }
+}
