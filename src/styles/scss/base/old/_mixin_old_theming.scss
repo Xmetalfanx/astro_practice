@@ -1,0 +1,107 @@
+// placeholder for mixins in other files 
+
+
+
+
+// just an idea for now .. not sure about the syntax FTR
+@mixin color-variants-hsl(
+  $name,
+  $lum_level2: 5,
+  $lum_level3: 10,
+  $saturation_less1: 5,
+  $saturation_less2: 10,
+  $opacity_80: 80,
+  $opacity_70: 70
+) {
+  --#{$name}-dark: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
+  --#{$name}-darker: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+
+  --#{$name}-light: hsl(
+    from var(--#{$name}) h calc(s - #{$saturation_less1})
+      calc(l + #{$lum_level2})
+  );
+  --#{$name}-lighter: hsl(
+    from var(--#{$name}) h calc(s - #{$saturation_less2})
+      calc(l + #{$lum_level3})
+  );
+
+  --#{$name}-o90: hsl(from var(--#{$name}) h s l / .90);
+  --#{$name}-o80: hsl(from var(--#{$name}) h s l / .80);
+  --#{$name}-o70: hsl(from var(--#{$name}) h s l / .70);
+}
+
+// new oklch color-variants mixin
+@mixin color-variants(
+  $name,
+  $light_step2: 0.05,
+  $light_step3: 0.10,
+  $chroma_less1: 0.015,
+  $chroma_less2: 0.023,
+  $opacity_90: 0.9,
+  $opacity_80: 0.8,
+  $opacity_70: 0.7
+) {
+  --#{$name}-dark: oklch(
+    from var(--#{$name})
+    calc(l - #{$light_step2}) calc(c - #{$chroma_less1}) h
+  );
+
+  --#{$name}-darker: oklch(
+    from var(--#{$name})
+    calc(l - #{$light_step3}) c h
+  );
+
+  --#{$name}-light: oklch(
+    from var(--#{$name})
+    calc(l + #{$light_step2})
+    calc(c - #{$chroma_less1})
+    h
+  );
+
+  --#{$name}-lighter: oklch(
+    from var(--#{$name})
+    calc(l + #{$light_step3})
+    calc(c - #{$chroma_less2})
+    h
+  );
+
+  --#{$name}-o90: oklch(from var(--#{$name}) l c h / #{$opacity_90});
+  --#{$name}-o80: oklch(from var(--#{$name}) l c h / #{$opacity_80});
+  --#{$name}-o70: oklch(from var(--#{$name}) l c h / #{$opacity_70});
+}
+
+
+
+// color-levels are for the levels so i can say background-color: var(--main-color-l2)
+@mixin color-levels(
+  $name,
+  $theme,
+) {
+  @if $theme == light {
+    --#{$name}-l2: var(--#{$name}-dark);
+    --#{$name}-l3: var(--#{$name}-darker);
+  } @else if $theme == dark {
+    --#{$name}-l2: var(--#{$name}-light);
+    --#{$name}-l3: var(--#{$name}-lighter);
+  }
+}
+
+// property is like background-color, color, border-color, etc or what element to color
+// level is the level of the color variant, default is 1 (and wouldn't be called if 1)
+@mixin theme-color($level: 1, $property: background-color) {
+  html[data-theme="light"] & {
+    @if $level == 1 {
+      #{$property}: var(--light-color);
+    } @else {
+      #{$property}: var(--light-color-l#{$level});
+    }
+  }
+
+  html[data-theme="dark"] & {
+    @if $level == 1 {
+      #{$property}: var(--dark-color);
+    } @else {
+      #{$property}: var(--dark-color-l#{$level});
+    }
+  }
+}

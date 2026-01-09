@@ -1,70 +1,91 @@
 @use "sass:color";
 @use "colors" as *;
 
-// consider: name change to "color-levels"
-// color-variants could be for creating variants (that say color-levels could use)
-// idea variants like the ones below (lightening and darkening)
-// variants with some for of opacity
-// to create the colors
-
-// just an idea for now .. not sure about the syntax FTR
+// this would be for the main or accent colors 
 @mixin color-variants(
   $name,
-  $lum_level2: 5,
-  $lum_level3: 10,
-  $saturation_less1: 5,
-  $saturation_less2: 10,
-  $opacity_80: 80,
-  $opacity_70: 70
-) {
-  --#{$name}-dark: hsl(from var(--#{$name}) h s calc(l - #{$lum_level2}));
-  --#{$name}-darker: hsl(from var(--#{$name}) h s calc(l - #{$lum_level3}));
+  // softness: lighter + less chroma
+  $soft_l: 0.005,
+  $soft_c: 0.03,
 
-  --#{$name}-light: hsl(
-    from var(--#{$name}) h calc(s - #{$saturation_less1})
-      calc(l + #{$lum_level2})
-  );
-  --#{$name}-lighter: hsl(
-    from var(--#{$name}) h calc(s - #{$saturation_less2})
-      calc(l + #{$lum_level3})
+  // strength: slightly darker, keep chroma
+  $strong_l: 0.05,
+  $strong_l2: .10
+
+) {
+  // soft → background-friendly, subdued
+  --#{$name}-soft: oklch(
+    from var(--#{$name}) clamp(0.15, l + #{$soft_l}, 0.95)
+      max(0, c - #{$soft_c}) h
   );
 
-  --#{$name}-o90: hsl(from var(--#{$name}) h s l / .90);
-  --#{$name}-o80: hsl(from var(--#{$name}) h s l / .80);
-  --#{$name}-o70: hsl(from var(--#{$name}) h s l / .70);
+  // strong → emphasis, accents
+  --#{$name}-strong: oklch(
+    from var(--#{$name}) calc(l - #{$strong_l}) c h
+  );
+  --#{$name}-stronger: oklch(
+    from var(--#{$name}) calc(l - #{$strong_l2}) c h
+  );
+
+  // optional opacity helpers (still useful)
+  --#{$name}-o90: oklch(from var(--#{$name}) l c h / 0.9);
+  --#{$name}-o80: oklch(from var(--#{$name}) l c h / 0.8);
+  --#{$name}-o70: oklch(from var(--#{$name}) l c h / 0.7);
 }
 
-// color-levels are for the levels so i can say background-color: var(--main-color-l2)
-@mixin color-levels(
-  $name,
-  $theme,
-) {
-  @if $theme == light {
-    --#{$name}-l2: var(--#{$name}-dark);
-    --#{$name}-l3: var(--#{$name}-darker);
-  } @else if $theme == dark {
-    --#{$name}-l2: var(--#{$name}-light);
-    --#{$name}-l3: var(--#{$name}-lighter);
+// for the dark or light color
+@mixin surface-levels($step1: 0.08, $step2: 0.14, $step3: 0.22) {
+ 
+  &[data-theme="light"] {
+    --surface-l2: oklch(from var(--surface-color) calc(l - #{$step1}) c h);
+    --surface-l3: oklch(from var(--surface-color) calc(l - #{$step2}) c h);
+    --surface-l4: oklch(from var(--surface-color) calc(l - #{$step3}) c h);
+  }
+
+  &[data-theme="dark"] {
+    --surface-l2: oklch(from var(--surface-color) calc(l + #{$step1}) c h);
+    --surface-l3: oklch(from var(--surface-color) calc(l + #{$step2}) c h);
+    --surface-l4: oklch(from var(--surface-color) calc(l + #{$step3}) c h);
   }
 }
 
-// property is like background-color, color, border-color, etc or what element to color
-// name is the base name of the color variable like main-color, accent-color, etc
-// level is the level of the color variant, default is 1 (and wouldn't be called if 1)
-@mixin theme-color($level: 1, $property: background-color) {
-  html[data-theme="light"] & {
-    @if $level == 1 {
-      #{$property}: var(--light-color);
-    } @else {
-      #{$property}: var(--light-color-l#{$level});
-    }
-  }
+@mixin color-levels($name) {
+  --#{$name}-l1: var(--#{$name});          // base
+  --#{$name}-l2: var(--#{$name}-soft);     // subtle
+  --#{$name}-l3: var(--#{$name}-strong);   // emphasis
+  --#{$name}-l4: var(--#{$name}-stronger); // heavy emphasis
+}
 
-  html[data-theme="dark"] & {
-    @if $level == 1 {
-      #{$property}: var(--dark-color);
-    } @else {
-      #{$property}: var(--dark-color-l#{$level});
+// after refactoring i am not sure this mixin below makes sense
+
+// applies a color role + level, nothing else
+// @mixin theme-color($name, $level: 1, $property: background-color) {
+//   #{$property}: var(--#{$name}-l#{$level});
+// }
+
+
+@mixin theme-color-root(
+    $light_theme_color: light-color,
+    $dark_theme_color: dark-color,
+    $property: color
+){
+    @at-root html[data-theme=dark] {
+        #{$property}: var(--#{$dark_theme_color});
     }
-  }
+    @at-root html[data-theme=light] {
+        #{$property}: var(--#{$light_theme_color});
+    }
+}
+
+@mixin theme-color-element(
+    $light_theme_color: light-color,
+    $dark_theme_color: dark-color,
+    $property: color
+){
+    html[data-theme=dark] & {
+        #{$property}: var(--#{$dark_theme_color});
+    }
+    html[data-theme=light] & {
+        #{$property}: var(--#{$light_theme_color});
+    }
 }

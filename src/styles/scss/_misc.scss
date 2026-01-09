@@ -6,7 +6,7 @@
   @include flex($jc: space-between);
 
   .desktop-card {
-    @include theme-color(2);
+    background-color: var(--surface-l2);
 
     @include default-ol-and-bs(
       $bs-x: 0,

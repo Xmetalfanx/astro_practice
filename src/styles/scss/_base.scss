@@ -7,11 +7,8 @@
   --light-color: #{$light-color};
   --dark-color: #{$dark-color};
 
-
   @include color-variants(main-color);
   @include color-variants(accent-color);
-  @include color-variants(light-color);
-  @include color-variants(dark-color);
 
   --fw-bold: 800;
 
@@ -49,19 +46,10 @@
   box-sizing: border-box;
 }
 
+html {
+  @include theme-color-root(light-color, dark-color, --surface-color);
 
-:root[data-theme="light"] {
-  @include color-levels(main-color, light);
-  @include color-levels(accent-color, light);
-  @include color-levels(light-color, light);
-  @include color-levels(dark-color, light);
-}
-
-:root[data-theme="dark"] {
-  @include color-levels(main-color, dark);
-  @include color-levels(accent-color, dark);
-  @include color-levels(light-color, dark);
-  @include color-levels(dark-color, dark);
+  @include surface-levels();
 }
 
 *,
@@ -78,15 +66,13 @@ html {
 
 
 body {
-  html[data-theme="light"] & {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-  }
+ 
+  // for the background-color
+  @include theme-color-root(light-color, dark-color, background-color);
+  
+  // "fg" color
+  @include theme-color-root(dark-color, light-color);
 
-  html[data-theme="dark"] & {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-  }
 
   font-size: var(--fs-normal);
 
