@@ -117,10 +117,24 @@ const icons = [
 
 
 <style lang="scss">
+  @use "@scss/base/_index.scss" as *;
+
   section {
+    @include outline;
+    @include box-shadow;
+    background-color: var(--surface-l2);
+    
     padding: 20px;
     margin-inline: auto;
+    margin-bottom: 2rem;
     max-width: 800px;
+
+    h1 { 
+      padding: 1rem 0;
+      text-decoration: underline;
+    }
+
+    p { margin: 0; }
   }
 
   ul {
