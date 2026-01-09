@@ -50,6 +50,9 @@ html {
   @include theme-color-root(light-color, dark-color, --surface-color);
 
   @include surface-levels();
+
+  color-scheme: light dark;
+
 }
 
 *,
@@ -59,11 +62,6 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  color-scheme: light dark;
-}
-
 
 body {
  
