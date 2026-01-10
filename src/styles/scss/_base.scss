@@ -109,7 +109,7 @@ body {
     width: 100%;
     height: auto;
 
-    @media (max-width: $breakpoint-sm) {
+    @media ($breakpoint-sm) {
       width: 50%;
     }
   }
