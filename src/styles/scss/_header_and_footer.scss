@@ -34,13 +34,5 @@ header {
 
   font-weight: var(--fw-bold);
 
-  // commented out due to this being in an .Astro file 
-  // @media (max-width: $breakpoint-sm) {
 
-  //   nav {
-  //     flex-flow: column wrap;
-  //     gap: 1rem;
-  //     margin-inline: auto;
-  //   }
-  // }
 }
