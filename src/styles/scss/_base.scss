@@ -1,100 +1,102 @@
 @use "base/index" as *;
 
-:root {
-  // setup css var colors based on the sass color vars, of the same names
-  --main-color: #{$main-color};
-  --accent-color: #{$accent-color};
-  --light-color: #{$light-color};
-  --dark-color: #{$dark-color};
+@layer global {
+  :root {
+    // setup css var colors based on the sass color vars, of the same names
+    --main-color: #{$main-color};
+    --accent-color: #{$accent-color};
+    --light-color: #{$light-color};
+    --dark-color: #{$dark-color};
 
-  @include color-variants(main-color);
-  @include color-variants(accent-color);
+    @include color-variants(main-color);
+    @include color-variants(accent-color);
 
-  --fw-bold: 800;
+    --fw-bold: 800;
 
-  // 400 (like with some of Kevin Powell's vars is the "middle"/default
-  --fs-200: 1.1rem;
-  --fs-300: 1.15rem;
-  --fs-400: 1.2rem;
-  --fs-500: 1.3rem;
+    // 400 (like with some of Kevin Powell's vars is the "middle"/default
+    --fs-200: 1.1rem;
+    --fs-300: 1.15rem;
+    --fs-400: 1.2rem;
+    --fs-500: 1.3rem;
 
-  --fs-default: var(--fs-400);
+    --fs-default: var(--fs-400);
 
-  --fs-normal: 1.125rem;
-  --fs-large: 1.2rem;
-  --fs-larger: 1.4rem;
+    --fs-normal: 1.125rem;
+    --fs-large: 1.2rem;
+    --fs-larger: 1.4rem;
 
-  // header sizes (fonts)
-  --h1: 2rem;
-  --h2: 1.5rem;
+    // header sizes (fonts)
+    --h1: 2rem;
+    --h2: 1.5rem;
 
-  // Font Families
-  --ffamily-roboto:
-    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
-    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    // Font Families
+    --ffamily-roboto:
+      "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+      "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol";
 
-  --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
-  --ffamily-e-candy:
-    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
+    --ffamily-dynapuff:
+      "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
+    --ffamily-e-candy:
+      "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
 
-  --ffamily-header: var(--ffamily-dynapuff);
-  --ffamily-nav: var(--ffamily-e-candy);
+    --ffamily-header: var(--ffamily-dynapuff);
+    --ffamily-nav: var(--ffamily-e-candy);
 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  @include theme-color-root(light-color, dark-color, --surface-color);
-
-  @include surface-levels();
-
-  color-scheme: light dark;
-
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
- 
-  // for the background-color
-  @include theme-color-root(light-color, dark-color, background-color);
-  
-  // "fg" color
-  @include theme-color-root(dark-color, light-color);
-
-
-  font-size: var(--fs-normal);
-
-  display: grid;
-  grid-template: 1fr auto 1fr / 1fr;
-  grid-template-areas:
-    "header"
-    "primary-container"
-    "footer";
-
-  height: 100vh;
-
-  // default links ... things like header and footer are styled specifically, there
-  a,
-  a:link {
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  @media ($breakpoint-sm) {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer base {
+  html {
+    @include theme-color-root(light-color, dark-color, --surface-color);
+
+    @include surface-levels();
+
+    color-scheme: light dark;
+  }
+
+  body {
+    // for the background-color
+    @include theme-color-root(light-color, dark-color, background-color);
+
+    // "fg" color
+    @include theme-color-root(dark-color, light-color);
+
+    font-size: var(--fs-normal);
+
+    display: grid;
+    grid-template: 1fr auto 1fr / 1fr;
     grid-template-areas:
+      "header"
       "primary-container"
-      "header";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+      "footer";
+
+    height: 100vh;
+
+    // default links ... things like header and footer are styled specifically, there
+    a,
+    a:link {
+      text-decoration: none;
+    }
+
+    @media ($breakpoint-sm) {
+      grid-template-areas:
+        "primary-container"
+        "header";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
+    }
   }
 }
 

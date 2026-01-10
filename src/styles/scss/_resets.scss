@@ -1,43 +1,47 @@
 /* Modern CSS Reset – 2026 */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer resets {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  line-height: 1.6;
-}
+  body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
 
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-/* Typography improvements */
-p,
-li {
-  text-wrap: pretty;
-}
+  /* Typography improvements */
+  p,
+  li {
+    text-wrap: pretty;
+  }
 
-h1, h2, h3 {
-  text-wrap: balance;
-}
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 
-/* Reduced motion – non-invasive */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  /* Reduced motion – non-invasive */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

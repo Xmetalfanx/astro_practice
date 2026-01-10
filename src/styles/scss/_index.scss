@@ -7,3 +7,5 @@
 @use "theme_toggle" as *;
 @use "primary_container" as *;
 @use "misc" as *;
+
+@layer resets, global, layout, base;

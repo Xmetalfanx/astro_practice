@@ -1,46 +1,44 @@
 @use "base/index" as *;
 
+@layer layout {
+  header,
+  footer {
+    @include theme-color-element(main-color, main-color-soft, background-color);
 
-header,
-footer {
+    color: var(--light-color);
+    padding: 1rem;
 
-  @include theme-color-element(main-color, main-color-soft, background-color);
-  
-  color: var(--light-color);
+    @include links(
+      $light-link: var(--light-color),
+      $dark-link: var(--light-color),
+      $light-link-hf: var(--accent-color),
+      $dark-link-hf: var(--accent-color)
+    );
 
-  padding: 1rem;
+    a {
+      margin: 2px;
 
-
-  @include links(
-    $light-link: var(--light-color),
-    $dark-link: var(--light-color),
-    $light-link-hf: var(--accent-color),
-    $dark-link-hf: var(--accent-color)
-  );
-
-  a {
-    margin: 2px;
-
-    &:visited {
-      text-decoration: dotted;
+      &:visited {
+        text-decoration: dotted;
+      }
     }
   }
-}
 
-header {
-  grid-area: header;
+  header {
+    grid-area: header;
 
-  @include flex($jc: space-between, $ai: center);
+    @include flex($jc: space-between, $ai: center);
 
-  font-weight: var(--fw-bold);
+    font-weight: var(--fw-bold);
 
-  // commented out due to this being in an .Astro file 
-  // @media (max-width: $breakpoint-sm) {
+    // commented out due to this being in an .Astro file
+    // @media (max-width: $breakpoint-sm) {
 
-  //   nav {
-  //     flex-flow: column wrap;
-  //     gap: 1rem;
-  //     margin-inline: auto;
-  //   }
-  // }
+    //   nav {
+    //     flex-flow: column wrap;
+    //     gap: 1rem;
+    //     margin-inline: auto;
+    //   }
+    // }
+  }
 }

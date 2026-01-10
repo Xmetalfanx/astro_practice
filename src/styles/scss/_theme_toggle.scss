@@ -1,28 +1,29 @@
 @use "base/index" as *;
 
-#theme-toggle {
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0.5rem;
-  width: 50px;
-  height: 50px;
+@layer layout {
+  #theme-toggle {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
 
-  background-color: var(--light-color);
+    background-color: var(--light-color);
 
-  // remember this is for the items IN the button, 
-  // not #theme-toggle in the footer itself
-  @include flex($ai: center, $jc: center);
+    // remember this is for the items IN the button,
+    // not #theme-toggle in the footer itself
+    @include flex($ai: center, $jc: center);
 
-  @media ($breakpoint-sm) {
-    scale: 1.45;
-  }
+    @media ($breakpoint-sm) {
+      scale: 1.45;
+    }
 
-  // for the svg color
-  svg {
-    fill: var(--accent-color);
+    // for the svg color
+    svg {
+      fill: var(--accent-color);
 
-    transition: all 0.3s ease-in-out;
-
+      transition: all 0.3s ease-in-out;
+    }
   }
 }

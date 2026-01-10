@@ -1,97 +1,92 @@
 @use "base/index" as *;
 
-/* main section of site */
-// updated: march 17, 2025: at the time of me typing this i have not adjusted the code below
-// the main section should now be "primary-content" which includes any asides AND the <main>
-// AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
-.primary-container {
-  grid-area: primary-container;
+@layer layout {
+  /* main section of site */
+  // updated: march 17, 2025: at the time of me typing this i have not adjusted the code below
+  // the main section should now be "primary-content" which includes any asides AND the <main>
+  // AT THE TIME OF ME TYPING THIS the old "<div class="primary-content>" should NOW BE <main>
+  .primary-container {
+    grid-area: primary-container;
 
-  @include links;
+    @include links;
 
-  // div that astro puts between the primary-container and the aside/main section
-  > *:nth-child(1) {
-    margin: 2rem;
-    display: grid;
-    grid-template-areas: "aside main";
-    grid-template-columns: 16% 1fr;
-    gap: 1rem;
-    align-items: start;
+    // div that astro puts between the primary-container and the aside/main section
+    > *:nth-child(1) {
+      margin: 2rem;
+      display: grid;
+      grid-template-areas: "aside main";
+      grid-template-columns: 16% 1fr;
+      gap: 1rem;
+      align-items: start;
 
-    // between "Desktop" and "mobile"  .. Tablet maybe?
-    @media ($breakpoint-md) {
-      grid-template-columns: 25% 1fr;
-    }
-
-    // small breakpoint
-    @media ($breakpoint-sm) {
-      gap: 2rem;
-      grid-template-areas:
-        "main"
-        "aside";
-      grid-template-columns: unset;
-
-      // idea for the header now at the bottom so the content is not covered
-      margin-bottom: $mobile-header-height;
-    }
-
-    > aside {
-      grid-area: aside;
-      margin: unset;
-
-      .aside-section {
-        @include box-shadow(
-          $x: 0,
-          $y: 0,
-          $blur: 0.4rem,
-        );
-
+      // between "Desktop" and "mobile"  .. Tablet maybe?
+      @media ($breakpoint-md) {
+        grid-template-columns: 25% 1fr;
       }
 
-      input {
-        display: none;
+      // small breakpoint
+      @media ($breakpoint-sm) {
+        gap: 2rem;
+        grid-template-areas:
+          "main"
+          "aside";
+        grid-template-columns: unset;
+
+        // idea for the header now at the bottom so the content is not covered
+        margin-bottom: $mobile-header-height;
       }
 
-      label {
-        background-color: var(--accent-color-strong);
-        color: var(--light-color);
-        font-weight: 800;
-        display: block;
-
-        // this may not be final but leave it for now
+      > aside {
+        grid-area: aside;
         margin: unset;
 
-        padding: 1rem;
-
-        &:hover {
-          cursor: crosshair;
+        .aside-section {
+          @include box-shadow($x: 0, $y: 0, $blur: 0.4rem);
         }
-      }
 
-      .accordion {
-        background-color: var(--surface-l2);
+        input {
+          display: none;
+        }
 
+        label {
+          background-color: var(--accent-color-strong);
+          color: var(--light-color);
+          font-weight: 800;
+          display: block;
 
-        margin-bottom: 1rem;
+          // this may not be final but leave it for now
+          margin: unset;
 
-        padding: 1.25rem;
+          padding: 1rem;
 
-        .accordion-content {
-          @include flex($direction: column, $wrap: nowrap);
+          &:hover {
+            cursor: crosshair;
+          }
+        }
 
-          // needed since the mixin doesn't do margins (mixin called elsewhere)
-          a {
-            margin-top: 0.5rem;
+        .accordion {
+          background-color: var(--surface-l2);
 
+          margin-bottom: 1rem;
+
+          padding: 1.25rem;
+
+          .accordion-content {
+            @include flex($direction: column, $wrap: nowrap);
+
+            // needed since the mixin doesn't do margins (mixin called elsewhere)
+            a {
+              margin-top: 0.5rem;
+            }
           }
         }
       }
-    }
 
-    > main {
-      grid-area: main;
+      > main {
+        grid-area: main;
 
-      @include links;
+        @include links;
+      }
     }
   }
 }
