@@ -24,10 +24,5 @@
 
     transition: all 0.3s ease-in-out;
 
-    [data-theme="dark"] & {
-
-      //?? why is !important needed? ...
-      //fill: var(--light-color) !important;
-    }
   }
 }
