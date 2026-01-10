@@ -1,4 +1,36 @@
 
+@mixin outline(
+  $width: 1px,
+  $style: solid,
+  $color: var(--main-color),
+  $color-dark: var(--light-color)
+) {
+  html[data-theme="light"] & {
+    outline: $width $style $color;
+  }
+  html[data-theme="dark"] & {
+    outline: $width $style $color-dark;
+  }
+}
+
+@mixin border(
+  $border-size: 1px,
+  $border-style: solid,
+
+  $border-color: var(--main-color),
+  $border-color-dark: var(--light-color)
+) {
+  html[data-theme="light"] & {
+    border: $border-size $border-style $border-color;
+  }
+  html[data-theme="dark"] & {
+    border: $border-size $border-style $border-color-dark;
+  }
+}
+
+////////////////////////////////////////////////////////////////////
+
+
 // just an idea for a default mixin for a box shadow AND outline, to combine the two
 
 // default outline and box-shadow
