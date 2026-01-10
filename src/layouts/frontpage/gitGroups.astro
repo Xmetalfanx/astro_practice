@@ -107,13 +107,11 @@
         line-height: 200%;
         padding: 1.5rem;
 
-        // &:hover {
-        //   box-shadow: 0 8px 8px var(--accent-color);
-        // }
 
         .git-section-title {
-          margin-bottom: 1rem;
+          
           @include header($font-size: var(--fs-500));
+          margin-bottom: 1rem;
         }
 
         .git-icons {
@@ -149,16 +147,7 @@
           @iclude flex($jc: space-around);
         }
       }
-
-      // todo: change to data-theme="dark"
-      html[data-theme="dark"] & {
-        .git-group {
-
-          i {
-            background-color: var(--accent-color-l2);
-          }
-        }
-      }
+  
       
     }
   }
