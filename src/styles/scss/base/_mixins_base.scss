@@ -65,7 +65,8 @@
   $dark-link-bg: inherit,
   $dark-link-hf: var(--main-color-l2),
   $dark-link-hf-bg: inherit,
-  $dark-link-visited: var(--main-color)
+  $dark-link-visited: var(--main-color),
+  $outline: none
 ) {
   html[data-theme="light"] & {
     a,
@@ -77,7 +78,8 @@
       &:hover {
         background-color: $light-link-hf-bg;
         color: $light-link-hf;
-        @include outline;
+        outline: $outline;
+
       }
     }
   }
@@ -92,6 +94,7 @@
       &:hover {
         background-color: $dark-link-hf-bg;
         color: $dark-link-hf;
+        outline: $outline;
       }
     }
   }
