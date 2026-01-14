@@ -152,13 +152,13 @@ const desktops = [
   keywords="linux, desktop, environments, distros"
   description="A collection of popular Linux desktop environments."
 >
-  <div slot="linux-main">
+  <div slot="linux-container">
     <LinkToMenu />
 
     <div class="desktop_container">
       {
         desktops.map((desktop) => (
-          <div key={desktop.name} class="desktop-card">
+          <div class="desktop-card">
             <div class="icon_and_title">
               <img
                 class="icon"
