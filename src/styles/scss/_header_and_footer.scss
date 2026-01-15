@@ -1,15 +1,11 @@
 @use "base/index" as *;
 
-
 header,
 footer {
-
-  @include theme-color-element(main-color, main-color-soft, background-color);
-  
-  color: var(--light-color);
+  @include theme-color-element(main-color, main-color, background-color);
+  @include theme-color-element(light-color, light-color, color);
 
   padding: 1rem;
-
 
   @include links(
     $light-link: var(--light-color),
@@ -33,6 +29,4 @@ header {
   @include flex($jc: space-between, $ai: center);
 
   font-weight: var(--fw-bold);
-
-
 }

@@ -7,13 +7,19 @@
   --light-color: #{$light-color};
   --dark-color: #{$dark-color};
 
+  // @include color-variants(main-color);
+  // @include color-variants(accent-color);
+  // @include color-variants(light-color);
+  // @include color-variants(dark-color);
+
+  @include color-scale(main-color);
+  @include color-scale(accent-color);
+  @include color-scale(light-color);
+  @include color-scale(dark-color);
+
   @include color-variants(main-color);
   @include color-variants(accent-color);
 
-  @include color-levels(main-color);
-  @include color-levels(accent-color);
-  @include color-levels(light-color);
-  @include color-levels(dark-color);
 
   --fw-bold: 800;
 
@@ -57,7 +63,6 @@ html {
   @include surface-levels();
 
   color-scheme: light dark;
-
 }
 
 *,
@@ -69,13 +74,11 @@ html {
 }
 
 body {
- 
   // for the background-color
   @include theme-color-root(light-color, dark-color, background-color);
-  
+
   // "fg" color
   @include theme-color-root(dark-color, light-color);
-
 
   font-size: var(--fs-normal);
 
