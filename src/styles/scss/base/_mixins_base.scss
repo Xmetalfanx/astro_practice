@@ -97,6 +97,43 @@
   }
 }
 
+// this is a simipler way but caniuse says browser support is in the 
+// mid to high 80's and i am not sure how the fallbacks work for now 
+@mixin links_lightdark(
+  $light-link: var(--accent-color),
+  $light-link-bg: inherit,
+  $light-link-hf: var(--main-color),
+  $light-link-hf-bg: inherit,
+  $light-link-visited: var(--accent-color),
+
+  $dark-link: var(--light-color-l2),
+  $dark-link-bg: inherit,
+  $dark-link-hf: var(--main-color-l2),
+  $dark-link-hf-bg: inherit,
+  $dark-link-visited: var(--main-color)
+) {
+  color-scheme: light dark;
+
+  a,
+  a:link {
+    background-color: light-dark(#{$light-link-bg}, #{$dark-link-bg});
+    color: light-dark(#{$light-link}, #{$dark-link});
+
+    &:visited {
+      color: light-dark(#{$light-link-visited}, #{$dark-link-visited});
+    }
+
+    &:focus,
+    &:hover {
+      background-color: light-dark(#{$light-link-hf-bg}, #{$dark-link-hf-bg});
+      color: light-dark(#{$light-link-hf}, #{$dark-link-hf});
+      @include outline;
+    }
+  }
+}
+
+
+
 @mixin ai_ac_ji_jc(
   $align-items: normal,
   $align-content: normal,
