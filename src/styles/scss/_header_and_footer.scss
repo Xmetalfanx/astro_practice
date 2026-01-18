@@ -1,28 +1,33 @@
 @use "base/index" as *;
 
-
 header,
 footer {
-
-  @include theme-color-element(main-color, main-color-soft, background-color);
-  
-  color: var(--light-color);
-
-  padding: 1rem;
-
-
-  @include links(
-    $light-link: var(--light-color),
-    $dark-link: var(--light-color),
-    $light-link-hf: var(--accent-color),
-    $dark-link-hf: var(--accent-color)
+  @include theme-color-element(
+    main-color-500,
+    main-color-600,
+    background-color
   );
+  @include theme-color-element(light-color-500, light-color-400, color);
 
   a {
-    margin: 2px;
+    @include theme-color-element(light-color, light-color, color);
+    padding: 0.5rem;
 
-    &:visited {
-      text-decoration: dotted;
+    &:hover {
+      border-radius: 0.75rem;
+
+      // change background color on hover
+      @include theme-color-element(
+        main-color-600,
+        main-color-soft,
+        background-color
+      );
+
+      // adds outline on hover
+      @include outline(
+        $color: var(--light-color-500),
+        $color-dark: var(--light-color-500)
+      );
     }
   }
 }
@@ -31,8 +36,19 @@ header {
   grid-area: header;
 
   @include flex($jc: space-between, $ai: center);
+  padding: 0.5rem;
+
+  nav {
+    @include flex;
+
+    gap: 3rem;
+    font-family: var(--ffamily-nav);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.6rem;
+  }
 
   font-weight: var(--fw-bold);
-
-
 }
+
+

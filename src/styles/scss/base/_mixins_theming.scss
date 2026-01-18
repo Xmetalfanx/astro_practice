@@ -1,41 +1,35 @@
 @use "sass:color";
 @use "colors" as *;
 
-// this would be for the main or accent colors 
+// the 100 to 900 scale
+@mixin color-scale($name) {
+  --#{$name}-100: color-mix(in oklch, var(--#{$name}) 75%, var(--light-color));
+  --#{$name}-200: color-mix(in oklch, var(--#{$name}) 80%, var(--light-color));
+  --#{$name}-300: color-mix(in oklch, var(--#{$name}) 95%, var(--light-color));
+  --#{$name}-400: color-mix(in oklch, var(--#{$name}) 90%, var(--light-color));
+  --#{$name}-500: var(--#{$name});
+  --#{$name}-600: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
+  --#{$name}-700: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
+  --#{$name}-800: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
+  --#{$name}-900: color-mix(in oklch, var(--#{$name}) 80%, var(--dark-color));
+}
+
+// this would be for the main or accent colors
 @mixin color-variants(
   $name,
   // softness: lighter + less chroma
-  $soft_l: 0.005,
-  $soft_c: 0.03,
-
-  // strength: slightly darker, keep chroma
-  $strong_l: 0.05,
-  $strong_l2: .10
+  $soft_l: 0.004,
+  $soft_c: 0.035,
 
 ) {
   // soft → background-friendly, subdued
   --#{$name}-soft: oklch(
-    from var(--#{$name}) clamp(0.15, l + #{$soft_l}, 0.95)
-      max(0, c - #{$soft_c}) h
+    from var(--#{$name}) calc(l + #{$soft_l}) calc(c - #{$soft_c}) h
   );
-
-  // strong → emphasis, accents
-  --#{$name}-strong: oklch(
-    from var(--#{$name}) calc(l - #{$strong_l}) c h
-  );
-  --#{$name}-stronger: oklch(
-    from var(--#{$name}) calc(l - #{$strong_l2}) c h
-  );
-
-  // optional opacity helpers (still useful)
-  --#{$name}-o90: oklch(from var(--#{$name}) l c h / 0.9);
-  --#{$name}-o80: oklch(from var(--#{$name}) l c h / 0.8);
-  --#{$name}-o70: oklch(from var(--#{$name}) l c h / 0.7);
 }
 
 // for the dark or light color
 @mixin surface-levels($step1: 0.08, $step2: 0.14, $step3: 0.22) {
- 
   &[data-theme="light"] {
     --surface-l2: oklch(from var(--surface-color) calc(l - #{$step1}) c h);
     --surface-l3: oklch(from var(--surface-color) calc(l - #{$step2}) c h);
@@ -49,12 +43,6 @@
   }
 }
 
-@mixin color-levels($name) {
-  --#{$name}-l1: var(--#{$name});          // base
-  --#{$name}-l2: var(--#{$name}-soft);     // subtle
-  --#{$name}-l3: var(--#{$name}-strong);   // emphasis
-  --#{$name}-l4: var(--#{$name}-stronger); // heavy emphasis
-}
 
 // after refactoring i am not sure this mixin below makes sense
 
@@ -63,29 +51,39 @@
 //   #{$property}: var(--#{$name}-l#{$level});
 // }
 
-
 @mixin theme-color-root(
-    $light_theme_color: light-color,
-    $dark_theme_color: dark-color,
-    $property: color
-){
-    @at-root html[data-theme=dark] {
-        #{$property}: var(--#{$dark_theme_color});
-    }
-    @at-root html[data-theme=light] {
-        #{$property}: var(--#{$light_theme_color});
-    }
+  $light_theme_color: light-color,
+  $dark_theme_color: dark-color,
+  $property: color
+) {
+  @at-root html[data-theme="dark"] {
+    #{$property}: var(--#{$dark_theme_color});
+  }
+  @at-root html[data-theme="light"] {
+    #{$property}: var(--#{$light_theme_color});
+  }
 }
 
+// note to self: the "500" colors are default shades/whatever 
 @mixin theme-color-element(
-    $light_theme_color: light-color,
-    $dark_theme_color: dark-color,
-    $property: color
-){
-    html[data-theme=dark] & {
-        #{$property}: var(--#{$dark_theme_color});
-    }
-    html[data-theme=light] & {
-        #{$property}: var(--#{$light_theme_color});
-    }
+  $light: light-color-500,
+  $dark: dark-color-500,
+  $property: color
+) {
+  html[data-theme="dark"] & {
+    #{$property}: var(--#{$dark});
+  }
+
+  html[data-theme="light"] & {
+    #{$property}: var(--#{$light});
+  }
+}
+
+@mixin custom_colormix(
+  $color1: red,
+  $color2: blue,
+  $property: background-color
+) {
+  // #{$property}: colormix(in lab, $color1, $color2);
+  #{$property}: colormix(in lab, #{$color1}, #{$color2});
 }
