@@ -1,9 +1,39 @@
 ---
 import { Image } from "astro:assets";
 import LinkToMenu from "@components/global/PageLinkToMenus.astro";
-import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
+import LinuxBaseTemplate from "@templates/linuxhq/linux-base-template.astro";
 
-const desktopicon_path = "/src/assets/linuxHQ/graphics/desktops/icons";
+import budgieIcon from "@assets/linuxHQ/graphics/desktops/icons/budgie.svg";
+import cinnamonIcon from "@assets/linuxHQ/graphics/desktops/icons/cinnamon.png";
+import cosmicIcon from "@assets/linuxHQ/graphics/desktops/icons/cosmic.png";
+import gnomeIcon from "@assets/linuxHQ/graphics/desktops/icons/gnome.svg";
+import plasmaIcon from "@assets/linuxHQ/graphics/desktops/icons/plasma.svg";
+import lxqtIcon from "@assets/linuxHQ/graphics/desktops/icons/lxqt.png";
+import mateIcon from "@assets/linuxHQ/graphics/desktops/icons/mate.png";
+//import pantheonIcon from "@assets/linuxHQ/graphics/desktops/icons/pantheon.svg";
+import xfceIcon from "@assets/linuxHQ/graphics/desktops/icons/xfce.svg";
+
+// Screenshot imports
+import budgieScreenshot from "@desktop_ss/budgie.avif";
+import budgieScreenshotTn from "@desktop_ss/thumbnails/budgie-small.avif";
+import cinnamonScreenshot from "@desktop_ss/cinnamon.png";
+import cinnamonScreenshotTn from "@desktop_ss/thumbnails/cinnamon-small.png";
+// import cosmicScreenshot from "@desktop_ss/cosmic.png";
+// import cosmicScreenshotTn from "@desktop_ss/thumbnails/cosmic-small.png";
+import gnomeScreenshot from "@desktop_ss/gnome.png";
+import gnomeScreenshotTn from "@desktop_ss/thumbnails/gnome-small.png";
+import plasmaScreenshot from "@desktop_ss/plasma.png";
+import plasmaScreenshotTn from "@desktop_ss/thumbnails/plasma-small.png";
+import lxqtScreenshot from "@desktop_ss/lxqt.png";
+import lxqtScreenshotTn from "@desktop_ss/thumbnails/lxqt-small.png";
+import mateScreenshot from "@desktop_ss/mate.png";
+import mateScreenshotTn from "@desktop_ss/thumbnails/mate-small.png";
+import pantheonScreenshot from "@desktop_ss/pantheon.png";
+import pantheonScreenshotTn from "@desktop_ss/thumbnails/pantheon-small.png";
+import xfceScreenshot from "@desktop_ss/xfce.png";
+import xfceScreenshotTn from "@desktop_ss/thumbnails/xfce-small.png";
+
+const desktopicon_path = "@assets/linuxHQ/graphics/desktops/icons";
 
 const desktops = [
   {
@@ -17,9 +47,8 @@ const desktops = [
       { name: "Ubuntu Budgie", link: "https://ubuntubudgie.org/" },
       { name: "Arch Linux", link: "https://archlinux.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/budgie.avif",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/budgie-small.avif",
+    screenshot: budgieScreenshot,
+    screenshot_tn: budgieScreenshotTn,
     screenshot_distro: "unknown",
   },
   {
@@ -33,10 +62,8 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/cinnamon.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/cinnamon-small.png",
+    screenshot: cinnamonScreenshot,
+    screenshot_tn: cinnamonScreenshotTn,
     screenshot_distro: "Linux Mint 22.x",
   },
   {
@@ -46,9 +73,8 @@ const desktops = [
       "Cosmic is a modern desktop environment developed by System76, designed to be intuitive and customizable.",
     homepage: "https://pop.system76.com/",
     commonDistros: [{ name: "Pop!_OS", link: "https://pop.system76.com/" }],
-    screenshot: "/assets/screenshots/cosmic.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/cosmic-small.png",
+    screenshot: undefined,
+    screenshot_tn: undefined,
     screenshot_distro: "",
   },
   {
@@ -62,9 +88,8 @@ const desktops = [
       { name: "Fedora", link: "https://getfedora.org/" },
       { name: "Debian", link: "https://www.debian.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/gnome.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/gnome-small.png",
+    screenshot: gnomeScreenshot,
+    screenshot_tn: gnomeScreenshotTn,
     screenshot_distro: "Ubuntu 24.04",
   },
   {
@@ -78,9 +103,8 @@ const desktops = [
       { name: "openSUSE", link: "https://www.opensuse.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/plasma.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/plasma-small.png",
+    screenshot: plasmaScreenshot,
+    screenshot_tn: plasmaScreenshotTn,
     screenshot_distro: "Not Known - Maybe Kubuntu 24",
   },
   {
@@ -94,9 +118,8 @@ const desktops = [
       { name: "SparkyLinux", link: "https://sparkylinux.org/" },
       { name: "Manjaro", link: "https://manjaro.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/lxqt.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/lxqt-small.png",
+    screenshot: lxqtScreenshot,
+    screenshot_tn: lxqtScreenshotTn,
     screenshot_distro: "",
   },
   {
@@ -110,9 +133,8 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "Fedora", link: "https://getfedora.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/mate.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/mate-small.png",
+    screenshot: mateScreenshot,
+    screenshot_tn: mateScreenshotTn,
     screenshot_distro: "Fedora - Mate 1.26",
   },
   {
@@ -122,10 +144,8 @@ const desktops = [
       "Pantheon is the desktop environment of elementary OS, known for its simplicity, elegance, and user-friendly design.",
     homepage: "https://elementary.io/",
     commonDistros: [{ name: "elementary OS", link: "https://elementary.io/" }],
-    screenshot:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/pantheon.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/pantheon-small.png",
+    screenshot: pantheonScreenshot,
+    screenshot_tn: pantheonScreenshotTn,
     screenshot_distro: "ElementaryOS 6.x",
   },
   {
@@ -139,15 +159,14 @@ const desktops = [
       { name: "Linux Mint", link: "https://linuxmint.com/" },
       { name: "MX Linux", link: "https://mxlinux.org/" },
     ],
-    screenshot: "/src/assets/linuxHQ/graphics/desktops/screenshots/xfce.png",
-    screenshot_tn:
-      "/src/assets/linuxHQ/graphics/desktops/screenshots/thumbnails/xfce-small.png",
+    screenshot: xfceScreenshot,
+    screenshot_tn: xfceScreenshotTn,
     screenshot_distro: "Xubuntu 24.04",
   },
 ];
 ---
 
-<LinuxDesktopTemplate
+<LinuxBaseTemplate
   title="Linux Desktop Environments"
   keywords="linux, desktop, environments, distros"
   description="A collection of popular Linux desktop environments."
@@ -158,7 +177,6 @@ const desktops = [
     <div class="desktop_container">
       {
         desktops.map((desktop) => (
-          <div key={desktop.name} class="desktop-card">
             <div class="icon_and_title">
               <img
                 class="icon"
@@ -175,29 +193,38 @@ const desktops = [
             <h3>Common Distros:</h3>
             <ul>
               {desktop.commonDistros.map((distro) => (
-                <li key={distro.name}>
+                <li>
                   <a href={distro.link} target="_blank">
                     {distro.name}
                   </a>
                 </li>
               ))}
             </ul>
-            <a href={desktop.screenshot} target="_blank">
-              <Image
-                class="screenshot"
-                src={desktop.screenshot_tn}
-                alt={`${desktop.name} screenshot`}
-                width={640}
-                height={400}
-              />
-            </a>
+            <div>
+              {desktop.screenshot_tn ? (
+                <a href={desktop.screenshot?.src} target="_blank">
+                  <Image
+                    class="screenshot"
+                    src={desktop.screenshot_tn}
+                    alt={`${desktop.name} screenshot`}
+                    width={640}
+                    height={400}
+                  />
+                </a>
+              ) : (
+                <div class="screenshot screenshot--placeholder">
+                  No screenshot available
+                </div>
+              )}
+            </div>
+
             <div>Screenshot Distro: {desktop.screenshot_distro}</div>
           </div>
         ))
       }
     </div>
   </div>
-</LinuxDesktopTemplate>
+</LinuxBaseTemplate>
 
 <style lang="scss">
   @use "@scss/base/_index.scss" as *;
