@@ -1,0 +1,22 @@
+---
+// idea this is a template that doesn't have the aside but does have the main area
+// the idea is to use this when no aside is needed.  for now there is no need to make
+// other linuxhq templates use this instead ... they can stay as they are
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LinuxTopMenus from "@layouts/linuxHQ/LinuxTopMenus.astro";
+
+const { title = "" } = Astro.props;
+const appendedTitle = `LinuxHQ Section - ${title}`;
+
+const { keywords, description } = Astro.props;
+---
+
+<BaseLayout
+  title={appendedTitle}
+  keywords={keywords}
+  description={description}
+/>
+    <LinuxTopMenus slot="header" />
+    <slot name="linux-container" />
+</BaseLayout>
