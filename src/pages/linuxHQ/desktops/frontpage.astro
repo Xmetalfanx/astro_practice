@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import LinkToMenu from "@components/global/PageLinkToMenus.astro";
-import LinuxBaseTemplate from "@templates/linuxhq/linux-base-template.astro";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 import budgieIcon from "@assets/linuxHQ/graphics/desktops/icons/budgie.svg";
 import cinnamonIcon from "@assets/linuxHQ/graphics/desktops/icons/cinnamon.png";
@@ -165,7 +165,7 @@ const desktops = [
 ];
 ---
 
-<LinuxBaseTemplate
+<LinuxDesktopTemplate
   title="Linux Desktop Environments"
   keywords="linux, desktop, environments, distros"
   description="A collection of popular Linux desktop environments."
@@ -176,6 +176,7 @@ const desktops = [
     <div class="desktop_container">
       {
         desktops.map((desktop) => (
+          <div class="desktop-card">
             <div class="icon_and_title">
               {desktop.icon ? (
                 <img
@@ -227,7 +228,7 @@ const desktops = [
       }
     </div>
   </div>
-</LinuxBaseTemplate>
+</LinuxDesktopTemplate>
 
 <style lang="scss">
   @use "@scss/base/_index.scss" as *;
@@ -238,11 +239,7 @@ const desktops = [
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 
-    @media ($breakpoint-lg) {
-      .desktop_container {
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
-      }
-    }
+    margin: 1.5rem;
 
     .desktop-card {
       @include flex($direction: column, $ai: center);
