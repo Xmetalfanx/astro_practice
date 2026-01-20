@@ -1,124 +1,114 @@
 @use "base/index" as *;
 
-:root {
-  // setup css var colors based on the sass color vars, of the same names
-  --main-color: #{$main-color};
-  --accent-color: #{$accent-color};
-  --light-color: #{$light-color};
-  --dark-color: #{$dark-color};
-
-  // @include color-variants(main-color);
-  // @include color-variants(accent-color);
-  // @include color-variants(light-color);
-  // @include color-variants(dark-color);
-
-  @include color-scale(main-color);
-  @include color-scale(accent-color);
-  @include color-scale(light-color);
-  @include color-scale(dark-color);
-
-  @include color-variants(main-color);
-  @include color-variants(accent-color);
+// pages may be in .Astro files 
+@layer resets, base, layout, components, pages;
 
 
-  --fw-bold: 800;
+@layer base {
+  :root {
+    // setup css var colors based on the sass color vars, of the same names
+    --main-color: #{$main-color};
+    --accent-color: #{$accent-color};
+    --light-color: #{$light-color};
+    --dark-color: #{$dark-color};
 
-  // 400 (like with some of Kevin Powell's vars is the "middle"/default
-  --fs-200: 1.1rem;
-  --fs-300: 1.15rem;
-  --fs-400: 1.2rem;
-  --fs-500: 1.3rem;
+    // @include color-variants(main-color);
+    // @include color-variants(accent-color);
+    // @include color-variants(light-color);
+    // @include color-variants(dark-color);
 
-  --fs-default: var(--fs-400);
+    @include color-scale(main-color);
+    @include color-scale(accent-color);
+    @include color-scale(light-color);
+    @include color-scale(dark-color);
 
-  --fs-normal: 1.125rem;
-  --fs-large: 1.2rem;
-  --fs-larger: 1.4rem;
+    @include color-variants(main-color);
+    @include color-variants(accent-color);
 
-  // header sizes (fonts)
-  --h1: 2rem;
-  --h2: 1.5rem;
+    --fw-bold: 800;
 
-  // Font Families
-  --ffamily-roboto:
-    "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
-    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    // 400 (like with some of Kevin Powell's vars is the "middle"/default
+    --fs-200: 1.1rem;
+    --fs-300: 1.15rem;
+    --fs-400: 1.2rem;
+    --fs-500: 1.3rem;
 
-  --ffamily-dynapuff: "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
-  --ffamily-e-candy:
-    "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
+    --fs-default: var(--fs-400);
 
-  --ffamily-header: var(--ffamily-dynapuff);
-  --ffamily-nav: var(--ffamily-e-candy);
+    --fs-normal: 1.125rem;
+    --fs-large: 1.2rem;
+    --fs-larger: 1.4rem;
 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    // header sizes (fonts)
+    --h1: 2rem;
+    --h2: 1.5rem;
 
-html {
-  @include theme-color-root(light-color, dark-color, --surface-color);
+    // Font Families
+    --ffamily-roboto:
+      "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+      "Helvetica Neue", arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol";
 
-  @include surface-levels();
+    --ffamily-dynapuff:
+      "DynaPuff", -apple-system, blinkmacsystemfont, "Segoe UI";
+    --ffamily-e-candy:
+      "Emilys Candy", -apple-system, blinkmacsystemfont, "Segoe UI";
 
-  color-scheme: light dark;
-}
+    --ffamily-header: var(--ffamily-dynapuff);
+    --ffamily-nav: var(--ffamily-e-candy);
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  // for the background-color
-  @include theme-color-root(light-color, dark-color, background-color);
-
-  // "fg" color
-  @include theme-color-root(dark-color, light-color);
-
-  font-size: var(--fs-normal);
-
-  display: grid;
-  grid-template: 1fr auto 1fr / 1fr;
-  grid-template-areas:
-    "header"
-    "primary-container"
-    "footer";
-
-  height: 100vh;
-
-  // default links ... things like header and footer are styled specifically, there
-  a,
-  a:link {
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  @media ($breakpoint-sm) {
+  html {
+    @include theme-color-root(light-color, dark-color, --surface-color);
+
+    @include surface-levels();
+
+    color-scheme: light dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    // for the background-color
+    @include theme-color-root(light-color, dark-color, background-color);
+
+    // "fg" color
+    @include theme-color-root(dark-color, light-color);
+
+    font-size: var(--fs-normal);
+
+    display: grid;
+    grid-template: 1fr auto 1fr / 1fr;
     grid-template-areas:
+      "header"
       "primary-container"
-      "header";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-  }
-}
+      "footer";
 
-.fw-bold {
-  font-weight: var(--fw-bold);
-}
+    height: 100vh;
 
-// Screenshot
-.screenshot {
-  margin: 0 1.5rem;
-  img {
-    width: 100%;
-    height: auto;
+    // default links ... things like header and footer are styled specifically, there
+    a,
+    a:link {
+      text-decoration: none;
+    }
 
     @media ($breakpoint-sm) {
-      width: 50%;
+      grid-template-areas:
+        "primary-container"
+        "header";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
     }
+
   }
 }

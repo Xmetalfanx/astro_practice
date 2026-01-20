@@ -1,54 +1,54 @@
 @use "base/index" as *;
 
-header,
-footer {
-  @include theme-color-element(
-    main-color-500,
-    main-color-600,
-    background-color
-  );
-  @include theme-color-element(light-color-500, light-color-400, color);
+@layer layout {
+  header,
+  footer {
+    @include theme-color-element(
+      main-color-500,
+      main-color-600,
+      background-color
+    );
+    @include theme-color-element(light-color-500, light-color-400, color);
 
-  a {
-    @include theme-color-element(light-color, light-color, color);
-    padding: 0.5rem;
+    a {
+      @include theme-color-element(light-color, light-color, color);
+      padding: 0.5rem;
 
-    &:hover {
-      border-radius: 0.75rem;
+      &:hover {
+        border-radius: 0.75rem;
 
-      // change background color on hover
-      @include theme-color-element(
-        main-color-600,
-        main-color-soft,
-        background-color
-      );
+        // change background color on hover
+        @include theme-color-element(
+          main-color-600,
+          main-color-soft,
+          background-color
+        );
 
-      // adds outline on hover
-      @include outline(
-        $color: var(--light-color-500),
-        $color-dark: var(--light-color-500)
-      );
+        // adds outline on hover
+        @include outline(
+          $color: var(--light-color-500),
+          $color-dark: var(--light-color-500)
+        );
+      }
     }
   }
-}
 
-header {
-  grid-area: header;
+  header {
+    grid-area: header;
 
-  @include flex($jc: space-between, $ai: center);
-  padding: 0.5rem;
+    @include flex($jc: space-between, $ai: center);
+    padding: 0.5rem;
 
-  nav {
-    @include flex;
+    nav {
+      @include flex;
 
-    gap: 3rem;
-    font-family: var(--ffamily-nav);
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.6rem;
+      gap: 3rem;
+      font-family: var(--ffamily-nav);
+      font-weight: 700;
+      font-style: normal;
+      font-size: 1.6rem;
+    }
+
+    font-weight: var(--fw-bold);
   }
-
-  font-weight: var(--fw-bold);
 }
-
-

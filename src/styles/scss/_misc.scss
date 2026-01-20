@@ -1,34 +1,68 @@
 @use "base/index" as *;
 
-.desktop_container {
-  // note to self: the default flex direction is row
-  // not sure about this here (the jc)
-  @include flex($jc: space-between);
+// this is global
+@layer layout {
+  .desktop_container {
+    // note to self: the default flex direction is row
+    // not sure about this here (the jc)
+    @include flex($jc: space-between);
 
-  .desktop-card {
-    background-color: var(--surface-l2);
+    .desktop-card {
+      background-color: var(--surface-l2);
 
-    @include default-ol-and-bs(
-      $bs-x: 0,
-      $bs-y: 0.15rem,
-      $bs-blur: 0.6rem,
-      // bs-color default is main-color
-      $bs-color-dark: var(--light-color)
-    );
+      @include default-ol-and-bs(
+        $bs-x: 0,
+        $bs-y: 0.15rem,
+        $bs-blur: 0.6rem,
+        // bs-color default is main-color
+        $bs-color-dark: var(--light-color)
+      );
+    }
   }
 }
 
-.mobile_menu_related {
-  display: none;
-  // what is this (below) for if display is none?
-  // writing-mode: horizontal-tb;
+@layer components {
+  .fw-bold {
+    font-weight: var(--fw-bold);
+  }
 
-  @media ($breakpoint-sm) {
-    @include links;
+  // Screenshot
+  .screenshot {
+    margin: 0 1.5rem;
+    img {
+      width: 100%;
+      height: auto;
 
-    display: block;
-    margin: 1rem auto;
-    scroll-behavior: smooth;
+      @media ($breakpoint-sm) {
+        width: 50%;
+      }
+    }
+  }
+  // for theme toggle button 
+  #theme-toggle {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--light-color);
+
+    // remember this is for the items IN the button,
+    // not #theme-toggle in the footer itself
+    @include flex($ai: center, $jc: center);
+
+    @media ($breakpoint-sm) {
+      scale: 1.45;
+    }
+
+    // for the svg color
+    svg {
+      fill: var(--accent-color);
+
+      transition: all 0.3s ease-in-out;
+    }
   }
   // for theme toggle button 
   #theme-toggle {
