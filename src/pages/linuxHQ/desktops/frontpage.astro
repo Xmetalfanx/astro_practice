@@ -234,15 +234,19 @@ const desktops = [
   @use "@scss/base/_index.scss" as *;
   @use "@scss/_misc.scss" as *;
 
+  // globally this is set to flex... why grid here?
+  // could what is done with grid-template-column be done in flex?
   .desktop_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 
     margin: 1.5rem;
 
     .desktop-card {
+      flex: 1 1 350px;
+      flex-wrap: wrap;
+
       @include flex($direction: column, $ai: center);
+
       padding: 1rem;
       border-radius: 5px;
       /* Responsive width using clamp, but grid controls columns */
