@@ -11,3 +11,21 @@
   <!-- Target for Link to Menu -->
   <div id="asidetarget"></div>
 </div>
+
+
+<style>
+  .mobile_menu_related {
+    display: none;
+    // what is this (below) for if display is none?
+    // writing-mode: horizontal-tb;
+
+    @media ($breakpoint-sm) {
+      @include links;
+
+      display: block;
+      margin: 1rem auto;
+      scroll-behavior: smooth;
+    }
+  }
+
+</style>
