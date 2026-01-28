@@ -43,14 +43,9 @@
   }
 }
 
-
-// after refactoring i am not sure this mixin below makes sense
-
-// applies a color role + level, nothing else
-// @mixin theme-color($name, $level: 1, $property: background-color) {
-//   #{$property}: var(--#{$name}-l#{$level});
-// }
-
+// logic: 
+  // “Given the current theme (light or dark), 
+  // what is the value of --surface-color?”"
 @mixin theme-color-root(
   $light_theme_color: light-color,
   $dark_theme_color: dark-color,
