@@ -28,7 +28,9 @@
   );
 }
 
-// for the dark or light color
+// logic: 
+  // “Once I have a surface color, 
+  // how do I derive slightly raised or recessed surfaces?”
 @mixin surface-levels($step1: 0.08, $step2: 0.14, $step3: 0.22) {
   &[data-theme="light"] {
     --surface-l2: oklch(from var(--surface-color) calc(l - #{$step1}) c h);
@@ -74,6 +76,8 @@
   }
 }
 
+
+// I think this was just a test and not really in use anywhere  
 @mixin custom_colormix(
   $color1: red,
   $color2: blue,
