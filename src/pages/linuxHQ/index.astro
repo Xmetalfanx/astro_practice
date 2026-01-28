@@ -1,8 +1,8 @@
 ---
-import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.astro";
+import LinuxBlankTemplate from "@layouts/templates/linuxhq/linux-blank-template.astro";
 ---
 
-<LinuxBaseTemplate
+<LinuxBlankTemplate
   title="Linux Desktops"
   keywords="Linux Desktops, Linux Desktop Environments, Linux Desktop Themes"
   description="Linux Desktops, Desktop Environments, and Themes"
@@ -43,77 +43,77 @@ import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.as
       </ul>
     </section>
   </div>
-</LinuxBaseTemplate>
+</LinuxBlankTemplate>
 
 <style lang="scss">
   @use "@scss/base/_index.scss" as *;
 
-  .linux-main {
-    @include flex($direction: column, $wrap: nowrap, $ai: center);
+  @layer pages {
+    .linux-main {
+      @include flex($direction: column, $wrap: nowrap, $ai: center);
 
-    padding: 1.5rem 2rem;
+      padding: 1.5rem 2rem;
 
-    @media (width <= $breakpoint-sm) {
-      padding: unset;
-    }
-
-    > * {
-      max-width: 80%;
-      margin: 1rem 0;
-    }
-
-    section {
-      background-color: var(--surface-l2);
-      @include border-radius;
-
-      // use outline and box-shadow combo mixin
-      @include default-ol-and-bs( 
-        $ol-color: var(--accent-color),
-        $ol-color-dark: var(--light-color),
-        $bs-color: var(--accent-color),
-        $bs-color-dark: var(--light-color),
-        $bs-x: 5px,
-        $bs-y: 5px,
-        $bs-blur: 3px
-      );
-
-      max-width: 60vw;
-      padding: 1.5rem;
-      
-      @media ($breakpoint-sm) {
-        max-width: 100%;
+      @media (width <= $breakpoint-sm) {
+        padding: unset;
       }
 
-      
-
-      p {
+      > * {
+        max-width: 80%;
         margin: 1rem 0;
       }
-    }
 
-    h1 {
-      font-size: 1.5rem;
-      // margin: 1rem 0;
-      font-weight: 600;
-    }
+      section {
+        background-color: var(--surface-l2);
+        @include border-radius;
 
-    ul {
-      // list-style-type: none;
-      margin: 2rem 1rem;
-      padding: 0;
+        // use outline and box-shadow combo mixin
+        @include default-ol-and-bs(
+          $ol-color: var(--accent-color),
+          $ol-color-dark: var(--light-color),
+          $bs-color: var(--accent-color),
+          $bs-color-dark: var(--light-color),
+          $bs-x: 5px,
+          $bs-y: 5px,
+          $bs-blur: 3px
+        );
 
-      li {
-        border-radius: 8px;
-        margin-left: 2rem;
-        padding: 1rem;
-
-        transition: box-shadow 0.3s ease;
-
-        // removes the extra background level ... not sure why i set that globally
-        background-color: unset;
+        max-width: 60vw;
+        padding: 1.5rem;
 
         @media ($breakpoint-sm) {
-          padding: 0 1.5rem
+          max-width: 100%;
+        }
+
+        p {
+          margin: 1rem 0;
+        }
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        // margin: 1rem 0;
+        font-weight: 600;
+      }
+
+      ul {
+        // list-style-type: none;
+        margin: 2rem 1rem;
+        padding: 0;
+
+        li {
+          border-radius: 8px;
+          margin-left: 2rem;
+          padding: 1rem;
+
+          transition: box-shadow 0.3s ease;
+
+          // removes the extra background level ... not sure why i set that globally
+          background-color: unset;
+
+          @media ($breakpoint-sm) {
+            padding: 0 1.5rem;
+          }
         }
       }
     }
