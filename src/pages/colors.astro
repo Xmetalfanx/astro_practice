@@ -2,10 +2,10 @@
 import "@css/global-styles.css";
 ---
 
-<table class="palette">
+<table>
   <thead>
     <tr>
-      <th></th>
+      <th>Level</th>
       <th>main-color</th>
       <th>accent-color</th>
       <th>Light</th>
@@ -22,10 +22,10 @@ import "@css/global-styles.css";
     </tr>
     <tr>
       <th>200</th>
-      <td style="background: var(--main-color-100)">200</td>
-      <td style="background: var(--accent-color-100)">200</td>
-      <td style="background: var(--light-color-100)">200</td>
-      <td style="background: var(--dark-color-100)">200</td>
+      <td style="background: var(--main-color-200)">200</td>
+      <td style="background: var(--accent-color-200)">200</td>
+      <td style="background: var(--light-color-200)">200</td>
+      <td style="background: var(--dark-color-200)">200</td>
     </tr>
     <tr>
       <th>300</th>
@@ -35,7 +35,7 @@ import "@css/global-styles.css";
       <td style="background: var(--dark-color-300)">300</td>
     </tr>
     <tr>
-      <th>500</th>
+      <th>500 (default)</th>
       <td style="background: var(--main-color-500)">500</td>
       <td style="background: var(--accent-color-500)">500</td>
       <td style="background: var(--light-color-500)">500</td>
@@ -99,7 +99,7 @@ import "@css/global-styles.css";
       >
     </tr> -->
     <!-- Grouped by level, each row uses the same color variable type for all tds -->
-    <tr>
+    <!-- <tr>
       <th>level 1</th>
       <td style="background: var(--main-color-l1)">main-color-l1</td>
       <td style="background: var(--main-color-l2)">main-color-l2</td>
@@ -126,15 +126,25 @@ import "@css/global-styles.css";
       <td style="background: var(--dark-color-l2)">dark-color-l2</td>
       <td style="background: var(--dark-color-l3)">dark-color-l3</td>
       <td style="background: var(--dark-color-l4)">dark-color-l4</td>
-    </tr>
+    </tr> -->
+    <!-- <tr>
+      <th>surface level 1</th>
+      <td style="background: var(--surface-l1)">surface-color-l1</td>
+      <td style="background: var(--surface-l2)">surface-color-l2</td>
+      <td style="background: var(--surface-l3)">surface-color-l3</td>
+      <td style="background: var(--surface-l4)">surface-color-l4</td>
+    </tr> -->
+
+
   </tbody>
 </table>
+<div>
 
-<!-- <table>
-  <tbody>
-    <tr> Surface colors </tr>
-  </tbody>
-</table> -->
+  Remember that the surface colors and handled in a sense by the --suface type variables 
+  .. the range from 100 to 900 for light and dark colors are NOT "really needed"...
+  I do not think
+
+</div>
 
 <style>
   * {
@@ -148,5 +158,9 @@ import "@css/global-styles.css";
     td {
       width: 25%;
     }
+  }
+
+  div {
+    margin-inline: 2rem;
   }
 </style>
