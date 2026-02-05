@@ -4,33 +4,30 @@
 // the 100 to 900 scale
 @mixin color-scale($name) {
   --#{$name}-100: color-mix(in oklch, var(--#{$name}) 75%, var(--light-color));
-  --#{$name}-200: color-mix(in oklch, var(--#{$name}) 80%, var(--light-color));
-  --#{$name}-300: color-mix(in oklch, var(--#{$name}) 95%, var(--light-color));
-  --#{$name}-400: color-mix(in oklch, var(--#{$name}) 90%, var(--light-color));
+  --#{$name}-200: color-mix(in oklch, var(--#{$name}) 85%, var(--light-color));
+  --#{$name}-300: color-mix(in oklch, var(--#{$name}) 90%, var(--light-color));
+  --#{$name}-400: color-mix(in oklch, var(--#{$name}) 95%, var(--light-color));
   --#{$name}-500: var(--#{$name});
-  --#{$name}-600: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
+  --#{$name}-600: color-mix(in oklch, var(--#{$name}) 95%, var(--dark-color));
   --#{$name}-700: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
-  --#{$name}-800: color-mix(in oklch, var(--#{$name}) 90%, var(--dark-color));
-  --#{$name}-900: color-mix(in oklch, var(--#{$name}) 80%, var(--dark-color));
+  --#{$name}-800: color-mix(in oklch, var(--#{$name}) 85%, var(--dark-color));
+  --#{$name}-900: color-mix(in oklch, var(--#{$name}) 70%, var(--dark-color));
 }
 
 // this would be for the main or accent colors
-@mixin color-variants(
-  $name,
+@mixin color-variants($name,
   // softness: lighter + less chroma
   $soft_l: 0.004,
   $soft_c: 0.035,
 
 ) {
   // soft → background-friendly, subdued
-  --#{$name}-soft: oklch(
-    from var(--#{$name}) calc(l + #{$soft_l}) calc(c - #{$soft_c}) h
-  );
+  --#{$name}-soft: oklch(from var(--#{$name}) calc(l + #{$soft_l}) calc(c - #{$soft_c}) h);
 }
 
 // logic: 
-  // “Once I have a surface color, 
-  // how do I derive slightly raised or recessed surfaces?”
+// “Once I have a surface color, 
+// how do I derive slightly raised or recessed surfaces?”
 @mixin surface-levels($step1: 0.08, $step2: 0.14, $step3: 0.22) {
   &[data-theme="light"] {
     --surface-l2: oklch(from var(--surface-color) calc(l - #{$step1}) c h);
@@ -46,27 +43,24 @@
 }
 
 // logic: 
-  // “Given the current theme (light or dark), 
-  // what is the value of --surface-color?”"
-@mixin theme-color-root(
-  $light_theme_color: light-color,
+// “Given the current theme (light or dark), 
+// what is the value of --surface-color?”"
+@mixin theme-color-root($light_theme_color: light-color,
   $dark_theme_color: dark-color,
-  $property: color
-) {
+  $property: color) {
   @at-root html[data-theme="dark"] {
     #{$property}: var(--#{$dark_theme_color});
   }
+
   @at-root html[data-theme="light"] {
     #{$property}: var(--#{$light_theme_color});
   }
 }
 
 // note to self: the "500" colors are default shades/whatever 
-@mixin theme-color-element(
-  $light: light-color-500,
+@mixin theme-color-element($light: light-color-500,
   $dark: dark-color-500,
-  $property: color
-) {
+  $property: color) {
   html[data-theme="dark"] & {
     #{$property}: var(--#{$dark});
   }
@@ -78,11 +72,9 @@
 
 
 // I think this was just a test and not really in use anywhere  
-@mixin custom_colormix(
-  $color1: red,
+@mixin custom_colormix($color1: red,
   $color2: blue,
-  $property: background-color
-) {
+  $property: background-color) {
   // #{$property}: colormix(in lab, $color1, $color2);
   #{$property}: colormix(in lab, #{$color1}, #{$color2});
 }
