@@ -1,24 +1,24 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@graphics/*": ["src/assets/graphics/*"],
-      "@css/*": ["src/styles/*"],
-      "@scss/*": ["src/styles/scss/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@data/*": ["src/data/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@templates/*": ["src/layouts/templates/*"],
-      "@global_layout/*": ["src/layouts/global/*"],
-      "@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
-      "@distro_icons/*": ["/src/assets/linuxHQ/graphics/distros/icons/*"],
-      "@distro_ss/*": ["/src/assets/linuxHQ/graphics/distros/screenshots/*"],
-      "@desktop_icons/*": ["/src/assets/linuxHQ/graphics/desktops/icons/*"],
-      "@desktop_ss/*": ["/src/assets/linuxHQ/graphics/desktops/screenshots/*"]
-    }
-  }
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@assets/*": ["src/assets/*"],
+			"@graphics/*": ["src/assets/graphics/*"],
+			"@css/*": ["src/styles/*"],
+			"@scss/*": ["src/styles/scss/*"],
+			"@scripts/*": ["src/scripts/*"],
+			"@data/*": ["src/data/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@pages/*": ["src/pages/*"],
+			"@templates/*": ["src/layouts/templates/*"],
+			"@global_layout/*": ["src/layouts/global/*"],
+			"@linux_aside/*": ["src/layouts/linuxHQ/asides/*"],
+			"@distro_icons/*": ["/src/assets/linuxHQ/graphics/distros/icons/*"],
+			"@distro_ss/*": ["/src/assets/linuxHQ/graphics/distros/screenshots/*"],
+			"@desktop_icons/*": ["/src/assets/linuxHQ/graphics/desktops/icons/*"],
+			"@desktop_ss/*": ["/src/assets/linuxHQ/graphics/desktops/screenshots/*"]
+		}
+	}
 }
