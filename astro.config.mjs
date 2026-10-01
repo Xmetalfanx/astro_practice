@@ -1,14 +1,30 @@
+import { fileURLToPath } from "node:url";
+
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
-// export default defineConfig({});
+const scssPath = fileURLToPath(
+    new URL("./src/styles/scss", import.meta.url),
+);
 
-// xmetal added
 export default defineConfig({
-	vite: {
-		build: {
-			minify: false,
-			cssMinify: false,
-		},
-	},
+    vite: {
+        resolve: {
+            alias: {
+                "@scss": scssPath,
+            },
+        },
+
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@use "@scss/base/index" as *;',
+                },
+            },
+        },
+
+        build: {
+            minify: false,
+            cssMinify: false,
+        },
+    },
 });
