@@ -10,14 +10,14 @@ let theme = localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
 applyTheme(theme);
 
 themeToggle.addEventListener("click", () => {
-  theme = theme === "light" ? "dark" : "light";
-  localStorage.setItem("theme", theme);
-  applyTheme(theme);
+	theme = theme === "light" ? "dark" : "light";
+	localStorage.setItem("theme", theme);
+	applyTheme(theme);
 });
 
 function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
+	document.documentElement.dataset.theme = theme;
 
-  lightIcon.style.display = theme === "dark" ? "none" : "block";
-  darkIcon.style.display = theme === "dark" ? "block" : "none";
+	lightIcon.style.display = theme === "dark" ? "none" : "block";
+	darkIcon.style.display = theme === "dark" ? "block" : "none";
 }
