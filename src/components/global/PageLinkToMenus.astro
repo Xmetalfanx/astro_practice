@@ -14,11 +14,12 @@
 <style>
   .mobile_menu_related {
     display: none;
-    // what is this (below) for if display is none?
-    // writing-mode: horizontal-tb;
-
+    
     @media ($breakpoint-sm) {
       @include links;
+
+      writing-mode: horizontal-tb;
+
 
       display: block;
       margin: 1rem auto;
