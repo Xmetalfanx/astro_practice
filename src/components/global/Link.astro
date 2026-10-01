@@ -5,6 +5,11 @@ interface Props {
     class?: string
 }
 
-const {linktext, location, class} = Astro.props;
+const {
+    linktext,
+    location,
+    class: className,
+} = Astro.props;
+
 ---
 <a href={location}>{linktext}</a>
