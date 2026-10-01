@@ -4,6 +4,13 @@
 // for the images
 import { Image } from "astro:assets";
 import LinkToMenus from "@components/global/PageLinkToMenus.astro";
+import archIcon from "@distro_icons/arch.svg";
+import debianIcon from "@distro_icons/debian.svg";
+import fedoraIcon from "@distro_icons/fedora.svg";
+// for icons
+import linuxMintIcon from "@distro_icons/linuxmint.svg";
+import openSUSEIcon from "@distro_icons/opensuse.svg";
+import ubuntuIcon from "@distro_icons/ubuntu.svg";
 import archSSSrc from "@distro_ss/arch_based/arch.png";
 import archThumbnail from "@distro_ss/arch_based/thumbnails/arch-small.png";
 import debianSSSrc from "@distro_ss/debian_based/debian.png";
@@ -12,22 +19,14 @@ import fedoraSSSrc from "@distro_ss/rpm_based/fedora.png";
 import openSUSESSSrc from "@distro_ss/rpm_based/opensuse.png";
 import fedoraThumbnail from "@distro_ss/rpm_based/thumbnails/fedora-small.png";
 import openSUSEThumbnail from "@distro_ss/rpm_based/thumbnails/opensuse-small.png";
-// Template to use
-import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 // for the screenshot sources
 import linuxMintSSSrc from "@distro_ss/ubuntu_based/mint.png";
 // For the thumbnails
 import linuxMintThumbnail from "@distro_ss/ubuntu_based/thumbnails/mint-small.png";
 import ubuntuThumbnail from "@distro_ss/ubuntu_based/thumbnails/ubuntu-small.png";
 import ubuntuSSSrc from "@distro_ss/ubuntu_based/ubuntu.png";
-
-// for icons
-import linuxMintIcon from "@distro_icons/linuxmint.svg";
-import archIcon from "@distro_icons/arch.svg";
-import ubuntuIcon from "@distro_icons/ubuntu.svg";
-import debianIcon from "@distro_icons/debian.svg";
-import fedoraIcon from "@distro_icons/fedora.svg";
-import openSUSEIcon from "@distro_icons/opensuse.svg";
+// Template to use
+import LinuxDistroTemplate from "@templates/linuxhq/linux-distro-template.astro";
 
 const distros = [
 	{
@@ -242,7 +241,6 @@ const distros = [
 </LinuxDistroTemplate>
 
 <style lang="scss">
-  @use "@scss/index" as *;
 
   .distro-container {
     @include flex($jc: space-evenly);

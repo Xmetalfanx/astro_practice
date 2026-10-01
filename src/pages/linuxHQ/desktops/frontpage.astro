@@ -1,167 +1,165 @@
 ---
 import { Image } from "astro:assets";
-import LinkToMenu from "@components/global/PageLinkToMenus.astro";
-import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
-
 import budgieIcon from "@assets/linuxHQ/graphics/desktops/icons/budgie.svg";
 import cinnamonIcon from "@assets/linuxHQ/graphics/desktops/icons/cinnamon.png";
 import cosmicIcon from "@assets/linuxHQ/graphics/desktops/icons/cosmic.png";
 import gnomeIcon from "@assets/linuxHQ/graphics/desktops/icons/gnome.svg";
-import plasmaIcon from "@assets/linuxHQ/graphics/desktops/icons/plasma.svg";
 import lxqtIcon from "@assets/linuxHQ/graphics/desktops/icons/lxqt.png";
 import mateIcon from "@assets/linuxHQ/graphics/desktops/icons/mate.png";
+import plasmaIcon from "@assets/linuxHQ/graphics/desktops/icons/plasma.svg";
 //import pantheonIcon from "@assets/linuxHQ/graphics/desktops/icons/pantheon.svg";
 import xfceIcon from "@assets/linuxHQ/graphics/desktops/icons/xfce.svg";
-
+import LinkToMenu from "@components/global/PageLinkToMenus.astro";
 // Screenshot imports
 import budgieScreenshot from "@desktop_ss/budgie.avif";
-import budgieScreenshotTn from "@desktop_ss/thumbnails/budgie-small.avif";
 import cinnamonScreenshot from "@desktop_ss/cinnamon.png";
-import cinnamonScreenshotTn from "@desktop_ss/thumbnails/cinnamon-small.png";
 // import cosmicScreenshot from "@desktop_ss/cosmic.png";
 // import cosmicScreenshotTn from "@desktop_ss/thumbnails/cosmic-small.png";
 import gnomeScreenshot from "@desktop_ss/gnome.png";
-import gnomeScreenshotTn from "@desktop_ss/thumbnails/gnome-small.png";
-import plasmaScreenshot from "@desktop_ss/plasma.png";
-import plasmaScreenshotTn from "@desktop_ss/thumbnails/plasma-small.png";
 import lxqtScreenshot from "@desktop_ss/lxqt.png";
-import lxqtScreenshotTn from "@desktop_ss/thumbnails/lxqt-small.png";
 import mateScreenshot from "@desktop_ss/mate.png";
-import mateScreenshotTn from "@desktop_ss/thumbnails/mate-small.png";
 import pantheonScreenshot from "@desktop_ss/pantheon.png";
+import plasmaScreenshot from "@desktop_ss/plasma.png";
+import budgieScreenshotTn from "@desktop_ss/thumbnails/budgie-small.avif";
+import cinnamonScreenshotTn from "@desktop_ss/thumbnails/cinnamon-small.png";
+import gnomeScreenshotTn from "@desktop_ss/thumbnails/gnome-small.png";
+import lxqtScreenshotTn from "@desktop_ss/thumbnails/lxqt-small.png";
+import mateScreenshotTn from "@desktop_ss/thumbnails/mate-small.png";
 import pantheonScreenshotTn from "@desktop_ss/thumbnails/pantheon-small.png";
-import xfceScreenshot from "@desktop_ss/xfce.png";
+import plasmaScreenshotTn from "@desktop_ss/thumbnails/plasma-small.png";
 import xfceScreenshotTn from "@desktop_ss/thumbnails/xfce-small.png";
+import xfceScreenshot from "@desktop_ss/xfce.png";
+import LinuxDesktopTemplate from "@templates/linuxhq/linux-desktop-template.astro";
 
 const desktopicon_path = "@assets/linuxHQ/graphics/desktops/icons";
 
 const desktops = [
-  {
-    name: "Budgie",
-    icon: budgieIcon,
-    description:
-      "Budgie is a desktop environment that focuses on simplicity and elegance. It is developed by the Solus project.",
-    homepage: "https://getsol.us/home/",
-    commonDistros: [
-      { name: "Solus", link: "https://getsol.us/home/" },
-      { name: "Ubuntu Budgie", link: "https://ubuntubudgie.org/" },
-      { name: "Arch Linux", link: "https://archlinux.org/" },
-    ],
-    screenshot: budgieScreenshot,
-    screenshot_tn: budgieScreenshotTn,
-    screenshot_distro: "unknown",
-  },
-  {
-    name: "Cinnamon",
-    icon: cinnamonIcon,
-    description:
-      "Cinnamon is a Linux desktop environment that provides advanced innovative features and a traditional user experience.",
-    homepage: "https://linuxmint.com/",
-    commonDistros: [
-      { name: "Linux Mint", link: "https://linuxmint.com/" },
-      { name: "Fedora", link: "https://getfedora.org/" },
-      { name: "Manjaro", link: "https://manjaro.org/" },
-    ],
-    screenshot: cinnamonScreenshot,
-    screenshot_tn: cinnamonScreenshotTn,
-    screenshot_distro: "Linux Mint 22.x",
-  },
-  {
-    name: "Cosmic",
-    icon: cosmicIcon,
-    description:
-      "Cosmic is a modern desktop environment developed by System76, designed to be intuitive and customizable.",
-    homepage: "https://pop.system76.com/",
-    commonDistros: [{ name: "Pop!_OS", link: "https://pop.system76.com/" }],
-    screenshot: undefined,
-    screenshot_tn: undefined,
-    screenshot_distro: "",
-  },
-  {
-    name: "GNOME",
-    icon: gnomeIcon,
-    description:
-      "GNOME is a desktop environment composed of free and open-source software that runs on Linux and most BSD derivatives.",
-    homepage: "https://www.gnome.org/",
-    commonDistros: [
-      { name: "Ubuntu", link: "https://ubuntu.com/" },
-      { name: "Fedora", link: "https://getfedora.org/" },
-      { name: "Debian", link: "https://www.debian.org/" },
-    ],
-    screenshot: gnomeScreenshot,
-    screenshot_tn: gnomeScreenshotTn,
-    screenshot_distro: "Ubuntu 24.04",
-  },
-  {
-    name: "KDE Plasma",
-    icon: plasmaIcon,
-    description:
-      "KDE Plasma is a modern desktop environment designed to be powerful, flexible, and customizable.",
-    homepage: "https://kde.org/plasma-desktop",
-    commonDistros: [
-      { name: "Kubuntu", link: "https://kubuntu.org/" },
-      { name: "openSUSE", link: "https://www.opensuse.org/" },
-      { name: "Manjaro", link: "https://manjaro.org/" },
-    ],
-    screenshot: plasmaScreenshot,
-    screenshot_tn: plasmaScreenshotTn,
-    screenshot_distro: "Not Known - Maybe Kubuntu 24",
-  },
-  {
-    name: "LXQt",
-    icon: lxqtIcon,
-    description:
-      "LXQt is a lightweight, modular, fast, and user-friendly desktop environment.",
-    homepage: "https://lxqt-project.org/",
-    commonDistros: [
-      { name: "Lubuntu", link: "https://lubuntu.me/" },
-      { name: "SparkyLinux", link: "https://sparkylinux.org/" },
-      { name: "Manjaro", link: "https://manjaro.org/" },
-    ],
-    screenshot: lxqtScreenshot,
-    screenshot_tn: lxqtScreenshotTn,
-    screenshot_distro: "",
-  },
-  {
-    name: "MATE",
-    icon: mateIcon,
-    description:
-      "MATE is a desktop environment that continues the legacy of GNOME 2, providing a traditional desktop experience.",
-    homepage: "https://mate-desktop.org/",
-    commonDistros: [
-      { name: "Ubuntu MATE", link: "https://ubuntu-mate.org/" },
-      { name: "Linux Mint", link: "https://linuxmint.com/" },
-      { name: "Fedora", link: "https://getfedora.org/" },
-    ],
-    screenshot: mateScreenshot,
-    screenshot_tn: mateScreenshotTn,
-    screenshot_distro: "Fedora - Mate 1.26",
-  },
-  {
-    name: "Pantheon",
-    description:
-      "Pantheon is the desktop environment of elementary OS, known for its simplicity, elegance, and user-friendly design.",
-    homepage: "https://elementary.io/",
-    commonDistros: [{ name: "elementary OS", link: "https://elementary.io/" }],
-    screenshot: pantheonScreenshot,
-    screenshot_tn: pantheonScreenshotTn,
-    screenshot_distro: "ElementaryOS 6.x",
-  },
-  {
-    name: "XFCE",
-    icon: xfceIcon,
-    description:
-      "XFCE is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources.",
-    homepage: "https://xfce.org/",
-    commonDistros: [
-      { name: "Xubuntu", link: "https://xubuntu.org/" },
-      { name: "Linux Mint", link: "https://linuxmint.com/" },
-      { name: "MX Linux", link: "https://mxlinux.org/" },
-    ],
-    screenshot: xfceScreenshot,
-    screenshot_tn: xfceScreenshotTn,
-    screenshot_distro: "Xubuntu 24.04",
-  },
+	{
+		name: "Budgie",
+		icon: budgieIcon,
+		description:
+			"Budgie is a desktop environment that focuses on simplicity and elegance. It is developed by the Solus project.",
+		homepage: "https://getsol.us/home/",
+		commonDistros: [
+			{ name: "Solus", link: "https://getsol.us/home/" },
+			{ name: "Ubuntu Budgie", link: "https://ubuntubudgie.org/" },
+			{ name: "Arch Linux", link: "https://archlinux.org/" },
+		],
+		screenshot: budgieScreenshot,
+		screenshot_tn: budgieScreenshotTn,
+		screenshot_distro: "unknown",
+	},
+	{
+		name: "Cinnamon",
+		icon: cinnamonIcon,
+		description:
+			"Cinnamon is a Linux desktop environment that provides advanced innovative features and a traditional user experience.",
+		homepage: "https://linuxmint.com/",
+		commonDistros: [
+			{ name: "Linux Mint", link: "https://linuxmint.com/" },
+			{ name: "Fedora", link: "https://getfedora.org/" },
+			{ name: "Manjaro", link: "https://manjaro.org/" },
+		],
+		screenshot: cinnamonScreenshot,
+		screenshot_tn: cinnamonScreenshotTn,
+		screenshot_distro: "Linux Mint 22.x",
+	},
+	{
+		name: "Cosmic",
+		icon: cosmicIcon,
+		description:
+			"Cosmic is a modern desktop environment developed by System76, designed to be intuitive and customizable.",
+		homepage: "https://pop.system76.com/",
+		commonDistros: [{ name: "Pop!_OS", link: "https://pop.system76.com/" }],
+		screenshot: undefined,
+		screenshot_tn: undefined,
+		screenshot_distro: "",
+	},
+	{
+		name: "GNOME",
+		icon: gnomeIcon,
+		description:
+			"GNOME is a desktop environment composed of free and open-source software that runs on Linux and most BSD derivatives.",
+		homepage: "https://www.gnome.org/",
+		commonDistros: [
+			{ name: "Ubuntu", link: "https://ubuntu.com/" },
+			{ name: "Fedora", link: "https://getfedora.org/" },
+			{ name: "Debian", link: "https://www.debian.org/" },
+		],
+		screenshot: gnomeScreenshot,
+		screenshot_tn: gnomeScreenshotTn,
+		screenshot_distro: "Ubuntu 24.04",
+	},
+	{
+		name: "KDE Plasma",
+		icon: plasmaIcon,
+		description:
+			"KDE Plasma is a modern desktop environment designed to be powerful, flexible, and customizable.",
+		homepage: "https://kde.org/plasma-desktop",
+		commonDistros: [
+			{ name: "Kubuntu", link: "https://kubuntu.org/" },
+			{ name: "openSUSE", link: "https://www.opensuse.org/" },
+			{ name: "Manjaro", link: "https://manjaro.org/" },
+		],
+		screenshot: plasmaScreenshot,
+		screenshot_tn: plasmaScreenshotTn,
+		screenshot_distro: "Not Known - Maybe Kubuntu 24",
+	},
+	{
+		name: "LXQt",
+		icon: lxqtIcon,
+		description:
+			"LXQt is a lightweight, modular, fast, and user-friendly desktop environment.",
+		homepage: "https://lxqt-project.org/",
+		commonDistros: [
+			{ name: "Lubuntu", link: "https://lubuntu.me/" },
+			{ name: "SparkyLinux", link: "https://sparkylinux.org/" },
+			{ name: "Manjaro", link: "https://manjaro.org/" },
+		],
+		screenshot: lxqtScreenshot,
+		screenshot_tn: lxqtScreenshotTn,
+		screenshot_distro: "",
+	},
+	{
+		name: "MATE",
+		icon: mateIcon,
+		description:
+			"MATE is a desktop environment that continues the legacy of GNOME 2, providing a traditional desktop experience.",
+		homepage: "https://mate-desktop.org/",
+		commonDistros: [
+			{ name: "Ubuntu MATE", link: "https://ubuntu-mate.org/" },
+			{ name: "Linux Mint", link: "https://linuxmint.com/" },
+			{ name: "Fedora", link: "https://getfedora.org/" },
+		],
+		screenshot: mateScreenshot,
+		screenshot_tn: mateScreenshotTn,
+		screenshot_distro: "Fedora - Mate 1.26",
+	},
+	{
+		name: "Pantheon",
+		description:
+			"Pantheon is the desktop environment of elementary OS, known for its simplicity, elegance, and user-friendly design.",
+		homepage: "https://elementary.io/",
+		commonDistros: [{ name: "elementary OS", link: "https://elementary.io/" }],
+		screenshot: pantheonScreenshot,
+		screenshot_tn: pantheonScreenshotTn,
+		screenshot_distro: "ElementaryOS 6.x",
+	},
+	{
+		name: "XFCE",
+		icon: xfceIcon,
+		description:
+			"XFCE is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources.",
+		homepage: "https://xfce.org/",
+		commonDistros: [
+			{ name: "Xubuntu", link: "https://xubuntu.org/" },
+			{ name: "Linux Mint", link: "https://linuxmint.com/" },
+			{ name: "MX Linux", link: "https://mxlinux.org/" },
+		],
+		screenshot: xfceScreenshot,
+		screenshot_tn: xfceScreenshotTn,
+		screenshot_distro: "Xubuntu 24.04",
+	},
 ];
 ---
 
@@ -231,8 +229,6 @@ const desktops = [
 </LinuxDesktopTemplate>
 
 <style lang="scss">
-  @use "@scss/base/_index.scss" as *;
-  @use "@scss/_misc.scss" as *;
 
   // globally this is set to flex... why grid here?
   // could what is done with grid-template-column be done in flex?
