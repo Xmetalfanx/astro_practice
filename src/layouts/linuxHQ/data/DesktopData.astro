@@ -262,11 +262,11 @@ const info_updated = Astro.props.info_updated;
   .desktop_container {
     background-color: var(--surface-l2);
     @include outline;
-    @include border-radius;
-
+    @include border-radius(20px, 20px, 20px, 20px);
+    margin: 0 auto;
 
     // not sure this is "too much"
-    // @include box-shadow($blur: 0.75rem);
+    //@include box-shadow($blur: 0.75rem);
 
     // since flex should be set globally for this
     flex-direction: column;
@@ -274,6 +274,8 @@ const info_updated = Astro.props.info_updated;
     font-size: 1.2rem;
     line-height: 1.7rem;
     padding: 1.6rem;
+
+    width: 90%;
 
     .desktop_title {
       font-size: 2rem;
@@ -300,13 +302,15 @@ const info_updated = Astro.props.info_updated;
 
       // Sub Version Container - this is say for each distro base "section"
       .sub_version_container {
+        @include border_radius;
+        @include outline;
+
+
         background-color: var(--surface-l3);
 
-        @include box-shadow($color: var(--dark-color));
 
         line-height: 2rem;
         margin: 1rem;
-        @include outline;
         padding: 1rem;
         width: clamp(300px, 25%, 100%);
 
@@ -324,13 +328,15 @@ const info_updated = Astro.props.info_updated;
     .install_container {
       //  @include box-shadow;
       margin: 2rem 1rem;
-      padding: 1rem;
+      @include border;
+      @include border-radius;
+      padding: .5rem 1rem 1rem 1rem;
 
       background-color: var(--surface-l3);
 
       h3 {
         font-size: 1.5rem;
-        margin: 2rem 0;
+        margin: .5rem 0 2rem 0;
       }
     }
   }
