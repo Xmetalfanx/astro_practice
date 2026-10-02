@@ -41,7 +41,9 @@
         margin: unset;
 
         .aside-section {
-          @include box-shadow($x: 0, $y: 0, $blur: 0.4rem);
+          // @include box-shadow($x: 0, $y: 0, $blur: 0.4rem);
+          @include outline;
+          @include border-radius;
         }
 
         input {
