@@ -46,7 +46,8 @@ import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.as
 </LinuxBaseTemplate>
 
 <style lang="scss">
-  @layer layout {
+  @layer resets, base, layout, components, pages;
+  @layer components {
     .linux-main {
       @include flex($direction: column, $wrap: nowrap, $ai: center);
 
@@ -61,34 +62,35 @@ import LinuxBaseTemplate from "@layouts/templates/linuxhq/linux-base-template.as
         margin: 1rem 0;
       }
 
-      @layer components {
-        section {
-          background-color: var(--surface-l2);
-          @include border-radius;
+      section {
+        background-color: var(--surface-l2);
+        @include border-radius;
 
-          // use outline and box-shadow combo mixin
-          @include default-ol-and-bs(
-            $ol-color: var(--accent-color),
-            $ol-color-dark: var(--light-color),
-            $bs-color: var(--accent-color),
-            $bs-color-dark: var(--light-color),
-            $bs-x: 5px,
-            $bs-y: 5px,
-            $bs-blur: 3px
-          );
+        margin: 2rem auto;
 
-          max-width: 60vw;
-          padding: 1.5rem;
+        // use outline and box-shadow combo mixin
+        @include default-ol-and-bs(
+          $ol-color: var(--accent-color),
+          $ol-color-dark: var(--light-color),
+          $bs-color: var(--accent-color),
+          $bs-color-dark: var(--light-color),
+          $bs-x: 5px,
+          $bs-y: 5px,
+          $bs-blur: 3px
+        );
 
-          @media ($breakpoint-sm) {
-            max-width: 100%;
-          }
+        max-width: 60vw;
+        padding: 1.5rem;
 
-          p {
-            margin: 1rem 0;
-          }
+        @media ($breakpoint-sm) {
+          max-width: 100%;
+        }
+
+        p {
+          margin: 1rem 0;
         }
       }
+
       h1 {
         font-size: 1.5rem;
         // margin: 1rem 0;
