@@ -43,8 +43,8 @@ const version_debian_bookwoom = Astro.props.version_debian_bookworm;
 const version_debian_trixie = Astro.props.version_debian_trixie;
 const version_debian_forky = Astro.props.version_debian_forky;
 
+const version_fedora_44 = Astro.props.version_fedora_44;
 const version_fedora_43 = Astro.props.version_fedora_43;
-const version_fedora_42 = Astro.props.version_fedora_42;
 
 const latest_version = Astro.props.version_latest_version;
 
@@ -150,12 +150,12 @@ const info_updated = Astro.props.info_updated;
     <!-- Fedora  -->
     <div class="sub_version_container">
       <div>
+        <span class="distro-name">Fedora 44 Version:</span>
+        {version_fedora_44}
+      </div>  
+      <div>
         <span class="distro-name">Fedora 43 Version:</span>
         {version_fedora_43}
-      </div>
-      <div>
-        <span class="distro-name">Fedora 42 Version:</span>
-        {version_fedora_42}
       </div>
     </div>
 
