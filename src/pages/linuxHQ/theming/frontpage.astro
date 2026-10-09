@@ -120,15 +120,16 @@ const icons = [
 
   section {
     @include outline;
-    @include box-shadow;
+    @include box-shadow($blur: .35rem);
     background-color: var(--surface-l2);
-    
+
     padding: 20px;
     margin-inline: auto;
+    // why bottom?... i get it that i dont want it to be auto, but ..
     margin-bottom: 2rem;
     max-width: 800px;
 
-    h1 { 
+    h1 {
       padding: 1rem 0;
       text-decoration: underline;
     }
