@@ -57,8 +57,12 @@ function move_astro_project() {
 
 }
 
-assign_variables
+function main() {
+    assign_variables
+    compile_sass
+    build_astro_project
+    move_astro_project
 
-build_astro_project
+}
 
-move_astro_project
+main
