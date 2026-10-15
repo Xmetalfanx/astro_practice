@@ -16,6 +16,12 @@ function assign_variables() {
 
 }
 
+function compile_sass() {
+    printf "%s" "re-compling sass"
+    (
+        npm run sass
+    )
+}
 function build_astro_project() { 
     printf "%s" "Building Astro project Astro_Practice"
     (
