@@ -16,12 +16,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
-    "astro": "^7.3.5",
-    "cssnano": "^9.1.2",
-    "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.1.0",
+    "astro": "^7.3.8",
+    "cssnano": "^9.8.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
     "sass": "^1.105.1",
-    "stylelint": "^17.15.0",
+    "stylelint": "^17.16.0",
     "stylelint-scss": "^7.3.0",
     "typescript": "6.0.3"
   },
