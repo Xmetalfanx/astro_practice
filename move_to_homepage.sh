@@ -22,18 +22,21 @@ function compile_sass() {
         npm run sass
     )
 }
-function build_astro_project() { 
+
+function build_astro_project() {
     printf "%s" "Building Astro project Astro_Practice"
     (
         cd "${astro_practice_dir}" || exit 1
-        yarn run build    
+        yarn run build
     )
 }
 
 function homepage_backup() {
+    printf "%s" "Backing up existing production Homepage location"
     (
+     # ? why the exit ?
      cd "$local_git_dir" || exit
-     tar -zcvf Homepage.tar.gz Homepage   
+     tar -zcvf Homepage.tar.gz Homepage
     )
 }
 
