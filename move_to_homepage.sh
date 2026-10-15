@@ -44,9 +44,11 @@ function move_astro_project() {
 
     echo -e "Moving built astro_project from ${built_project_dir} to ${local_homepage_dir}"
 
-    # delete here may remove the need for the purge function 
+    # delete here may remove the need for the purge function
+    # excluding .git will keep repo b's (the home page production repo), .git from getting removed
     rsync -a \
         --delete \
+        --exclude='/.git/' \
         --exclude='/keybase.txt' \
         --exclude='/*_tests/' \
         --exclude='/colors/' \
