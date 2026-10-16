@@ -9,21 +9,21 @@
     "preview": "astro preview",
     "sass": "sass src/styles/global-styles.scss src/styles/global-styles.css",
     "lint:styles": "stylelint 'src/**/*.scss' --fix",
-    "format:styles": "prettier --write 'src/**/*.scss'",
+    "format:styles": "vp fmt 'src/**/*.scss'",
     "bcheck": "biome check --write",
     "bfix": "biome lint --write",
-    "bformat": "biome format --write"
+    "bformat": "biome format --write",
+    "prepare": "vp config"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
     "astro": "^7.3.8",
     "cssnano": "^9.8.0",
-    "prettier": "^3.9.10",
-    "prettier-plugin-astro": "^1.1.1",
     "sass": "^1.105.1",
     "stylelint": "^17.16.0",
     "stylelint-scss": "^7.3.0",
-    "typescript": "6.0.3"
+    "typescript": "6",
+    "vite-plus": "catalog:"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
