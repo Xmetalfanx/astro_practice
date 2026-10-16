@@ -10,11 +10,7 @@ const appendedTitle = `LinuxHQ Section - ${title}`;
 const { keywords, description } = Astro.props;
 ---
 
-<BaseLayout
-  title={appendedTitle}
-  keywords={keywords}
-  description={description}
->
+<BaseLayout title={appendedTitle} keywords={keywords} description={description}>
   <LinuxTopMenus slot="header" />
   <!-- slot would contain aside and main for each sub-template -->
   <!--idea: this is telling it to put it in slot "primary-container" 

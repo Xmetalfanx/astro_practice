@@ -5,7 +5,9 @@
 
 <div class="mobile_menu_related">
   <!-- Sends users to menus -->
-  <a href="#asidetarget" class="linktoaside">Link to Menu</a>
+  <a href="#asidetarget" class="linktoaside">
+    Link to Menu
+  </a>
 
   <!-- target for "backtotop" link  -->
   <div id="backtotop"></div>
@@ -14,17 +16,15 @@
 <style>
   .mobile_menu_related {
     display: none;
-    
+
     @media ($breakpoint-sm) {
       @include links;
 
       writing-mode: horizontal-tb;
-
 
       display: block;
       margin: 1rem auto;
       scroll-behavior: smooth;
     }
   }
-
 </style>

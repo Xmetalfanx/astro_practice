@@ -15,18 +15,20 @@
 }
 
 // this would be for the main or accent colors
-@mixin color-variants($name,
+@mixin color-variants(
+  $name,
   // softness: lighter + less chroma
   $soft_l: 0.004,
-  $soft_c: 0.035,
-
+  $soft_c: 0.035
 ) {
   // soft → background-friendly, subdued
-  --#{$name}-soft: oklch(from var(--#{$name}) calc(l + #{$soft_l}) calc(c - #{$soft_c}) h);
+  --#{$name}-soft: oklch(
+    from var(--#{$name}) calc(l + #{$soft_l}) calc(c - #{$soft_c}) h
+  );
 }
 
-// logic: 
-// “Once I have a surface color, 
+// logic:
+// “Once I have a surface color,
 // how do I derive slightly raised or recessed surfaces?”
 @mixin surface-levels($step1: 0.08, $step2: 0.14, $step3: 0.22) {
   &[data-theme="light"] {
@@ -42,12 +44,14 @@
   }
 }
 
-// logic: 
-// “Given the current theme (light or dark), 
+// logic:
+// “Given the current theme (light or dark),
 // what is the value of --surface-color?”"
-@mixin theme-color-root($light_theme_color: light-color,
+@mixin theme-color-root(
+  $light_theme_color: light-color,
   $dark_theme_color: dark-color,
-  $property: color) {
+  $property: color
+) {
   @at-root html[data-theme="dark"] {
     #{$property}: var(--#{$dark_theme_color});
   }
@@ -57,10 +61,12 @@
   }
 }
 
-// note to self: the "500" colors are default shades/whatever 
-@mixin theme-color-element($light: light-color-500,
+// note to self: the "500" colors are default shades/whatever
+@mixin theme-color-element(
+  $light: light-color-500,
   $dark: dark-color-500,
-  $property: color) {
+  $property: color
+) {
   html[data-theme="dark"] & {
     #{$property}: var(--#{$dark});
   }
@@ -70,11 +76,12 @@
   }
 }
 
-
-// I think this was just a test and not really in use anywhere  
-@mixin custom_colormix($color1: red,
+// I think this was just a test and not really in use anywhere
+@mixin custom_colormix(
+  $color1: red,
   $color2: blue,
-  $property: background-color) {
+  $property: background-color
+) {
   // #{$property}: colormix(in lab, $color1, $color2);
   #{$property}: colormix(in lab, #{$color1}, #{$color2});
 }

@@ -10,7 +10,7 @@ const desktop_title = Astro.props.desktop_title;
 const generalinfo_desktop_category = Astro.props.generalinfo_desktop_category;
 const generalinfo_desktop_toolkit = Astro.props.generalinfo_desktop_toolkit;
 const generalinfo_distros_that_feature =
-	Astro.props.generalinfo_distros_that_feature;
+  Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs
@@ -78,23 +78,20 @@ const info_updated = Astro.props.info_updated;
     <div class="generalinfo">
       <div>
         <span class="fw-bold">Desktop Hompage: </span>
-        <a href={link_homepage}>
-          {link_homepage}
-        </a>
+        <a href={link_homepage}>{link_homepage}</a>
       </div>
       <div>
-        <span class="fw-bold">Source Code/Issue Tracker: </span>{link_code}
+        <span class="fw-bold">Source Code/Issue Tracker: </span>
+        {link_code}
       </div>
 
       <div>
-        <span class="fw-bold">Desktop Category: </span>{
-          generalinfo_desktop_category
-        }
+        <span class="fw-bold">Desktop Category: </span>
+        {generalinfo_desktop_category}
       </div>
       <div>
-        <span class="fw-bold">Toolkit/WM Name: </span>{
-          generalinfo_desktop_toolkit
-        }
+        <span class="fw-bold">Toolkit/WM Name: </span>
+        {generalinfo_desktop_toolkit}
       </div>
 
       <div>
@@ -104,9 +101,11 @@ const info_updated = Astro.props.info_updated;
 
     <div class="screenshot">
       <a
-        href={typeof screenshot_src === "string"
-          ? screenshot_src
-          : screenshot_src.src}
+        href={
+          typeof screenshot_src === "string"
+            ? screenshot_src
+            : screenshot_src.src
+        }
         target="_blank"
       >
         <Image src={screenshot_src} alt="test" width={500} />
@@ -258,7 +257,6 @@ const info_updated = Astro.props.info_updated;
 </div>
 
 <style lang="scss">
-
   .desktop_container {
     background-color: var(--surface-l2);
     @include outline;
@@ -305,9 +303,7 @@ const info_updated = Astro.props.info_updated;
         @include border_radius;
         @include outline;
 
-
         background-color: var(--surface-l3);
-
 
         line-height: 2rem;
         margin: 1rem;
@@ -330,13 +326,13 @@ const info_updated = Astro.props.info_updated;
       margin: 2rem 1rem;
       @include border;
       @include border-radius;
-      padding: .5rem 1rem 1rem 1rem;
+      padding: 0.5rem 1rem 1rem 1rem;
 
       background-color: var(--surface-l3);
 
       h3 {
         font-size: 1.5rem;
-        margin: .5rem 0 2rem 0;
+        margin: 0.5rem 0 2rem 0;
       }
     }
   }

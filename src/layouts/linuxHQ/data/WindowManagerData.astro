@@ -9,7 +9,7 @@ const wm_title = Astro.props.wm_title;
 const generalinfo_wm_category = Astro.props.generalinfo_wm_category;
 const generalinfo_wm_toolkit = Astro.props.generalinfo_wm_toolkit;
 const generalinfo_distros_that_feature =
-	Astro.props.generalinfo_distros_that_feature;
+  Astro.props.generalinfo_distros_that_feature;
 
 const link_homepage = Astro.props.link_homepage;
 // the idea is to the code ... labeled code in CASE its not on github/gitlabs
@@ -53,21 +53,20 @@ const info_updated = Astro.props.info_updated;
     <div class="generalinfo">
       <div>
         <span class="fw-bold">Window Manager Homepage: </span>
-        <a href={link_homepage}>
-          {link_homepage}
-        </a>
+        <a href={link_homepage}>{link_homepage}</a>
       </div>
       <div>
-        <span class="fw-bold">Source Code/Issue Tracker: </span>{link_code}
+        <span class="fw-bold">Source Code/Issue Tracker: </span>
+        {link_code}
       </div>
 
       <div>
-        <span class="fw-bold">Window Manager Category: </span>{
-          generalinfo_wm_category
-        }
+        <span class="fw-bold">Window Manager Category: </span>
+        {generalinfo_wm_category}
       </div>
       <div>
-        <span class="fw-bold">Toolkit/WM Name: </span>{generalinfo_wm_toolkit}
+        <span class="fw-bold">Toolkit/WM Name: </span>
+        {generalinfo_wm_toolkit}
       </div>
 
       <div>
@@ -202,7 +201,6 @@ const info_updated = Astro.props.info_updated;
 </div>
 
 <style lang="scss">
-
   .wm_container {
     @include flex($direction: column);
     font-size: 1.2rem;

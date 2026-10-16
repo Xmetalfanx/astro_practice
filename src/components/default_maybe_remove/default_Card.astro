@@ -1,8 +1,8 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
 }
 
 const { href, title, body } = Astro.props;
@@ -24,11 +24,9 @@ import "@css/global-styles.css";
 
 <style lang="scss">
   .link-card {
-
     @include outline;
 
     background-color: var(--surface-l2);
-
 
     @include flex($direction: column, $ai: center);
     @include border-radius;
@@ -47,7 +45,6 @@ import "@css/global-styles.css";
 
     > a,
     a:link {
-
       // padding: 1rem;
       border-radius: 0.35rem;
       text-decoration: none;

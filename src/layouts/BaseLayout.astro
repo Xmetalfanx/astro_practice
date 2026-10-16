@@ -11,7 +11,11 @@ const { keywords, description } = Astro.props;
 <!-- This should be for either LinuxHQ or TechHQ pages. -->
 <!-- This would ONLY get called from the templates  -->
 
-<GlobalHeadtag title={appendedTitle} keywords={keywords} description={description} />
+<GlobalHeadtag
+  title={appendedTitle}
+  keywords={keywords}
+  description={description}
+/>
 <slot name="header" />
 
 <slot name="primary-container" />

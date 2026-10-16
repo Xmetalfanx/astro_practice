@@ -38,7 +38,7 @@
       }
     }
   }
-  // for theme toggle button 
+  // for theme toggle button
   #theme-toggle {
     border: none;
     border-radius: 50%;
@@ -64,7 +64,7 @@
       transition: all 0.3s ease-in-out;
     }
   }
-  // for theme toggle button 
+  // for theme toggle button
   #theme-toggle {
     border: none;
     border-radius: 50%;
@@ -73,7 +73,7 @@
     width: 50px;
     height: 50px;
 
-    // for the background around the graphic 
+    // for the background around the graphic
     background-color: var(--light-color);
 
     // remember this is for the items IN the button,
@@ -88,7 +88,8 @@
     svg {
       fill: var(--accent-color);
 
-      :hover, :focus {
+      :hover,
+      :focus {
         fill: var(--dark-color);
       }
 

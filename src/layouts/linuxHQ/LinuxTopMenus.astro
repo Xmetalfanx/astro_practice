@@ -38,7 +38,6 @@ import DarkIcon from "@graphics/light_mode.svg";
 <script src="./ThemeToggleScript.js"></script>
 
 <style lang="scss">
-
   header {
     .section-title {
       font-family: var(--ffamily-header);
@@ -83,14 +82,17 @@ import DarkIcon from "@graphics/light_mode.svg";
 
       // the overall hamburger menus and nav on smaller layouts
       #siteMenu {
+        @include flex(
+          $direction: column,
+          $wrap: nowrap,
+          $jc: flex-end,
+          $ai: flex-end
+        );
 
-        @include flex($direction: column, $wrap: nowrap, $jc: flex-end, $ai: flex-end);
-  
         cursor: pointer;
         inset: 0 0 0 auto;
 
         label {
-
           z-index: 10;
         }
 
@@ -115,7 +117,7 @@ import DarkIcon from "@graphics/light_mode.svg";
             width: 100px;
             height: 12px;
             background-color: var(--accent-color);
-            margin: .75rem 0;
+            margin: 0.75rem 0;
           }
         }
 

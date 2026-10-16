@@ -4,20 +4,20 @@ import "@css/global-styles.css";
 import { Image } from "astro:assets";
 
 const {
-	icon_name,
-	icon_title,
-	link_homepage,
-	generalinfo_icon_category,
-	generalinfo_icon_toolkit,
-	generalinfo_distros_that_feature,
-	install_arch,
-	install_fedora,
-	install_ubuntu,
-	screenshot_distro,
-	screenshot_src,
-	screenshot_thumbnail,
-	latest_version,
-	info_updated,
+  icon_name,
+  icon_title,
+  link_homepage,
+  generalinfo_icon_category,
+  generalinfo_icon_toolkit,
+  generalinfo_distros_that_feature,
+  install_arch,
+  install_fedora,
+  install_ubuntu,
+  screenshot_distro,
+  screenshot_src,
+  screenshot_thumbnail,
+  latest_version,
+  info_updated,
 } = Astro.props;
 ---
 
@@ -28,8 +28,12 @@ const {
 <div class="icon-container">
   <div class="icon-header">{icon_title}</div>
 
-  <p><strong>Latest Version:</strong> {latest_version}</p>
-  <p><strong>Information Updated:</strong> {info_updated}</p>
+  <p>
+    <strong>Latest Version:</strong> {latest_version}
+  </p>
+  <p>
+    <strong>Information Updated:</strong> {info_updated}
+  </p>
   <div>
     <a href={link_homepage} target="_blank" rel="noopener noreferrer">
       Homepage: {link_homepage}
@@ -39,8 +43,12 @@ const {
   <section class="icon-info">
     <h2>General Information</h2>
     <ul>
-      <li><strong>Category:</strong> {generalinfo_icon_category}</li>
-      <li><strong>Toolkit:</strong> {generalinfo_icon_toolkit}</li>
+      <li>
+        <strong>Category:</strong> {generalinfo_icon_category}
+      </li>
+      <li>
+        <strong>Toolkit:</strong> {generalinfo_icon_toolkit}
+      </li>
       <li>
         <strong>Featured Distros:</strong>
         {generalinfo_distros_that_feature}
@@ -50,9 +58,15 @@ const {
   <section class="icon-install">
     <h2>Installation</h2>
     <ul>
-      <li><strong>Arch:</strong> <code>{install_arch}</code></li>
-      <li><strong>Fedora:</strong> <code>{install_fedora}</code></li>
-      <li><strong>Ubuntu:</strong> <code>{install_ubuntu}</code></li>
+      <li>
+        <strong>Arch:</strong> <code>{install_arch}</code>
+      </li>
+      <li>
+        <strong>Fedora:</strong> <code>{install_fedora}</code>
+      </li>
+      <li>
+        <strong>Ubuntu:</strong> <code>{install_ubuntu}</code>
+      </li>
     </ul>
   </section>
 

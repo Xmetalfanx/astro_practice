@@ -79,7 +79,6 @@
         background-color: $light-link-hf-bg;
         color: $light-link-hf;
         outline: $outline;
-
       }
     }
   }
@@ -100,15 +99,14 @@
   }
 }
 
-// this is a simipler way but caniuse says browser support is in the 
-// mid to high 80's and i am not sure how the fallbacks work for now 
+// this is a simipler way but caniuse says browser support is in the
+// mid to high 80's and i am not sure how the fallbacks work for now
 @mixin links_lightdark(
   $light-link: var(--accent-color),
   $light-link-bg: inherit,
   $light-link-hf: var(--main-color),
   $light-link-hf-bg: inherit,
   $light-link-visited: var(--accent-color),
-
   $dark-link: var(--light-color-l2),
   $dark-link-bg: inherit,
   $dark-link-hf: var(--main-color-l2),
@@ -134,8 +132,6 @@
     }
   }
 }
-
-
 
 @mixin ai_ac_ji_jc(
   $align-items: normal,

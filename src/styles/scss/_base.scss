@@ -1,8 +1,7 @@
 @use "base/index" as *;
 
-// pages may be in .Astro files 
+// pages may be in .Astro files
 @layer resets, base, layout, components, pages;
-
 
 @layer base {
   :root {
@@ -70,7 +69,6 @@
     color-scheme: light dark;
   }
 
-
   body {
     // for the background-color
     @include theme-color-root(light-color, dark-color, background-color);
@@ -93,7 +91,7 @@
     a,
     a:link {
       text-decoration: none;
-      color: var(--accent-color-900)
+      color: var(--accent-color-900);
     }
 
     @media ($breakpoint-sm) {
@@ -103,6 +101,5 @@
       grid-template-columns: 1fr;
       grid-template-rows: 1fr auto;
     }
-
   }
 }

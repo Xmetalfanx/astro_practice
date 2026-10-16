@@ -1,15 +1,11 @@
 ---
 interface Props {
-    linktext: string
-    location: string
-    class?: string
+  linktext: string;
+  location: string;
+  class?: string;
 }
 
-const {
-    linktext,
-    location,
-    class: className,
-} = Astro.props;
-
+const { linktext, location, class: className } = Astro.props;
 ---
+
 <a href={location}>{linktext}</a>

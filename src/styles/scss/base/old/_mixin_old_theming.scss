@@ -1,7 +1,4 @@
-// placeholder for mixins in other files 
-
-
-
+// placeholder for mixins in other files
 
 // just an idea for now .. not sure about the syntax FTR
 @mixin color-variants-hsl(
@@ -25,16 +22,16 @@
       calc(l + #{$lum_level3})
   );
 
-  --#{$name}-o90: hsl(from var(--#{$name}) h s l / .90);
-  --#{$name}-o80: hsl(from var(--#{$name}) h s l / .80);
-  --#{$name}-o70: hsl(from var(--#{$name}) h s l / .70);
+  --#{$name}-o90: hsl(from var(--#{$name}) h s l / 0.9);
+  --#{$name}-o80: hsl(from var(--#{$name}) h s l / 0.8);
+  --#{$name}-o70: hsl(from var(--#{$name}) h s l / 0.7);
 }
 
 // new oklch color-variants mixin
 @mixin color-variants(
   $name,
   $light_step2: 0.05,
-  $light_step3: 0.10,
+  $light_step3: 0.1,
   $chroma_less1: 0.015,
   $chroma_less2: 0.023,
   $opacity_90: 0.9,
@@ -42,27 +39,17 @@
   $opacity_70: 0.7
 ) {
   --#{$name}-dark: oklch(
-    from var(--#{$name})
-    calc(l - #{$light_step2}) calc(c - #{$chroma_less1}) h
+    from var(--#{$name}) calc(l - #{$light_step2}) calc(c - #{$chroma_less1}) h
   );
 
-  --#{$name}-darker: oklch(
-    from var(--#{$name})
-    calc(l - #{$light_step3}) c h
-  );
+  --#{$name}-darker: oklch(from var(--#{$name}) calc(l - #{$light_step3}) c h);
 
   --#{$name}-light: oklch(
-    from var(--#{$name})
-    calc(l + #{$light_step2})
-    calc(c - #{$chroma_less1})
-    h
+    from var(--#{$name}) calc(l + #{$light_step2}) calc(c - #{$chroma_less1}) h
   );
 
   --#{$name}-lighter: oklch(
-    from var(--#{$name})
-    calc(l + #{$light_step3})
-    calc(c - #{$chroma_less2})
-    h
+    from var(--#{$name}) calc(l + #{$light_step3}) calc(c - #{$chroma_less2}) h
   );
 
   --#{$name}-o90: oklch(from var(--#{$name}) l c h / #{$opacity_90});
@@ -70,13 +57,8 @@
   --#{$name}-o70: oklch(from var(--#{$name}) l c h / #{$opacity_70});
 }
 
-
-
 // color-levels are for the levels so i can say background-color: var(--main-color-l2)
-@mixin color-levels(
-  $name,
-  $theme,
-) {
+@mixin color-levels($name, $theme) {
   @if $theme == light {
     --#{$name}-l2: var(--#{$name}-dark);
     --#{$name}-l3: var(--#{$name}-darker);

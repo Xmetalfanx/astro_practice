@@ -73,7 +73,6 @@
 | Version info filled out | Pass  | Pass | Pass  | Pass     | Pass |
 | Install Info filled out | Pass  | Pass | Pass  | Pass     | Pass |
 
-
 ### Mobile
 
 - things all seem ok

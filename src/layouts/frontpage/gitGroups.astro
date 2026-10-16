@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <div class="git-section">
@@ -34,7 +33,8 @@
           Installs/Enables some third party repos that update the software
           selection they can install
         </li>
-      </ul>Distro bases supported:
+      </ul>
+      Distro bases supported:
       <ul class="d-flex flex-wrap">
         <li>Arch</li>
         <li>Debian</li>
@@ -76,7 +76,6 @@
 </div>
 
 <style lang="scss">
-
   .frontpage-title {
     font-size: var(--h2);
     font-weight: var(--fw-bold);
@@ -86,7 +85,7 @@
 
   .git-section {
     padding: 1rem;
-    
+
     // The overall "git container" class covering both cards
     .git-container {
       display: grid;
@@ -95,9 +94,7 @@
       justify-content: center;
       padding: 1rem;
 
-
       .git-card {
-
         @include outline;
 
         background-color: var(--surface-l2);
@@ -106,22 +103,19 @@
         line-height: 200%;
         padding: 1.5rem;
 
-
         .git-section-title {
-          
           @include header($font-size: var(--fs-500));
           margin-bottom: 1rem;
         }
 
         .git-icons {
-
           @include flex($jc: space-around);
           margin: 1.5rem 0;
 
           a > i {
             color: var(--accent-color);
-              
-            &:focus, 
+
+            &:focus,
             &:hover {
               color: var(--main-color);
               transition: color 0.3s;
@@ -146,8 +140,6 @@
           @iclude flex($jc: space-around);
         }
       }
-  
-      
     }
   }
 </style>
